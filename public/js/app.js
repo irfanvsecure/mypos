@@ -121,8 +121,8 @@
     var sec=location.hash.replace(/^#/,''); if(!sec || !current) return;
     var target=document.getElementById(sec) || document.getElementById(current.dataset.page+'--'+sec);
     if(!target) return;
-    var y=target.getBoundingClientRect().top + window.pageYOffset - (navEl?navEl.offsetHeight:0) - 8;
-    window.scrollTo({top:y,behavior: smooth?'smooth':'auto'});
+    // scroll-margin-top (CSS) keeps the target clear of the sticky nav; scrollIntoView also stays correct under html{zoom}.
+    target.scrollIntoView({block:'start',behavior: smooth?'smooth':'auto'});
   }
   if(current){ observe(current); fixFaq(current); }
   window.addEventListener('hashchange',function(){ scrollToHash(true); });
