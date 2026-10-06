@@ -8,7 +8,9 @@
     $canonical   = trim($__env->yieldContent('canonical')) ?: $siteUrl . (request()->path() === '/' ? '/' : '/' . request()->path());
     $ogImage     = trim($__env->yieldContent('og_image')) ?: '/images/logo.png';
     $ogImage     = str_starts_with($ogImage, 'http') ? $ogImage : $siteUrl . $ogImage;
-    $robots      = trim($__env->yieldContent('robots')) ?: 'index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large';
+    $robots      = config('site.noindex')
+        ? 'noindex, nofollow'
+        : (trim($__env->yieldContent('robots')) ?: 'index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large');
 @endphp
 <!DOCTYPE html>
 <html lang="en">

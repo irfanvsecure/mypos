@@ -10,6 +10,10 @@ return [
     'address'   => 'Office No. 1, Midlane Plaza, Ghazni Lane, New Super Town, Lahore, Pakistan',
     'hours'     => 'Mon–Fri, 10:00 am – 18:00 pm (Pakistan Standard Time)',
     'register_url' => 'https://erp.mypos.pk/business/register',
+    // Keep the whole site out of search engines (meta robots + X-Robots-Tag on every response + robots.txt).
+    // Set SITE_NOINDEX=false in .env on launch day.
+    'noindex' => env('SITE_NOINDEX', true),
+
     // Serve not-yet-migrated /uploads files from the old WordPress server (see routes/web.php).
     'remote_uploads' => env('SITE_REMOTE_UPLOADS', true),
     'free_download' => 'https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs',

@@ -55,6 +55,21 @@ class ExampleTest extends TestCase
         $this->get('/no-such-page')->assertNotFound();
     }
 
+    public function test_noindex_mode_blocks_indexing_everywhere(): void
+    {
+        config(['site.noindex' => true]);
+
+        foreach (['/', '/fbr-pos-integration', '/blogs', '/clients', '/sitemap.xml', '/no-such-page'] as $url) {
+            $this->get($url)->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+        }
+        $this->get('/')->assertSee('<meta name="robots" content="noindex, nofollow" />', false);
+        $this->get('/robots.txt')->assertOk()->assertDontSee('Sitemap:');
+
+        config(['site.noindex' => false]);
+        $this->get('/')->assertHeaderMissing('X-Robots-Tag')->assertSee('content="index, follow', false);
+        $this->get('/robots.txt')->assertSee('Sitemap:');
+    }
+
     public function test_structured_data_is_valid_json(): void
     {
         $html = $this->get('/frequently-asked-questions')->getContent();

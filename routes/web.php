@@ -17,6 +17,16 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
 Route::get('/portfolio-item/{slug}', [ClientController::class, 'show'])->name('clients.show');
 
+// robots.txt follows config('site.noindex'): crawling stays allowed so bots can see the noindex signals,
+// and the sitemap is only advertised once the site is meant to be indexed.
+Route::get('/robots.txt', function () {
+    $txt = "User-agent: *\nDisallow: /enquiry\n";
+    if (!config('site.noindex')) {
+        $txt .= "\nSitemap: " . rtrim(config('site.url'), '/') . "/sitemap.xml\n";
+    }
+    return response($txt, 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+});
+
 // Old WordPress sitemap URLs all point at the single generated sitemap.
 Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 Route::redirect('/sitemap_index.xml', '/sitemap.xml', 301);
