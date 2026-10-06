@@ -537,7 +537,13 @@
   </div>
 </section>
 
-<x-client-strip :slugs="['brooklyn', 'burger-bliss', 'butt-karahi', 'chemcos', 'hyundai-blue-otimus', 'meadows-grammar-school', 'mesol-pvt-ltd', 'mitti-di-handi', 'client', 'snt-foods', 'strongman-medifur-systems']" title="Our POS Clients" eyebrow="TRUSTED BY" :limit="12" />
+@php
+  $clientRows = [
+    [['2026/07/appleman-logo-revise.jpeg', 'Appleman', null], ['2026/07/brooklyn-logo-revise.jpeg', 'Brooklyn', 'brooklyn'], ['2026/07/burger-bliss-logo-revise.jpeg', 'Burger Bliss', 'burger-bliss'], ['2026/07/but-karahi-logo-revise.jpeg', 'Butt Karahi', 'butt-karahi'], ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos', 'chemcos'], ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai Blue Otimus', 'hyundai-blue-otimus'], ['2026/07/kids-care-logo-revise.jpeg', 'Kids Care', null]],
+    [['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School', 'meadows-grammar-school'], ['2026/07/mesol-logo-revise.jpeg', 'Mesol Pvt LTD', 'mesol-pvt-ltd'], ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi', 'mitti-di-handi'], ['2026/07/shaakh-logo-revise.jpeg', 'Shaakh', 'client'], ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods', 'snt-foods'], ['2026/07/strongman-logo-revise.jpeg', 'Strongman Medifur Systems', 'strongman-medifur-systems'], ['2026/07/jojo-logo-revise.jpeg', 'JoJo', null]],
+  ];
+@endphp
+<x-client-marquee :rows="$clientRows" title="Our POS Clients" eyebrow="TRUSTED BY" id="clients" />
 
 <section id="pricing" class="pricing">
   <div class="wrap">

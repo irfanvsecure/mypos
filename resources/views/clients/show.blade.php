@@ -35,11 +35,14 @@
       <div class="eyebrow-line"><span class="bar"></span><span>MORE CLIENTS</span></div>
       <h2>Other businesses on myPOS.</h2>
     </div>
-    <div class="client-strip">
+    <ul class="cs-grid">
       @foreach ($others as $o)
-        <a href="{{ $o->url }}" title="{{ $o->name }}">@if ($o->logo)<img src="{{ asset(ltrim($o->logo, '/')) }}" alt="{{ $o->name }} logo" loading="lazy">@endif</a>
+        <li><a href="{{ $o->url }}" class="cs-card">
+          <span class="cs-logo">@if ($o->logo)<img src="{{ asset(ltrim($o->logo, '/')) }}" alt="{{ $o->name }} logo" loading="lazy">@endif</span>
+          <span class="cs-name">{{ $o->name }}</span>
+        </a></li>
       @endforeach
-    </div>
+    </ul>
   </div>
 </section>
 @endif
