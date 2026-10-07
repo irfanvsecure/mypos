@@ -77,7 +77,7 @@
         <div class="hx-body">
           <div class="hx-menu">
             <div class="hx-cats">
-              <button type="button" class="on" data-cat="all">All</button><button type="button" data-cat="food">Food</button><button type="button" data-cat="drinks">Drinks</button><button type="button" data-cat="desserts">Desserts</button>
+              <button type="button" class="on" data-cat="all" aria-pressed="true">All</button><button type="button" data-cat="food" aria-pressed="false">Food</button><button type="button" data-cat="drinks" aria-pressed="false">Drinks</button><button type="button" data-cat="desserts" aria-pressed="false">Desserts</button>
             </div>
             <div class="hx-items">
               <button type="button" class="hx-item" data-id="zinger" data-cat="food" data-price="650"><i style="--c:#FBE3D6" aria-hidden="true">🍔</i><b>Zinger Burger</b><span>Rs 650</span></button>

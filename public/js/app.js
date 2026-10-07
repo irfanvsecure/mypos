@@ -182,7 +182,7 @@
       else if((t=e.target.closest('[data-dec]'))) dec(t.dataset.dec);
       else if(e.target.closest('[data-pay]')) charge();
       else if((t=e.target.closest('[data-cat]'))){
-        demo.querySelectorAll('.hx-cats [data-cat]').forEach(function(b){ b.classList.toggle('on', b===t); });
+        demo.querySelectorAll('.hx-cats [data-cat]').forEach(function(b){ b.classList.toggle('on', b===t); b.setAttribute('aria-pressed', b===t ? 'true' : 'false'); });
         Object.keys(items).forEach(function(id){ var el=items[id].el; el.hidden = t.dataset.cat!=='all' && el.dataset.cat!==t.dataset.cat; });
       }
     });
