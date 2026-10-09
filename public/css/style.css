@@ -292,7 +292,7 @@ footer{background:var(--navy); color:var(--text-mute-on-dark); border-top:1px so
 .footer-brand .logo{color:var(--text-on-dark);}
 .footer-brand p{margin-top:14px; font-size:0.86rem; max-width:260px; color:var(--text-mute-on-dark);}
 .footer-bottom{margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-between; font-size:0.8rem; flex-wrap:wrap; gap:12px;}
-.page-header{background:var(--navy); color:var(--text-on-dark); padding-top:78px; position:relative; overflow:hidden;}
+.page-header{background:var(--navy); color:var(--text-on-dark);  position:relative; overflow:hidden;}
 .page-header::before{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(640px 460px at 12% 18%, rgba(193,80,46,0.16), transparent 60%), radial-gradient(600px 520px at 88% 78%, rgba(79,168,218,0.18), transparent 62%);}
 .page-header .wrap{position:relative; z-index:2; padding-top:56px; padding-bottom:56px;}
 .page-header .crumb{font-size:0.82rem; color:var(--text-mute-on-dark); margin-bottom:14px;}
