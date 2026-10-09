@@ -27,8 +27,9 @@
       <div class="media-frame contain"><img src="{{ asset('uploads/2022/10/3-1.png') }}" alt="FBR POS Integration with myPOS point of sale software" loading="lazy"></div>
       <div class="btn-row" style="margin-top:22px;">
         <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Integration</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
+      <x-cta-proof tone="light" />
     </div>
   </div>
 </section>
@@ -58,6 +59,8 @@
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="fbr-pos-integration--who">
   <div class="wrap split" style="align-items:start;">
@@ -202,5 +205,5 @@
   </div>
 </section>
 
-<x-cta-band title="Get your FBR POS integration done — free." text="Give Us a Call to find out more about our Point of Sale Software, or book a free demo and our certified team will handle the integration." primary="Get Free Demo" />
+<x-cta-band title="Get your FBR POS integration done — free." text="Book a free demo and our certified team will handle the FBR integration for you." primary="Book a Free Demo" />
 @endsection

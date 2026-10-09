@@ -51,7 +51,7 @@
       <p>You don’t need to be a big business to join the program. Many of our resellers are individuals who wanted to take control of their careers. Additionally, our technical team of experts is always ready to help you and provide you with live technical support no matter where you are.</p>
       <div class="cta-inline">
         <a href="#reseller-apply" class="btn btn-primary">Join the Program</a>
-        <span class="num">Give Us a Call to find out more about our Point of Sale Software. <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
+        <span class="num">Talk to the partner team. <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
       </div>
     </div>
     <div class="media-frame contain reveal-right">
@@ -102,7 +102,7 @@
     </div>
     <div class="cta-inline">
       <a href="#reseller-apply" class="btn btn-primary">Become a Reseller</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>
 </section>

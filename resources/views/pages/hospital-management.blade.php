@@ -28,12 +28,13 @@
 @section('content')
 <x-page-header title="Hospital Management" eyebrow="HOSPITAL MANAGEMENT SYSTEM" crumb="Hospital Management"
   lead="As the best hospital management system software in Pakistan, myPOS offers automated tools to optimize healthcare administration &mdash; appointments, patient records, lab tests, pharmacy and billing in one place.">
-  <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <div class="btn-row reveal" style="margin-top:26px;">
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/hospital-fbr-pos-integration') }}" class="btn btn-outline">Hospital FBR Integration</a>
   </div>
   <div class="hero-trust">
+    <x-cta-proof :caption="false" />
     <div class="ht-item"><b>15,000+</b><span>Customers across Pakistan</span></div>
     <div class="ht-sep"></div>
     <div class="ht-item"><b>FBR &amp; PRA</b><span>Integrated invoicing</span></div>
@@ -54,7 +55,7 @@
         <li>Core HMS features include electronic health records, appointment scheduling, revenue cycle management, inventory control, and data analytics.</li>
         <li>The user-friendly, customizable platform centralizes data for transparent reporting and prevents supply shortages.</li>
       </ul>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="reveal-right">
       <img src="{{ asset('uploads/2024/01/Best_Hospital_Management_System-removebg-preview-min.png') }}" alt="Best hospital management system software in Pakistan" loading="lazy" style="height:auto; object-fit:contain;">
@@ -80,6 +81,8 @@
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="hospital-management--why">
   <div class="wrap split">
@@ -136,6 +139,6 @@
   </div>
 </section>
 
-<x-cta-band title="Give Us a Call to find out more about our Point of Sale Software."
-  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo of the myPOS hospital management system for your hospital, clinic or pharmacy." primary="Get In Touch" />
+<x-cta-band title="See hospital billing and records on a free demo."
+  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo of the myPOS hospital management system for your hospital, clinic or pharmacy." primary="Book a Free Demo" />
 @endsection

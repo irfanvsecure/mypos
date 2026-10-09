@@ -26,11 +26,12 @@
     <h1 class="reveal">Wedding Event Halls FBR POS Integration</h1>
     <p class="lead reveal">Every booking, advance payment and event service reported to FBR and PRA automatically &mdash; transparent records for marriage halls, banquets and event venues.</p>
     <div class="ind-actions reveal">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="reveal" style="margin-top:18px; color:var(--text-mute-on-dark); font-size:0.92rem;">Give Us a Call to find out more about our Point of Sale Software. <a href="tel:{{ config('site.phone_raw') }}" style="color:var(--blue-light); font-weight:600;">{{ config('site.phone') }} Call us anytime</a></p>
+    <x-cta-proof />
+    <p class="reveal" style="margin-top:18px; color:var(--text-mute-on-dark); font-size:0.92rem;"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--blue-light); font-weight:600;">{{ config('site.phone') }} Call us anytime</a></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2026/01/ETG8.jpg') }}" alt="wedding event halls fbr pos integration" width="960" height="720">
       <div class="float-chip fchip-1"><div class="cdot" style="background:var(--blue-light);"></div><div><div class="ct">Hall Booking Advance</div><div class="cv">FBR Filed</div></div></div>
@@ -55,8 +56,8 @@
       <p>Our wedding event halls FBR POS integration service helps marriage halls, banquet facilities, and event venues comply with <a href="{{ url('/fbr-digital-invoicing') }}" class="link-arrow">Pakistan&rsquo;s mandatory digital invoicing</a> and tax reporting regulations. At MyPOS.pk, we provide a secure and scalable POS solution that ensures every booking, service charge, and event payment is reported to Federal Board Of Revenue in real time.</p>
       <p>With strict enforcement by Pakistan government, FBR POS integration for marriage halls and event venues is essential for businesses offering taxable services, advance bookings, or bundled event packages.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="compliance-visual reveal-right">
@@ -92,11 +93,13 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:820px;">Marriage halls in Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Gujranwala and across Punjab are rapidly adopting <a href="{{ url('/') }}">compliant Point Of Sale systems</a> to ensure transparency.</p>
     <div class="btn-row reveal" style="margin-top:18px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="pra-integration">
   <div class="wrap split">
@@ -109,7 +112,7 @@
       <p>For event venues operating in Punjab, PRA integration service for event halls is mandatory to report provincial sales tax accurately. The Punjab Revenue Authority closely monitors wedding and event venues due to their service-based revenue model.</p>
       <p>Our unified solution combines wedding event halls <a href="{{ url('/fbr-pos-integration') }}" class="link-arrow">POS integration service</a> with federal reporting, eliminating the need for separate systems. We also provide pra integration service for wedding event halls and tailored support for banquet and marriage venues.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="btn btn-ghost">PRA Integration</a>
       </div>
     </div>
@@ -180,8 +183,8 @@
       <p>Manual billing and undocumented bookings can create serious compliance challenges.</p>
       <p>By choosing FBR POS integration for marriage halls and event halls PRA integration service through MyPOS.pk, venue owners safeguard their reputation and ensure accurate, compliant financial reporting across Pakistan.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -204,7 +207,7 @@
       <p>If you operate a wedding hall, banquet venue, or event organization facility anywhere in Pakistan, our pra integration for event halls delivers compliance without complexity&mdash;<a href="{{ url('/contact') }}">contact us today to get started</a>.</p>
     </div>
     <div class="btn-row reveal" style="margin-top:24px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
     </div>
   </div>
 </section>

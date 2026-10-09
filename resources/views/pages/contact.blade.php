@@ -31,7 +31,7 @@
     <div class="support-card reveal-right">
       <h3>Support Hours</h3>
       <div class="hours">Mon-Fri (10:00 am - 18:00 pm) - Pakistan Standard Time</div>
-      <div class="note">Usually it take 12-24 hours to respond to your emails. Use alternate ways (Call) for quick response.</div>
+      <div class="note">Email usually takes 12–24 hours. For a faster answer, call or WhatsApp — we typically reply in minutes.</div>
 
       <div class="support-detail-row">
         <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3l6 4.5L14 3M2 3h12v10H2V3z" stroke="#fff" stroke-width="1.3"/></svg></div>
@@ -41,7 +41,7 @@
         <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
         <div><a href="tel:{{ config('site.phone_raw') }}" class="val" style="color:var(--text-on-dark);">+92 322 476 5528</a></div>
       </div>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" target="_blank" rel="noopener" class="wa-btn">
+      <a href="{{ wa_link() }}" target="_blank" rel="noopener" class="wa-btn">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13l1.2-3.6A7 7 0 1110 13c-1.2 0-2.3-.3-3.3-.8L3 13z" stroke="currentColor" stroke-width="1.4"/></svg>
         Whatsapp Us
       </a>
@@ -71,7 +71,7 @@
           <div><div class="lbl">Trusted</div><div class="val">15,000+ customers · 4.9/5 average rating</div></div>
         </div>
         <div class="btn-row" style="margin-top:26px;">
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
           <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call Now</a>
         </div>
       </div>

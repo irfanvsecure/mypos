@@ -8,7 +8,7 @@
 @php
   $chk = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>';
   $tel = 'tel:' . config('site.phone_raw');
-  $wa = 'https://wa.me/' . config('site.whatsapp');
+  $wa = wa_link();
 @endphp
 
 @section('content')
@@ -18,11 +18,12 @@
     <h1 class="reveal">Laboratories FBR POS Integration</h1>
     <p class="lead reveal">Every test, service and payment recorded and reported to FBR and PRA in real time &mdash; built for medical laboratories, diagnostic centers and pathology labs across Pakistan.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Get Free Demo</a>
+      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}" class="btn btn-outline">Get In Touch</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="hero-call reveal">Give Us a Call to find out more about our Point of Sale Software. <a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
+    <x-cta-proof />
+    <p class="hero-call reveal"><a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2026/01/Laboratory.webp') }}" alt="Medical laboratory technician running diagnostic tests">
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Pathology Test</div><div class="cv">FBR Reported</div></div></div>
@@ -47,7 +48,7 @@
       <p>Our laboratories FBR POS integration service is designed to help registered medical laboratories, diagnostic centers, and pathology labs comply with Pakistan&rsquo;s mandatory digital invoicing and tax reporting requirements. At MyPOS.pk, we provide a secure, healthcare-focused POS solution that ensures every test, service, and payment is accurately recorded and reported to FBR in real time.</p>
       <p>With increased regulatory enforcement by government of Pakistan, FBR Point Of Sale integration for laboratories is essential for labs offering taxable diagnostic and medical services across Pakistan.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -88,11 +89,13 @@
       <span>Lahore</span><span>Islamabad</span><span>Rawalpindi</span><span>Faisalabad</span><span>Multan</span><span>Peshawar</span><span>Punjab-wide</span>
     </div>
     <div class="btn-row" style="margin-top:26px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Talk To Expert</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="pra-integration">
   <div class="wrap split">
@@ -110,7 +113,7 @@
       <p>For labs operating in Punjab, PRA integration service for laboratories is mandatory to report applicable provincial sales tax accurately. The Punjab Revenue Authority closely monitors healthcare service providers, including diagnostic and pathology labs.</p>
       <p>Our unified system combines medical labs PRA integration service with federal reporting, eliminating the need for multiple platforms. With compliant pra integration service for laboratories, medical centres can manage both FBR and PRA obligations through one secure interface.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="link-arrow">About PRA integration &rarr;</a>
       </div>
     </div>
@@ -181,7 +184,7 @@
       </ul>
       <p>Our laboratories FBR POS integration service runs seamlessly in the background, allowing lab staff to focus on patient diagnostics while compliance is handled automatically.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -202,7 +205,7 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing support, updates and documentation by experts.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
@@ -227,5 +230,5 @@
   </div>
 </x-faq>
 
-<x-cta-band title="Get Your Laboratory FBR &amp; PRA Compliant." text="Real-time reporting for every test and service, audit-ready records, and one system for both authorities &mdash; book a free demo today." primary="Get Free Demo" />
+<x-cta-band title="Get Your Laboratory FBR &amp; PRA Compliant." text="Real-time reporting for every test and service, audit-ready records, and one system for both authorities &mdash; book a free demo today." primary="Book a Free Demo" />
 @endsection

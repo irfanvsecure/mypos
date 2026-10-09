@@ -11,11 +11,12 @@
   <div class="call-row reveal">
     <div class="phone">
       <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
-      <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Give Us a Call to find out more about our Point of Sale Software.</div></div>
+      <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Free PRA demo on your invoices. We usually reply in minutes.</div></div>
     </div>
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get In Touch</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
   </div>
+  <x-cta-proof />
 </x-page-header>
 
 <section id="pra-integration--overview">
@@ -28,7 +29,7 @@
         <p>If your business has received a notice to integrate with the Punjab Revenue Authority (PRA), now is the time to act. Delaying compliance can lead to unnecessary penalties, operational disruptions, and increased regulatory scrutiny.</p>
         <p>Our PRA Integration service enables businesses across Pakistan to connect their POS systems with PRA requirements quickly, securely, and accurately. Whether you operate a retail store, restaurant, pharmacy, or any other sales-based business, we ensure your invoicing and transaction data are seamlessly integrated with the authority&rsquo;s system.</p>
         <p>Our experienced team handles the complete implementation process with minimal disruption to your daily operations, helping you stay compliant while maintaining business continuity. Don&rsquo;t wait until deadlines become costly problems. Get your POS software PRA-ready with a reliable integration solution that meets regulatory standards, safeguards your business, and gives you the confidence to focus on serving your customers instead of worrying about compliance.</p>
-        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
       </div>
     </div>
   </div>
@@ -42,7 +43,7 @@
         <h2>What PRA POS Integration means for your business.</h2>
         <p>PRA integration links your POS software with the Punjab Revenue Authority&rsquo;s systems so that sales data is recorded and prepared in a way that supports provincial sales tax compliance. Each sale is processed through your POS, an invoice is created, and the necessary details are stored in a compliant format that can be used for reporting and verification.</p>
         <p>A PRA&#8209;compliant POS provider helps ensure that invoices carry the correct transaction information, applicable taxes, and identifiers. This makes your records more reliable for audits, inspections, and internal reviews, and it simplifies the way your business handles tax documentation, especially when you need to respond quickly to PRA integration queries or notices.</p>
-        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
       </div>
     </div>
     <div class="media-frame reveal-right"><img src="{{ asset('uploads/2023/12/Untitled-1-3-jpg.webp') }}" alt="What PRA POS integration means for your business" loading="lazy"></div>
@@ -104,7 +105,7 @@
         <h2>Why PRA integration is no longer optional.</h2>
         <p>PRA compliance is becoming increasingly important for registered restaurants and service businesses in Punjab. As enforcement continues to tighten, businesses that fail to use required PRA-integrated systems are more likely to face notices, audits, financial penalties, and increased regulatory scrutiny. Delaying compliance can also create unnecessary operational and legal risks.</p>
         <p>myPOS helps you stay ahead of these requirements by making compliance part of your everyday billing process. The system generates PRA-compliant invoices, maintains organised sales records, and supports accurate reporting, helping keep your business audit-ready. Instead of worrying about manual processes or changing compliance obligations, you can operate with greater confidence, knowing your POS system is built to support ongoing PRA compliance.</p>
-        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
       </div>
     </div>
     <div class="media-frame reveal-right"><img src="{{ asset('uploads/2023/12/2-1-jpg.webp') }}" alt="PRA integrated POS billing" width="600" height="600" loading="lazy"></div>
@@ -120,7 +121,7 @@
         <h2>How PRA POS Integration works.</h2>
         <p>In a typical PRA POS integration flow, the cashier creates an invoice at the checkout counter, the POS records the sale, and the system handles all tax calculations and documentation in the background. Invoices can include QR codes or other verification details, so customers and authorities can verify the transaction when needed.</p>
         <p>For your team, this means fewer manual steps and fewer chances for human error. For your business, it means cleaner data and a more organized tax workflow that can be reviewed or reported when necessary, which is crucial if you are already receiving PRA integration reminders or facing scrutiny over your billing practices.</p>
-        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
       </div>
     </div>
   </div>
@@ -145,7 +146,7 @@
     </div>
     </div>
     <p style="margin-top:28px; max-width:760px;">In addition to PRA POS Integration, myPOS also supports <a href="{{ url('/fbr-digital-invoicing') }}" style="color:var(--coral); text-decoration:underline;">FBR Digital Invoicing</a> and <a href="{{ url('/fbr-pos-integration') }}" style="color:var(--coral); text-decoration:underline;">FBR POS Integration</a>, allowing you to manage both provincial and federal tax compliance from a single platform instead of relying on multiple systems. This simplifies day-to-day operations while keeping your reporting consistent across different tax authorities. If you&rsquo;d like to explore the available plans before getting started, you can view our <a href="{{ url('/pricing') }}" style="color:var(--coral); text-decoration:underline;">pricing page</a> for a detailed breakdown of features and costs.</p>
-    <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+    <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
   </div>
 </section>
 
@@ -164,7 +165,7 @@
         <div class="who-row"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg><span>Chains and franchises that require centralized reporting across outlets.</span></div>
       </div>
       <p style="margin-top:24px; max-width:760px;">If your business operates in Punjab but is managed from another city (for example, a Karachi&#8209;based owner with a Lahore branch), PRA integrated POS makes remote compliance much easier. You can monitor sales and tax data for your Punjab locations without being physically present, reducing the risk of surprises when PRA reviews your records.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="media-frame reveal-right"><img src="{{ asset('uploads/2023/12/2-1-jpg.webp') }}" alt="Businesses that should use PRA integrated POS" width="600" height="600" loading="lazy"></div>
   </div>
@@ -179,7 +180,7 @@
         <h2>Why choose myPOS for PRA Integration.</h2>
         <p>myPOS is built for Pakistani businesses that want both operational ease and regulatory compliance. The platform combines core POS features like sales, inventory, and reporting, with PRA integration, <a href="{{ url('/fbr-digital-invoicing') }}" style="color:var(--coral); text-decoration:underline;">FBR e&#8209;invoicing</a>, and other provincial capabilities, so you do not need a different system for each authority.</p>
         <p>This unified approach helps you avoid manual tax calculation and paper&#8209;based processes, keep your fiscal data synchronized and ready for reporting, and respond quickly to notices or compliance updates with proper documentation already stored in your system. Whether you run a single outlet or a multi&#8209;branch chain, myPOS can support your compliance strategy without complicating daily operations.</p>
-        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+        <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
       </div>
     </div>
   </div>
@@ -192,7 +193,7 @@
       <h2>PRA POS Integration, FBR &amp; other authorities.</h2>
       <p>Many businesses in Pakistan need to coordinate compliance across more than one tax authority. PRA Integration covers provincial sales tax on services in Punjab, while FBR governs POS and digital invoicing for goods-based retailers registered at the federal level. <a href="{{ url('/kpra-integration') }}" style="color:var(--coral); text-decoration:underline;">KPRA integration</a> and <a href="{{ url('/srb-integration-services-in-pakistan') }}" style="color:var(--coral); text-decoration:underline;">SRB integration</a> are equally important for businesses operating in Khyber Pakhtunkhwa and Sindh.</p>
       <p>myPOS helps you manage these different requirements within the same POS environment. If you operate in multiple provinces, a unified platform makes compliance easier to manage and monitor. Instead of maintaining separate tools for each region, you can build a single workflow that covers the authorities relevant to your business while still maintaining outlet-level control and reporting.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -204,7 +205,7 @@
       <h2>How PRA POS Integration fits into your daily operations.</h2>
       <p>Once PRA integration is configured, your billing process remains familiar for staff. A customer arrives at the counter, the cashier creates an invoice, and the system automatically applies the correct PRA tax rules and stores the transaction for reporting. There are no complicated extra steps at the front desk; the complexity stays inside the software, not with your team.</p>
       <p>Over time, this leads to faster billing, fewer errors, and stronger documentation. If PRA sends you queries or asks for transaction details, having an integrated POS makes it much easier to respond with accurate data rather than trying to piece together records from different spreadsheets or manual logs.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>

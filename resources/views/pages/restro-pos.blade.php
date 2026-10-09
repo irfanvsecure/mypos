@@ -24,12 +24,13 @@
 @section('content')
 <x-page-header title="Restro POS" eyebrow="MYPOS RESTROPRO" crumb="Restro POS"
   lead="The restaurant POS for dine in, delivery and takeaway &mdash; cashier module, waiter&rsquo;s app, kitchen print and display, table management and real time reports in one system.">
-  <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <div class="btn-row reveal" style="margin-top:26px;">
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/download/restropro') }}" class="btn btn-outline">Download RestroPro</a>
   </div>
   <div class="hero-trust">
+    <x-cta-proof :caption="false" />
     <div class="ht-item"><b>15,000+</b><span>Customers across Pakistan</span></div>
     <div class="ht-sep"></div>
     <div class="ht-item"><b>Offline</b><span>Keeps billing without internet</span></div>
@@ -50,7 +51,7 @@
       <ul class="check-grid" style="grid-template-columns:repeat(2,1fr);">
         @foreach ($modes as $m)<li>{{ $m }}</li>@endforeach
       </ul>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -108,7 +109,7 @@
     <ul class="check-grid reveal">
       @foreach ($sales as $m)<li>{{ $m }}</li>@endforeach
     </ul>
-    <div class="cta-inline reveal"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><a href="{{ url('/pricing-restropro') }}" class="btn btn-outline">See RestroPro Pricing</a></div>
+    <div class="cta-inline reveal"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><a href="{{ url('/pricing-restropro') }}" class="btn btn-outline">See RestroPro Pricing</a></div>
   </div>
 </section>
 

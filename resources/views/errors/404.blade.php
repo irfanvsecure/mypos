@@ -20,7 +20,7 @@
       <a href="{{ url('/contact') }}">Contact</a>
     </div>
     <div class="btn-row mt-40">
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>
     </div>
   </div>

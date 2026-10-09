@@ -37,9 +37,12 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg><a href="{{ url('/reports') }}">Reports</a></li>
       </ul>
       <div class="btn-row">
-        <a href="{{ config('site.register_url') }}" class="btn btn-primary" target="_blank" rel="noopener">Register Your Free Account</a>
-        <a href="{{ url('/one-time-pricing') }}" class="btn-secondary-link">OR Check Onetime Payment Plan</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ config('site.register_url') }}" class="btn-secondary-link" target="_blank" rel="noopener">Or start the 14-day trial</a>
+        <a href="{{ url('/one-time-pricing') }}" class="btn-secondary-link">One-time payment plan</a>
       </div>
+      <x-cta-proof />
     </div>
 
     <div class="addon-card reveal-right">
@@ -91,5 +94,5 @@
   </div>
 </section>
 
-<x-cta-band title="Not sure which modules you need?" text="Give Us a Call to find out more about our Point of Sale Software — or book a free demo and we will recommend the right setup." />
+<x-cta-band title="Not sure which modules you need?" text="Tell us which modules you use and we will recommend the right setup — free demo, no obligation." />
 @endsection

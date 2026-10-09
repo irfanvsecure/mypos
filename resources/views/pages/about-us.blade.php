@@ -17,8 +17,8 @@
       <p>At mypos.pk, we are more than just a POS provider — we are a technology partner committed to helping Pakistani businesses operate smarter and grow faster. By combining reliable systems, local expertise and dedicated support, we ensure our customers can focus on what matters most: running and expanding their business with confidence.</p>
       <p>Whether you&rsquo;re a small shop or a multi-branch enterprise, our software is built to scale with your needs. We are driven by innovation, guided by customer trust and focused on delivering practical solutions that simplify operations and create long-term value for businesses across Pakistan.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
     <div class="about-photo reveal-right">

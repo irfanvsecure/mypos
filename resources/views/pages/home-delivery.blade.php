@@ -44,12 +44,13 @@
 @section('content')
 <x-page-header title="Home Delivery" eyebrow="MYPOS RESTROPRO" crumb="Home Delivery"
   lead="RestroPro is a complete solution tailored for restaurant businesses, designed to simplify daily operations and help increase your revenue &mdash; from taking orders to processing payments and delivery.">
-  <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <div class="btn-row reveal" style="margin-top:26px;">
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/download/restropro') }}" class="btn btn-outline" target="_blank">Download Now</a>
   </div>
   <div class="hero-trust">
+    <x-cta-proof :caption="false" />
     <div class="ht-item"><b>15,000+</b><span>Customers across Pakistan</span></div>
     <div class="ht-sep"></div>
     <div class="ht-item"><b>Web &amp; Mobile</b><span>Access RestroPro anywhere</span></div>
@@ -65,7 +66,7 @@
       <h2 style="{{ $h2 }}"><strong>RestroPro</strong> <strong>Ultimate Restaurant POS System: Streamlined Point of Sale Software for Efficient Management</strong></h2>
       <p>RestroPro is a complete solution tailored for restaurant businesses, designed to simplify daily operations and help increase your revenue. It's more flexible and affordable than other restaurant management systems out there. With RestroPro, everything from taking orders to processing payments is streamlined, making it easier for you to focus on what matters most—delivering great service.</p>
       <p>If you're in need of a <strong>Restaurant Point of Sale (POS)</strong> system, <strong>POS software</strong>, or a full <strong>restaurant management software</strong>, RestroPro has it all. Our system is built to handle the needs of any restaurant, whether you're looking for advanced <strong>Restaurant POS system software</strong> or just a simple, effective <strong>POS program</strong>. Plus, you can access it on both web and mobile, making it convenient and adaptable to how you run your business.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="reveal-right">
       <img src="{{ asset('uploads/2022/08/ease-of-access.png') }}" alt="RestroPro home delivery POS &ndash; ease of access on web and mobile" loading="lazy" style="height:auto; object-fit:contain;">
@@ -125,7 +126,7 @@
       <ul class="check-list">
         @foreach ($why as $w)<li>{{ $w }}</li>@endforeach
       </ul>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><a href="{{ url('/pricing-restropro') }}" class="btn btn-outline">See RestroPro Pricing</a></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><a href="{{ url('/pricing-restropro') }}" class="btn btn-outline">See RestroPro Pricing</a></div>
     </div>
   </div>
 </section>
@@ -217,7 +218,7 @@
       <div class="eyebrow-line"><span class="bar"></span><span>PRODUCTION</span></div>
       <h2 style="{{ $h2 }}">Production Management System</h2>
       <p>Handle all of your things and stock inventory POS has a incredible POS product management system. Through this software ,you can manage your bit-by-bit creation system as well. Furthermore, you can manage your current product records and new upcoming productions as well. Also, you can set up production units easily. So, using POS software, you can keep track of your production system easily. Here, it is the summary of your record work process in the going with portions.</p>
-      <div class="btn-row" style="margin-top:22px;"><a href="{{ url('/download/restropro') }}" class="btn btn-primary" target="_blank">Check Trial Version</a></div>
+      <div class="btn-row" style="margin-top:22px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><a href="{{ url('/download/restropro') }}" class="btn btn-outline" target="_blank">Try the free trial</a></div>
     </div>
   </div>
 </section>
@@ -228,7 +229,7 @@
       <div class="eyebrow-line"><span class="bar"></span><span>PURCHASING</span></div>
       <h2 style="{{ $h2 }}">Purchase Management System</h2>
       <p>Purchase Management System is vital for your business. For dealing with the purchases POS has an attract element. In the restaurant business, the purchase will occur at each time. In this way, you need to purchase fixings according to your necessities to secure the appropriate assistance. For this reason, POS will be the best decision for you. Because this software purchase the executives include assists you with playing out this task naturally.</p>
-      <div class="btn-row" style="margin-top:22px;"><a href="{{ url('/download/restropro') }}" class="btn btn-primary" target="_blank">Check Trial Version</a><a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get Free Demo</a></div>
+      <div class="btn-row" style="margin-top:22px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><a href="{{ url('/download/restropro') }}" class="btn btn-outline" target="_blank">Try the free trial</a></div>
     </div>
     <div class="reveal-right">
       <div class="media-frame contain"><img src="{{ asset('uploads/2022/08/5.png') }}" alt="Purchase management system screen" loading="lazy" style="height:auto;"></div>
@@ -253,6 +254,6 @@
   </div>
 </section>
 
-<x-cta-band title="Give Us a Call to find out more about our Point of Sale Software."
-  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free RestroPro demo for dine in, takeaway and home delivery, including FBR &amp; PRA integration." primary="Get In Touch" />
+<x-cta-band title="See dine-in, takeaway and delivery on a free demo."
+  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free RestroPro demo for dine in, takeaway and home delivery, including FBR &amp; PRA integration." primary="Book a Free Demo" />
 @endsection

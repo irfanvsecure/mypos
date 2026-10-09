@@ -11,11 +11,12 @@
   <div class="call-row reveal">
     <div class="phone">
       <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
-      <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Give Us a Call to find out more about our Point of Sale Software.</div></div>
+      <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Free KPRA demo on your counter. We usually reply in minutes.</div></div>
     </div>
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get In Touch</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
   </div>
+  <x-cta-proof />
 </x-page-header>
 
 <section id="kpra-integration--overview">
@@ -24,7 +25,7 @@
       <p>KPRA POS integration is mandatory for service businesses operating in Khyber Pakhtunkhwa. If your business crosses the PKR 5 million annual revenue threshold, or if you run a restaurant or salon in a KPRA-regulated zone, you are required to connect your point of sale system directly to KPRA&rsquo;s network.</p>
       <p>myPOS provides complete KPRA POS integration services, connecting your point-of-sale system directly with the Khyber Pakhtunkhwa Revenue Authority&rsquo;s platform to ensure real-time tax reporting, digital invoicing, and full compliance with provincial tax regulations.</p>
       <p>Whether you operate a restaurant, salon, clinic, hotel, or any other service business across Khyber Pakhtunkhwa, myPOS handles the entire integration process at no cost. The integration is free, and setup is typically completed within two to four weeks from the initial consultation.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="who-grid">
       <div class="who-row"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg><span>Real-time KPRA digital invoicing with compliant tax reporting</span></div>
@@ -61,7 +62,7 @@
       <p>Every transaction processed through myPOS is sent to KPRA in real time. Applicable tax calculations are applied automatically at the point of sale, ensuring accurate reporting without manual reconciliation at the end of the day or month. Your KPRA records remain current with every sale.</p>
       <p>Each invoice generated through myPOS includes a QR code or barcode, printed automatically at checkout. This is a mandatory requirement that allows KPRA to verify that the transaction has been reported. Invoices are generated according to KPRA standards, including the correct tax breakdown and a secure digital audit trail that remains accessible for regulatory review.</p>
       <p>Customers can verify their purchases by scanning the QR code through the KPRA Tax App. This confirms that the transaction was reported correctly and that the applicable tax was charged. It also provides an independent record of compliance that can support your business during audits or regulatory reviews.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="feat-grid-7 stagger" style="margin-top:44px;">
       <div class="feat-tile reveal-scale" style="--i:0">
@@ -160,7 +161,7 @@
     <div class="cta-band reveal">
       <h2>Get your business KPRA compliant today.</h2>
       <p>Getting started with KPRA integration is a simple, structured process designed to minimize disruption and ensure full compliance from the very beginning. From assessment to go-live, myPOS handles everything so your business stays fully compliant with Khyber Pakhtunkhwa tax regulations without technical stress.</p>
-      <div class="btn-row" style="justify-content:center;"><a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book Your Integration Appointment</a><a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Get In Touch</a></div>
+      <div class="btn-row" style="justify-content:center;"><a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book Your Integration Appointment</a><a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Book a Free Demo</a></div>
     </div>
     <div class="steps-flow stagger" style="margin-top:44px;">
       <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Initial Assessment</h4><p>Contact myPOS for a free POS assessment. We review your current system and define required KPRA compliance configuration (2&ndash;3 days).</p></div></div>

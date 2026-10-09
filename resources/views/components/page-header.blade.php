@@ -40,11 +40,12 @@
       <div class="call-row reveal">
         <div class="phone">
           <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
-          <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }}</a><div class="phone-sub">Call us anytime — find out more about our Point of Sale Software</div></div>
+          <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }}</a><div class="phone-sub">Free demo on your own products. We usually reply in minutes.</div></div>
         </div>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get In Touch</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       </div>
+      <x-cta-proof class="reveal" />
     @endif
   </div>
 </header>

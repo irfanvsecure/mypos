@@ -23,12 +23,13 @@
 @section('content')
 <x-page-header title="Accounting Software" eyebrow="MYPOS ACCOUNTING &amp; ERP" crumb="Accounting Software"
   lead="Experience simplified financial management with MyPOS, the best accounting software in Pakistan for small businesses.">
-  <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <div class="btn-row reveal" style="margin-top:26px;">
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/pricing') }}" class="btn btn-outline">See Pricing</a>
   </div>
   <div class="hero-trust">
+    <x-cta-proof :caption="false" />
     <div class="ht-item"><b>15,000+</b><span>Customers across Pakistan</span></div>
     <div class="ht-sep"></div>
     <div class="ht-item"><b>FBR</b><span>Integrated digital invoicing</span></div>
@@ -53,7 +54,7 @@
         <li>As a reliable gateway to success, mypos.pk ensures businesses not only navigate challenges seamlessly but also thrive continuously.</li>
         <li>With a focus on innovation and user-friendly solutions, mypos.pk stands as a key player in facilitating business progress in Pakistan.</li>
       </ul>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -77,6 +78,8 @@
   </div>
 </section>
 
+<x-mid-cta />
+
 <section id="accounting-software--made-easy">
   <div class="wrap split">
     <div class="reveal-left">
@@ -88,7 +91,7 @@
       <p>As Pakistan's leading provider of fast, small-business accounting software, we empower managers with comprehensive yet easy-to-use financial tools.</p>
       <p>MyPOS paves the way for your success through our dedicated accounting solutions. Uncover the confidence that comes with simplified accounting and management. <strong>MyPOS: Your partner in Pakistan for integrated online accounting software.</strong></p>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/fbr-digital-invoicing') }}" class="btn btn-outline">FBR Digital Invoicing</a>
       </div>
     </div>
@@ -129,6 +132,6 @@
   </div>
 </section>
 
-<x-cta-band title="Give Us a Call to find out more about our Point of Sale Software."
-  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo and see how MyPOS accounting, inventory and FBR invoicing work together." primary="Get In Touch" />
+<x-cta-band title="See accounting, stock and tax invoicing in one demo."
+  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo and see how MyPOS accounting, inventory and FBR invoicing work together." primary="Book a Free Demo" />
 @endsection

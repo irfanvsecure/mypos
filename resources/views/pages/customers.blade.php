@@ -45,8 +45,8 @@
         <span>Laundry Stores</span>
       </div>
       <div class="cta-inline">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-        <span class="num">Give Us a Call to find out more about our Point of Sale Software. <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <span class="num"><a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
       </div>
     </div>
   </div>

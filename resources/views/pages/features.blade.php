@@ -18,7 +18,7 @@
       <p>Online mobile reporting enable you to keep track of inventory items, sales and employee performance from anywhere, anytime. With lot of flexibility and runtime designer, now myPOS will enable you to customize your reports quickly without the intervention of any code modifications.</p>
       <p>Get an instant overview of your business across all of your locations. Access real-time product, sales and employee performance reports from anywhere, at anytime. Through customizable reports, access your key information quickly without the need to re-run individual reports.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="#features--explore" class="link-arrow">Explore all features →</a>
       </div>
     </div>

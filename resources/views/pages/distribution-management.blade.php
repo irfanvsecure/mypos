@@ -23,12 +23,13 @@
 @section('content')
 <x-page-header title="Distribution Management" eyebrow="SALES &amp; DISTRIBUTION SOFTWARE" crumb="Distribution Management"
   lead="We provide end-to-end automation from order processing to shipping goods &mdash; sales, orders, inventory and channels in one integrated solution for wholesale distributors.">
-  <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <div class="btn-row reveal" style="margin-top:26px;">
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/fbr-digital-invoicing') }}" class="btn btn-outline">FBR Digital Invoicing</a>
   </div>
   <div class="hero-trust">
+    <x-cta-proof :caption="false" />
     <div class="ht-item"><b>15,000+</b><span>Customers across Pakistan</span></div>
     <div class="ht-sep"></div>
     <div class="ht-item"><b>4.9/5</b><span>Average customer rating</span></div>
@@ -52,7 +53,7 @@
         <li>Experience the power of real-time data with access to up-to-the-minute insights into your sales, inventory, and distribution channels. This allows you to make informed decisions in the dynamic food distribution industry.</li>
         <li>Additionally, our sales and distribution software, including tailored features for food distribution ERP, optimizes your processes. Automate routine tasks, enhance accuracy and increase overall efficiency to keep your operations running smoothly.</li>
       </ul>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -76,6 +77,8 @@
   </div>
 </section>
 
+<x-mid-cta />
+
 <section id="distribution-management--why">
   <div class="wrap split">
     <div class="reveal-left">
@@ -89,7 +92,7 @@
       </ul>
       <p>Transform your distribution with MyPOS. Our specialized software provides contemporary features to manage sales, orders, inventory, and channels in one integrated solution. <strong>Contact our team today to modernize operations and uncover new opportunities for your evolving business.</strong></p>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/wholesalers-guide-to-fbr-digital-invoicing') }}" class="btn btn-outline">Wholesaler's FBR Guide</a>
       </div>
     </div>
@@ -130,6 +133,6 @@
   </div>
 </section>
 
-<x-cta-band title="Give Us a Call to find out more about our Point of Sale Software."
-  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo of MyPOS sales and distribution management software." primary="Get In Touch" />
+<x-cta-band title="See sales, routes and stock on a free demo."
+  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo of MyPOS sales and distribution management software." primary="Book a Free Demo" />
 @endsection

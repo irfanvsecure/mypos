@@ -21,7 +21,7 @@
       <p>{{ $client->name }} is one of the 15,000+ businesses that run their sales, stock and reporting on myPOS point of sale software.</p>
       <p>Want the same setup for your business? Our team handles installation, data migration, FBR &amp; PRA integration and staff training.</p>
       <div class="btn-row mt-24">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ route('clients.index') }}" class="btn btn-outline">See all clients</a>
       </div>
     </div>
@@ -46,4 +46,5 @@
   </div>
 </section>
 @endif
+<x-cta-band title="Want the same setup for your business?" text="Book a free demo — installation, data migration, FBR and PRA integration, and staff training are handled by our team." primary="Book a Free Demo" />
 @endsection

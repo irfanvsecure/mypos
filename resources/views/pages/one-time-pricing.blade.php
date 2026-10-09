@@ -6,7 +6,7 @@
 
 @section('content')
 <x-page-header title="Pricing RetailPro" eyebrow="RETAILPRO · ONE-TIME LICENSE" :crumbs="[['Pricing', '/pricing']]" crumb="RetailPro"
-  lead="Give Us a Call to find out more about our Point of Sale Software. Start free, then pick the one-time RetailPro license that fits your retail business." :call="true" />
+  lead="Start free, then pick the one-time RetailPro license that fits your retail business." :call="true" />
 
 <section class="section-tight" style="padding-bottom:0;">
   <div class="wrap">
@@ -90,7 +90,9 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Biller/Permission</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Reports</li>
         </ul>
-        <a href="{{ url('/download/mypos-retailpro') }}" class="btn btn-primary">Download RetailPro</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ url('/download/mypos-retailpro') }}" class="btn-secondary-link">Download RetailPro</a>
+        <x-cta-proof />
       </div>
       <div class="price-card reveal-scale" style="--i:3">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
@@ -189,5 +191,5 @@
   </div>
 </section>
 
-<x-cta-band title="Ready to run your retail business on RetailPro?" text="Download the free edition today or talk to our team — we will help you choose the right plan, set up FBR/PRA integration and train your staff." primary="Get Free Demo" />
+<x-cta-band title="Ready to run your retail business on RetailPro?" text="Download the free edition today or talk to our team — we will help you choose the right plan, set up FBR/PRA integration and train your staff." primary="Book a Free Demo" />
 @endsection

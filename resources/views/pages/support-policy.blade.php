@@ -87,7 +87,7 @@
         <p style="color:var(--text-mute-ink); margin-bottom:20px;">Our team is happy to help — call, WhatsApp or email us at <a href="mailto:{{ config('site.email') }}" style="color:var(--coral-deep);">{{ config('site.email') }}</a>.</p>
         <div class="btn-row">
           <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary btn-sm">Contact Us</a>
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp</a>
           <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline btn-sm">Call {{ config('site.phone') }}</a>
         </div>
         <nav class="related-links" aria-label="Other policies">
@@ -124,4 +124,5 @@
     </aside>
   </div>
 </section>
+<x-cta-band title="Need a POS that stays compliant?" text="Book a free demo — we set up the software, FBR and PRA integration, and train your staff." primary="Book a Free Demo" />
 @endsection

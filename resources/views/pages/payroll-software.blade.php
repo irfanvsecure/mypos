@@ -23,12 +23,13 @@
 @section('content')
 <x-page-header title="Payroll Management Software" eyebrow="MYPOS HR &amp; PAYROLL" crumb="Payroll Software"
   lead="MyPOS offers an integrated HR payroll management system to streamline the payroll process for businesses in Pakistan.">
-  <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <div class="btn-row reveal" style="margin-top:26px;">
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="#payroll-software--download" class="btn btn-outline">Free Download</a>
   </div>
   <div class="hero-trust">
+    <x-cta-proof :caption="false" />
     <div class="ht-item"><b>15,000+</b><span>Customers across Pakistan</span></div>
     <div class="ht-sep"></div>
     <div class="ht-item"><b>4.8</b><span>Editor's rating</span></div>
@@ -51,7 +52,7 @@
       <p>Our goal is to help Pakistani companies improve workplace and business productivity through our HR payroll software.</p>
       <p>By automating and integrating key HR processes like payroll, leave, and attendance, we allow managers and employees to focus less on administrative tasks and more on strategic priorities.</p>
       <p>With features designed specifically for the Pakistani market, MyPOS strives to be an HR software partner that grows along with your organization. Our commitment is to keep innovating new ways to simplify payroll and HR management for businesses of all sizes and industries nationwide.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -75,6 +76,8 @@
   </div>
 </section>
 
+<x-mid-cta />
+
 <section id="payroll-software--efficient">
   <div class="wrap split">
     <div class="reveal-left">
@@ -89,7 +92,7 @@
       </ul>
       <p>With MyPOS payroll software, save time and costs while empowering employees through self-service and promoting productivity across your organization. Contact our team today to modernize operations and uncover new opportunities for your evolving business. <strong>Sign up now for a free demo.</strong></p>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/employee-management') }}" class="btn btn-outline">Employee Management</a>
       </div>
     </div>
@@ -158,6 +161,6 @@
   </div>
 </section>
 
-<x-cta-band title="Give Us a Call to find out more about our Point of Sale Software."
-  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo of MyPOS payroll, leave and attendance management." primary="Get In Touch" />
+<x-cta-band title="See payroll, leave and attendance on a free demo."
+  text="<a href='tel:{{ config('site.phone_raw') }}' style='color:inherit; font-weight:700;'>{{ config('site.phone') }}</a> &mdash; Call us anytime. Book a free demo of MyPOS payroll, leave and attendance management." primary="Book a Free Demo" />
 @endsection

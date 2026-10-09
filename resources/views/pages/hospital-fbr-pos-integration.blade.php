@@ -12,11 +12,12 @@
     <h1 class="reveal">Hospital FBR POS Integration</h1>
     <p class="lead reveal">FBR &amp; PRA compliant POS for hospitals and medical institutions &mdash; OPD, IPD, pharmacy and lab billing reported in real time, with FBR-verifiable QR codes on every patient receipt.</p>
     <div class="ind-actions reveal">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="reveal" style="margin-top:18px; color:var(--text-mute-on-dark); font-size:0.92rem;">Give Us a Call to find out more about our Point of Sale Software. <a href="tel:{{ config('site.phone_raw') }}" style="color:var(--blue-light); font-weight:600;">{{ config('site.phone') }} Call us anytime</a></p>
+    <x-cta-proof />
+    <p class="reveal" style="margin-top:18px; color:var(--text-mute-on-dark); font-size:0.92rem;"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--blue-light); font-weight:600;">{{ config('site.phone') }} Call us anytime</a></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2025/12/how-to-integrate-your-pos-with-fbr-digital-invoicing-1024x576-1.webp') }}" alt="hospital fbr pos integration" width="1024" height="576">
       <div class="float-chip fchip-1"><div class="cdot" style="background:var(--blue-light);"></div><div><div class="ct">OPD Billing</div><div class="cv">FBR Filed</div></div></div>
@@ -41,8 +42,8 @@
       <p>We provide reliable and professionally managed hospital FBR POS integration services for hospitals and medical institutions across Pakistan. Our solutions help hospitals comply with applicable Federal Board Of Revenue (FBR) and Punjab Revenue Authority (PRA) regulations, manage structured income reporting, and meet POS integration requirements where enforcement applies.</p>
       <p>Whether your hospital requires mandatory Point Of Sale integration under regulatory notifications or needs a compliant system for income tax filing, documentation, and audits, MyPOS.pk delivers secure, scalable, and healthcare-ready POS solutions.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="compliance-visual reveal-right">
@@ -68,7 +69,7 @@
       </div>
       <p>Our systems support consistent reporting while keeping hospital operations smooth.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       </div>
     </div>
     <div class="media-frame reveal-right">
@@ -76,6 +77,8 @@
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="pra-clinics">
   <div class="wrap split">
@@ -88,7 +91,7 @@
       <p>For healthcare providers operating in Punjab, a reliable PRA integration service for clinics plays a vital role in maintaining provincial tax compliance and accurate income documentation. The Punjab Revenue Authority (PRA) requires clinics and medical service providers to properly record and report applicable provincial sales tax on services and taxable supplies.</p>
       <p>Our company offers a streamlined solution that simplifies this entire process by automating reporting, documentation, and reconciliation. Through our platform, clinics can manage both FBR (federal) requirements and clinics PRA integration (provincial) from a single, unified interface. This reduces manual effort, minimizes reporting errors, and ensures clinics remain compliant while focusing on patient care and daily operations.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/clinics-fbr-pos-integration') }}" class="btn btn-ghost">Clinics FBR POS Integration</a>
       </div>
     </div>
@@ -144,7 +147,7 @@
       <div class="icon-row-card reveal-scale" style="--i:4"><div class="ic-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="8" rx="1.5" stroke="#fff" stroke-width="1.4"/><path d="M7 9V6a3 3 0 016 0v3" stroke="#fff" stroke-width="1.4"/></svg></div><span><strong>Secure EMR:</strong> Encrypted Electronic Medical Records linked to billing.</span></div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/hospital-management') }}" class="btn btn-ghost">Hospital Management Software</a>
     </div>
   </div>
@@ -166,8 +169,8 @@
     <div class="benefit-card reveal" style="margin-top:36px; background:#fff;">
       <p><a href="{{ url('/') }}">MyPOS.pk</a> provides hospitals across Punjab with mandatory Point Of Sale compliance, structured income reporting, and professional documentation support. Our solutions deliver smooth compliance without complexity, allowing your medical teams to focus entirely on patient care. Contact us today for consultation, system setup, or compliance guidance.</p>
       <div class="btn-row" style="margin-top:20px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>

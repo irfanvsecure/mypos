@@ -47,7 +47,7 @@
         <p style="margin:0 0 22px;">Our team sets up the POS, FBR / PRA integration and staff training for you. Most businesses are live within 1–3 days.</p>
         <div class="btn-row">
           <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
       </div>
     </article>
@@ -62,7 +62,7 @@
       <div class="aside-cta">
         <h4>Talk to a POS expert</h4>
         <p>Free consultation on POS setup and FBR / PRA integration for your business.</p>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:var(--text-on-dark);">{{ config('site.phone') }}</a>
       </div>
     </aside>

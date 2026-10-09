@@ -11,11 +11,12 @@
   <div class="call-row reveal">
     <div class="phone">
       <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
-      <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Give Us a Call to find out more about our Point of Sale Software.</div></div>
+      <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Free SRB demo on your invoices. We usually reply in minutes.</div></div>
     </div>
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get In Touch</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
   </div>
+  <x-cta-proof />
 </x-page-header>
 
 <section id="srb-integration-services-in-pakistan--overview">
@@ -24,7 +25,7 @@
       <p>Running a service-oriented business in Sindh means staying on the right side of the Sindh Revenue Board. If your business has received a notice for non-compliance or you are setting up your tax infrastructure from scratch, professional SRB integration is no longer optional, it is a legal requirement.</p>
       <p>myPOS delivers end-to-end SRB POS integration services that connect your point-of-sale system directly with the Sindh Revenue Board&rsquo;s central platform, ensuring real-time Sindh sales tax reporting, accurate digital invoicing, and full regulatory compliance.</p>
       <p>Whether you operate in Karachi, Hyderabad, Sukkur, or anywhere across Sindh, myPOS is your trusted SRB-approved POS provider in Pakistan.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="who-grid">
       <div class="who-row"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg><span>Real-time SRB digital invoicing with QR codes</span></div>
@@ -46,7 +47,7 @@
       <p>The Sindh Revenue Board, established under the Sindh Revenue Board Act 2010, is the provincial authority responsible for collecting sales tax on services across Sindh. Under the Sindh Sales Tax Special Procedure (Online Integration of Business) Rules 2022, businesses falling under scheduled service categories are legally mandated to connect their computerized sales systems to the SRB&rsquo;s central portal. This process is known as SRB POS integration.</p>
       <p>When your system is integrated, every completed transaction is automatically reported to the SRB in real time. A unique SRB invoice ID is generated for each sale, and a QR code is printed on the customer&rsquo;s receipt. Customers can verify the sales tax payment through the official SRB Tax App, creating full transparency in the tax chain.</p>
       <p>Non-compliance carries serious consequences. Businesses that fail to integrate face legal notices, penalties, backdated tax demands, suspension of business licenses, and even sealing of premises. Under the Sindh Finance Act 2025, the standard Sindh Sales Tax rate on services stands at 15%, and penalties for non-compliance with e-invoicing requirements can reach up to Rs. 1,000,000. The risk of operating without a verified SRB-POS system is simply too high.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     </div>
     <div class="stats-band" style="border-radius:16px; margin-top:44px;">
@@ -76,7 +77,7 @@
       <div class="who-row"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg><span>Online marketplace platforms</span></div>
     </div>
     <p style="margin-top:24px; max-width:760px;">The Sindh Finance Act 2025 has further expanded the scope of taxable services, moving Sindh from a positive list to a negative list framework &mdash; meaning virtually all services are now taxable unless specifically exempt. This makes SRB digital invoicing relevant to a wider pool of businesses than ever before. If your business provides taxable services in Sindh and you are registered with the SRB, you are likely required to have a verified, integrated POS system in place. Consulting with myPOS helps you determine your exact obligations and get compliant without delay.</p>
-    <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Start Your Integration</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+    <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
   </div>
 </section>
 
@@ -142,7 +143,7 @@
     <div class="cta-band reveal">
       <h2>Get your business SRB compliant today.</h2>
       <p>Avoiding SRB compliance is not a strategy &mdash; it is a liability. With the Sindh Finance Act 2025 broadening the tax base and SRB audit activity intensifying, now is the time to ensure your business is properly integrated. myPOS makes the process straightforward, fast, and fully managed from start to finish. Contact the myPOS team today to discuss your SRB POS integration requirements, get a free consultation, and take the first step toward full Sindh sales tax compliance. Visit us at <a href="{{ url('/') }}" style="color:#fff; text-decoration:underline;">mypos.pk</a> or reach out to our dedicated support team to book your integration appointment.</p>
-      <div class="btn-row" style="justify-content:center;"><a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book Your Integration Appointment</a><a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Get In Touch</a></div>
+      <div class="btn-row" style="justify-content:center;"><a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book Your Integration Appointment</a><a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Book a Free Demo</a></div>
     </div>
   </div>
 </section>

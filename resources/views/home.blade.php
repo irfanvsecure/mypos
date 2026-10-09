@@ -50,10 +50,10 @@
       <h1><span class="h1-kicker">Best Free POS Software for Retail, Restaurant, &amp; Salon Businesses in Pakistan</span>The POS that keeps <span class="hx-hl">ringing up sales</span>, online or off.</h1>
       <p class="lead">Power your business with a reliable free POS software built for seamless offline and cloud-based sales, smart inventory management, and real-time reporting. Stay connected, stay secure, and grow faster with a system built for modern businesses across Pakistan.</p>
       <div class="hx-actions">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary hx-btn">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#free-version" class="btn hx-btn hx-btn-ghost">Try Free Version</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary hx-btn">Book a Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="{{ wa_link() }}" class="btn btn-wa hx-btn" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-      <p class="hx-talk">Prefer to talk? <a href="https://wa.me/{{ config('site.whatsapp') }}?text={{ rawurlencode('Hi myPOS, I would like a demo of your POS software.') }}" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3.2 28.8l7.1-1.8c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.2 1.1 1.1-4.1-.3-.4c-1-1.6-1.6-3.5-1.6-5.4C5.3 9.9 10.1 5.2 16 5.2s10.7 4.7 10.7 10.6S21.9 26.1 16 26.1z"/></svg>WhatsApp us</a> or call <a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></p>
+      <p class="hx-talk">Want to try it yourself first? <a href="#free-version">Download the free version</a> — or call <a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></p>
       <ul class="hx-assure">
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Free version available</li>
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Works offline</li>
@@ -125,15 +125,13 @@
   </div>
 </header>
 
-<div class="marquee-section">
-  <div class="marquee-label">OUR POS CLIENTS · TRUSTED BY BUSINESSES ACROSS PAKISTAN</div>
-  <div class="marquee-track">
-    <div class="marquee-inner">
-      <span class="mq-logo"><img src="{{ asset('uploads/2026/07/appleman-logo-revise.jpeg') }}" alt="Appleman logo" loading="lazy" width="36" height="36">Appleman</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/brooklyn-logo-revise.jpeg') }}" alt="Brooklyn logo" loading="lazy" width="36" height="36">Brooklyn</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/burger-bliss-logo-revise.jpeg') }}" alt="Burger Bliss logo" loading="lazy" width="36" height="36">Burger Bliss</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/but-karahi-logo-revise.jpeg') }}" alt="But Karahi logo" loading="lazy" width="36" height="36">But Karahi</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/chemcos-logo-revise.jpeg') }}" alt="Chemcos logo" loading="lazy" width="36" height="36">Chemcos</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/hyundai-blue-logo-revise.jpeg') }}" alt="Hyundai logo" loading="lazy" width="36" height="36">Hyundai</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/kids-care-logo-revise.jpeg') }}" alt="Kids Care logo" loading="lazy" width="36" height="36">Kids Care</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/meadows-grammar-school-logo-revise.jpeg') }}" alt="Meadows Grammar School logo" loading="lazy" width="36" height="36">Meadows Grammar School</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/mesol-logo-revise.jpeg') }}" alt="Mesol logo" loading="lazy" width="36" height="36">Mesol</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/mitti-di-handi-logo-revise.jpeg') }}" alt="Mitti Di Handi logo" loading="lazy" width="36" height="36">Mitti Di Handi</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/shaakh-logo-revise.jpeg') }}" alt="Shaakh logo" loading="lazy" width="36" height="36">Shaakh</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/snt-foods-logo-revise.jpeg') }}" alt="SNT Foods logo" loading="lazy" width="36" height="36">SNT Foods</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/strongman-logo-revise.jpeg') }}" alt="Strongman logo" loading="lazy" width="36" height="36">Strongman</span><span class="mq-logo"><img src="{{ asset('uploads/2026/07/jojo-logo-revise.jpeg') }}" alt="Jojo logo" loading="lazy" width="36" height="36">Jojo</span>
-      <span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/appleman-logo-revise.jpeg') }}" alt="Appleman logo" loading="lazy" width="36" height="36">Appleman</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/brooklyn-logo-revise.jpeg') }}" alt="Brooklyn logo" loading="lazy" width="36" height="36">Brooklyn</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/burger-bliss-logo-revise.jpeg') }}" alt="Burger Bliss logo" loading="lazy" width="36" height="36">Burger Bliss</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/but-karahi-logo-revise.jpeg') }}" alt="But Karahi logo" loading="lazy" width="36" height="36">But Karahi</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/chemcos-logo-revise.jpeg') }}" alt="Chemcos logo" loading="lazy" width="36" height="36">Chemcos</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/hyundai-blue-logo-revise.jpeg') }}" alt="Hyundai logo" loading="lazy" width="36" height="36">Hyundai</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/kids-care-logo-revise.jpeg') }}" alt="Kids Care logo" loading="lazy" width="36" height="36">Kids Care</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/meadows-grammar-school-logo-revise.jpeg') }}" alt="Meadows Grammar School logo" loading="lazy" width="36" height="36">Meadows Grammar School</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/mesol-logo-revise.jpeg') }}" alt="Mesol logo" loading="lazy" width="36" height="36">Mesol</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/mitti-di-handi-logo-revise.jpeg') }}" alt="Mitti Di Handi logo" loading="lazy" width="36" height="36">Mitti Di Handi</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/shaakh-logo-revise.jpeg') }}" alt="Shaakh logo" loading="lazy" width="36" height="36">Shaakh</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/snt-foods-logo-revise.jpeg') }}" alt="SNT Foods logo" loading="lazy" width="36" height="36">SNT Foods</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/strongman-logo-revise.jpeg') }}" alt="Strongman logo" loading="lazy" width="36" height="36">Strongman</span><span class="mq-logo" aria-hidden="true"><img src="{{ asset('uploads/2026/07/jojo-logo-revise.jpeg') }}" alt="Jojo logo" loading="lazy" width="36" height="36">Jojo</span>
-    </div>
-  </div>
-</div>
+@php
+  $clientRows = [
+    [['2026/07/appleman-logo-revise.jpeg', 'Appleman', null], ['2026/07/brooklyn-logo-revise.jpeg', 'Brooklyn', 'brooklyn'], ['2026/07/burger-bliss-logo-revise.jpeg', 'Burger Bliss', 'burger-bliss'], ['2026/07/but-karahi-logo-revise.jpeg', 'Butt Karahi', 'butt-karahi'], ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos', 'chemcos'], ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai Blue Otimus', 'hyundai-blue-otimus'], ['2026/07/kids-care-logo-revise.jpeg', 'Kids Care', null]],
+    [['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School', 'meadows-grammar-school'], ['2026/07/mesol-logo-revise.jpeg', 'Mesol Pvt LTD', 'mesol-pvt-ltd'], ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi', 'mitti-di-handi'], ['2026/07/shaakh-logo-revise.jpeg', 'Shaakh', 'client'], ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods', 'snt-foods'], ['2026/07/strongman-logo-revise.jpeg', 'Strongman Medifur Systems', 'strongman-medifur-systems'], ['2026/07/jojo-logo-revise.jpeg', 'JoJo', null]],
+  ];
+@endphp
+<x-client-marquee :rows="$clientRows" title="Our POS Clients" eyebrow="TRUSTED BY" id="clients" />
 
 <section id="industries">
   <div class="wrap">
@@ -341,7 +339,7 @@
         <p>We also develop custom applications as per the customer&rsquo;s requirements.</p>
         <div class="bn-cta-btns">
           <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="bn-link bn-link--light" target="_blank" rel="noopener">or WhatsApp us →</a>
+          <a href="{{ wa_link() }}" class="bn-link bn-link--light" target="_blank" rel="noopener">or WhatsApp us →</a>
         </div>
       </article>
     </div>
@@ -554,7 +552,7 @@
 
     <div class="tour-cta reveal">
       <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book Now</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <span class="tour-note">Free version available · Works offline · FBR &amp; PRA ready</span>
     </div>
   </div>
@@ -608,7 +606,7 @@
     </ol>
     <div class="steps-cta reveal">
       <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}?text={{ rawurlencode('Hi myPOS, I would like a demo of your POS software.') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <span class="steps-note">No obligation · Free version available</span>
     </div>
   </div>
@@ -767,7 +765,7 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>WhatsApp, SMS &amp; email receipts</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Role-based staff access</li>
         </ul>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get a Quote</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       </div>
       <div class="price-card reveal-scale" style="--i:2">
         <div class="pc-badge">CUSTOM</div>
@@ -780,7 +778,7 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Dedicated onboarding &amp; training</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Priority 24-hour support</li>
         </ul>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-ghost">Talk to Us</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-ghost">Book a Free Demo</a>
       </div>
     </div>
     <div class="pricing-links reveal">
@@ -800,18 +798,13 @@
           <li><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Fully compatible with Windows 7,8,10</li>
         </ul>
       </div>
-      <a href="https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs" class="btn btn-primary" style="white-space:nowrap;" target="_blank" rel="noopener">Download Now</a>
+      <div class="btn-row">
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+        <a href="https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs" class="btn btn-outline" style="white-space:nowrap;" target="_blank" rel="noopener">Download free version</a>
+      </div>
     </div>
   </div>
 </section>
-
-@php
-  $clientRows = [
-    [['2026/07/appleman-logo-revise.jpeg', 'Appleman', null], ['2026/07/brooklyn-logo-revise.jpeg', 'Brooklyn', 'brooklyn'], ['2026/07/burger-bliss-logo-revise.jpeg', 'Burger Bliss', 'burger-bliss'], ['2026/07/but-karahi-logo-revise.jpeg', 'Butt Karahi', 'butt-karahi'], ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos', 'chemcos'], ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai Blue Otimus', 'hyundai-blue-otimus'], ['2026/07/kids-care-logo-revise.jpeg', 'Kids Care', null]],
-    [['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School', 'meadows-grammar-school'], ['2026/07/mesol-logo-revise.jpeg', 'Mesol Pvt LTD', 'mesol-pvt-ltd'], ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi', 'mitti-di-handi'], ['2026/07/shaakh-logo-revise.jpeg', 'Shaakh', 'client'], ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods', 'snt-foods'], ['2026/07/strongman-logo-revise.jpeg', 'Strongman Medifur Systems', 'strongman-medifur-systems'], ['2026/07/jojo-logo-revise.jpeg', 'JoJo', null]],
-  ];
-@endphp
-<x-client-marquee :rows="$clientRows" title="Our POS Clients" eyebrow="TRUSTED BY" id="clients" />
 
 @php
 $homeFaqs = [

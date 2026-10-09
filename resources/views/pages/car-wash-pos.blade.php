@@ -21,10 +21,11 @@
     <h1 class="reveal">Car Wash POS Software with FBR &amp; PRA Integration in Pakistan</h1>
     <p class="lead reveal">Every service transaction reported to FBR and PRA automatically &mdash; no manual filing, no separate systems, fully audit-ready.</p>
     <div class="ind-actions reveal">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call Now</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
+    <x-cta-proof />
     <div class="hero-photo-wrap reveal-scale">
       <div class="float-chip" style="bottom:16px; left:20px;"><div class="cdot"></div><div><div class="cv">Car Wash POS &mdash; Dashboard</div></div></div>
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Premium Exterior Wash</div><div class="cv">FBR Filed</div></div></div>
@@ -82,6 +83,8 @@
   </div>
 </section>
 
+<x-mid-cta />
+
 <section id="car-wash-pos--compare">
   <div class="wrap">
     <div class="section-head reveal" style="text-align:center;">
@@ -98,8 +101,8 @@
       </table>
     </div>
     <div style="text-align:center; margin-top:28px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -138,7 +141,7 @@
     <p style="margin-top:28px; max-width:760px;">Car wash operators in Lahore, Multan, Gujranwala, and across Punjab are rapidly adopting compliant Point Of Sale systems to stay protected. Protect your business with a compliant car wash POS from day one.</p>
     <div style="margin-top:20px;">
       <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Request PRA Integration</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -210,7 +213,7 @@
       <p>2026 enforcement is active for car wash and service station businesses. Set up FBR &amp; PRA reporting in one visit &mdash; no separate systems, no manual filing.</p>
       <div>
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call +92 322 476 5528</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;" target="_blank" rel="noopener">WhatsApp</a>
         <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;">Request PRA &amp; FBR Setup</a>
       </div>
     </div>

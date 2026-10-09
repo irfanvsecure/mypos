@@ -21,10 +21,11 @@
     <h1 class="reveal">Veteran Clinic POS Software with FBR &amp; PRA Integration in Pakistan</h1>
     <p class="lead reveal">Every consultation, procedure, and product sale reported to FBR and PRA automatically &mdash; no manual filing, no separate systems, fully audit-ready.</p>
     <div class="ind-actions reveal">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call Now</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
+    <x-cta-proof />
     <div class="hero-photo-wrap reveal-scale">
       <div class="float-chip" style="bottom:16px; left:20px;"><div class="cdot"></div><div><div class="cv">Veteran Clinic POS &mdash; Dashboard</div></div></div>
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Consultation Fee</div><div class="cv">FBR Filed</div></div></div>
@@ -61,8 +62,8 @@
     </div>
     <p class="reveal" style="text-align:center; margin-top:32px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.15rem; color:var(--navy);">Ready to run a fully compliant veteran clinic POS across FBR reporting?</p>
     <div style="text-align:center; margin-top:18px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -85,6 +86,8 @@
     <p style="margin-top:28px; max-width:760px;">Veteran clinics in Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, and across Punjab are increasingly adopting compliant POS systems to stay protected.</p>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="veteran-clinic-fbr-pos-integration--pra-integration">
   <div class="wrap">
@@ -142,7 +145,7 @@
     <p style="margin-top:24px; max-width:760px;">Protect your practice with a compliant veteran clinic POS from day one.</p>
     <div style="margin-top:20px;">
       <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Request PRA Integration</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -217,7 +220,7 @@
       <p>2026 enforcement is active for veterinary clinics and animal hospitals. Set up FBR &amp; PRA reporting in one visit &mdash; no separate systems, no manual filing.</p>
       <div>
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call +92 322 476 5528</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;" target="_blank" rel="noopener">WhatsApp</a>
         <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;">Book A Free Demo</a>
       </div>
     </div>

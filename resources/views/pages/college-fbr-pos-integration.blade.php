@@ -23,11 +23,12 @@
     <h1 class="reveal">College FBR POS Integration</h1>
     <p class="lead reveal">FBR &amp; PRA compliant POS for private colleges and higher education institutions &mdash; every fee collection digitally recorded, reported and audit-ready.</p>
     <div class="ind-actions reveal">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="reveal" style="margin-top:18px; color:var(--text-mute-on-dark); font-size:0.92rem;">Give Us a Call to find out more about our Point of Sale Software. <a href="tel:{{ config('site.phone_raw') }}" style="color:var(--blue-light); font-weight:600;">{{ config('site.phone') }} <b>Call us anytime</b></a></p>
+    <x-cta-proof />
+    <p class="reveal" style="margin-top:18px; color:var(--text-mute-on-dark); font-size:0.92rem;"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--blue-light); font-weight:600;">{{ config('site.phone') }} <b>Call us anytime</b></a></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2026/01/indian-man-customer-buyer-pay-his-new-smartphone-seller-by-credit-card-mobile-phone-store-south-asian-peoples-technologies-concept-cellphone-shop-scaled.jpg') }}" alt="college fbr pos integration" width="2560" height="1703">
       <div class="float-chip fchip-1"><div class="cdot" style="background:var(--blue-light);"></div><div><div class="ct">Semester Fee</div><div class="cv">FBR Filed</div></div></div>
@@ -52,8 +53,8 @@
       <p>We provide a professional and scalable college FBR POS integration service for private colleges, degree-awarding institutes, and higher education institutions across Pakistan. Our solutions help colleges maintain structured income documentation, meet applicable FBR and PRA requirements, and ensure financial transparency without disrupting academic operations.</p>
       <p>Whether your institution needs mandatory POS compliance for taxable services or a reliable system for income reporting, tax filing, and audits, our company delivers education-focused POS solutions designed for long-term compliance.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
     <div class="compliance-visual reveal-right">
@@ -89,11 +90,13 @@
     </div>
     <p class="reveal" style="margin-top:28px;">Our company ensures compliance while keeping college administration simple and efficient.</p>
     <div class="btn-row reveal" style="margin-top:18px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="pra-integration">
   <div class="wrap split">
@@ -110,7 +113,7 @@
       </div>
       <p>We help colleges manage integration smoothly while aligning records with PRA requirements.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="btn btn-ghost">PRA Integration</a>
       </div>
     </div>
@@ -189,8 +192,8 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><h3>&#10004; Secure &amp; Scalable Systems:</h3><p>Works for single colleges and large education networks.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -213,7 +216,7 @@
       <p>If you operate a college anywhere in Pakistan and need mandatory POS compliance or structured income documentation, our solutions deliver compliance without complexity. <a href="{{ url('/contact') }}">Contact us</a> today to get started.</p>
     </div>
     <div class="btn-row reveal" style="margin-top:24px;">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
     </div>
   </div>
 </section>

@@ -8,7 +8,7 @@
 @php
   $chk = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>';
   $tel = 'tel:' . config('site.phone_raw');
-  $wa = 'https://wa.me/' . config('site.whatsapp');
+  $wa = wa_link();
 @endphp
 
 @section('content')
@@ -18,11 +18,12 @@
     <h1 class="reveal">Beauty Salons FBR POS Integration</h1>
     <p class="lead reveal">Every hair, skincare, nails, spa and product sale recorded and reported for FBR &amp; PRA &mdash; built for salons, parlors, spas and wellness centers, without affecting client experience.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Get Free Demo</a>
+      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}" class="btn btn-outline">Get In Touch</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="hero-call reveal">Give Us a Call to find out more about our Point of Sale Software. <a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
+    <x-cta-proof />
+    <p class="hero-call reveal"><a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2026/01/salon-employee-measuring-eyebrow-length-scaled-1.webp') }}" alt="Beauty salon professional treating a client">
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Hair &amp; Styling</div><div class="cv">FBR Reported</div></div></div>
@@ -55,7 +56,7 @@
       <p>We provide professional and reliable beauty salons FBR POS integration for registered and taxable salons, parlors, and cosmetic service providers across Pakistan, with special focus on Punjab-based businesses. Our solutions help salons maintain structured income documentation, comply with FBR and PRA regulations, and ensure transparent financial reporting without disrupting daily operations.</p>
       <p>Whether you operate a single salon, a chain of beauty parlors, or multi-service wellness centers, our company delivers scalable POS solutions built specifically for the beauty and wellness sector.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -84,11 +85,13 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:760px;">Our solutions ensure regulatory compliance without affecting client experience.</p>
     <div class="btn-row" style="margin-top:20px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Talk To Expert</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/salon-management') }}" class="link-arrow">Explore salon management software &rarr;</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="pra-integration">
   <div class="wrap split">
@@ -102,7 +105,7 @@
       </div>
       <p>We help salon owners manage beauty salons PRA integration efficiently while aligning all records with PRA and FBR requirements.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="link-arrow">About PRA integration &rarr;</a>
       </div>
     </div>
@@ -175,7 +178,7 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><div class="bc-ic">{!! $chk !!}</div><h3>Secure &amp; Scalable Systems:</h3><p>Works for single salons and multi-branch chains.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
@@ -196,7 +199,7 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing compliance support.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>
@@ -219,5 +222,5 @@
   </div>
 </x-faq>
 
-<x-cta-band title="Get Your Salon FBR &amp; PRA Compliant." text="Service and product income recorded digitally, audit-ready reporting, and one system for both authorities &mdash; book a free demo today." primary="Get Free Demo" />
+<x-cta-band title="Get Your Salon FBR &amp; PRA Compliant." text="Service and product income recorded digitally, audit-ready reporting, and one system for both authorities &mdash; book a free demo today." primary="Book a Free Demo" />
 @endsection

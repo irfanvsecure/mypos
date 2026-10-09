@@ -90,7 +90,7 @@ unset($others[$p['key']]);
           @foreach ($p['tags'] as [$tl, $tu])<a href="{{ url($tu) }}"><span>{{ $tl }}</span></a>@endforeach
         </div>
       </div>
-      <p style="font-size:0.82rem; color:var(--text-mute-ink); margin:0;">Hosted on Google Drive · Need help installing? <a href="https://wa.me/{{ config('site.whatsapp') }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp us</a></p>
+      <p style="font-size:0.82rem; color:var(--text-mute-ink); margin:0;">Hosted on Google Drive · Need help installing? <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp us</a></p>
     </div>
   </div>
 </section>
@@ -124,8 +124,8 @@ unset($others[$p['key']]);
         <p style="color:var(--text-mute-ink);">Get a free demo, FBR / PRA integration and staff training from the myPOS team — trusted by 15,000+ customers.</p>
       </div>
       <div class="btn-row">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Get Free Demo</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" style="white-space:nowrap;" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" style="white-space:nowrap;" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
 

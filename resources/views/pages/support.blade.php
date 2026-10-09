@@ -30,7 +30,7 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
     <div class="split">
       <div class="reveal-left">
         <div class="eyebrow-line"><span class="bar"></span><span>TALK TO US</span></div>
-        <h2>Give Us a Call to find out more about our Point of Sale Software.</h2>
+        <h2>Need help with myPOS? Call or WhatsApp us.</h2>
         <p>Our support team is a phone call or WhatsApp message away — replies usually take under 2 minutes, in English, Urdu or Arabic.</p>
         <a href="tel:{{ config('site.phone_raw') }}" style="display:block; margin-top:26px; background:var(--navy); color:var(--text-on-dark); border-radius:14px; padding:26px 28px;">
           <div style="font-family:'Space Grotesk',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:var(--coral-soft);">{{ config('site.phone') }}</div>
@@ -38,12 +38,12 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
         </a>
         <div class="btn-row" style="margin-top:22px;">
           <a href="{{ url('/contact') }}" class="btn btn-primary">Get In Touch</a>
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
       </div>
       <div class="reveal-right">
         <div class="who-grid" style="margin-top:0;">
-          <div class="who-row">{!! $check !!}<div><strong>Phone / WhatsApp</strong><br><a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a> · <a href="https://wa.me/{{ config('site.whatsapp') }}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+          <div class="who-row">{!! $check !!}<div><strong>Phone / WhatsApp</strong><br><a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a> · <a href="{{ wa_link() }}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
           <div class="who-row">{!! $check !!}<div><strong>Email</strong><br><a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></div></div>
           <div class="who-row">{!! $check !!}<div><strong>Support hours</strong><br>{{ config('site.hours') }}</div></div>
           <div class="who-row">{!! $check !!}<div><strong>Support tickets</strong><br>Report an issue and track it with our team — <a href="{{ url('/tickets') }}" class="link-arrow" style="margin-top:0;">Open a ticket →</a></div></div>
@@ -104,7 +104,7 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
       </div>
       <div class="btn-row">
         <a href="{{ url('/tickets') }}" class="btn btn-primary" style="white-space:nowrap;">Open a Ticket</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" style="white-space:nowrap;" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" style="white-space:nowrap;" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>

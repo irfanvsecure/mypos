@@ -8,7 +8,7 @@
 @php
   $chk = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>';
   $tel = 'tel:' . config('site.phone_raw');
-  $wa = 'https://wa.me/' . config('site.whatsapp');
+  $wa = wa_link();
 @endphp
 
 @section('content')
@@ -18,11 +18,12 @@
     <h1 class="reveal">Schools FBR POS Integration</h1>
     <p class="lead reveal">FBR &amp; PRA compliant fee and income documentation for private schools, academies, colleges and school chains &mdash; recorded digitally, audit-ready, without disrupting academic operations.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Get Free Demo</a>
+      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}" class="btn btn-outline">Get In Touch</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="hero-call reveal">Give Us a Call to find out more about our Point of Sale Software. <a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
+    <x-cta-proof />
+    <p class="hero-call reveal"><a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2025/12/679bb039e78be8df1b8cb6f9_shutterstock-2265711619_a484c0694ed81b3748b0aab8227eaa9f_2000.jpeg') }}" alt="School administration using a compliant POS for fee collection">
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Admission Fee</div><div class="cv">FBR Reported</div></div></div>
@@ -55,7 +56,7 @@
       <p>MyPOS.pk provides professional and compliant school FBR POS integration services for private schools, academies, colleges, and educational institutions across Pakistan. Our solutions help schools manage structured income documentation, comply with applicable FBR and PRA requirements, and maintain transparent financial records without disrupting academic operations.</p>
       <p>Whether your institution requires mandatory Point Of Sale compliance for taxable activities or needs a reliable system for income reporting, tax filing, and audits, our company delivers secure and scalable solutions designed specifically for the education sector.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -90,11 +91,13 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:760px;">Our company ensures compliance without adding operational burden to school administration.</p>
     <div class="btn-row" style="margin-top:20px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Talk To Expert</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/pra-integration') }}" class="link-arrow">How PRA integration works &rarr;</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="compare">
   <div class="wrap">
@@ -135,7 +138,7 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><div class="bc-ic">{!! $chk !!}</div><h3>Secure &amp; Scalable:</h3><p>Works for single schools and multi-branch institutions.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
@@ -186,7 +189,7 @@
       </ul>
       <p>Our school FBR POS integration ensures institutions remain protected and prepared.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -207,7 +210,7 @@
       <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Activity-based income</h4><p>Audit-ready financial summaries for management.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>
@@ -230,5 +233,5 @@
   </div>
 </x-faq>
 
-<x-cta-band title="Get Your School FBR &amp; PRA Compliant." text="One system for fee collections, income summaries and audit-ready records &mdash; federal and provincial reporting handled for you. Book a free demo today." primary="Get Free Demo" />
+<x-cta-band title="Get Your School FBR &amp; PRA Compliant." text="One system for fee collections, income summaries and audit-ready records &mdash; federal and provincial reporting handled for you. Book a free demo today." primary="Book a Free Demo" />
 @endsection

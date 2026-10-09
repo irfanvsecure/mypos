@@ -120,8 +120,8 @@ $plus = '<span class="plus"></span>';
             <h2>Need help with FBR or PRA compliance?</h2>
             <p>Our team handles the technical setup, configures the integration within your existing workflow and trains your staff.</p>
             <div class="btn-row" style="justify-content:center;">
-              <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-              <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+              <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+              <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
             </div>
           </div>
         @endif
@@ -147,7 +147,7 @@ $plus = '<span class="plus"></span>';
       <div class="aside-cta">
         <h4>Still have a question?</h4>
         <p>Talk to a myPOS expert — 15,000+ customers, rated 4.9/5, replies in under 2 minutes on WhatsApp.</p>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp Us</a>
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.35); color:var(--text-on-dark);">Call {{ config('site.phone') }}</a>
         <a href="{{ url('/tickets') }}" class="btn btn-primary btn-sm">Open a Support Ticket</a>
       </div>

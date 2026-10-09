@@ -45,7 +45,7 @@
       <p>Whether overseeing Linen Shipping and Receiving, optimizing routes, handling billing and invoicing, or managing clients, myPOS caters to all your operational needs. Experience the convenience of myPOS, now seamlessly integrated with FBR, offering 24-hour phone support, a user-friendly learning system, extensive customization options, and a straightforward free trial.</p>
       <p>Simplify the initiation process and revolutionize your laundry operations effortlessly with myPOS.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/laundrypro') }}" class="btn btn-ghost">Download Free Trial</a>
       </div>
     </div>
@@ -101,10 +101,10 @@
     <div class="free-band reveal">
       <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
       <div>
-        <h3>Give Us a Call to find out more about our Point of Sale Software.</h3>
-        <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="https://wa.me/{{ config('site.whatsapp') }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
+        <h3>See LaundryPro on your own counter — free demo, setup included.</h3>
+        <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>
@@ -145,5 +145,5 @@
   </div>
 </section>
 
-<x-cta-band title="Run your laundry on LaundryPro." text="Book a free demo — we will set up LaundryPro for your laundry or dry cleaning business, including FBR integration, and train your staff." primary="Get Free Demo" />
+<x-cta-band title="Run your laundry on LaundryPro." text="Book a free demo — we will set up LaundryPro for your laundry or dry cleaning business, including FBR integration, and train your staff." primary="Book a Free Demo" />
 @endsection

@@ -8,7 +8,7 @@
 @php
   $chk = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>';
   $tel = 'tel:' . config('site.phone_raw');
-  $wa = 'https://wa.me/' . config('site.whatsapp');
+  $wa = wa_link();
 @endphp
 
 @section('content')
@@ -19,11 +19,11 @@
     <h1 class="reveal">PRA POS Restaurant Integration in Punjab</h1>
     <p class="lead reveal">myPOS delivers PRA POS restaurant integration for dine-in, takeaway, and delivery billing, with automatic tax reporting for Punjab restaurants.</p>
     <div class="ind-actions reveal">
-      <a href="{{ $tel }}" class="btn btn-primary">Start Integration &rarr;</a>
-      <a href="#how-it-works" class="btn btn-outline">Learn How It Works &#9662;</a>
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-outline">Get Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#how-it-works" class="btn btn-outline">Learn How It Works &#9662;</a>
     </div>
+    <x-cta-proof />
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2026/07/PRA-POS-Restaurant-Integration-in-Punjab.jpg') }}" alt="Restaurant cashier billing an order on PRA integrated POS in Punjab" width="1060" height="707">
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Dine-in &middot; Table 7</div><div class="cv">PRA Reported</div></div></div>
@@ -51,8 +51,8 @@
       <p>Restaurants in Punjab are required to charge and report tax under the Punjab Revenue Authority's rules for restaurant services, which are handled separately from the federal FBR system most retail businesses deal with. PRA POS restaurant integration means your billing software is connected directly to PRA's reporting system, so every invoice, whether it's dine-in, takeaway, or a delivery order, is automatically calculated, QR-coded, and reported the moment the sale happens.</p>
       <p>Without this, restaurants end up running two separate processes: one for actually billing the customer, and another for manually reporting sales to PRA later. That second process is where most compliance problems start, since it depends on someone remembering to do it correctly, every single day, across every shift.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Start Your Integration</a>
-        <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Get Free Demo</a>
+        <a href="{{ $tel }}" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -105,11 +105,13 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Reported in real time</h4><p>Transaction data is sent to PRA the moment the sale happens.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Start Your Integration</a>
+      <a href="{{ $tel }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/restaurant-management') }}" class="link-arrow">See the restaurant billing software &rarr;</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section class="section-tight" id="rush-hours">
   <div class="wrap">
@@ -143,7 +145,7 @@
       <div class="benefit-card reveal-scale" style="--i:3;"><div class="bc-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="10" rx="1.5" stroke="#fff" stroke-width="1.4"/><path d="M7 17h6M10 14v3" stroke="#fff" stroke-width="1.4"/></svg></div><h3>Unified Platform</h3><p>Federal and provincial reporting on one system &mdash; no separate software per authority.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Get Free Demo</a>
+      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <a href="{{ $tel }}" class="btn btn-ghost">Call {{ config('site.phone') }}</a>
     </div>
@@ -182,7 +184,7 @@
       <div class="benefit-card reveal-scale" style="--i:2;"><div class="bc-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 3.5h3l1.5 4-2 1.2a9 9 0 0 0 4.8 4.8l1.2-2 4 1.5v3c0 .8-.7 1.5-1.5 1.5C8.3 17.5 2.5 11.7 2.5 5 2.5 4.2 3.2 3.5 4 3.5z" stroke="#fff" stroke-width="1.3"/></svg></div><h3>Local Support in Pakistan</h3><p>Support is based locally in Pakistan, so questions about how a specific transaction was reported get answered by someone who understands PRA's rules directly &mdash; not a generic support queue reading from a script.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Start Your Integration</a>
+      <a href="{{ $tel }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/pricing') }}" class="link-arrow">See pricing &rarr;</a>
     </div>
   </div>

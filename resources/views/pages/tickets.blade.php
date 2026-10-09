@@ -37,7 +37,7 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
 </section>
 
 <x-contact-section id="ticket" eyebrow="OPEN A TICKET" type="Customer Support"
-  title="Give Us a Call to find out more about our Point of Sale Software."
+  title="Tell us what is going wrong. We will get you unstuck."
   text="Call us anytime on {{ config('site.phone') }} — or submit a support ticket below and our team will get back to you.">
   <div style="margin-top:22px;">
     <a href="{{ url('/contact') }}" class="btn btn-primary">Get In Touch</a>

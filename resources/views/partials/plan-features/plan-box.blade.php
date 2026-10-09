@@ -49,18 +49,20 @@
           </ul>
         </nav>
         <div class="btn-row">
-          <a href="{{ config('site.register_url') }}" class="btn btn-primary" target="_blank" rel="noopener">Start Your 14-Day Free Trial</a>
+          <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="{{ config('site.register_url') }}" class="btn-secondary-link" target="_blank" rel="noopener">Or start the 14-day trial</a>
           <a href="{{ url('/pricing') }}" class="btn-secondary-link">See full pricing &amp; add-on modules</a>
         </div>
       </div>
 
       <div class="addon-card reveal-right">
-        <h3>Give Us a Call to find out more about our Point of Sale Software.</h3>
+        <h3>Not sure this is the right plan? We will set it up with you.</h3>
         <a href="tel:{{ config('site.phone_raw') }}" style="display:block; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.6rem; color:var(--navy);">{{ config('site.phone') }}</a>
         <div style="font-size:0.9rem; color:var(--text-mute-ink); margin-top:4px;">Call us anytime</div>
         <div class="btn-row" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
-          <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary btn-sm">Get In Touch</a>
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary btn-sm">Book a Free Demo</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
         <div style="margin-top:26px; border-top:1px solid var(--paper-line); padding-top:6px;">
           <div class="addon-row"><span>Businesses using myPOS</span><span class="price">15,000+</span></div>

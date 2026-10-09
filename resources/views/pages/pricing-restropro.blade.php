@@ -6,7 +6,7 @@
 
 @section('content')
 <x-page-header title="Pricing RestroPro" eyebrow="RESTROPRO · ONE-TIME LICENSE" :crumbs="[['Pricing', '/pricing']]" crumb="RestroPro"
-  lead="Give Us a Call to find out more about our Point of Sale Software. Start free, then pick the one-time RestroPro license that fits your restaurant business." :call="true" />
+  lead="Start free, then pick the one-time RestroPro license that fits your restaurant business." :call="true" />
 
 <section class="section-tight" style="padding-bottom:0;">
   <div class="wrap">
@@ -89,7 +89,9 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Biller/Permission</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Reports</li>
         </ul>
-        <a href="{{ url('/download/restropro') }}" class="btn btn-primary">Download RestroPro</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ url('/download/restropro') }}" class="btn-secondary-link">Download RestroPro</a>
+        <x-cta-proof />
       </div>
       <div class="price-card reveal-scale" style="--i:3">
         <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
@@ -186,5 +188,5 @@
   </div>
 </section>
 
-<x-cta-band title="Ready to run your restaurant business on RestroPro?" text="Download the free edition today or talk to our team — we will help you choose the right plan, set up FBR/PRA integration and train your staff." primary="Get Free Demo" />
+<x-cta-band title="Ready to run your restaurant business on RestroPro?" text="Download the free edition today or talk to our team — we will help you choose the right plan, set up FBR/PRA integration and train your staff." primary="Book a Free Demo" />
 @endsection

@@ -31,7 +31,7 @@
           <div><div class="lbl">Support hours</div><div class="val">{{ config('site.hours') }}</div></div>
         </div>
         <div class="btn-row" style="margin-top:26px;">
-          <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
           <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call Now</a>
         </div>
         {{ $slot }}

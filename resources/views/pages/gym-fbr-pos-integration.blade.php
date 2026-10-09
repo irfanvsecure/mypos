@@ -17,10 +17,11 @@
     <h1 class="reveal">Gym POS Software with FBR &amp; PRA Integration in Pakistan</h1>
     <p class="lead reveal">Every membership fee, training charge, and supplement sale reported to FBR and PRA automatically &mdash; no manual filing, no separate systems, fully audit-ready.</p>
     <div class="ind-actions reveal">
-      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call Now</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Get In Touch</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
+    <x-cta-proof />
     <div class="compliance-visual reveal-scale" style="min-height:0; margin-top:40px;">
       <div class="compliance-mock" style="max-width:520px;">
         <div class="compliance-mock-head"><span class="cm-dot"></span> Gym POS &mdash; Dashboard</div>
@@ -61,8 +62,8 @@
     <div class="cta-band reveal" style="margin-top:56px; padding:34px 30px;">
       <p style="font-size:1.1rem; margin:0 0 18px;">Ready to run a fully compliant gym POS across FBR &amp; PRA reporting?</p>
       <div class="btn-row" style="justify-content:center;">
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Talk To Expert</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </div>
@@ -88,6 +89,8 @@
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="compare">
   <div class="wrap">
@@ -135,7 +138,7 @@
     <p style="margin-top:28px; font-weight:600;">Protect your fitness business with a compliant gym POS from day one.</p>
     <div class="btn-row" style="margin-top:18px;">
       <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Request PRA Integration</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -221,10 +224,10 @@
       <p>2026 enforcement is active for gyms and fitness centers. Set up FBR &amp; PRA reporting in one visit &mdash; no separate systems, no manual filing.</p>
       <div class="btn-row" style="justify-content:center; margin-top:24px;">
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call {{ config('site.phone') }}</a>
-        <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
         <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Contact MyPOS.pk</a>
       </div>
-      <p style="margin-top:18px; font-size:0.85rem;"><a href="tel:{{ config('site.phone_raw') }}">Call</a> &middot; <a href="https://wa.me/{{ config('site.whatsapp') }}" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="{{ url('/contact') }}">Contact</a></p>
+      <p style="margin-top:18px; font-size:0.85rem;"><a href="tel:{{ config('site.phone_raw') }}">Call</a> &middot; <a href="{{ wa_link() }}" target="_blank" rel="noopener">WhatsApp</a> &middot; <a href="{{ url('/contact') }}">Contact</a></p>
     </div>
   </div>
 </section>

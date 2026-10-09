@@ -8,7 +8,7 @@
 @php
   $chk = '<svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>';
   $tel = 'tel:' . config('site.phone_raw');
-  $wa = 'https://wa.me/' . config('site.whatsapp');
+  $wa = wa_link();
 @endphp
 
 @section('content')
@@ -18,11 +18,12 @@
     <h1 class="reveal">Medical Complex FBR POS Integration</h1>
     <p class="lead reveal">One regulation-ready POS for every department under one roof &mdash; OPD, IPD, diagnostics, pharmacy and procedures reported for FBR &amp; PRA, without disrupting clinical operations.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Get Free Demo</a>
+      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="{{ url('/contact') }}" class="btn btn-outline">Get In Touch</a>
+      <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
-    <p class="hero-call reveal">Give Us a Call to find out more about our Point of Sale Software. <a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
+    <x-cta-proof />
+    <p class="hero-call reveal"><a href="{{ $tel }}">{{ config('site.phone') }}</a> &mdash; <b>Call us anytime</b></p>
     <div class="hero-photo-wrap reveal-scale">
       <img src="{{ asset('uploads/2026/01/A_photograph_captures_a_pharmacy_checkout_counter.webp') }}" alt="Pharmacy checkout counter inside a medical complex">
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">OPD Consultation</div><div class="cv">FBR Reported</div></div></div>
@@ -47,7 +48,7 @@
       <p>At MyPOS.pk, we provide a strong and healthcare-focused medical complex FBR POS integration service for multi-specialty medical complexes across Pakistan. Our solutions are designed to help medical complexes maintain structured income documentation, meet applicable FBR and PRA requirements, and ensure transparent financial reporting without disrupting clinical operations.</p>
       <p>Whether your medical complex requires mandatory POS compliance for taxable services or needs a secure system for income reporting, tax filing, and audits, our company delivers scalable, regulation-ready POS solutions built specifically for healthcare environments.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -85,11 +86,13 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:760px;">Our company ensures regulatory alignment while allowing medical teams to focus on patient care.</p>
     <div class="btn-row" style="margin-top:20px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Talk To Expert</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/fbr-pos-integration') }}" class="link-arrow">How FBR POS integration works &rarr;</a>
     </div>
   </div>
 </section>
+
+<x-mid-cta />
 
 <section id="pra-integration">
   <div class="wrap split">
@@ -111,7 +114,7 @@
       </div>
       <p>We help healthcare providers manage medical complex PRA integration smoothly while aligning records with their requirements.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="link-arrow">About PRA integration &rarr;</a>
       </div>
     </div>
@@ -181,7 +184,7 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><div class="bc-ic">{!! $chk !!}</div><h3>Secure &amp; Scalable Systems:</h3><p>Works for single-location and large multi-branch medical complexes.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
@@ -203,7 +206,7 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Manage</h4><p>Documentation, updates and regulatory guidance.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ $tel }}" class="btn btn-primary">Book A Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>
@@ -226,5 +229,5 @@
   </div>
 </x-faq>
 
-<x-cta-band title="Get Your Medical Complex FBR &amp; PRA Compliant." text="Department-wise reporting, audit-ready summaries and one system for both authorities &mdash; book a free demo today." primary="Get Free Demo" />
+<x-cta-band title="Get Your Medical Complex FBR &amp; PRA Compliant." text="Department-wise reporting, audit-ready summaries and one system for both authorities &mdash; book a free demo today." primary="Book a Free Demo" />
 @endsection

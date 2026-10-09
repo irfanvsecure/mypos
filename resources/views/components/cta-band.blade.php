@@ -11,9 +11,10 @@
     <p>{!! $text !!}</p>
     <div class="btn-row" style="justify-content:center;">
       <a href="{{ url($primaryUrl) }}" class="btn btn-primary">{{ $primary }}</a>
-      <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>
     </div>
+    <x-cta-proof class="proof-center" />
     {{ $slot }}
   </div>
 @if ($bg)</div></section>@endif

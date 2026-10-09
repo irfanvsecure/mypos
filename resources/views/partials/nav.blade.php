@@ -4,7 +4,7 @@
 @endphp
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a href="{{ route('home') }}" class="logo-mark"><img src="{{ asset('images/logo.png') }}" alt="myPOS logo" width="46" height="46"><span class="word">myPOS</span></a>
+    <a href="{{ route('home') }}" class="logo-mark"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="84" height="84"></a>
     <div class="nav-links">
       @foreach (config('site.menu') as $menu)
         @php $current = collect($menu['items'])->contains(fn ($i) => $isActive($i[1])) || (isset($menu['url']) && $isActive($menu['url'])); @endphp
@@ -26,7 +26,7 @@
     </div>
     <div class="nav-cta">
       <a href="tel:{{ config('site.phone_raw') }}" class="phone-pill">{{ config('site.phone') }}</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
+      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -42,8 +42,8 @@
     </details>
   @endforeach
   <div class="mm-cta">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Demo</a>
-    <a href="https://wa.me/{{ config('site.whatsapp') }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>
   </div>
 </div>
