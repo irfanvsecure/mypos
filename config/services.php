@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    // Meta (Facebook) Pixel. Events are only sent from the hosts listed here, so local and staging
+    // visits never reach the ads data; elsewhere, with APP_DEBUG on, calls are logged to the console instead.
+    'meta' => [
+        'pixel_id' => env('META_PIXEL_ID', '1658044839300375'),
+        'pixel_hosts' => array_filter(explode(',', env('META_PIXEL_HOSTS', 'mypos.pk,www.mypos.pk'))),
+    ],
+
 ];

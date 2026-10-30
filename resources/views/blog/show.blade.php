@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pixel_category', 'blog')
 
 @section('page', 'post')
 @section('title', $post->meta_title ?: $post->title)

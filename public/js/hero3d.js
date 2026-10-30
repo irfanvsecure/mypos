@@ -58,7 +58,7 @@ export function mount(host) {
   const boxMats = [0xc8461c, 0x5cc8ff, 0x1a5a8e].map(c => new THREE.MeshStandardMaterial({ color: c, roughness: 0.35, metalness: 0.15 }));
 
   const floaters = [];
-  const kinds = small ? 14 : 26;
+  const kinds = small ? 12 : 20;
   for (let i = 0; i < kinds; i++) {
     const k = i % 4;
     const m = k === 0 ? new THREE.Mesh(coinGeo, coinMat)
@@ -67,7 +67,12 @@ export function mount(host) {
       : new THREE.Mesh(boxGeo, boxMats[i % 3]);
     // Keep the middle-left (headline + form) clear: objects favour the right side and the far background.
     // Left-side objects sit far out and deep in the fog so they never cross the text column.
-    if (Math.random() < 0.75) m.position.set(1.5 + Math.random() * 7, (Math.random() - 0.5) * 8, -Math.random() * 9 + 1);
+    // The right column holds the POS mockup, so nearby objects stay past its outer edge or above/below it;
+    // the rest sit deep in the fog where they read as background depth.
+    const r = Math.random();
+    if (r < 0.35) m.position.set(8 + Math.random() * 3, (Math.random() - 0.5) * 8, -1 - Math.random() * 3);
+    else if (r < 0.55) m.position.set(2 + Math.random() * 6, (Math.random() < 0.5 ? -1 : 1) * (4.2 + Math.random() * 1.5), -2 - Math.random() * 3);
+    else if (r < 0.8) m.position.set(3 + Math.random() * 9, (Math.random() - 0.5) * 10, -10 - Math.random() * 6);
     else m.position.set(-(9 + Math.random() * 5), (Math.random() - 0.5) * 9, -7 - Math.random() * 6);
     m.rotation.set(Math.random() * 6, Math.random() * 6, Math.random() * 6);
     m.userData = { spin: (Math.random() - 0.5) * 0.6, bob: Math.random() * 6, speed: 0.25 + Math.random() * 0.35, y: m.position.y };

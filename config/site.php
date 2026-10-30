@@ -21,6 +21,13 @@ return [
     // Where website enquiries are emailed (stored in the `leads` table either way).
     'leads_email' => env('LEADS_EMAIL', 'info@mypos.pk'),
 
+    // Businesses running myPOS, shown on the client logo strip (the clients table only holds the showcased ones).
+    'clients_total' => 1200,
+
+    // myPOS mobile app on the home page "Mobile Reporting" tab. Leave empty to show the built-in mockup / demo button.
+    'play_store_url' => env('PLAY_STORE_URL', ''),
+    'app_screenshot' => '', // e.g. 'images/app/mobile-app.png' under public/
+
     'enquiry_types' => ['Sales Enquiry', 'Customer Support', 'Technical Assistance', 'FBR / PRA Integration', 'Free Demo'],
 
     // Pages whose CTA band keeps plain buttons instead of the inline demo form: they already carry the full

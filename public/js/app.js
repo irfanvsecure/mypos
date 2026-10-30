@@ -49,7 +49,7 @@
   /* Homepage device tabs */
   var tabData={
     desktop:{title:"Full sales terminal, offline-ready", desc:"Ring up items, split payments, apply discounts and print or send receipts \u2014 even mid-outage. Every FBR invoice files itself the moment you're back online."},
-    mobile:{title:"Check every branch from your pocket", desc:"See today's sales, top-performing branches, low-stock alerts and pending approvals \u2014 wherever you are."},
+    mobile:{title:"The myPOS mobile app", desc:"Check today's sales, top-performing branches, low-stock alerts and pending approvals \u2014 wherever you are."},
     cloud:{title:"One dashboard, every location", desc:"Consolidated inventory, staff access levels and full sync status across all your branches, live."}
   };
   document.querySelectorAll('.tab-btn').forEach(function(btn){
@@ -61,6 +61,9 @@
       document.querySelector('.device-panel[data-panel="'+key+'"]').classList.add('active');
       document.getElementById('tabTitle').textContent=tabData[key].title;
       document.getElementById('tabDesc').textContent=tabData[key].desc;
+      var mock=document.querySelector('.device-mock'); if(mock) mock.classList.toggle('is-phone', key==='mobile');
+      document.querySelectorAll('[data-tab-show]').forEach(function(el){ el.hidden=el.dataset.tabShow!==key; });
+      document.querySelectorAll('[data-tab-hide]').forEach(function(el){ el.hidden=el.dataset.tabHide===key; });
     });
   });
 
@@ -102,7 +105,8 @@
     if(next) next.addEventListener('click',function(){ rvTrack.scrollBy({left:step()}); });
     rvTrack.addEventListener('scroll',function(){ window.requestAnimationFrame(sync); },{passive:true});
     window.addEventListener('resize',sync);
-    sync();
+    // Measuring during startup forces a layout while the page is still styling; wait until it has loaded.
+    window.addEventListener('load',function(){ window.requestAnimationFrame(sync); });
   }
 
   /* Mobile menu */

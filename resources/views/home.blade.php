@@ -52,7 +52,7 @@
         <span class="hx-pill hx-pill--coral">FBR &amp; PRA ready</span>
       </div>
       <h1><span class="hx-hl">Free POS Software</span> for Retail, Restaurant, &amp; Salon Businesses in Pakistan</h1>
-      <p class="lead">Power your business with a reliable free POS software built for seamless offline and cloud-based sales, smart inventory management, and real-time reporting. Stay connected, stay secure, and grow faster with a system built for modern businesses across Pakistan.</p>
+      <p class="lead">Fast billing that keeps working offline, smart inventory and real-time reports — with FBR &amp; PRA digital invoicing built in. Free to start, set up for you in days.</p>
       <form class="hx-form" method="POST" action="{{ route('enquiry.store') }}#hero-demo" id="hero-demo" novalidate>
         @csrf
         <input type="hidden" name="page" value="home (hero)">
@@ -70,19 +70,11 @@
           <button class="btn btn-primary hx-btn" type="submit">Get My Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
         @if ($errors->any())<p class="hx-form-err" role="alert">{{ $errors->first() }}</p>@endif
-        <p class="hx-form-note">Free · No obligation · We reply within minutes on WhatsApp</p>
+        <ul class="hx-assure">
+          <li>Free version available</li><li>Works offline</li><li>Reply within minutes</li>
+        </ul>
       </form>
       <p class="hx-talk">Prefer to chat? <a href="{{ wa_link() }}" target="_blank" rel="noopener">WhatsApp us</a> · <a href="#free-version">Download the free version</a> · or call <a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></p>
-      <ul class="hx-assure">
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Free version available</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Works offline</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Ready to trade within minutes</li>
-      </ul>
-      <div class="hx-trust">
-        <div class="hx-stat"><b>15,000+</b><span>Businesses served across Pakistan</span></div>
-        <div class="hx-stat"><b>4.9<small>/5</small> <i class="hx-stars" aria-hidden="true">★★★★★</i></b><span>Average customer rating</span></div>
-        <div class="hx-stat"><b>24-hour</b><span>Support in English, Urdu &amp; Arabic</span></div>
-      </div>
     </div>
 
     <div class="hx-visual" data-pos-demo role="group" aria-label="Interactive myPOS billing demo">
@@ -142,12 +134,20 @@
       </div>
     </div>
   </div>
+  <div class="wrap hx-trustbar">
+    <div class="hx-trust">
+      <div class="hx-stat"><b>15,000+</b><span>Businesses served across Pakistan</span></div>
+      <div class="hx-stat"><b>4.9<small>/5</small> <i class="hx-stars" aria-hidden="true">★★★★★</i></b><span>Average customer rating</span></div>
+      <div class="hx-stat"><b>1–3 days</b><span>From demo to going live</span></div>
+      <div class="hx-stat"><b>24-hour</b><span>Support in English, Urdu &amp; Arabic</span></div>
+    </div>
+  </div>
 </header>
 
 @php
   $clientRows = [
-    [['2026/07/appleman-logo-revise.jpeg', 'Appleman', null], ['2026/07/brooklyn-logo-revise.jpeg', 'Brooklyn', 'brooklyn'], ['2026/07/burger-bliss-logo-revise.jpeg', 'Burger Bliss', 'burger-bliss'], ['2026/07/but-karahi-logo-revise.jpeg', 'Butt Karahi', 'butt-karahi'], ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos', 'chemcos'], ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai Blue Otimus', 'hyundai-blue-otimus'], ['2026/07/kids-care-logo-revise.jpeg', 'Kids Care', null]],
-    [['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School', 'meadows-grammar-school'], ['2026/07/mesol-logo-revise.jpeg', 'Mesol Pvt LTD', 'mesol-pvt-ltd'], ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi', 'mitti-di-handi'], ['2026/07/shaakh-logo-revise.jpeg', 'Shaakh', 'client'], ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods', 'snt-foods'], ['2026/07/strongman-logo-revise.jpeg', 'Strongman Medifur Systems', 'strongman-medifur-systems'], ['2026/07/jojo-logo-revise.jpeg', 'JoJo', null]],
+    [['2026/07/appleman-logo-revise.jpeg', 'Appleman', null], ['2026/07/brooklyn-logo-revise.jpeg', 'Brooklyn', 'brooklyn'], ['2026/07/burger-bliss-logo-revise.jpeg', 'Burger Bliss', 'burger-bliss'], ['2026/07/but-karahi-logo-revise.jpeg', 'Butt Karahi', 'butt-karahi'], ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos', 'chemcos'], ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai Blue Otimus', 'hyundai-blue-otimus'], ['2026/07/kids-care-logo-revise.jpeg', 'Kids Care', null], ['2026/06/tea-at-terrace-logo-removebg-preview.png', 'Tea at Terrace', 'tea-at-terrace'], ['2018/05/bhavna-1.jpg', 'Bhavna Restaurant', 'bhavna-restaurant'], ['2018/05/baked-potato-1.jpg', 'Baked Potato', 'baked-potato'], ['2018/05/perfect-biryani-1.jpg', 'Perfect Biryani House', 'perfect-biryani-house'], ['2018/05/shahi-mughal-1.jpg', 'Shahi Mughal', 'shahi-mughal'], ['2018/05/mugcafe-1.jpg', 'Mug Cafe', 'mugcafe'], ['2018/05/candadian-pizza-1.jpg', 'Canadian Pizza', 'canadian-pizza'], ['2018/05/maras-turka-1.jpg', 'Maras Turka', 'maras-turka'], ['2018/05/bazaar-1.jpg', 'Bazaar', 'bazaar'], ['2018/05/xd-cinema-1.jpg', 'XD Cinema', 'xd-cinema'], ['2026/06/the-florist-by-aimen-tahir-logo-removebg-preview.png', 'The Florist by Aimen Tahir', 'the-florist-by-aimen-tahir'], ['2026/06/vision-optik-logo-removebg-preview.png', 'Vision Optik', 'vision-optik']],
+    [['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School', 'meadows-grammar-school'], ['2026/07/mesol-logo-revise.jpeg', 'Mesol Pvt LTD', 'mesol-pvt-ltd'], ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi', 'mitti-di-handi'], ['2026/07/shaakh-logo-revise.jpeg', 'Shaakh', 'client'], ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods', 'snt-foods'], ['2026/07/strongman-logo-revise.jpeg', 'Strongman Medifur Systems', 'strongman-medifur-systems'], ['2026/07/jojo-logo-revise.jpeg', 'JoJo', null], ['2018/05/compubase-1.jpg', 'CompuBase', 'compubase'], ['2018/05/cedar-1.jpg', 'Cedars', 'cedars'], ['2018/05/green-desert-1.jpg', 'Green Desert Aquarium', 'green-desert'], ['2018/05/brain-games-1.jpg', 'Brain Games', 'brain-games'], ['2018/05/izaak-1.jpg', 'Izaak Men Salon', 'izaak-men-salon'], ['2018/05/lavande-1.jpg', 'Lavande', 'lavande'], ['2018/05/nibras-1.jpg', 'Nebras', 'nebras'], ['2018/05/pective-1.jpg', 'Pectiv', 'pectiv'], ['2018/05/france-gallery-1.jpg', 'France Gallery', 'france-gallery'], ['2018/05/transworld-1.jpg', 'Transworld', 'transworld'], ['2018/05/topit-1.jpg', 'Topit', 'topit'], ['2018/05/good-times-1.jpg', 'Good Times', 'good-times'], ['2018/05/emd-1.jpg', 'Edrees Medical Equipments', 'edrees-medical-equipments'], ['2018/05/TAS-1.jpg', 'TAS', 'tas'], ['2018/05/bisou-1.jpg', 'Bisou Salon', 'bisou-salon']],
   ];
 @endphp
 <x-client-marquee :rows="$clientRows" title="Our POS Clients" eyebrow="TRUSTED BY" id="clients" />
@@ -157,22 +157,22 @@
   $industries = [
     ['retail', 'Retail / Shop', 'RetailPro', 'RETAIL · MOST POPULAR', 'Barcode scanning, stock control and multi-branch inventory in one till — built for shops that never want a queue to stall.',
       ['Scan &amp; bill in under 5 seconds', 'Low-stock alerts &amp; auto purchase orders', 'Customer credit ledgers &amp; loyalty'], '/retail-management',
-      'https://images.pexels.com/photos/12935045/pexels-photo-12935045.jpeg', 'Cashier at a retail store checkout using a POS terminal'],
+      'uploads/2026/10/retail-shop-counter', 'Shopkeeper at the counter of a busy South Asian grocery store'],
     ['restaurant', 'Restaurant / Café', 'RestroPro', 'RESTAURANT', 'Kitchen display, table management and split billing built for speed.',
       ['Dine-in, takeaway &amp; delivery on one screen', 'Kitchen order tickets &amp; table map', 'PRA-ready restaurant invoices'], '/restaurant-management',
-      'https://images.pexels.com/photos/12935084/pexels-photo-12935084.jpeg', 'Restaurant kitchen digital ordering touchscreen system'],
+      'uploads/2026/10/restaurant-kitchen', 'Cook preparing food in a desi restaurant kitchen'],
     ['salon', 'Salon / Spa', 'SalonPro', 'SALON &amp; SPA', 'Appointment booking, stylist commissions and loyalty ledgers, handled.',
       ['Appointments &amp; walk-ins in one calendar', 'Stylist commissions calculated for you', 'Packages, memberships &amp; loyalty'], '/salon-management',
-      'https://images.pexels.com/photos/7195806/pexels-photo-7195806.jpeg', 'Beauty salon reception counter'],
+      'uploads/2026/10/salon-bridal-makeup', 'Makeup artist doing bridal makeup in a beauty salon'],
     ['supermarket', 'Supermarket / Mart', 'Supermarket POS', 'SUPERMARKET', 'Fast multi-counter billing with thousands of barcoded products, weighing scales and expiry tracking.',
       ['Multiple tills, one live stock count', 'Weighing scale &amp; barcode label printing', 'Expiry and batch tracking'], '/supermarket-pos',
-      null, null],
+      'uploads/2026/10/supermarket-shelves', 'Well-stocked grocery shelves in a supermarket'],
     ['clinic', 'Pharmacy / Clinic', 'Clinic &amp; Pharmacy POS', 'HEALTHCARE', 'Patient billing, medicine stock with expiry alerts and FBR-compliant invoices for clinics, labs and pharmacies.',
       ['Medicine batches &amp; expiry alerts', 'Patient &amp; doctor-wise billing', 'FBR / PRA integration built in'], '/clinics-fbr-pos-integration',
-      'uploads/2025/12/679bb039e78be8df1b8cb6f9_shutterstock-2265711619_a484c0694ed81b3748b0aab8227eaa9f_2000.jpeg', 'Clinic reception billing patients on a POS system'],
+      'uploads/2026/10/pharmacy-counter', 'Pharmacist at the billing computer in a pharmacy'],
     ['other', 'Other business', 'myPOS ERP', 'EVERY KIND OF BUSINESS', 'Bakery, garments, laundry, tailor, distribution, hospital or something custom — one system covers the till to the back office.',
       ['Ready-made apps for 30+ business types', 'Accounting, payroll &amp; HR built in', 'Custom features built on request'], '/features',
-      null, null],
+      'uploads/2026/10/bakery-sweets-counter', 'Customer buying sweets at a bakery counter'],
   ];
 @endphp
 <section id="industries" class="bsel">
@@ -202,7 +202,14 @@
           </div>
           <div class="bsel-vis tilt" data-tilt>
             @if ($img)
-              <div class="photo"><img src="{{ str_starts_with($img, 'http') ? $img : asset($img) }}" alt="{{ $alt }}" loading="lazy"></div>
+              @if (str_starts_with($img, 'http'))
+              <div class="photo"><img src="{{ pexels($img, 900) }}" srcset="{{ pexels($img, 600) }} 600w, {{ pexels($img, 900) }} 900w, {{ pexels($img, 1300) }} 1300w" sizes="(max-width:960px) 100vw, 640px" alt="{{ $alt }}" width="900" height="600" loading="lazy" decoding="async"></div>
+              @elseif (is_file(public_path($img . '-900.webp')))
+              {{-- Local photo saved as -600 / -900 / -1300 webp, cropped to the card's 5:4 frame. --}}
+              <div class="photo"><img src="{{ asset($img . '-900.webp') }}" srcset="{{ asset($img . '-600.webp') }} 600w, {{ asset($img . '-900.webp') }} 900w, {{ asset($img . '-1300.webp') }} 1300w" sizes="(max-width:960px) 100vw, 640px" alt="{{ $alt }}" width="900" height="720" loading="lazy" decoding="async"></div>
+              @else
+              <div class="photo"><img src="{{ asset($img) }}" alt="{{ $alt }}" width="900" height="600" loading="lazy" decoding="async"></div>
+              @endif
             @else
               <div class="bsel-art" aria-hidden="true"><span>{!! $product !!}</span></div>
             @endif
@@ -439,10 +446,20 @@
             <div class="d-row" style="border:none;"><span>Total</span><b style="color:#5CC8FF; font-size:1.1rem;">₨ 1,840</b></div>
           </div>
           <div class="device-panel" data-panel="mobile">
-            <div class="d-row"><span>Today, all branches</span><b>₨ 412,600</b></div>
-            <div class="d-row"><span>Top branch</span><b>Gulberg — ₨ 148,200</b></div>
-            <div class="d-row"><span>Low stock alerts</span><b>3 items</b></div>
-            <div class="d-row" style="border:none;"><span>Pending approvals</span><b>2 refunds</b></div>
+            <div class="phone-mock">
+              <div class="pm-notch" aria-hidden="true"></div>
+              @if (config('site.app_screenshot'))
+                <img src="{{ asset(config('site.app_screenshot')) }}" alt="myPOS mobile app showing today's sales report" loading="lazy">
+              @else
+                <div class="pm-screen">
+                  <div class="pm-head"><small>Today, all branches</small><b>₨ 412,600</b><em>▲ 18% vs yesterday</em></div>
+                  <div class="pm-bars" aria-hidden="true"><i style="height:40%"></i><i style="height:58%"></i><i style="height:46%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:86%"></i><i style="height:100%"></i></div>
+                  <div class="pm-row"><span>Top branch</span><b>Gulberg</b></div>
+                  <div class="pm-row"><span>Low stock</span><b class="warn">3 items</b></div>
+                  <div class="pm-row"><span>Pending refunds</span><b>2</b></div>
+                </div>
+              @endif
+            </div>
           </div>
           <div class="device-panel" data-panel="cloud">
             <div class="d-row"><span>Locations online</span><b>4 / 4</b></div>
@@ -454,7 +471,18 @@
         <div class="tab-copy reveal-right">
           <h4 id="tabTitle">Full sales terminal, offline-ready</h4>
           <p id="tabDesc">Ring up items, split payments, apply discounts and print or send receipts — even mid-outage. Every FBR invoice files itself the moment you're back online.</p>
-          <a href="#enquiry" class="link-arrow">See it on a free demo →</a>
+          <a href="#enquiry" class="link-arrow" data-tab-hide="mobile">See it on a free demo →</a>
+          <div class="app-dl" data-tab-show="mobile" hidden>
+            <ul class="app-dl-points"><li>Live sales &amp; profit for every branch</li><li>Stock alerts and refund approvals</li><li>Free with every myPOS plan</li></ul>
+            @if (config('site.play_store_url'))
+              <a href="{{ config('site.play_store_url') }}" class="gplay" target="_blank" rel="noopener">
+                <svg width="26" height="28" viewBox="0 0 26 28" aria-hidden="true"><path d="M1.2.6L14.4 14 1.2 27.4a1.6 1.6 0 01-.7-1.4V2C.5 1.4.8.9 1.2.6z" fill="#00D7FE"/><path d="M18.8 9.6L14.4 14 1.2.6c.4-.3 1-.3 1.6 0z" fill="#00F076"/><path d="M18.8 18.4l-16 9c-.6.3-1.2.3-1.6 0L14.4 14z" fill="#FF3A44"/><path d="M24.4 12.6c1 .6 1 2.2 0 2.8l-5.6 3L14.4 14l4.4-4.4z" fill="#FFD400"/></svg>
+                <span><small>GET IT ON</small>Google Play</span>
+              </a>
+            @else
+              <a href="#enquiry" class="btn btn-primary">Get the app with a free demo</a>
+            @endif
+          </div>
         </div>
       </div>
     </div>
@@ -462,34 +490,36 @@
     <div class="feat-sub reveal" id="software">
       <h3>One system, every kind of business.</h3>
       <p class="feat-sub-lead">Beyond the core POS, myPOS covers the software your whole operation runs on — from the till to the back office.</p>
-      <div class="software-grid stagger">
-        <div class="software-col reveal-scale" style="--i:0">
-          <h4><div class="sc-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="11" rx="1" stroke="#fff" stroke-width="1.4"/><path d="M2 8.5h16" stroke="#fff" stroke-width="1.4"/></svg></div>POS Software</h4>
-          <ul>
-            <li><a href="{{ url('/retail-management') }}">Retail Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/restaurant-management') }}">Restaurant Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/salon-management') }}">Salon Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/supermarket-pos') }}">Supermarket POS<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/bakery-pos') }}">Bakery POS<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-          </ul>
-        </div>
-        <div class="software-col reveal-scale" style="--i:1">
-          <h4><div class="sc-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4h12v10l-3-2-3 2-3-2-3 2V4z" stroke="#fff" stroke-width="1.4"/></svg></div>More to Offer</h4>
-          <ul>
-            <li><a href="{{ url('/accounting-software') }}">Accounting Software<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/garments-pos') }}">Garments POS<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/laundry-management') }}">Laundry Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/tailor-management') }}">Tailor Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-          </ul>
-        </div>
-        <div class="software-col reveal-scale" style="--i:2">
-          <h4><div class="sc-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#fff" stroke-width="1.4"/><path d="M2 10h16M10 2c2.2 2 3.3 5 3.3 8s-1.1 6-3.3 8c-2.2-2-3.3-5-3.3-8S7.8 4 10 2z" stroke="#fff" stroke-width="1.4"/></svg></div>Cloud Applications</h4>
-          <ul>
-            <li><a href="{{ url('/distribution-management') }}">Distribution Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/hospital-management') }}">Hospital Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-            <li><a href="{{ url('/payroll-software') }}">Payroll Management<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a></li>
-          </ul>
-        </div>
+      @php
+        // [label, url, group, svg path markup (24x24, stroked)]
+        $bizTiles = [
+          ['Retail', '/retail-management', 'POS', '<path d="M4 9l1.5-5h13L20 9"/><path d="M4 9h16v2a3 3 0 01-5.3 2A3 3 0 0112 14a3 3 0 01-2.7-1A3 3 0 014 11z"/><path d="M5 14v6h14v-6"/><path d="M10 20v-4h4v4"/>'],
+          ['Restaurant', '/restaurant-management', 'POS', '<path d="M7 3v8M5 3v5a2 2 0 004 0V3M7 11v10"/><path d="M17 21V3c-2 1-3 4-3 7v3h3"/>'],
+          ['Salon &amp; Spa', '/salon-management', 'POS', '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1L20 20M8.1 15.9L20 4"/>'],
+          ['Supermarket', '/supermarket-pos', 'POS', '<path d="M3 4h2l2.4 11h11l2-8H6"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/>'],
+          ['Bakery', '/bakery-pos', 'POS', '<path d="M4 13a8 5 0 0116 0v4a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M9 9.5l1 4M15 9.5l-1 4M12 9v4.5"/>'],
+          ['Garments', '/garments-pos', 'POS', '<path d="M9 3l3 2 3-2 5 3-2 4-2-1v12H8V9l-2 1-2-4z"/>'],
+          ['Laundry', '/laundry-management', 'POS', '<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4.5"/><path d="M7 6.5h.01M10 6.5h.01"/>'],
+          ['Tailor', '/tailor-management', 'POS', '<path d="M4 20L18 6"/><circle cx="19" cy="5" r="1.6"/><path d="M4 8c3 0 3 3 6 3s3-3 6-3"/>'],
+          ['Car Wash', '/car-wash-pos', 'POS', '<path d="M5 15l1.6-4.5A2 2 0 018.5 9h7a2 2 0 011.9 1.5L19 15"/><rect x="3" y="15" width="18" height="4" rx="1.5"/><path d="M8 4.5c0 1-.8 1.5-.8 2.3a.8.8 0 001.6 0C8.8 6 8 5.5 8 4.5zM16 4.5c0 1-.8 1.5-.8 2.3a.8.8 0 001.6 0C16.8 6 16 5.5 16 4.5z"/>'],
+          ['Clinics &amp; Pharmacy', '/clinics-fbr-pos-integration', 'Healthcare', '<rect x="3" y="5" width="18" height="15" rx="2"/><path d="M12 9v7M8.5 12.5h7M9 5V3h6v2"/>'],
+          ['Hospital', '/hospital-management', 'Healthcare', '<path d="M4 21V7l8-4 8 4v14"/><path d="M12 8v6M9 11h6M9 21v-4h6v4"/>'],
+          ['Schools &amp; Colleges', '/schools-fbr-pos-integration', 'Education', '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/>'],
+          ['Gym &amp; Fitness', '/gym-fbr-pos-integration', 'Services', '<path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/>'],
+          ['Distribution', '/distribution-management', 'Cloud', '<path d="M2 6h11v10H2zM13 9h4l3 3.5V16h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>'],
+          ['Accounting', '/accounting-software', 'Back office', '<rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8 6.5h8M8 11h.01M12 11h.01M16 11h.01M8 14.5h.01M12 14.5h.01M16 14.5h.01M8 18h.01M12 18h4"/>'],
+          ['Payroll &amp; HR', '/payroll-software', 'Back office', '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M17 7v8M19.5 9H16a1.3 1.3 0 000 2.6h2a1.3 1.3 0 010 2.6h-3.5"/>'],
+        ];
+      @endphp
+      <div class="biz-grid stagger">
+        @foreach ($bizTiles as $i => [$label, $href, $group, $icon])
+          <a href="{{ url($href) }}" class="biz-tile reveal-scale" style="--i:{{ $i % 8 }}">
+            <span class="biz-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $icon !!}</svg></span>
+            <b>{!! $label !!}</b>
+            <small>{{ $group }}</small>
+            <i class="biz-go" aria-hidden="true">→</i>
+          </a>
+        @endforeach
       </div>
     </div>
   </div>
@@ -576,7 +606,7 @@
       <div class="rv-score-row">
         <span class="rv-score">5.0</span>
         <div>
-          <div class="rv-stars" aria-label="5 out of 5 stars">@for ($s = 0; $s < 5; $s++)<svg><use href="#rv-star"/></svg>@endfor</div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">@for ($s = 0; $s < 5; $s++)<svg><use href="#rv-star"/></svg>@endfor</div>
           <span class="rv-count"><svg class="rv-g"><use href="#rv-google"/></svg> 20 Google reviews</span>
         </div>
       </div>
@@ -592,7 +622,7 @@
       @foreach ($reviews as $i => [$name, $text])
         <figure class="review-card">
           <svg class="rv-quote" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 8H6v8h5c0 3-2 5-5 5v3c5 0 9-4 9-9V8zm14 0h-7v8h5c0 3-2 5-5 5v3c5 0 9-4 9-9V8z" fill="currentColor"/></svg>
-          <div class="rv-stars" aria-label="5 out of 5 stars">@for ($s = 0; $s < 5; $s++)<svg><use href="#rv-star"/></svg>@endfor</div>
+          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">@for ($s = 0; $s < 5; $s++)<svg><use href="#rv-star"/></svg>@endfor</div>
           <blockquote>{{ $text }}</blockquote>
           <figcaption>
             <span class="rv-avatar">{{ $initials($name) }}</span>
@@ -635,13 +665,17 @@
 
       <div class="tour-stage">
         @foreach ($tourScreens as $i => [$key, $label, $desc, $img, $ext, $alt])
-          <figure class="tour-panel {{ $i === 0 ? 'active' : '' }} {{ $key === 'all-in-one' ? 'is-illus' : '' }}" role="tabpanel" id="tp-{{ $key }}" aria-labelledby="tt-{{ $key }}" @if ($i) hidden @endif>
+          <div class="tour-panel {{ $i === 0 ? 'active' : '' }} {{ $key === 'all-in-one' ? 'is-illus' : '' }}" role="tabpanel" id="tp-{{ $key }}" aria-labelledby="tt-{{ $key }}" @if ($i) hidden @endif>
             <picture>
-              <source srcset="{{ asset('uploads/' . $img . '.webp') }}" type="image/webp">
+              @if (is_file(public_path('uploads/' . $img . '-760.webp')))
+                <source srcset="{{ asset('uploads/' . $img . '-760.webp') }} 760w, {{ asset('uploads/' . $img . '.webp') }} 1440w" sizes="(max-width:960px) 100vw, 760px" type="image/webp">
+              @else
+                <source srcset="{{ asset('uploads/' . $img . '.webp') }}" type="image/webp">
+              @endif
               <img src="{{ asset('uploads/' . $img . '.' . $ext) }}" alt="{{ $alt }}" width="{{ $key === 'all-in-one' ? 544 : 1440 }}" height="{{ $key === 'all-in-one' ? 459 : 860 }}" loading="{{ $i ? 'lazy' : 'eager' }}" decoding="async">
             </picture>
-            <figcaption><span class="tp-dot"></span>{{ $label }} <em>— {{ $desc }}</em></figcaption>
-          </figure>
+            <div class="tp-cap"><span class="tp-dot"></span>{{ $label }} <em>— {{ $desc }}</em></div>
+          </div>
         @endforeach
       </div>
     </div>
@@ -787,7 +821,7 @@
 
 <section id="full-control" style="background:var(--paper-2);">
   <div class="wrap split">
-    <div class="media-frame contain reveal-left"><img src="{{ asset('uploads/2024/01/software-process-jpg-removebg-preview-min.png') }}" alt="myPOS software process — purchase, stock, sale and reporting" loading="lazy"></div>
+    <div class="media-frame contain reveal-left"><img src="{{ asset('uploads/2024/01/software-process-jpg-removebg-preview-min.png') }}" alt="myPOS software process — purchase, stock, sale and reporting" width="503" height="496" loading="lazy" decoding="async"></div>
     <div class="reveal-right">
       <div class="eyebrow-line"><span class="bar"></span><span>KEEP FULL CONTROL</span></div>
       <h2>Keep Full Control — Complete Awareness</h2>
@@ -798,7 +832,7 @@
   <div class="wrap">
     <div class="control-cards stagger">
       <div class="control-card control-card--dark reveal-scale" style="--i:0">
-        <img src="{{ asset('uploads/2018/05/My-Pos-Logo.png') }}" alt="myPOS logo" loading="lazy" class="cc-logo">
+        <img src="{{ asset('uploads/2018/05/My-Pos-Logo.png') }}" alt="myPOS logo" width="116" height="142" loading="lazy" class="cc-logo">
         <p class="cc-big">myPOS is serving 15000+ customers globally.</p>
         <p>We also develop custom applications as per the customer&rsquo;s requirements.</p>
         <a href="{{ url('/contact') }}" class="link-arrow">Contact Us →</a>

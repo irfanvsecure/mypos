@@ -108,3 +108,13 @@ if (! function_exists('demo_url')) {
         return has_lead_form() ? '#enquiry' : url('/contact') . '#enquiry';
     }
 }
+
+if (! function_exists('pexels')) {
+    /**
+     * A Pexels photo resized and compressed by their CDN; the originals are 4–5k px and several MB.
+     */
+    function pexels(string $url, int $width = 1000): string
+    {
+        return strtok($url, '?') . '?auto=compress&cs=tinysrgb&w=' . $width;
+    }
+}

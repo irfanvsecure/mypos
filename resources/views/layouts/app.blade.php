@@ -40,7 +40,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+{{-- Fonts load without blocking the first paint; text shows in the fallback font until they arrive (display=swap). --}}
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
 <script type="application/ld+json">{!! json_encode([
     '@@context' => 'https://schema.org',
@@ -56,23 +58,13 @@
     'areaServed' => 'PK',
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
 @stack('head')
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1658044839300375');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1658044839300375&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+@php
+    // 'live' sends events to Meta (production hosts only); 'debug' logs them to the console for local testing.
+    $pixelId = config('services.meta.pixel_id');
+    $pixelMode = ! $pixelId ? false
+        : (in_array(request()->getHost(), config('services.meta.pixel_hosts'), true) ? 'live' : (config('app.debug') ? 'debug' : false));
+@endphp
+@includeWhen($pixelMode, 'partials.meta-pixel', ['pixelId' => $pixelId, 'pixelMode' => $pixelMode])
 </head>
 <body>
 @php
@@ -107,5 +99,6 @@ src="https://www.facebook.com/tr?id=1658044839300375&ev=PageView&noscript=1"
 
 <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 @stack('scripts')
+@if ($pixelMode ?? false)<script src="{{ asset('js/pixel-events.js') }}?v={{ filemtime(public_path('js/pixel-events.js')) }}" defer></script>@endif
 </body>
 </html>

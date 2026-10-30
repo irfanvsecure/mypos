@@ -32,7 +32,7 @@
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Premium Exterior Wash</div><div class="cv">FBR Filed</div></div></div>
       <div class="float-chip fchip-3"><div class="cdot"></div><div><div class="ct">Interior Detailing</div><div class="cv">FBR Filed</div></div></div>
       <div class="float-chip fchip-2"><div class="cdot"></div><div><div class="ct">Wax &amp; Polish Add-on</div><div class="cv">PRA Filed</div></div></div>
-      <img src="https://images.pexels.com/photos/29504462/pexels-photo-29504462.jpeg" alt="Professional car wash facility with team washing a vehicle">
+      <img src="{{ pexels('https://images.pexels.com/photos/29504462/pexels-photo-29504462.jpeg', 1000) }}" srcset="{{ pexels('https://images.pexels.com/photos/29504462/pexels-photo-29504462.jpeg', 600) }} 600w, {{ pexels('https://images.pexels.com/photos/29504462/pexels-photo-29504462.jpeg', 1000) }} 1000w" sizes="(max-width:960px) 100vw, 600px" alt="Professional car wash facility with team washing a vehicle" loading="lazy" decoding="async">
     </div>
     <div class="stats-row reveal" style="margin-top:44px; grid-template-columns:repeat(4,1fr);">
       <div class="stat"><div class="num">15,000+</div><div class="lbl">Customers Across Pakistan</div></div>

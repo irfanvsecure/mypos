@@ -4,7 +4,7 @@
 @endphp
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a href="{{ route('home') }}" class="logo-mark"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="84" height="84"></a>
+    <a href="{{ route('home') }}" class="logo-mark"><picture><source srcset="{{ asset('images/logo-168.webp') }}" type="image/webp"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="84" height="84"></picture></a>
     <div class="nav-links">
       @foreach (config('site.menu') as $menu)
         @php $current = collect($menu['items'])->contains(fn ($i) => $isActive($i[1])) || (isset($menu['url']) && $isActive($menu['url'])); @endphp

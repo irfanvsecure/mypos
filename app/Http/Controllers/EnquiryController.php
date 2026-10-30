@@ -40,7 +40,15 @@ class EnquiryController extends Controller
             Log::warning('Enquiry email failed: ' . $e->getMessage(), ['lead' => $lead->id]);
         }
 
-        // The "lead" flash fires the Meta Pixel Lead event once; a refresh or direct visit won't count again.
-        return redirect()->route('thank-you')->with('lead', true);
+        // Fired by the pixel on the next page only: a refresh or a direct visit to /thank-you won't count again.
+        // No name, phone or email goes to Meta. The event ID lets Meta drop duplicates of the same lead.
+        return redirect()->route('thank-you')->with('pixel_events', [[
+            'name' => 'Lead',
+            'params' => array_filter([
+                'content_name' => $data['page'] ?? null,
+                'content_category' => $data['type'] ?? null,
+            ]),
+            'event_id' => 'lead-' . $lead->id,
+        ]]);
     }
 }

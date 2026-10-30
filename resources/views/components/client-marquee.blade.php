@@ -4,7 +4,7 @@
     'title' => 'Our Clients',
     'eyebrow' => 'TRUSTED BY',
 ])
-@php $total = \App\Models\Client::count(); @endphp
+@php $total = config('site.clients_total'); @endphp
 <section class="section-tight cs-section" {{ $attributes }}>
   <div class="wrap">
     <div class="cs-head reveal">
@@ -29,7 +29,7 @@
               <a href="{{ $slug ? route('clients.show', $slug) : route('clients.index') }}" class="cm-logo" @if ($copy) aria-hidden="true" tabindex="-1" @endif>
                 <picture>
                   @if (is_file(public_path('uploads/' . ($webp = preg_replace('/\.jpe?g$/', '-420.webp', $logo)))))
-                    <source srcset="{{ asset('uploads/' . $webp) }}" type="image/webp">
+                    <source srcset="@if (is_file(public_path('uploads/' . ($small = str_replace('-420.webp', '-210.webp', $webp))))){{ asset('uploads/' . $small) }} 280w, @endif{{ asset('uploads/' . $webp) }} 420w" sizes="(max-width:560px) 134px, 186px" type="image/webp">
                   @endif
                   <img src="{{ asset('uploads/' . $logo) }}" alt="{{ $copy ? '' : $name . ' logo' }}" title="{{ $name }}" loading="lazy" width="210" height="130">
                 </picture>

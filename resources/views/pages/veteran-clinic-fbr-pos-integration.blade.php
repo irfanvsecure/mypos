@@ -32,7 +32,7 @@
       <div class="float-chip fchip-1"><div class="cdot"></div><div><div class="ct">Consultation Fee</div><div class="cv">FBR Filed</div></div></div>
       <div class="float-chip fchip-3"><div class="cdot"></div><div><div class="ct">Vaccination Charges</div><div class="cv">FBR Filed</div></div></div>
       <div class="float-chip fchip-2"><div class="cdot"></div><div><div class="ct">Pet Medicines</div><div class="cv">PRA Filed</div></div></div>
-      <img src="https://images.pexels.com/photos/6234612/pexels-photo-6234612.jpeg" alt="Veterinarian examining a dog in a clinic">
+      <img src="{{ pexels('https://images.pexels.com/photos/6234612/pexels-photo-6234612.jpeg', 1000) }}" srcset="{{ pexels('https://images.pexels.com/photos/6234612/pexels-photo-6234612.jpeg', 600) }} 600w, {{ pexels('https://images.pexels.com/photos/6234612/pexels-photo-6234612.jpeg', 1000) }} 1000w" sizes="(max-width:960px) 100vw, 600px" alt="Veterinarian examining a dog in a clinic" loading="lazy" decoding="async">
     </div>
     <div class="stats-row reveal" style="margin-top:44px; grid-template-columns:repeat(4,1fr);">
       <div class="stat"><div class="num">15,000+</div><div class="lbl">Customers Across Pakistan</div></div>
