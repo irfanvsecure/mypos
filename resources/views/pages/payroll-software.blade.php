@@ -131,7 +131,7 @@
       <div style="display:flex; gap:20px; align-items:center;">
         <img src="{{ asset('uploads/2018/05/mypos-pk-splash-screen-1-246x300.png') }}" alt="myPOS software splash screen" loading="lazy" style="width:96px; height:auto; border-radius:8px; flex-shrink:0;">
         <div>
-          <h3 style="font-size:1.1rem;">myPOS Payroll Management</h3>
+          <div class="h3" style="font-size:1.1rem;">myPOS Payroll Management</div>
           <p style="font-size:0.9rem; color:var(--text-mute-ink);">Editor's Rating: 4.8</p>
         </div>
       </div>
@@ -148,7 +148,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>RELATED</span></div>
-      <h2>Explore more myPOS business software.</h2>
+      <div class="h2">Explore more myPOS business software.</div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/employee-management') }}">Employee Management</a>

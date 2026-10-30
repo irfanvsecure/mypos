@@ -156,10 +156,10 @@
   </div>
   <div class="wrap">
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Your services, pricing structure, and compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>Our secure FBR POS integration software.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Configure</h4><p>Real-time reporting aligned with FBR and PRA rules.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>System updates, documentation assistance and regulatory guidance.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Your services, pricing structure, and compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>Our secure FBR POS integration software.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Configure</div><p>Real-time reporting aligned with FBR and PRA rules.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Support</div><p>System updates, documentation assistance and regulatory guidance.</p></div></div>
     </div>
   </div>
 </section>

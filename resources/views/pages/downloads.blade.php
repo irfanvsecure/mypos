@@ -53,7 +53,7 @@ $products = [
     <div class="free-band reveal" style="margin-top:0;">
       <div class="fb-icon"><svg width="26" height="26" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M4 6l6-4 6 4M4 14l6 4 6-4" stroke="#fff" stroke-width="1.4"/></svg></div>
       <div>
-        <h3>Try out free version</h3>
+        <div class="h3">Try out free version</div>
         <p style="color:var(--text-mute-ink); margin-bottom:8px;">Our free version covers all basic sales functions.</p>
         <ul>
           <li>{!! $check !!}Support is not Included</li>
@@ -79,7 +79,7 @@ $products = [
           <div style="display:flex; align-items:center; gap:14px;">
             <div class="ft-icon" style="width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(135deg,var(--coral),var(--coral-deep)); flex-shrink:0;">{!! $dlIcon !!}</div>
             <div>
-              <h3 style="font-size:1.25rem;">{{ $prod['name'] }}</h3>
+              <div class="h3" style="font-size:1.25rem;">{{ $prod['name'] }}</div>
               <div style="font-size:0.84rem; color:var(--text-mute-ink);">{{ $prod['for'] }}</div>
             </div>
           </div>
@@ -106,9 +106,9 @@ $products = [
       <h2>From download to first sale.</h2>
     </div>
     <div class="steps-flow stagger">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Download</h4><p>Pick your edition above — files are hosted on Google Drive.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Install</h4><p>Set up myPOS on your Windows 7, 8 or 10 PC.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Upgrade when ready</h4><p>Need support, FBR / PRA integration or more modules? Talk to our team.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Download</div><p>Pick your edition above — files are hosted on Google Drive.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Install</div><p>Set up myPOS on your Windows 7, 8 or 10 PC.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Upgrade when ready</div><p>Need support, FBR / PRA integration or more modules? Talk to our team.</p></div></div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/pricing') }}">Pricing</a>

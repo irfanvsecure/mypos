@@ -10,7 +10,7 @@
 @if ($form && $bg)<x-sales-proof />@endif
 @if ($bg)<section class="section-tight bg-paper2"><div class="wrap">@endif
   <div class="cta-band reveal{{ $form ? ' cta-band--form' : '' }}">
-    <h2>{!! $title !!}</h2>
+    <div class="h2">{!! $title !!}</div>
     <p>{!! $text !!}</p>
     @if ($form)
       <x-enquiry-form compact :button="$primary" />

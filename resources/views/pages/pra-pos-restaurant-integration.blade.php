@@ -100,10 +100,10 @@
       </div>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Order billed</h4><p>From a waiter's tablet, a counter till or a delivery app.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Tax calculated</h4><p>PRA tax applied automatically for dine-in, takeaway or delivery.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>QR code generated</h4><p>The required QR code is printed on the invoice.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Reported in real time</h4><p>Transaction data is sent to PRA the moment the sale happens.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Order billed</div><p>From a waiter's tablet, a counter till or a delivery app.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Tax calculated</div><p>PRA tax applied automatically for dine-in, takeaway or delivery.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">QR code generated</div><p>The required QR code is printed on the invoice.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Reported in real time</div><p>Transaction data is sent to PRA the moment the sale happens.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
       <a href="{{ $tel }}" class="btn btn-primary">Book a Free Demo</a>

@@ -105,7 +105,7 @@
     <div class="free-band reveal" style="margin-top:40px;">
       <div class="fb-icon"><svg width="26" height="26" viewBox="0 0 20 20" fill="none"><path d="M10 3v9M6.5 8.5L10 12l3.5-3.5M4 14v3h12v-3" stroke="#fff" stroke-width="1.4"/></svg></div>
       <div>
-        <h3>Try out the free version</h3>
+        <div class="h3">Try out the free version</div>
         <ul>
           <li><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Support is not Included</li>
           <li><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Fully compatible with Windows 7, 8, 10</li>
@@ -120,7 +120,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>RELATED FEATURES</span></div>
-      <h2>More from myPOS.</h2>
+      <div class="h2">More from myPOS.</div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/features') }}">All Features</a>

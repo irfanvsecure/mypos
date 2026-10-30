@@ -169,10 +169,10 @@
       <p>We then deploy compliant gym FBR POS integration software, configure real-time reporting aligned with FBR and PRA requirements, and ensure smooth connectivity with tax authorities. MyPOS.pk also provides continuous support for system updates, documentation, audits, and regulatory guidance, ensuring your gym remains compliant without operational disruption.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">1</div><div><h4>Assess</h4><p>Review services, pricing structure, and current compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">2</div><div><h4>Deploy</h4><p>POS goes live, configured for FBR and PRA reporting from day one.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">3</div><div><h4>Configure</h4><p>Reporting rules aligned to Federal and Punjab Revenue Authority requirements.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">4</div><div><h4>Support</h4><p>Ongoing updates, documentation, audits, and regulatory guidance.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">1</div><div><div class="h4">Assess</div><p>Review services, pricing structure, and current compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">2</div><div><div class="h4">Deploy</div><p>POS goes live, configured for FBR and PRA reporting from day one.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">3</div><div><div class="h4">Configure</div><p>Reporting rules aligned to Federal and Punjab Revenue Authority requirements.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">4</div><div><div class="h4">Support</div><p>Ongoing updates, documentation, audits, and regulatory guidance.</p></div></div>
     </div>
   </div>
 </section>
@@ -187,7 +187,7 @@
       <span>Lahore</span><span>Islamabad</span><span>Rawalpindi</span><span>Faisalabad</span><span>Multan</span><span>Gujranwala</span>
     </div>
     <div class="benefit-card reveal" style="margin-top:40px;">
-      <h3>Get Started With Gym PRA &amp; FBR POS Integration Today</h3>
+      <div class="h3">Get Started With Gym PRA &amp; FBR POS Integration Today</div>
       <p>If you operate a gym, fitness studio, CrossFit box, personal training center, or wellness facility anywhere in Pakistan, MyPOS.pk offers reliable solutions for mandatory Point Of Sale compliance and structured income reporting. Our PRA integration service built to deliver compliance without complexity, ensuring your fitness business remains secure, compliant, and future-ready.</p>
     </div>
   </div>

@@ -418,7 +418,7 @@
       </article>
 
       <article class="bn-card bn-cta reveal-scale" style="--i:6">
-        <h3>Need something built for your business?</h3>
+        <div class="h3">Need something built for your business?</div>
         <p>We also develop custom applications as per the customer&rsquo;s requirements.</p>
         <div class="bn-cta-btns">
           <a href="#enquiry" class="btn btn-primary">Book a Free Demo</a>
@@ -469,7 +469,7 @@
           </div>
         </div>
         <div class="tab-copy reveal-right">
-          <h4 id="tabTitle">Full sales terminal, offline-ready</h4>
+          <div class="h4" id="tabTitle">Full sales terminal, offline-ready</div>
           <p id="tabDesc">Ring up items, split payments, apply discounts and print or send receipts — even mid-outage. Every FBR invoice files itself the moment you're back online.</p>
           <a href="#enquiry" class="link-arrow" data-tab-hide="mobile">See it on a free demo →</a>
           <div class="app-dl" data-tab-show="mobile" hidden>
@@ -530,7 +530,7 @@
   <div class="wrap calc-grid">
     <div class="calc-copy reveal-left">
       <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">SAVINGS CALCULATOR</span></div>
-      <h2>How much is manual billing costing you?</h2>
+      <div class="h2">How much is manual billing costing you?</div>
       <p>Move the sliders to match your business. We'll estimate the staff time and stock leakage myPOS can win back every month.</p>
       <div class="calc-inputs" data-calc>
         <label class="calc-field"><span>Monthly sales <b data-out="sales">Rs 1,500,000</b></span>
@@ -599,7 +599,7 @@
     <div class="rv-panel reveal">
       <div class="rv-head">
         <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">CUSTOMER REVIEWS</span></div>
-        <h2>Loved by businesses across Pakistan.</h2>
+        <div class="h2">Loved by businesses across Pakistan.</div>
         <p>Real reviews from myPOS customers — retail, salon, hospital and restaurant owners.</p>
       </div>
       <div class="rv-actions">
@@ -720,17 +720,17 @@
     <ol class="steps-grid stagger">
       <li class="step-card reveal-scale" style="--i:0">
         <span class="step-num">1</span>
-        <h3>Book a free demo</h3>
+        <div class="h3">Book a free demo</div>
         <p>Tell us about your business. We show you myPOS working on your own products and answer every question.</p>
       </li>
       <li class="step-card reveal-scale" style="--i:1">
         <span class="step-num">2</span>
-        <h3>We set it up for you</h3>
+        <div class="h3">We set it up for you</div>
         <p>Installation, product upload, hardware and your FBR / PRA integration — handled by our team.</p>
       </li>
       <li class="step-card reveal-scale" style="--i:2">
         <span class="step-num">3</span>
-        <h3>Start selling</h3>
+        <div class="h3">Start selling</div>
         <p>Your staff is trained and our 24-hour support team stays on call, by phone and WhatsApp.</p>
       </li>
     </ol>
@@ -838,7 +838,7 @@
         <a href="{{ url('/contact') }}" class="link-arrow">Contact Us →</a>
       </div>
       <div class="control-card reveal-scale" style="--i:1">
-        <h3>Useful info</h3>
+        <div class="h3">Useful info</div>
         <ul class="check-grid" style="grid-template-columns:repeat(2,1fr); margin-top:14px;">
           <li>myPOS allows to print barcodes</li>
           <li>Quickly upload products</li>
@@ -910,7 +910,7 @@
     <div class="pricing-grid stagger">
       <div class="price-card reveal-scale" style="--i:0">
         <div class="pc-badge">FREE</div>
-        <h3>Starter</h3>
+        <div class="h3">Starter</div>
         <div class="pc-price">Rs. 0</div>
         <div class="pc-sub">Core sales features, forever free</div>
         <ul>
@@ -923,7 +923,7 @@
       </div>
       <div class="price-card featured reveal-scale" style="--i:1">
         <div class="pc-badge">MOST POPULAR</div>
-        <h3>Business</h3>
+        <div class="h3">Business</div>
         <div class="pc-price">Contact Sales</div>
         <div class="pc-sub">For growing multi-branch businesses</div>
         <ul>
@@ -937,7 +937,7 @@
       </div>
       <div class="price-card reveal-scale" style="--i:2">
         <div class="pc-badge">CUSTOM</div>
-        <h3>Enterprise</h3>
+        <div class="h3">Enterprise</div>
         <div class="pc-price">Custom</div>
         <div class="pc-sub">Tailored builds for large operations</div>
         <ul>
@@ -959,7 +959,7 @@
     <div class="free-band reveal" id="free-version">
       <div class="fb-icon"><svg width="26" height="26" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M4 6l6-4 6 4M4 14l6 4 6-4" stroke="#fff" stroke-width="1.4"/></svg></div>
       <div>
-        <h3>Try out free version</h3>
+        <div class="h3">Try out free version</div>
         <p style="color:var(--text-mute-ink); margin-bottom:8px;">Our free POS software version covers all basic sales functions.</p>
         <ul>
           <li><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Support is not Included</li>
@@ -987,7 +987,7 @@
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>PRICE BUILDER</span></div>
-      <h2>Build your myPOS setup in one minute.</h2>
+      <div class="h2">Build your myPOS setup in one minute.</div>
       <p>Pick your business, branches and modules — see your price instantly. No sign-up, pay only for what you use.</p>
     </div>
     <form class="bld reveal-3d" method="POST" action="{{ route('enquiry.store') }}#builder" data-builder novalidate>
@@ -1084,7 +1084,7 @@ $homeFaqs = [
     </div>
     <div class="faq-layout">
       <div class="faq-support reveal-left">
-        <h3>Still have questions?</h3>
+        <div class="h3">Still have questions?</div>
         <p>Our support team is ready to help you with anything you need. We typically respond within minutes.</p>
         <div class="faq-support-row">
           <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>

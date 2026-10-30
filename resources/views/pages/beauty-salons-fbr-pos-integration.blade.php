@@ -194,10 +194,10 @@
       <p>With us, you achieve organized income records, easier tax filing, improved transparency, reduced audit risks, and long-term regulatory confidence. Choosing our integration service ensures accurate financial reporting while staff focus on client care, delivering compliance without complexity.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Your services and branches.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>Compliant PRA integrated salon POS software.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Configure</h4><p>Reporting with FBR and PRA.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing compliance support.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Your services and branches.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>Compliant PRA integrated salon POS software.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Configure</div><p>Reporting with FBR and PRA.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Support</div><p>Ongoing compliance support.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
       <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>

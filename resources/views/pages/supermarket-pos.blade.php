@@ -91,7 +91,7 @@
     <div class="free-band reveal">
       <div class="fb-icon"><svg width="24" height="24" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
       <div>
-        <h3>See the supermarket POS on your own lane — free demo, setup included.</h3>
+        <div class="h3">See the supermarket POS on your own lane — free demo, setup included.</div>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
       <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
@@ -104,7 +104,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>NEXT STEPS</span></div>
-      <h2>Pricing, compliance &amp; downloads.</h2>
+      <div class="h2">Pricing, compliance &amp; downloads.</div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/pricing') }}">Pricing</a>

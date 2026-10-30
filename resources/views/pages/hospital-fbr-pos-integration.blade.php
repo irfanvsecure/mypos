@@ -162,10 +162,10 @@
       <p>Non-compliance can lead to fines, audits, or operational challenges, making professional hospital PRA integration service and FBR POS integration essential. Our systems handle regulatory requirements with clinical precision while managing income documentation and financial reporting in the background.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Consultation</h4><p>Talk to our team about your hospital's billing and compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>System Setup</h4><p>FBR &amp; PRA reporting configured on your OPD, IPD, pharmacy and lab billing.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Go Live</h4><p>Patient receipts carry FBR-verifiable QR codes from day one.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Compliance Guidance</h4><p>Ongoing documentation support while your teams focus on patients.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Consultation</div><p>Talk to our team about your hospital's billing and compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">System Setup</div><p>FBR &amp; PRA reporting configured on your OPD, IPD, pharmacy and lab billing.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Go Live</div><p>Patient receipts carry FBR-verifiable QR codes from day one.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Compliance Guidance</div><p>Ongoing documentation support while your teams focus on patients.</p></div></div>
     </div>
     <div class="benefit-card reveal" style="margin-top:36px; background:#fff;">
       <p><a href="{{ url('/') }}">MyPOS.pk</a> provides hospitals across Punjab with mandatory Point Of Sale compliance, structured income reporting, and professional documentation support. Our solutions deliver smooth compliance without complexity, allowing your medical teams to focus entirely on patient care. Contact us today for consultation, system setup, or compliance guidance.</p>

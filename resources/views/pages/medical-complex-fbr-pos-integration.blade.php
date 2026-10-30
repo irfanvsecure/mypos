@@ -201,10 +201,10 @@
       <p>Our systems operate efficiently in the background, allowing medical teams to focus on patient care while we manage documentation, updates, and regulatory guidance.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Detailed assessment of your services and departments.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>PRA compliant POS software goes live.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Configure</h4><p>Aligned with FBR and PRA requirements.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Manage</h4><p>Documentation, updates and regulatory guidance.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Detailed assessment of your services and departments.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>PRA compliant POS software goes live.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Configure</div><p>Aligned with FBR and PRA requirements.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Manage</div><p>Documentation, updates and regulatory guidance.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
       <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>

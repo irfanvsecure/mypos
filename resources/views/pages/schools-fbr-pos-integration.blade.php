@@ -206,9 +206,9 @@
       <p>With our company, compliance runs silently in the background - so administrators and teachers can focus on education, not paperwork.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(3,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Admission fees</h4><p>Recorded and reported with accurate fee tracking.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Transport charges</h4><p>Department-wise income reporting for every facility.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Activity-based income</h4><p>Audit-ready financial summaries for management.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Admission fees</div><p>Recorded and reported with accurate fee tracking.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Transport charges</div><p>Department-wise income reporting for every facility.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Activity-based income</div><p>Audit-ready financial summaries for management.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
       <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>

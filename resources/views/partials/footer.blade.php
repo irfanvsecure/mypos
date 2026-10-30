@@ -15,7 +15,7 @@
     </div>
     @foreach (config('site.footer') as $heading => $links)
       <div>
-        <h4>{{ $heading }}</h4>
+        <div class="h4">{{ $heading }}</div>
         <ul>
           @foreach ($links as [$label, $href])
             <li><a href="{{ url($href) }}">{{ $label }}</a></li>

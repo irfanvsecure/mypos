@@ -120,7 +120,7 @@ unset($others[$p['key']]);
     <div class="free-band reveal" style="margin-top:0;">
       <div class="fb-icon"><svg width="26" height="26" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M4 6l6-4 6 4M4 14l6 4 6-4" stroke="#fff" stroke-width="1.4"/></svg></div>
       <div>
-        <h3>Want the full {{ $p['name'] }} with support?</h3>
+        <div class="h3">Want the full {{ $p['name'] }} with support?</div>
         <p style="color:var(--text-mute-ink);">Get a free demo, FBR / PRA integration and staff training from the myPOS team — trusted by 15,000+ customers.</p>
       </div>
       <div class="btn-row">
@@ -131,7 +131,7 @@ unset($others[$p['key']]);
 
     <div class="section-head reveal" style="margin-top:72px;">
       <div class="eyebrow-line"><span class="bar"></span><span>MORE FROM MYPOS</span></div>
-      <h2>Similar Downloads</h2>
+      <div class="h2">Similar Downloads</div>
     </div>
     <div class="integ-grid stagger" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:36px;">
       @foreach (array_values($others) as $i => [$oName, $oSub, $oUrl])

@@ -93,7 +93,7 @@
       </article>
 
       <div class="addon-card reveal" style="margin-top:56px; max-width:760px;">
-        <h3>Questions about this policy?</h3>
+        <div class="h3">Questions about this policy?</div>
         <p style="color:var(--text-mute-ink); margin-bottom:20px;">Our team is happy to help — call, WhatsApp or email us at <a href="mailto:{{ config('site.email') }}" style="color:var(--coral-deep);">{{ config('site.email') }}</a>.</p>
         <div class="btn-row">
           <a href="{{ demo_url() }}" class="btn btn-primary btn-sm">Contact Us</a>
@@ -111,7 +111,7 @@
 
     <aside class="article-aside hide-mobile">
       <nav class="toc" aria-label="On this page">
-        <h4>ON THIS PAGE</h4>
+        <div class="h4">ON THIS PAGE</div>
         <a href="#what-are-cookies">1. What Are Cookies?</a>
         <a href="#why-we-use-cookies">2. Why We Use Cookies</a>
         <a href="#types-of-cookies-we-use">3. Types of Cookies We Use</a>

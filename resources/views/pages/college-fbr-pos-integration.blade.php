@@ -207,10 +207,10 @@
       <p>Our college PRA &amp; FBR POS integration process is designed to be simple and institution friendly, beginning with a detailed assessment of your fee structure, services and compliance scope. We deploy suitable college integration software, align reporting with FBR, PRA or both and provide ongoing support for documentation and regulatory updates.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Your fee structure, services and compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>Suitable college integration software.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Align</h4><p>Reporting with FBR, PRA or both.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Documentation and regulatory updates.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Your fee structure, services and compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>Suitable college integration software.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Align</div><p>Reporting with FBR, PRA or both.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Support</div><p>Documentation and regulatory updates.</p></div></div>
     </div>
     <div class="prose reveal" style="margin-top:36px; max-width:860px;">
       <p>Through our college <a href="{{ url('/fbr-pos-integration') }}">FBR Point Of Sale integration service</a>, colleges gain organized income records, easier tax filing, improved transparency, and reduced audit exposure. Manual reporting and undocumented income can create serious compliance risks, but choosing FBR &amp; PRA POS integration service for college through MyPOS.pk ensures accurate and compliant financial reporting.</p>

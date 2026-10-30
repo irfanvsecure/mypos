@@ -93,7 +93,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>RELATED FEATURES</span></div>
-      <h2>More from myPOS.</h2>
+      <div class="h2">More from myPOS.</div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/features') }}">All Features</a>

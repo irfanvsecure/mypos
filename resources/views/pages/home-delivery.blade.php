@@ -241,7 +241,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>RELATED</span></div>
-      <h2>Pricing, downloads &amp; compliance for restaurants.</h2>
+      <div class="h2">Pricing, downloads &amp; compliance for restaurants.</div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/pricing-restropro') }}">RestroPro Pricing</a>

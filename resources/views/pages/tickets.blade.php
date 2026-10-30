@@ -23,9 +23,9 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
       <h2>Raise a ticket in three steps.</h2>
     </div>
     <div class="steps-flow stagger">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Describe the issue</h4><p>Fill in the form below and choose “Customer Support” or “Technical Assistance”.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>We get in touch</h4><p>Our team calls or messages you on WhatsApp to understand the problem.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Problem solved</h4><p>Troubleshooting via remote assistance, or on-site when needed.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Describe the issue</div><p>Fill in the form below and choose “Customer Support” or “Technical Assistance”.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">We get in touch</div><p>Our team calls or messages you on WhatsApp to understand the problem.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Problem solved</div><p>Troubleshooting via remote assistance, or on-site when needed.</p></div></div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/support') }}">Support Plans</a>

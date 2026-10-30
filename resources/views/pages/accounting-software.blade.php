@@ -119,7 +119,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>RELATED</span></div>
-      <h2>Explore more myPOS business software.</h2>
+      <div class="h2">Explore more myPOS business software.</div>
     </div>
     <div class="related-links reveal">
       <a href="{{ url('/pricing') }}">Pricing</a>

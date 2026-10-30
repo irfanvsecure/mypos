@@ -4,7 +4,14 @@
   var pages={};
   document.querySelectorAll('.pg').forEach(function(p){pages[p.dataset.page]=p;});
   var navEl=document.querySelector('.nav');
+  if(navEl){ var setScrolled=function(){ navEl.classList.toggle('is-scrolled', window.scrollY>8); }; setScrolled(); window.addEventListener('scroll', setScrolled, {passive:true}); }
 
+  var toTop=document.querySelector('.to-top');
+  if(toTop){
+    var setToTop=function(){ toTop.classList.toggle('is-visible', window.scrollY>600); };
+    setToTop(); window.addEventListener('scroll', setToTop, {passive:true});
+    toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:reduceMotion?'auto':'smooth'}); });
+  }
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:0.18});

@@ -34,7 +34,7 @@
           <div class="pc-badge" style="margin-bottom:0;">PRIMARY</div>
           <img src="{{ asset('uploads/2015/07/home_software_pricing_icon_4.png') }}" alt="Pricing TailorPro — Primary plan" width="44" height="44" loading="lazy" style="width:44px; height:44px; object-fit:contain;">
         </div>
-        <h3 style="margin-top:16px;">Primary</h3>
+        <div class="h3" style="margin-top:16px;">Primary</div>
         <div class="pc-price">FREE</div>
         <div class="pc-sub">Free forever — download &amp; start selling</div>
         <ul>
@@ -50,7 +50,7 @@
           <div class="pc-badge" style="margin-bottom:0;">BASIC</div>
           <img src="{{ asset('uploads/2015/07/home_software_pricing_icon_1.png') }}" alt="Pricing TailorPro — Basic plan" width="44" height="44" loading="lazy" style="width:44px; height:44px; object-fit:contain;">
         </div>
-        <h3 style="margin-top:16px;">Basic</h3>
+        <div class="h3" style="margin-top:16px;">Basic</div>
         <div class="pc-price">Rs. 24,000</div>
         <div class="pc-sub">One-time license fee</div>
         <ul>
@@ -69,7 +69,7 @@
           <div class="pc-badge" style="margin-bottom:0;">STANDARD</div>
           <img src="{{ asset('uploads/2015/07/home_software_pricing_icon_2.png') }}" alt="Pricing TailorPro — Standard plan" width="44" height="44" loading="lazy" style="width:44px; height:44px; object-fit:contain;">
         </div>
-        <h3 style="margin-top:16px;">Standard</h3>
+        <div class="h3" style="margin-top:16px;">Standard</div>
         <div class="pc-price">Rs. 36,500</div>
         <div class="pc-sub">One-time license fee</div>
         <ul>
@@ -95,7 +95,7 @@
           <div class="pc-badge" style="margin-bottom:0;">PREMIUM</div>
           <img src="{{ asset('uploads/2015/07/home_software_pricing_icon_3.png') }}" alt="Pricing TailorPro — Premium plan" width="44" height="44" loading="lazy" style="width:44px; height:44px; object-fit:contain;">
         </div>
-        <h3 style="margin-top:16px;">Premium</h3>
+        <div class="h3" style="margin-top:16px;">Premium</div>
         <div class="pc-price">Contact</div>
         <div class="pc-sub">Custom quote for multi-location setups</div>
         <ul>
@@ -134,7 +134,7 @@
       </div>
 
       <div class="addon-card reveal-right">
-        <h3>Good to know</h3>
+        <div class="h3">Good to know</div>
         <div class="addon-row"><span>* Additional terminal at same location would cost</span><span class="price">8000/-</span></div>
         <div class="addon-row"><span>Average support response time</span><span class="price">&lt; 2 min</span></div>
         <div class="addon-row"><span>Businesses already using myPOS</span><span class="price">15,000+</span></div>
@@ -169,7 +169,7 @@
     <p class="reveal" style="margin-top:28px;"><a href="{{ url('/features') }}" class="link-arrow">And much more... &rarr;</a></p>
 
     <div class="reveal" style="margin-top:48px;">
-      <h3 style="font-size:1.05rem;">Related pages</h3>
+      <div class="h3" style="font-size:1.05rem;">Related pages</div>
       <div class="related-links">
         <a href="{{ url('/tailor-management') }}">Tailor Management Software</a>
         <a href="{{ url('/features') }}">All Features</a>

@@ -19,7 +19,7 @@
       <div class="office-card">
         <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
           <img src="{{ asset('uploads/2018/05/My-Pos-Logo.png') }}" alt="myPOS contact and support" loading="lazy" style="width:44px; height:auto; object-fit:contain;">
-          <h4 style="margin:0;">myPOS</h4>
+          <div class="h4" style="margin:0;">myPOS</div>
         </div>
         <div style="font-size:0.78rem; font-weight:700; letter-spacing:0.04em; color:var(--coral-deep); margin-bottom:4px;">Contact details:</div>
         <div class="office-row"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 14s5-4.2 5-8a5 5 0 10-10 0c0 3.8 5 8 5 8z" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="6" r="1.7" stroke="currentColor" stroke-width="1.2"/></svg>Office No. 1, Midlane Plaza, Ghazni Lane, New Super Town, Lahore, Pakistan</div>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="support-card reveal-right">
-      <h3>Support Hours</h3>
+      <div class="h3">Support Hours</div>
       <div class="hours">Mon-Fri (10:00 am - 18:00 pm) - Pakistan Standard Time</div>
       <div class="note">Email usually takes 12–24 hours. For a faster answer, call or WhatsApp — we typically reply in minutes.</div>
 
@@ -53,7 +53,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">GET A QUOTE</span></div>
-      <h2>Request a Quote</h2>
+      <div class="h2">Request a Quote</div>
       <p>Tell us about your business and requirements — our team will get back to you with the right solution, pricing and support details.</p>
     </div>
     <div class="contact-grid">
@@ -87,7 +87,7 @@
     <div class="free-band reveal" style="margin-top:0;">
       <div class="fb-icon"><svg width="26" height="26" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M4 6l6-4 6 4M4 14l6 4 6-4" stroke="#fff" stroke-width="1.4"/></svg></div>
       <div>
-        <h3>Try out free version</h3>
+        <div class="h3">Try out free version</div>
         <p style="color:var(--text-mute-ink); margin-bottom:8px;">Our free version covers all basic sales functions.</p>
         <ul>
           <li><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Support is not Included</li>

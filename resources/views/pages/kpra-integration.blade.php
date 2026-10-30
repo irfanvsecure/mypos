@@ -164,10 +164,10 @@
       <div class="btn-row" style="justify-content:center;"><a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Book Your Integration Appointment</a><a href="{{ demo_url() }}" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Book a Free Demo</a></div>
     </div>
     <div class="steps-flow stagger" style="margin-top:44px;">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Initial Assessment</h4><p>Contact myPOS for a free POS assessment. We review your current system and define required KPRA compliance configuration (2&ndash;3 days).</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>System Setup &amp; Configuration</h4><p>We configure KPRA tax rules, invoice structure, and system integration at no extra cost based on your business model.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Staff Training</h4><p>Your team receives hands-on training on POS usage, reporting, and KPRA compliance procedures (2&ndash;4 days).</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Go-Live Activation</h4><p>Your system goes live with full KPRA compliance enabled from day one. Total process: 2&ndash;4 weeks.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Initial Assessment</div><p>Contact myPOS for a free POS assessment. We review your current system and define required KPRA compliance configuration (2&ndash;3 days).</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">System Setup &amp; Configuration</div><p>We configure KPRA tax rules, invoice structure, and system integration at no extra cost based on your business model.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Staff Training</div><p>Your team receives hands-on training on POS usage, reporting, and KPRA compliance procedures (2&ndash;4 days).</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Go-Live Activation</div><p>Your system goes live with full KPRA compliance enabled from day one. Total process: 2&ndash;4 weeks.</p></div></div>
     </div>
   </div>
 </section>

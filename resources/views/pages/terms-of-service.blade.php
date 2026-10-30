@@ -60,13 +60,13 @@
         <h2 id="contact-information">21. Contact Information</h2>
         <p>For questions or concerns regarding these Terms, please contact us:</p>
         <p><strong>Email:</strong> <a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></p>
-        <h3>Phone: <a href="tel:{{ config('site.phone_raw') }}">+92 322 4765528</a></h3>
+        <div class="h3">Phone: <a href="tel:{{ config('site.phone_raw') }}">+92 322 4765528</a></div>
         <p><strong>Website:</strong> <a href="{{ url('/') }}">https://mypos.pk/</a></p>
         <p>myPOS is committed to delivering reliable, compliant, and future-ready software that empowers Pakistani businesses to grow with confidence. We value every Customer partnership and remain dedicated to providing the tools and support needed to streamline operations and meet evolving compliance standards.</p>
       </article>
 
       <div class="addon-card reveal" style="margin-top:56px; max-width:760px;">
-        <h3>Questions about this policy?</h3>
+        <div class="h3">Questions about this policy?</div>
         <p style="color:var(--text-mute-ink); margin-bottom:20px;">Our team is happy to help — call, WhatsApp or email us at <a href="mailto:{{ config('site.email') }}" style="color:var(--coral-deep);">{{ config('site.email') }}</a>.</p>
         <div class="btn-row">
           <a href="{{ demo_url() }}" class="btn btn-primary btn-sm">Contact Us</a>
@@ -84,7 +84,7 @@
 
     <aside class="article-aside hide-mobile">
       <nav class="toc" aria-label="On this page">
-        <h4>ON THIS PAGE</h4>
+        <div class="h4">ON THIS PAGE</div>
         <a href="#definitions">1. Definitions</a>
         <a href="#acceptance-of-terms">2. Acceptance of Terms</a>
         <a href="#services-provided">3. Services Provided</a>

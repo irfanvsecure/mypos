@@ -28,7 +28,7 @@
           </a>
           <div class="pc-body">
             <div class="pc-tag">{{ strtoupper($post->topic_label) }}</div>
-            <h3><a href="{{ $post->url }}">{{ $post->title }}</a></h3>
+            <div class="h3"><a href="{{ $post->url }}">{{ $post->title }}</a></div>
             <p>{{ $post->excerpt }}</p>
             <div class="pc-foot"><span>{{ $post->published_at?->format('M j, Y') }} · {{ $post->reading_minutes }} min read</span><b>Read →</b></div>
           </div>

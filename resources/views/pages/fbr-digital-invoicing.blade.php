@@ -177,11 +177,11 @@
   </div>
   <div class="wrap">
     <div class="steps-flow stagger" style="margin-top:48px;">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Sale Entry in POS or Dashboard:</h4><p>You enter items and tax details as usual.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Our System Generates a FBR-Verified Invoice:</h4><p>Invoice includes UIN, QR code, digital signature, and complete tax details.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Real-Time Sync With FBR:</h4><p>We transmit your invoice instantly to the FBR Computerized System through PRAL.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Customer Delivery:</h4><p>Send through WhatsApp, SMS, email, or print on spot.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:4"><div class="st-num">05</div><div><h4>Automated Reporting &amp; Reconciliation:</h4><p>Our dashboard lets you track synced invoices, validation issues, and daily/weekly/monthly summaries.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Sale Entry in POS or Dashboard:</div><p>You enter items and tax details as usual.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Our System Generates a FBR-Verified Invoice:</div><p>Invoice includes UIN, QR code, digital signature, and complete tax details.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Real-Time Sync With FBR:</div><p>We transmit your invoice instantly to the FBR Computerized System through PRAL.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Customer Delivery:</div><p>Send through WhatsApp, SMS, email, or print on spot.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:4"><div class="st-num">05</div><div><div class="h4">Automated Reporting &amp; Reconciliation:</div><p>Our dashboard lets you track synced invoices, validation issues, and daily/weekly/monthly summaries.</p></div></div>
     </div>
     <p class="reveal" style="margin-top:28px; color:var(--text-mute-ink);">This creates a fully automated digital invoicing for FBR experience.</p>
   </div>

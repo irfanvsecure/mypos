@@ -96,6 +96,9 @@
   <a href="{{ wa_link() }}" class="sc-wa" target="_blank" rel="noopener">WhatsApp</a>
   <a href="{{ $demoHref }}" class="sc-demo">Free Demo</a>
 </div>
+<button type="button" class="to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 @stack('scripts')

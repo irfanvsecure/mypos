@@ -44,7 +44,7 @@
       <div class="prose">{!! $content !!}</div>
 
       <div class="cta-band cta-band--form" style="margin-top:56px; text-align:left;">
-        <h2 style="font-size:1.4rem;">Get your business on myPOS — free demo, FBR-ready.</h2>
+        <div class="h2" style="font-size:1.4rem;">Get your business on myPOS — free demo, FBR-ready.</div>
         <p style="margin:0 0 22px;">Our team sets up the POS, FBR / PRA integration and staff training for you. Most businesses are live within 1–3 days.</p>
         <x-enquiry-form compact button="Book a Free Demo" />
         <div class="btn-row cta-alt">
@@ -57,12 +57,12 @@
     <aside class="article-aside">
       @if (count($toc) > 1)
         <nav class="toc" aria-label="Table of contents">
-          <h4>IN THIS ARTICLE</h4>
+          <div class="h4">IN THIS ARTICLE</div>
           @foreach ($toc as [$id, $label])<a href="#{{ $id }}">{{ $label }}</a>@endforeach
         </nav>
       @endif
       <div class="aside-cta">
-        <h4>Talk to a POS expert</h4>
+        <div class="h4">Talk to a POS expert</div>
         <p>Free consultation on POS setup and FBR / PRA integration for your business.</p>
         <a href="#enquiry" class="btn btn-primary">Book a Free Demo</a>
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:var(--text-on-dark);">{{ config('site.phone') }}</a>
@@ -76,7 +76,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>KEEP READING</span></div>
-      <h2>Related articles.</h2>
+      <div class="h2">Related articles.</div>
     </div>
     <div class="post-grid">
       @foreach ($related as $r)
@@ -84,7 +84,7 @@
           <a href="{{ $r->url }}" class="pc-img">@if ($r->featured_image)<img src="{{ asset(ltrim($r->featured_image, '/')) }}" alt="{{ $r->title }}" loading="lazy">@endif</a>
           <div class="pc-body">
             <div class="pc-tag">{{ strtoupper($r->topic_label) }}</div>
-            <h3><a href="{{ $r->url }}">{{ $r->title }}</a></h3>
+            <div class="h3"><a href="{{ $r->url }}">{{ $r->title }}</a></div>
             <p>{{ $r->excerpt }}</p>
             <div class="pc-foot"><span>{{ $r->reading_minutes }} min read</span><b>Read →</b></div>
           </div>

@@ -31,7 +31,7 @@
     <div class="plan-layout">
       <div class="plan-card reveal-left">
         <div class="pc-badge">STANDARD</div>
-        <h3 style="font-size:1.5rem; margin-bottom:6px;">Standard Plan</h3>
+        <div class="h3" style="font-size:1.5rem; margin-bottom:6px;">Standard Plan</div>
         <div class="pc-trial">Free for 14 days</div>
         <div class="pc-price">Rs. 2,000<span>/month</span></div>
         <nav aria-label="Standard Plan features">
@@ -57,7 +57,7 @@
       </div>
 
       <div class="addon-card reveal-right">
-        <h3>Not sure this is the right plan? We will set it up with you.</h3>
+        <div class="h3">Not sure this is the right plan? We will set it up with you.</div>
         <a href="tel:{{ config('site.phone_raw') }}" style="display:block; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.6rem; color:var(--navy);">{{ config('site.phone') }}</a>
         <div style="font-size:0.9rem; color:var(--text-mute-ink); margin-top:4px;">Call us anytime</div>
         <div class="btn-row" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">

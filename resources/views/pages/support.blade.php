@@ -70,7 +70,7 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
             <div class="pc-badge" style="margin:0;">{{ $badge }}</div>
             <img src="{{ asset('uploads/2015/07/' . $icon) }}" alt="{{ $name }} support plan" loading="lazy" style="width:44px; height:44px; object-fit:contain; background:#fff; border-radius:10px; padding:6px;">
           </div>
-          <h3>{{ $name }}</h3>
+          <div class="h3">{{ $name }}</div>
           <div class="pc-price"><span style="font-size:0.9rem; font-weight:600; vertical-align:super; margin-right:4px;">PKR</span>{{ $price }}</div>
           <div class="pc-sub">{{ $name === 'On Call' ? 'Single visit / call' : 'Per year, per location' }}</div>
           <ul>
@@ -99,7 +99,7 @@ $features = ['Easy to configure', 'Touch Screen Ready', 'Multi Registers', 'Cust
     <div class="free-band reveal" style="margin-top:0;">
       <div class="fb-icon"><svg width="26" height="26" viewBox="0 0 20 20" fill="none"><path d="M4 4h12v9H8l-4 3V4z" stroke="#fff" stroke-width="1.4"/></svg></div>
       <div>
-        <h3>Facing an issue right now?</h3>
+        <div class="h3">Facing an issue right now?</div>
         <p style="color:var(--text-mute-ink);">Open a support ticket with the details and our team will get back to you — or WhatsApp us for the fastest response.</p>
       </div>
       <div class="btn-row">

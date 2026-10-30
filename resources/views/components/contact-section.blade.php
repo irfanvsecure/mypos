@@ -9,7 +9,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">{{ $eyebrow }}</span></div>
-      <h2>{!! $title !!}</h2>
+      <div class="h2">{!! $title !!}</div>
       <p>{!! $text !!}</p>
     </div>
     <div class="contact-grid">

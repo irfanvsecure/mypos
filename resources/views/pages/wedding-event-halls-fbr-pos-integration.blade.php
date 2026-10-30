@@ -199,9 +199,9 @@
       <p>Our wedding event halls PRA &amp; FBR POS integration begins with a detailed assessment of your hall operations and event services, followed by deployment of compliant Federal Board Of Revenue Point Of Sale integration for banquet halls and accurate configuration aligned with FBR and PRA requirements.</p>
     </div>
     <div class="steps-flow stagger">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Your hall operations and event services.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>Compliant FBR Point Of Sale integration for banquet halls.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Configure</h4><p>Accurate configuration aligned with FBR and PRA requirements.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Your hall operations and event services.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>Compliant FBR Point Of Sale integration for banquet halls.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Configure</div><p>Accurate configuration aligned with FBR and PRA requirements.</p></div></div>
     </div>
     <div class="prose reveal" style="margin-top:36px; max-width:860px;">
       <p>With our company, event and marriage halls achieve transparent booking income records, easier tax filing, reduced audit risk, and improved financial visibility. Our system works efficiently in the background, allowing management to focus on flawless event execution while compliance is handled automatically.</p>

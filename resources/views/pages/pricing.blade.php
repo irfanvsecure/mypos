@@ -46,7 +46,7 @@
     </div>
 
     <div class="addon-card reveal-right">
-      <h3>Add-on Modules</h3>
+      <div class="h3">Add-on Modules</div>
         <div class="addon-row"><span>Offline Module</span><span class="price">+ 500/-</span></div>
         <div class="addon-row"><span>Accounting Module</span><span class="price">+ 1000/-</span></div>
         <div class="addon-row"><span>Instalment Module</span><span class="price">+ 1000/-</span></div>

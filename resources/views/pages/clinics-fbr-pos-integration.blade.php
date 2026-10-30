@@ -160,10 +160,10 @@
   </div>
   <div class="wrap">
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Clinic Assessment:</h4><p>We analyze your services, billing structure, and documentation needs.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>POS &amp; Invoicing Configuration:</h4><p>We set up a compliant system aligned with clinic income reporting requirements.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>PRA or FBR Alignment:</h4><p>We ensure your system supports PRA integration for clinics in Punjab or FBR reporting where applicable.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Ongoing Support &amp; Reporting:</h4><p>We assist with record maintenance, data exports, and compliance support throughout the year.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Clinic Assessment:</div><p>We analyze your services, billing structure, and documentation needs.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">POS &amp; Invoicing Configuration:</div><p>We set up a compliant system aligned with clinic income reporting requirements.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">PRA or FBR Alignment:</div><p>We ensure your system supports PRA integration for clinics in Punjab or FBR reporting where applicable.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Ongoing Support &amp; Reporting:</div><p>We assist with record maintenance, data exports, and compliance support throughout the year.</p></div></div>
     </div>
     <p class="reveal" style="margin-top:28px;">This process helps clinics maintain transparency without disrupting daily patient operations.</p>
     <div class="btn-row reveal" style="margin-top:18px;">

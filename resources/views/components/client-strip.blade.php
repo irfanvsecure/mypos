@@ -18,7 +18,7 @@
     <div class="cs-head reveal">
       <div class="section-head">
         <div class="eyebrow-line"><span class="bar"></span><span>{{ $eyebrow }}</span></div>
-        <h2>{{ $title }}</h2>
+        <div class="h2">{{ $title }}</div>
         <p class="cs-sub">Restaurants, retailers, pharmacies, schools and distributors across Pakistan run their counters on myPOS.</p>
       </div>
       <div class="cs-meta">

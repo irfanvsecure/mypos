@@ -200,10 +200,10 @@
       <p>Whether you operate a diagnostic lab, pathology center, or medical laboratory anywhere in Pakistan, our integration service delivers structured compliance without operational complexity. With ongoing support, updates, and documentation handled by experts, your lab stays compliant while you focus on patient care.</p>
     </div>
     <div class="steps-flow stagger" style="grid-template-columns:repeat(4,1fr);">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Laboratory services, test categories and compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>Reliable FBR POS integration for your laboratory.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Align</h4><p>Reporting aligned to FBR and PRA regulations.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing support, updates and documentation by experts.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Laboratory services, test categories and compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>Reliable FBR POS integration for your laboratory.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Align</div><p>Reporting aligned to FBR and PRA regulations.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Support</div><p>Ongoing support, updates and documentation by experts.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
       <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>

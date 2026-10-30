@@ -155,10 +155,10 @@
       <p>We begin with a detailed assessment of your car wash or service station operations, services, and compliance scope. Then we deploy suitable <a href="{{ url('/fbr-pos-integration') }}" class="link-arrow" style="display:inline;">FBR POS integration</a> for service stations, configure reporting aligned with Federal Board Of Revenue and Punjab Revenue Authority rules, and provide ongoing support for updates, documentation, and compliance guidance.</p>
     </div>
     <div class="steps-flow stagger">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Review services, package pricing, and current compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>POS goes live, configured for FBR and PRA reporting from day one.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Configure</h4><p>Reporting rules aligned to Federal and Punjab Revenue Authority requirements.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing updates, documentation, and compliance guidance.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Review services, package pricing, and current compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>POS goes live, configured for FBR and PRA reporting from day one.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Configure</div><p>Reporting rules aligned to Federal and Punjab Revenue Authority requirements.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Support</div><p>Ongoing updates, documentation, and compliance guidance.</p></div></div>
     </div>
   </div>
 </section>

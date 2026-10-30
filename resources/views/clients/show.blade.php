@@ -33,7 +33,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>MORE CLIENTS</span></div>
-      <h2>Other businesses on myPOS.</h2>
+      <div class="h2">Other businesses on myPOS.</div>
     </div>
     <ul class="cs-grid">
       @foreach ($others as $o)

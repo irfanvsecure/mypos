@@ -176,10 +176,10 @@
       <p>Our streamlined dental clinics PRA &amp; FBR POS integration begins with a quick assessment of your services and ends with fully compliant, real-time reporting to Federal Board Of Revenue and Punjab Revenue Authority. Using MyPOS.pk, dental clinics across Pakistan achieve accurate income documentation, reduced compliance risk, and hassle-free POS integration &mdash; without disrupting daily patient care.</p>
     </div>
     <div class="steps-flow stagger">
-      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><h4>Assess</h4><p>Review services, fee structure, and current compliance scope.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><h4>Deploy</h4><p>POS goes live, configured for FBR and PRA reporting from day one.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Configure</h4><p>Reporting rules aligned to Federal and Punjab Revenue Authority requirements.</p></div></div>
-      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing updates, documentation, and regulatory guidance.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:0"><div class="st-num">01</div><div><div class="h4">Assess</div><p>Review services, fee structure, and current compliance scope.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:1"><div class="st-num">02</div><div><div class="h4">Deploy</div><p>POS goes live, configured for FBR and PRA reporting from day one.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><div class="h4">Configure</div><p>Reporting rules aligned to Federal and Punjab Revenue Authority requirements.</p></div></div>
+      <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><div class="h4">Support</div><p>Ongoing updates, documentation, and regulatory guidance.</p></div></div>
     </div>
   </div>
 </section>

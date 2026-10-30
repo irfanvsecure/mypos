@@ -54,6 +54,9 @@ class Post extends Model
             return '<h2 id="' . $id . '">' . $m[1] . '</h2>';
         }, $this->content);
 
+        // The site uses no h4 headings; demote any in post content to h3.
+        $html = preg_replace('#<(/?)h4\b#i', '<$1h3', $html);
+
         return [$html, $toc];
     }
 }
