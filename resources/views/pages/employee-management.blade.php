@@ -35,7 +35,7 @@
         @endforeach
       </ul>
       <div class="cta-inline">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <span class="num"><a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
       </div>
     </div>

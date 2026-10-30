@@ -21,7 +21,7 @@
       <p>{{ $client->name }} is one of the 15,000+ businesses that run their sales, stock and reporting on myPOS point of sale software.</p>
       <p>Want the same setup for your business? Our team handles installation, data migration, FBR &amp; PRA integration and staff training.</p>
       <div class="btn-row mt-24">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ route('clients.index') }}" class="btn btn-outline">See all clients</a>
       </div>
     </div>

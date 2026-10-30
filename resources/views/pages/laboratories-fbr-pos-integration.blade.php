@@ -13,12 +13,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Laboratories</div>
     <h1 class="reveal">Laboratories FBR POS Integration</h1>
     <p class="lead reveal">Every test, service and payment recorded and reported to FBR and PRA in real time &mdash; built for medical laboratories, diagnostic centers and pathology labs across Pakistan.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -48,7 +49,7 @@
       <p>Our laboratories FBR POS integration service is designed to help registered medical laboratories, diagnostic centers, and pathology labs comply with Pakistan&rsquo;s mandatory digital invoicing and tax reporting requirements. At MyPOS.pk, we provide a secure, healthcare-focused POS solution that ensures every test, service, and payment is accurately recorded and reported to FBR in real time.</p>
       <p>With increased regulatory enforcement by government of Pakistan, FBR Point Of Sale integration for laboratories is essential for labs offering taxable diagnostic and medical services across Pakistan.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -89,7 +90,7 @@
       <span>Lahore</span><span>Islamabad</span><span>Rawalpindi</span><span>Faisalabad</span><span>Multan</span><span>Peshawar</span><span>Punjab-wide</span>
     </div>
     <div class="btn-row" style="margin-top:26px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
@@ -113,7 +114,7 @@
       <p>For labs operating in Punjab, PRA integration service for laboratories is mandatory to report applicable provincial sales tax accurately. The Punjab Revenue Authority closely monitors healthcare service providers, including diagnostic and pathology labs.</p>
       <p>Our unified system combines medical labs PRA integration service with federal reporting, eliminating the need for multiple platforms. With compliant pra integration service for laboratories, medical centres can manage both FBR and PRA obligations through one secure interface.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="link-arrow">About PRA integration &rarr;</a>
       </div>
     </div>
@@ -184,7 +185,7 @@
       </ul>
       <p>Our laboratories FBR POS integration service runs seamlessly in the background, allowing lab staff to focus on patient diagnostics while compliance is handled automatically.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -205,8 +206,8 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing support, updates and documentation by experts.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
 </section>

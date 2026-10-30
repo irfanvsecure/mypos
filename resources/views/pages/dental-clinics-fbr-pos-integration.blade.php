@@ -15,13 +15,14 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <nav class="crumb reveal" aria-label="Breadcrumb"><ol><li><a href="{{ url('/') }}">Home</a></li><li><a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a></li><li><span aria-current="page">Dental Clinics</span></li></ol></nav>
     <div class="eyebrow-line reveal"><span class="bar"></span><span style="color:var(--coral-soft);">FBR &amp; PRA Compliant Dental Clinic POS</span></div>
     <h1 class="reveal">Dental Clinic POS Software with FBR &amp; PRA Integration in Pakistan</h1>
     <p class="lead reveal">Every consultation, procedure, and treatment reported to FBR and PRA automatically &mdash; no manual filing, no separate systems, fully audit-ready.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -80,7 +81,7 @@
     <p style="margin-top:28px; max-width:760px;">Clinics in Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, and across Punjab rely on compliant Point Of Sale systems to stay protected.</p>
     <p style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.15rem; color:var(--navy);">Ready to run a fully compliant dental clinic POS across FBR reporting?</p>
     <div style="margin-top:16px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
@@ -143,7 +144,7 @@
     </div>
     <p style="margin-top:24px; max-width:760px;">Protect your practice with a compliant dental clinic POS from day one.</p>
     <div style="margin-top:18px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Request PRA Integration</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Request PRA Integration</a>
       <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px;" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
@@ -219,15 +220,18 @@
   </div>
 </x-faq>
 
+<x-sales-proof />
+
 <section id="dental-clinics-fbr-pos-integration--final-cta" style="background:var(--paper-2);">
   <div class="wrap">
-    <div class="cta-band reveal">
+    <div class="cta-band cta-band--form reveal">
       <h2>Get Your Dental Clinic POS Compliant Before Penalties Hit.</h2>
       <p>2026 enforcement is active for dental clinics and healthcare providers. Set up FBR &amp; PRA reporting in one visit &mdash; no separate systems, no manual filing.</p>
-      <div>
-        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Call +92 322 476 5528</a>
-        <a href="{{ wa_link() }}" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="margin-left:14px; border-color:rgba(255,255,255,0.35); color:#fff;">Book A Free Demo</a>
+      <x-enquiry-form compact button="Book a Free Demo" />
+      <div class="btn-row cta-alt">
+        <span>Prefer to talk?</span>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>
       </div>
     </div>
   </div>

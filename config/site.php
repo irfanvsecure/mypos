@@ -23,6 +23,27 @@ return [
 
     'enquiry_types' => ['Sales Enquiry', 'Customer Support', 'Technical Assistance', 'FBR / PRA Integration', 'Free Demo'],
 
+    // Pages whose CTA band keeps plain buttons instead of the inline demo form: they already carry the full
+    // contact form, or aren't sales pages. Paths ending in "*" match a prefix.
+    'no_lead_form' => [
+        '', 'thank-you', 'contact', 'about-us', 'reseller', 'tickets', 'support', 'on-call-support', 'downloads', 'download/*',
+        'cookie-policy', 'privacy-policy', 'security-policy', 'support-policy', 'terms-of-service',
+    ],
+
+    // Google reviews shown on the WordPress home page (Trustindex widget) — text kept verbatim.
+    'reviews' => [
+      ['raaj', 'MyPOS Pakistan is a game-changer for my vape shop in Karachi! It offers seamless inventory management, fast transactions, and real-time sales tracking. The user-friendly interface and excellent customer support make it a must-have for any vape business. Highly recommended!'],
+      ['Asad Gaba', 'myPOS has simplified managing my shoe shop with easy sales tracking, inventory management, and quick billing. It’s efficient, user-friendly, and perfect for retail!'],
+      ['Hassan Raza', 'I’ve been using The MyPOS Hospital Management System (HMS) for two months, and it’s a highly efficient, user-friendly solution that improves hospital operations and patient care. The support team is excellent, especially Salman Khan, who ensures everything runs smoothly. Highly recommended!'],
+      ['Fahad Islam', 'As a salon owner, using myPOS.pk has made managing payments effortless. It supports multiple payment methods, integrates smoothly with my system, and offers real-time updates via the mobile app. The secure transactions give me peace of mind, and my clients appreciate the convenience. Highly recommend it for any salon business!'],
+      ['Yousuf Usman', 'We are using my pos as there partner and we have more then 300 Setisfied customer in oman for my pos and they are very happy with the software and there support'],
+      ['Javaid Nasir', 'Its amazing software. It meets our each & every need of business. I m more than satisfied not only withe software but service and gratitude of POS reps. Regards Happy Bhayi'],
+      ['Mubashar Hussain', 'Very nice and cooperative staff sir Khalil and Salman khan thanks for guiding me.mjy apni boutique k leye myPOS SE achha koi software nhi lga'],
+      ['Eaze App', 'I using this software since last three months and it is wonderful. It is very user friendly and the support provided by there team is amazing. I recommend this software to every retailer.'],
+      ['Salman Raza', 'I am using MyPos Its very amazing user friendly software'],
+      ['Faheem Akram', 'Efficient POS software, streamlines transactions, user-friendly interface.'],
+    ],
+
     /*
     | Main navigation — mirrors the WordPress "Main Menu" item-for-item,
     | grouped into dropdowns. `match` = URL prefixes that mark the item active.

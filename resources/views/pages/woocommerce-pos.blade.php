@@ -60,7 +60,7 @@
       <p>WooCommerce on WordPress is a great way to sell online. myPOS is a brilliant in-store point of sale solution. myPOS seamlessly integrates with WooCommerce, giving you central access to all your customers, inventory, product catalog and more.</p>
       <p>Control and manage every aspect of your business, from an all-in-one retail POS solution.</p>
       <div class="cta-inline">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <span class="num"><a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
       </div>
     </div>

@@ -46,7 +46,7 @@
       <p>Your retail business needs a Point of Sale Solution that could adapt to your desires. Our <a href="{{ url('/') }}" style="color:var(--coral-deep); text-decoration:underline;">RetailPro Systems</a> could be very smooth to put into effect and accesses the facts, budget, and stock online from anywhere.</p>
       <p>From inventory management to sizable reporting tools, we provide you with the equipment to run your business without any difficulty.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pricing') }}" class="btn btn-ghost">See Pricing</a>
       </div>
     </div>
@@ -135,7 +135,7 @@
         <h3>See RetailPro on your own counter — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>

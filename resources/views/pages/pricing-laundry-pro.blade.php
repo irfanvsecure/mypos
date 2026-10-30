@@ -86,7 +86,7 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Biller/Permission</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Reports</li>
         </ul>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/laundrypro') }}" class="btn-secondary-link">Download LaundryPro</a>
         <x-cta-proof />
       </div>
@@ -129,7 +129,7 @@
         </ul>
         <div class="btn-row">
           <a href="{{ url('/pricing') }}" class="btn btn-primary">Checkout Our Monthly Subscription Plans</a>
-          <a href="{{ url('/contact') }}#enquiry" class="btn-secondary-link">Not sure which plan fits? Get a free demo</a>
+          <a href="{{ demo_url() }}" class="btn-secondary-link">Not sure which plan fits? Get a free demo</a>
         </div>
       </div>
 

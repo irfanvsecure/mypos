@@ -24,7 +24,7 @@
 <x-page-header title="Accounting Software" eyebrow="MYPOS ACCOUNTING &amp; ERP" crumb="Accounting Software"
   lead="Experience simplified financial management with MyPOS, the best accounting software in Pakistan for small businesses.">
     <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
     <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/pricing') }}" class="btn btn-outline">See Pricing</a>
   </div>
@@ -54,7 +54,7 @@
         <li>As a reliable gateway to success, mypos.pk ensures businesses not only navigate challenges seamlessly but also thrive continuously.</li>
         <li>With a focus on innovation and user-friendly solutions, mypos.pk stands as a key player in facilitating business progress in Pakistan.</li>
       </ul>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -91,7 +91,7 @@
       <p>As Pakistan's leading provider of fast, small-business accounting software, we empower managers with comprehensive yet easy-to-use financial tools.</p>
       <p>MyPOS paves the way for your success through our dedicated accounting solutions. Uncover the confidence that comes with simplified accounting and management. <strong>MyPOS: Your partner in Pakistan for integrated online accounting software.</strong></p>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/fbr-digital-invoicing') }}" class="btn btn-outline">FBR Digital Invoicing</a>
       </div>
     </div>

@@ -26,7 +26,7 @@
     <div class="reveal-right" style="position:sticky; top:110px;">
       <div class="media-frame contain"><img src="{{ asset('uploads/2022/10/3-1.png') }}" alt="FBR POS Integration with myPOS point of sale software" loading="lazy"></div>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Get Free Integration</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Get Free Integration</a>
         <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
       <x-cta-proof tone="light" />

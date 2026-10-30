@@ -37,7 +37,7 @@
       <p>MyPOS optimizes workflows in garment retail stores by automatically generating invoices and tracking payments and accounts receivables. Robust reporting provides real-time visibility into inventory status and sales trends, enabling data-driven decisions.</p>
       <p>The intuitive interface enhances customer experience by quickly processing sales, returns, and loyalty programs. By boosting efficiency, visibility, and service, MyPOS Point of Sale Software takes garment shops to the next level. The all-in-one solution is reliably designed to meet the specific needs of the garment industry.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pricing') }}" class="btn btn-ghost">See Pricing</a>
       </div>
     </div>
@@ -68,7 +68,7 @@
       <h2>MyPOS Software Your Perfect Fit for Garments Store Management</h2>
       <p>MyPOS Garments simplifies operations for Garment businesses. The desktop software seamlessly manages your supply chain, costing, production, inventory, and sales. Key features include supplier, material, brand, and category tracking to optimize sourcing. Create design recipes to calculate material costs and profit margins.</p>
       <p>Inventory, purchasing, and production planning modules give you operational control, while integrated customer analytics provide sales insight. In today's complex fashion industry, growing brands need an integrated POS solution to manage design to sales.</p>
-      <p>MyPOS brings it together on one user-friendly desktop platform with optional FBR integration. Focus on developing, producing, and selling while we streamline your backend needs. <a href="{{ url('/contact') }}#enquiry" style="color:var(--coral-deep); text-decoration:underline; font-weight:600;">Sign up for a demo today.</a></p>
+      <p>MyPOS brings it together on one user-friendly desktop platform with optional FBR integration. Focus on developing, producing, and selling while we streamline your backend needs. <a href="{{ demo_url() }}" style="color:var(--coral-deep); text-decoration:underline; font-weight:600;">Sign up for a demo today.</a></p>
     </div>
   </div>
 </section>
@@ -97,7 +97,7 @@
         <h3>See the garments POS on your own counter — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>

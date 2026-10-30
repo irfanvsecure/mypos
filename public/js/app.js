@@ -1,4 +1,6 @@
 (function(){
+  var scriptSrc=document.currentScript && document.currentScript.src;
+  var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var pages={};
   document.querySelectorAll('.pg').forEach(function(p){pages[p.dataset.page]=p;});
   var navEl=document.querySelector('.nav');
@@ -25,7 +27,7 @@
   },{threshold:0.5});
 
   function observe(root){
-    root.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
+    root.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.reveal-3d').forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
     root.querySelectorAll('.num[data-count],.num[data-decimal]').forEach(function(el){ statIo.observe(el); });
   }
   function fixFaq(root){
@@ -203,6 +205,121 @@
         else { clearTimeout(timer); timer=null; }
       },{threshold:0.4}).observe(demo);
     }
+  }
+
+  var fmtRs=function(n){ return Math.round(n).toLocaleString('en-US'); };
+
+  /* "Get a demo" buttons that pre-fill the page's demo form with what the visitor picked */
+  document.addEventListener('click',function(ev){
+    var btn=ev.target.closest('[data-prefill]'); if(!btn) return;
+    var form=document.getElementById('enquiry'); if(!form) return;
+    ev.preventDefault();
+    var msg=form.querySelector('[name="message"]'); if(msg) msg.value=btn.dataset.prefill;
+    var type=form.querySelector('select[name="type"]');
+    if(type){ [].forEach.call(type.options,function(o){ if(o.value==='Free Demo') type.value=o.value; }); }
+    form.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});
+    form.classList.remove('is-pulse'); void form.offsetWidth; form.classList.add('is-pulse');
+    var first=form.querySelector('[name="name"]'); if(first) setTimeout(function(){ first.focus({preventScroll:true}); },reduceMotion?0:600);
+  });
+
+  /* Savings calculator */
+  var calc=document.querySelector('[data-calc]');
+  if(calc){
+    var calcRoot=calc.closest('section');
+    var out=function(k,v){ calcRoot.querySelectorAll('[data-out="'+k+'"]').forEach(function(e){ e.textContent=v; }); };
+    var val=function(k){ return parseFloat(calc.querySelector('[data-in="'+k+'"]').value); };
+    var shown=0;
+    var runCalc=function(){
+      var sales=val('sales'), staff=val('staff'), hours=val('hours'), wage=val('wage');
+      var time=staff*hours*26*wage*0.6, leak=sales*0.015, total=time+leak;
+      out('sales','Rs '+fmtRs(sales)); out('staff',staff); out('hours',hours); out('wage','Rs '+fmtRs(wage));
+      out('time',fmtRs(time)); out('leak',fmtRs(leak)); out('roi',Math.max(1,Math.floor(total/2000))+'×');
+      var from=shown, t0=null; shown=total;
+      if(reduceMotion){ out('total',fmtRs(total)); return; }
+      requestAnimationFrame(function f(t){ if(!t0) t0=t; var p=Math.min(1,(t-t0)/500); out('total',fmtRs(from+(total-from)*(1-Math.pow(1-p,3)))); if(p<1) requestAnimationFrame(f); });
+    };
+    calc.addEventListener('input',runCalc); runCalc();
+  }
+
+  /* One-minute price builder (prices mirror the /pricing and /one-time-pricing pages) */
+  var bld=document.querySelector('[data-builder]');
+  if(bld){
+    var steps=[].slice.call(bld.querySelectorAll('.bld-step')), dots=[].slice.call(bld.querySelectorAll('.bld-steps li'));
+    var back=bld.querySelector('[data-bld-back]'), next=bld.querySelector('[data-bld-next]'), at=0;
+    var pick=function(n){ var c=bld.querySelector('[name="'+n+'"]:checked'); return c ? c.value : ''; };
+    var quote=function(){
+      var mods=[].slice.call(bld.querySelectorAll('[name="bld_mod"]:checked'));
+      var business=pick('bld_business'), branches=pick('bld_branches'), plan=pick('bld_plan');
+      var names=mods.map(function(m){ return m.dataset.name; }), q={business:business, branches:branches, mods:names};
+      var wantsFbr=mods.some(function(m){ return /^fbr/.test(m.value); });
+      if(branches!=='1' || (plan==='onetime' && wantsFbr)){
+        q.price='Custom quote'; q.per=''; q.plan='Premium — multi-location / FBR setup, quoted for your business';
+      } else if(plan==='monthly'){
+        var sum=2000; mods.forEach(function(m){ sum+=+m.dataset.price; });
+        q.price='Rs '+fmtRs(sum); q.per='/month'; q.plan='Standard monthly plan'+(names.length?' + '+names.length+' add-on'+(names.length>1?'s':''):'')+' · first 14 days free';
+      } else {
+        var std=mods.some(function(m){ return /accounting|whatsapp|mobile|instalment|manufacturing|woocommerce|catalogue|offline/.test(m.value); });
+        q.price=std?'Rs 36,500':'Rs 24,000'; q.per=' one-time'; q.plan=(std?'Standard':'Basic')+' one-time licence · single location';
+      }
+      return q;
+    };
+    var paint=function(){
+      var q=quote();
+      bld.querySelector('[data-bld-price]').textContent=q.price;
+      bld.querySelector('[data-bld-per]').textContent=q.per;
+      bld.querySelector('[data-bld-plan]').textContent=q.plan;
+      var lines=['Business: '+q.business,'Branches: '+q.branches].concat(q.mods.length?['Add-ons: '+q.mods.join(', ')]:[]);
+      bld.querySelector('[data-bld-summary]').innerHTML=lines.map(function(l){ return '<li>'+l.replace(/</g,'&lt;')+'</li>'; }).join('');
+      var text='Price builder: '+lines.join(' | ')+' | Estimate: '+q.price+q.per+' ('+q.plan+')';
+      bld.querySelector('[data-bld-message]').value=text;
+      var wa=bld.querySelector('[data-bld-wa]'); wa.href=wa.href.replace(/text=[^&]*/,'text='+encodeURIComponent('Hi myPOS, please confirm this quote. '+text));
+    };
+    var go=function(i){
+      at=Math.max(0,Math.min(steps.length-1,i));
+      steps.forEach(function(s,k){ s.classList.toggle('on',k===at); });
+      dots.forEach(function(d,k){ d.classList.toggle('on',k<=at); });
+      back.hidden=at===0; next.hidden=at===steps.length-1;
+      paint();
+    };
+    bld.classList.add('is-js');
+    back.addEventListener('click',function(){ go(at-1); });
+    next.addEventListener('click',function(){ go(at+1); });
+    bld.addEventListener('change',paint);
+    bld.addEventListener('submit',paint);
+    go(0);
+  }
+
+  /* 3D tilt on cards that follow the pointer (mouse only) */
+  if(!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    document.querySelectorAll('[data-tilt]').forEach(function(el){
+      el.addEventListener('pointermove',function(e){
+        var r=el.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
+        el.style.setProperty('--rx',(-y*8).toFixed(2)+'deg'); el.style.setProperty('--ry',(x*10).toFixed(2)+'deg');
+        el.style.setProperty('--mx',((x+0.5)*100).toFixed(1)+'%'); el.style.setProperty('--my',((y+0.5)*100).toFixed(1)+'%');
+      });
+      el.addEventListener('pointerleave',function(){ el.style.setProperty('--rx','0deg'); el.style.setProperty('--ry','0deg'); });
+    });
+  }
+
+  /* Scroll progress bar */
+  var bar=document.querySelector('[data-progress]');
+  if(bar){
+    var pr=function(){ var h=document.documentElement; bar.style.transform='scaleX('+(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)).toFixed(4)+')'; };
+    window.addEventListener('scroll',function(){ requestAnimationFrame(pr); },{passive:true}); pr();
+  }
+
+  /* Offer bar: stays dismissed for this visitor */
+  var offer=document.querySelector('[data-offer]');
+  if(offer){
+    try{ if(localStorage.getItem('offerClosed')==='1') offer.hidden=true; }catch(e){}
+    offer.querySelector('[data-offer-close]').addEventListener('click',function(){ offer.hidden=true; try{ localStorage.setItem('offerClosed','1'); }catch(e){} });
+  }
+
+  /* Cinematic 3D hero backdrop: loaded after the page settles, skipped for reduced motion or no WebGL */
+  var host3d=document.querySelector('[data-hero3d]');
+  if(host3d && scriptSrc && !reduceMotion && window.WebGLRenderingContext && (function(){ try{ return !!document.createElement('canvas').getContext('webgl2'); }catch(e){ return false; } })()){
+    var load3d=function(){ import(new URL('hero3d.js',scriptSrc).href.replace(/\?.*$/,'')+(scriptSrc.match(/\?.*$/)||[''])[0]).then(function(m){ m.mount(host3d); }).catch(function(){}); };
+    if(document.readyState==='complete') setTimeout(load3d,200); else window.addEventListener('load',function(){ setTimeout(load3d,200); });
   }
 
   /* Page init: each Laravel route renders one .pg; #section scrolls under the sticky nav */

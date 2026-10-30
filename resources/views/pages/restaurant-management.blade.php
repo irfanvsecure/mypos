@@ -35,7 +35,7 @@
       <p>RestroPro is a complete solution tailored for restaurant businesses, designed to simplify daily operations and help increase your revenue. It's more flexible and affordable than other restaurant management systems out there. With RestroPro, everything from taking orders to processing payments is streamlined, making it easier for you to focus on what matters most—delivering great service.</p>
       <p>If you're in need of a <strong>Restaurant Point of Sale (POS)</strong> system, POS software, or a full <strong>restaurant management software</strong>, RestroPro has it all. Our system is built to handle the needs of any restaurant, whether you're looking for advanced <strong>Restaurant POS system software</strong> or just a simple, effective POS program. Plus, you can access it on both web and mobile, making it convenient and adaptable to how you run your business.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/restropro') }}" class="btn btn-ghost">Download Now</a>
       </div>
     </div>
@@ -85,7 +85,7 @@
         <h2>myPOS RestroPro accomplished top-notch notoriety as Pakistan's Best Restaurant Management Software.</h2>
         <p>myPOS RestroPro has the consideration of eatery proprietors all around the world.</p>
         <p>Numerous clients from the USA, UAE, Canada, UK, Europe, Pakistan are dealing with their eatery organizations utilizing this Software. So we have made it top-notch so the client from anyplace in this world can utilize it.</p>
-        <div class="btn-row" style="margin-top:28px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <div class="btn-row" style="margin-top:28px;"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/restropro') }}" class="btn btn-outline">Download free trial</a></div>
       </div>
       <div class="media-frame reveal-right">
@@ -155,7 +155,7 @@
           <li>Online order notification</li>
           <li>Different/Easy Payment Modes</li>
         </ul>
-        <div class="btn-row" style="margin-top:28px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <div class="btn-row" style="margin-top:28px;"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/restropro') }}" class="btn btn-outline">Download free trial</a></div>
       </div>
       <div class="media-frame reveal-right">
@@ -177,7 +177,7 @@
           <li>Complete request</li>
           <li>Drop request</li>
         </ul>
-        <div class="btn-row" style="margin-top:28px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <div class="btn-row" style="margin-top:28px;"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/restropro') }}" class="btn btn-outline">Download free trial</a></div>
       </div>
     </div>
@@ -207,7 +207,7 @@
         <h3>See RestroPro on your own floor — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>
@@ -226,7 +226,7 @@
           <li>Kitchen app</li>
         </ul>
         <p>To learn more about this software please see the <a href="{{ url('/restaurant-management') }}#apps" style="color:var(--coral-deep); text-decoration:underline;">App Section</a></p>
-        <div class="btn-row" style="margin-top:28px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <div class="btn-row" style="margin-top:28px;"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/restropro') }}" class="btn btn-outline">Download free trial</a></div>
       </div>
       <div class="media-frame reveal-right">

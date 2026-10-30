@@ -24,7 +24,7 @@
 <meta name="robots" content="{{ $robots }}" />
 <link rel="canonical" href="{{ $canonical }}" />
 <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
-<meta name="theme-color" content="#154A73" />
+<meta name="theme-color" content="#0F3B63" />
 
 <meta property="og:type" content="@yield('og_type', 'website')" />
 <meta property="og:site_name" content="myPOS" />
@@ -75,6 +75,17 @@ src="https://www.facebook.com/tr?id=1658044839300375&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
+@php
+    // Content renders before the layout, so we know here whether the page carries a demo form to scroll to.
+    $demoHref = config('site.form_rendered') ? '#enquiry' : url('/contact') . '#enquiry';
+@endphp
+<div class="scroll-progress" aria-hidden="true"><i data-progress></i></div>
+<div class="offer-bar" data-offer>
+  <div class="wrap">
+    <p><span class="ob-tag">FREE</span>FBR &amp; PRA setup + staff training with every new myPOS install. <a href="{{ $demoHref }}">Book your free demo →</a></p>
+    <button type="button" class="ob-close" data-offer-close aria-label="Dismiss offer">&times;</button>
+  </div>
+</div>
 @include('partials.nav')
 <main id="app">
 <div class="pg" data-page="@yield('page')">
@@ -91,7 +102,7 @@ src="https://www.facebook.com/tr?id=1658044839300375&ev=PageView&noscript=1"
   <a href="tel:{{ config('site.phone_raw') }}" class="sc-call">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="currentColor" stroke-width="1.3"/></svg>Call</a>
   <a href="{{ wa_link() }}" class="sc-wa" target="_blank" rel="noopener">WhatsApp</a>
-  <a href="{{ url('/contact') }}#enquiry" class="sc-demo">Free Demo</a>
+  <a href="{{ $demoHref }}" class="sc-demo">Free Demo</a>
 </div>
 
 <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>

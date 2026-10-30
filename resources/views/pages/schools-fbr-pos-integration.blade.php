@@ -13,12 +13,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Schools</div>
     <h1 class="reveal">Schools FBR POS Integration</h1>
     <p class="lead reveal">FBR &amp; PRA compliant fee and income documentation for private schools, academies, colleges and school chains &mdash; recorded digitally, audit-ready, without disrupting academic operations.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -56,7 +57,7 @@
       <p>MyPOS.pk provides professional and compliant school FBR POS integration services for private schools, academies, colleges, and educational institutions across Pakistan. Our solutions help schools manage structured income documentation, comply with applicable FBR and PRA requirements, and maintain transparent financial records without disrupting academic operations.</p>
       <p>Whether your institution requires mandatory Point Of Sale compliance for taxable activities or needs a reliable system for income reporting, tax filing, and audits, our company delivers secure and scalable solutions designed specifically for the education sector.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -91,7 +92,7 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:760px;">Our company ensures compliance without adding operational burden to school administration.</p>
     <div class="btn-row" style="margin-top:20px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/pra-integration') }}" class="link-arrow">How PRA integration works &rarr;</a>
     </div>
   </div>
@@ -138,8 +139,8 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><div class="bc-ic">{!! $chk !!}</div><h3>Secure &amp; Scalable:</h3><p>Works for single schools and multi-branch institutions.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
 </section>
@@ -189,7 +190,7 @@
       </ul>
       <p>Our school FBR POS integration ensures institutions remain protected and prepared.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -210,7 +211,7 @@
       <div class="step-tile reveal-scale" style="--i:2"><div class="st-num">03</div><div><h4>Activity-based income</h4><p>Audit-ready financial summaries for management.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>

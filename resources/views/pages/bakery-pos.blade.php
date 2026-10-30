@@ -35,7 +35,7 @@
       <p>At myPOS.pk, we're dedicated to revolutionizing bakery management through our advanced software solutions. Our Bakery Inventory Management System ensures simplified efficiency in tracking stock levels and managing orders, while our Bakery Point of Sale (POS) software enhances customer experience and boosts sales.</p>
       <p>Tailored to meet your bakery's unique needs, our Management Software provides a customizable suite of tools for seamless operations. With innovation at its core, myPOS.pk eliminates manual processes, increasing productivity and serving as the trusted software for bakery businesses. Upgrade your bakery with myPOS.pk, where technology meets growth for unparalleled success.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pricing') }}" class="btn btn-ghost">See Pricing</a>
       </div>
     </div>
@@ -95,7 +95,7 @@
         <h3>See the bakery POS on your own counter — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>

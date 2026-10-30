@@ -96,7 +96,7 @@
         <h3>Questions about this policy?</h3>
         <p style="color:var(--text-mute-ink); margin-bottom:20px;">Our team is happy to help — call, WhatsApp or email us at <a href="mailto:{{ config('site.email') }}" style="color:var(--coral-deep);">{{ config('site.email') }}</a>.</p>
         <div class="btn-row">
-          <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary btn-sm">Contact Us</a>
+          <a href="{{ demo_url() }}" class="btn btn-primary btn-sm">Contact Us</a>
           <a href="{{ wa_link() }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp</a>
           <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline btn-sm">Call {{ config('site.phone') }}</a>
         </div>

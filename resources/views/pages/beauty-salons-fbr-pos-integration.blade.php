@@ -13,12 +13,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Beauty Salons</div>
     <h1 class="reveal">Beauty Salons FBR POS Integration</h1>
     <p class="lead reveal">Every hair, skincare, nails, spa and product sale recorded and reported for FBR &amp; PRA &mdash; built for salons, parlors, spas and wellness centers, without affecting client experience.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -56,7 +57,7 @@
       <p>We provide professional and reliable beauty salons FBR POS integration for registered and taxable salons, parlors, and cosmetic service providers across Pakistan, with special focus on Punjab-based businesses. Our solutions help salons maintain structured income documentation, comply with FBR and PRA regulations, and ensure transparent financial reporting without disrupting daily operations.</p>
       <p>Whether you operate a single salon, a chain of beauty parlors, or multi-service wellness centers, our company delivers scalable POS solutions built specifically for the beauty and wellness sector.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -85,7 +86,7 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:760px;">Our solutions ensure regulatory compliance without affecting client experience.</p>
     <div class="btn-row" style="margin-top:20px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/salon-management') }}" class="link-arrow">Explore salon management software &rarr;</a>
     </div>
   </div>
@@ -105,7 +106,7 @@
       </div>
       <p>We help salon owners manage beauty salons PRA integration efficiently while aligning all records with PRA and FBR requirements.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="link-arrow">About PRA integration &rarr;</a>
       </div>
     </div>
@@ -178,8 +179,8 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><div class="bc-ic">{!! $chk !!}</div><h3>Secure &amp; Scalable Systems:</h3><p>Works for single salons and multi-branch chains.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
 </section>
@@ -199,7 +200,7 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Support</h4><p>Ongoing compliance support.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>

@@ -35,7 +35,7 @@
       <p>MyPOS offers POS systems designed specifically for grocery stores and supermarkets. We understand the unique challenges of food retail environments, such as high transaction volumes, perishable stock control, and promotion/membership tracking.</p>
       <p>Our POS software provides owners/managers with robust reporting and analytics to optimize inventory ordering, shelf layouts, and storage. An integrated scale simplifies the handling of loose produce. Effortless FBR and supplier synchronizations reduce accounting headaches so that you can evaluate profitability more easily.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pricing') }}" class="btn btn-ghost">See Pricing</a>
       </div>
     </div>
@@ -94,7 +94,7 @@
         <h3>See the supermarket POS on your own lane — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>

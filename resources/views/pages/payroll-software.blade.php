@@ -24,7 +24,7 @@
 <x-page-header title="Payroll Management Software" eyebrow="MYPOS HR &amp; PAYROLL" crumb="Payroll Software"
   lead="MyPOS offers an integrated HR payroll management system to streamline the payroll process for businesses in Pakistan.">
     <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
     <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="#payroll-software--download" class="btn btn-outline">Free Download</a>
   </div>
@@ -52,7 +52,7 @@
       <p>Our goal is to help Pakistani companies improve workplace and business productivity through our HR payroll software.</p>
       <p>By automating and integrating key HR processes like payroll, leave, and attendance, we allow managers and employees to focus less on administrative tasks and more on strategic priorities.</p>
       <p>With features designed specifically for the Pakistani market, MyPOS strives to be an HR software partner that grows along with your organization. Our commitment is to keep innovating new ways to simplify payroll and HR management for businesses of all sizes and industries nationwide.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -92,7 +92,7 @@
       </ul>
       <p>With MyPOS payroll software, save time and costs while empowering employees through self-service and promoting productivity across your organization. Contact our team today to modernize operations and uncover new opportunities for your evolving business. <strong>Sign up now for a free demo.</strong></p>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/employee-management') }}" class="btn btn-outline">Employee Management</a>
       </div>
     </div>
@@ -124,7 +124,7 @@
       <p>Enhance workforce efficiency with our Biometric Attendance and Payroll Management System. Top-notch payroll software in Pakistan, ensuring seamless attendance and payroll integration.</p>
       <div class="btn-row" style="margin-top:22px;">
         <a href="{{ url('/downloads') }}" class="btn btn-primary">Go to Downloads</a>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline">Ask for a Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-outline">Ask for a Demo</a>
       </div>
     </div>
     <div class="download-card reveal-right">

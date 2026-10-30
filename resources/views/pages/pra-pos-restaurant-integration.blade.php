@@ -13,13 +13,14 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/pra-integration') }}">PRA Integration</a> &nbsp;/&nbsp; Restaurants</div>
     <span class="eyebrow-pill reveal">Punjab Revenue Authority</span>
     <h1 class="reveal">PRA POS Restaurant Integration in Punjab</h1>
     <p class="lead reveal">myPOS delivers PRA POS restaurant integration for dine-in, takeaway, and delivery billing, with automatic tax reporting for Punjab restaurants.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="#how-it-works" class="btn btn-outline">Learn How It Works &#9662;</a>
     </div>
@@ -52,7 +53,7 @@
       <p>Without this, restaurants end up running two separate processes: one for actually billing the customer, and another for manually reporting sales to PRA later. That second process is where most compliance problems start, since it depends on someone remembering to do it correctly, every single day, across every shift.</p>
       <div class="btn-row" style="margin-top:26px;">
         <a href="{{ $tel }}" class="btn btn-primary">Book a Free Demo</a>
-        <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-ghost">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -145,7 +146,7 @@
       <div class="benefit-card reveal-scale" style="--i:3;"><div class="bc-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="10" rx="1.5" stroke="#fff" stroke-width="1.4"/><path d="M7 17h6M10 14v3" stroke="#fff" stroke-width="1.4"/></svg></div><h3>Unified Platform</h3><p>Federal and provincial reporting on one system &mdash; no separate software per authority.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <a href="{{ $tel }}" class="btn btn-ghost">Call {{ config('site.phone') }}</a>
     </div>
@@ -207,16 +208,19 @@
   </div>
 </x-faq>
 
+<x-sales-proof />
+
 <section class="section-tight bg-paper2" id="get-started">
   <div class="wrap">
-    <div class="cta-band reveal">
+    <div class="cta-band cta-band--form reveal">
       <div class="eyebrow-line center" style="justify-content:center;"><span class="bar"></span><span style="color:var(--coral-soft);">Get Started Today</span></div>
       <h2>Make Your Restaurant PRA Compliant</h2>
       <p>Setup takes a few days. Your staff won't notice a difference at the counter &mdash; but PRA will notice the difference in your compliance.</p>
-      <div class="btn-row" style="justify-content:center;">
-        <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Request a Demo &rarr;</a>
-        <a href="{{ $tel }}" class="btn btn-outline">&#9742; Call Us Now</a>
-        <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      <x-enquiry-form compact button="Request a Demo" />
+      <div class="btn-row cta-alt">
+        <span>Prefer to talk?</span>
+        <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>
       </div>
     </div>
   </div>

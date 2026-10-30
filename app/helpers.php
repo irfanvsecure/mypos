@@ -13,6 +13,7 @@ if (! function_exists('wa_link')) {
             $path === '' => 'Hi myPOS, I would like a free demo of your POS software.',
             str_starts_with($path, 'download') => "Hi myPOS, I need help installing {$topic}.",
             in_array($path, ['support', 'tickets'], true) => 'Hi myPOS, I need help with my POS.',
+            $path === 'thank-you' => 'Hi myPOS, I just sent an enquiry on your website.',
             default => "Hi myPOS, I would like a free demo of {$topic}.",
         };
 
@@ -77,5 +78,33 @@ if (! function_exists('wa_topic')) {
         $slug = $path === '' ? 'myPOS' : str_replace(['-', '/'], ' ', $path);
 
         return trim($slug);
+    }
+}
+
+if (! function_exists('has_lead_form')) {
+    /**
+     * Whether the current page's CTA band shows the inline demo form (see config('site.no_lead_form')).
+     */
+    function has_lead_form(): bool
+    {
+        $path = trim(request()->path(), '/');
+
+        foreach (config('site.no_lead_form') as $skip) {
+            if ($path === $skip || (str_ends_with($skip, '*') && str_starts_with($path, rtrim($skip, '*')))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+if (! function_exists('demo_url')) {
+    /**
+     * Where "Book a Free Demo" buttons point: the form on this page when it has one, else the contact page.
+     */
+    function demo_url(): string
+    {
+        return has_lead_form() ? '#enquiry' : url('/contact') . '#enquiry';
     }
 }

@@ -18,12 +18,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Clinics</div>
     <h1 class="reveal">Clinics FBR POS Integration</h1>
     <p class="lead reveal">FBR &amp; PRA compliant billing for medical clinics, diagnostic centers and healthcare facilities &mdash; structured income records, audit-ready and digitally managed.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -53,7 +54,7 @@
       <p>We provide professional clinics FBR POS integration in Pakistan to help medical clinics, diagnostic centers, and healthcare facilities maintain proper income documentation, tax reporting, and regulatory compliance. Our solutions are designed for clinics that require structured billing, transparent income records, and smooth coordination with FBR and Punjab Revenue Authority (PRA) systems for income filing and audit readiness.</p>
       <p>Whether you operate a dental clinic, diagnostic lab, aesthetic clinic, or multi-specialty medical center, our company ensures your clinic&rsquo;s financial records remain organized, compliant, and digitally managed.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
@@ -117,7 +118,7 @@
       </div>
       <p>Our clinics FBR POS integration solutions help medical practices focus on patient care while we manage documentation and reporting needs.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
@@ -141,7 +142,7 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><h3>&#10004; Custom Setup for Medical Practices:</h3><p>We configure POS and invoicing workflows based on clinic services, consultation fees, procedures, and lab services.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
     </div>
   </div>
 </section>
@@ -191,7 +192,7 @@
       <div class="benefit-row reveal" style="--i:3"><div class="bn">04</div><div><h3 style="font-size:1rem; margin-bottom:4px;">Go-Live:</h3><p>Your clinic begins issuing compliant, digital receipts that patients can verify via the Tax Asaan App.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
@@ -225,8 +226,8 @@
       <p>If you operate a clinic anywhere in Pakistan, our clinics PRA integration and clinics FBR POS integration services provide compliant, stress-free setup with expert guidance from consultation to deployment. Contact us today for system setup, compliance support, or professional consultation.</p>
     </div>
     <div class="btn-row reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-ghost">Contact Us</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-ghost">Contact Us</a>
     </div>
   </div>
 </section>

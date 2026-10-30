@@ -10,7 +10,7 @@
         <p>WhatsApp reply in minutes. No obligation.</p>
       </div>
       <div class="btn-row">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <x-cta-proof tone="light" />

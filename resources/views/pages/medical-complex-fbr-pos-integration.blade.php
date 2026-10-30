@@ -13,12 +13,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Medical Complex</div>
     <h1 class="reveal">Medical Complex FBR POS Integration</h1>
     <p class="lead reveal">One regulation-ready POS for every department under one roof &mdash; OPD, IPD, diagnostics, pharmacy and procedures reported for FBR &amp; PRA, without disrupting clinical operations.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -48,7 +49,7 @@
       <p>At MyPOS.pk, we provide a strong and healthcare-focused medical complex FBR POS integration service for multi-specialty medical complexes across Pakistan. Our solutions are designed to help medical complexes maintain structured income documentation, meet applicable FBR and PRA requirements, and ensure transparent financial reporting without disrupting clinical operations.</p>
       <p>Whether your medical complex requires mandatory POS compliance for taxable services or needs a secure system for income reporting, tax filing, and audits, our company delivers scalable, regulation-ready POS solutions built specifically for healthcare environments.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ $wa }}" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
       </div>
     </div>
@@ -86,7 +87,7 @@
     </div>
     <p class="reveal" style="margin-top:28px; max-width:760px;">Our company ensures regulatory alignment while allowing medical teams to focus on patient care.</p>
     <div class="btn-row" style="margin-top:20px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ url('/fbr-pos-integration') }}" class="link-arrow">How FBR POS integration works &rarr;</a>
     </div>
   </div>
@@ -114,7 +115,7 @@
       </div>
       <p>We help healthcare providers manage medical complex PRA integration smoothly while aligning records with their requirements.</p>
       <div class="btn-row" style="margin-top:26px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="link-arrow">About PRA integration &rarr;</a>
       </div>
     </div>
@@ -184,8 +185,8 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><div class="bc-ic">{!! $chk !!}</div><h3>Secure &amp; Scalable Systems:</h3><p>Works for single-location and large multi-branch medical complexes.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="{{ url('/contact#enquiry') }}" class="btn btn-ghost">Send an Enquiry</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-ghost">Send an Enquiry</a>
     </div>
   </div>
 </section>
@@ -206,7 +207,7 @@
       <div class="step-tile reveal-scale" style="--i:3"><div class="st-num">04</div><div><h4>Manage</h4><p>Documentation, updates and regulatory guidance.</p></div></div>
     </div>
     <div class="btn-row reveal" style="margin-top:30px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ $wa }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     </div>
   </div>

@@ -45,7 +45,7 @@
       <p>Whether overseeing Linen Shipping and Receiving, optimizing routes, handling billing and invoicing, or managing clients, myPOS caters to all your operational needs. Experience the convenience of myPOS, now seamlessly integrated with FBR, offering 24-hour phone support, a user-friendly learning system, extensive customization options, and a straightforward free trial.</p>
       <p>Simplify the initiation process and revolutionize your laundry operations effortlessly with myPOS.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/laundrypro') }}" class="btn btn-ghost">Download Free Trial</a>
       </div>
     </div>
@@ -104,7 +104,7 @@
         <h3>See LaundryPro on your own counter — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>

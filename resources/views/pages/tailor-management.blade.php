@@ -41,7 +41,7 @@
 <x-page-header title="Tailor Management Software" eyebrow="MYPOS TAILORPRO" crumb="Tailor Management"
   lead="Manage measurements, orders, delivery dates and payments in one place &mdash; TailorPro is the tailoring shop POS built for tailors, fabric shops and boutiques across Pakistan.">
     <div class="btn-row reveal" style="margin-top:26px;">
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
     <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
     <a href="{{ url('/download/tailorpro') }}" class="btn btn-outline">Download TailorPro</a>
   </div>
@@ -68,7 +68,7 @@
       <p>MyPOS TailorPro is the most effective and fully advanced tailor management system, which covers all the activities of a tailor-related business.</p>
       <p>It will help your business grow faster, and it has never been easier to manage your tailor workload and pending jobs with our tailoring shop management software. Our Tailoring Point of Sale solution helps you manage customers efficiently, providing advance alerts regarding order delivery, which aids in growing your business and increasing sales.</p>
       <p>Whether you need a tailor software solution or are looking for software for tailors, our system provides everything you need. Plus, with our comprehensive booking system, you can enjoy a headache-free experience and take your business a step ahead of the competition. Download our tailoring shop management software free and see how it can transform your business.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><a href="{{ url('/pricing-tailorpro') }}" class="link-arrow" style="margin-top:0;">See TailorPro pricing &rarr;</a></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><a href="{{ url('/pricing-tailorpro') }}" class="link-arrow" style="margin-top:0;">See TailorPro pricing &rarr;</a></div>
     </div>
   </div>
 </section>
@@ -89,7 +89,7 @@
         </div>
       @endforeach
     </div>
-    <div class="cta-inline reveal"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+    <div class="cta-inline reveal"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
   </div>
 </section>
 
@@ -103,7 +103,7 @@
       <p>Generate quotes, orders, and invoices with ease, while keeping your inventory synchronized in real-time across checkout and stock rooms. Whether you're managing fabric rolls or tracking readymade garment sales, our tailor shop management software optimizes business operations for tailor and fabric shops alike.</p>
       <p><strong>Ready to transform your business? Download tailor shop management software today and experience streamlined business management tailored to your needs!</strong></p>
       <div class="btn-row" style="margin-top:22px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/tailorpro') }}" class="btn-secondary-link">Download TailorPro</a>
         <a href="{{ url('/fbr-pos-integration') }}" class="btn btn-outline">FBR POS Integration</a>
       </div>

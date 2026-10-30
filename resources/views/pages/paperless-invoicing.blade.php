@@ -38,7 +38,7 @@
         <a href="{{ url('/pricing-laundrypro') }}">Laundry</a>
       </div>
       <div class="cta-inline">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <span class="num"><a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span>
       </div>
     </div>
@@ -62,7 +62,7 @@
       @endforeach
     </div>
     <div class="cta-inline">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Go Paperless Today</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Go Paperless Today</a>
       <a href="{{ url('/fbr-digital-invoicing') }}" class="link-arrow">FBR Digital Invoicing →</a>
     </div>
   </div>

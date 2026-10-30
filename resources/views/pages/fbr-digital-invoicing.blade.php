@@ -14,7 +14,7 @@
       <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2.5c1 0 2 .3 2 1.2 0 .8-.7 1-.7 1.7 0 1.3 2.3 3.6 3.6 3.6.7 0 .9-.7 1.7-.7.9 0 1.2 1 1.2 2 0 1-1.3 2.2-2.3 2.2C6 12.5 3 9.5 2.8 7 2.7 5.9 2 4.9 2 4c0-1 .4-1.5 1-1.5z" stroke="#fff" stroke-width="1.2"/></svg></div>
       <div><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--text-on-dark);">{{ config('site.phone') }} &mdash; Call us anytime</a><div class="phone-sub">Free demo of FBR digital invoicing. We usually reply in minutes.</div></div>
     </div>
-    <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+    <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
     <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
   </div>
   <x-cta-proof />
@@ -30,7 +30,7 @@
       <h2>Stay Compliant with Pakistan&rsquo;s FBR Digital Invoicing Requirements</h2>
       <p>As Pakistan moves toward mandatory real-time tax reporting, businesses can no longer rely on manual invoicing processes. The introduction of FBR Digital Invoicing has transformed how companies generate, validate and report sales invoices to the Federal Board of Revenue (FBR).</p>
       <p>Whether you operate a retail chain, manufacturing company, distribution business, e-commerce store or service-based organization, adopting an FBR Digital Invoicing Software solution is essential to remain compliant, avoid penalties, and streamline operations.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -43,7 +43,7 @@
       <p>FBR Digital Invoicing is a government mandated electronic invoicing framework that enables businesses to report sales invoices directly to FBR in real time. Instead of manually preparing records and submitting tax information later, invoices are validated and transmitted instantly through FBR-approved APIs.</p>
       <p>The objective of Digital Invoicing FBR regulations is to increase transparency, reduce tax fraud, improve documentation and create a fully digital tax ecosystem for businesses operating in Pakistan.</p>
       <p>With the right software solution, companies can automate the entire invoicing lifecycle while maintaining full compliance with evolving FBR requirements.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="media-frame reveal-right">
       <img src="{{ asset('uploads/2026/05/FBR-Digital-Invoicing-2.jpg') }}" alt="What is FBR Digital Invoicing" width="1060" height="1060" loading="lazy">
@@ -118,7 +118,7 @@
         <li>Enhanced operational efficiency</li>
       </ul>
       <p>By automating compliance workflows, businesses can focus on growth while ensuring every transaction is properly documented and reported.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -140,7 +140,7 @@
         <span>SMEs and startups</span>
       </div>
       <p>Whether you process hundreds or thousands of invoices each month, our solution scales with your business requirements.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
     <div class="media-frame reveal-right">
       <img src="{{ asset('uploads/2025/06/2109.i607.018.S.m012.c12.fintech-isometric-icons-scaled.jpg') }}" alt="Businesses that benefit from FBR digital invoicing software" width="2560" height="2560" loading="lazy">
@@ -198,7 +198,7 @@
       <p>Businesses across Pakistan trust our solution because it combines compliance, automation, security and ease of use in a single platform.</p>
       <p>With real-time FBR connectivity, automated tax calculations, bulk invoice processing, cloud accessibility and flawless software integration, our FBR Digital Invoicing System empowers organizations to modernize their invoicing operations while meeting regulatory requirements with confidence.</p>
       <p>Whether you&rsquo;re preparing for mandatory compliance or looking to improve operational efficiency, our platform provides everything you need to automate invoicing and stay ahead of regulatory changes.</p>
-      <div class="cta-inline"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
+      <div class="cta-inline"><a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a><span class="num">or call <a href="tel:{{ config('site.phone_raw') }}" style="color:inherit; text-decoration:underline;">{{ config('site.phone') }}</a></span></div>
     </div>
   </div>
 </section>
@@ -227,7 +227,7 @@
       <p>Book a free demo today and discover how our platform can help you automate invoice submission, improve tax compliance, reduce administrative workload, and streamline your business operations through a powerful Digital Invoicing FBR solution.</p>
       <div class="btn-row" style="justify-content:center;">
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-primary">Contact Us &mdash; {{ config('site.phone') }}</a>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">Book a Free Demo</a>
       </div>
     </div>
   </div>

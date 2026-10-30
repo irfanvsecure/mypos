@@ -14,7 +14,7 @@ class EnquiryController extends Controller
     {
         // Honeypot: bots fill the hidden "website" field — pretend success, store nothing.
         if ($request->filled('website')) {
-            return back()->with('enquiry_ok', 'We have received your enquiry.');
+            return redirect()->route('thank-you');
         }
 
         $data = $request->validate([
@@ -40,6 +40,7 @@ class EnquiryController extends Controller
             Log::warning('Enquiry email failed: ' . $e->getMessage(), ['lead' => $lead->id]);
         }
 
-        return back()->with('enquiry_ok', 'Your enquiry has been received — our team will contact you shortly. For a faster reply, message us on WhatsApp at ' . config('site.phone') . '.');
+        // The "lead" flash fires the Meta Pixel Lead event once; a refresh or direct visit won't count again.
+        return redirect()->route('thank-you')->with('lead', true);
     }
 }

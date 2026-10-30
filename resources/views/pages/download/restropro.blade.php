@@ -70,7 +70,7 @@ unset($others[$p['key']]);
     </div>
 
     <div class="download-card reveal-right" style="position:sticky; top:100px;">
-      <div style="align-self:flex-start; font-size:0.68rem; font-weight:700; color:var(--coral-deep); background:rgba(139,58,31,0.1); padding:5px 12px; border-radius:999px;">FREE VERSION</div>
+      <div style="align-self:flex-start; font-size:0.68rem; font-weight:700; color:var(--coral-deep); background:rgba(158,52,18,0.1); padding:5px 12px; border-radius:999px;">FREE VERSION</div>
       <h2 style="font-size:1.5rem;">{{ $p['button'] }}</h2>
       <div class="dl-meta">
         <span>Version {{ $p['version'] }}</span><span>{{ $p['size'] }}</span><span>{{ $p['files'] }} File</span>
@@ -124,7 +124,7 @@ unset($others[$p['key']]);
         <p style="color:var(--text-mute-ink);">Get a free demo, FBR / PRA integration and staff training from the myPOS team — trusted by 15,000+ customers.</p>
       </div>
       <div class="btn-row">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-wa" style="white-space:nowrap;" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>

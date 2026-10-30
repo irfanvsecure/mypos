@@ -22,12 +22,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Aesthetic Clinics</div>
     <h1 class="reveal">Aesthetic Clinics FBR POS Integration</h1>
     <p class="lead reveal">Every consultation fee, cosmetic procedure and skincare package reported to FBR and PRA automatically &mdash; audit-ready records without slowing down your clinic.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -57,7 +58,7 @@
       <p>Aesthetic and cosmetic clinics are now under strict tax monitoring, making aesthetic clinics FBR POS integration essential for compliant operations.</p>
       <p>MyPOS.pk provides FBR POS integration for beauty clinics across Pakistan, helping them report income accurately while maintaining smooth daily workflows. From consultation fees to advanced cosmetic procedures, our system ensures every transaction is documented and reported in line with federal regulations.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/fbr-pos-integration') }}" class="btn btn-ghost">FBR POS Integration</a>
       </div>
     </div>
@@ -80,7 +81,7 @@
       <p>For cosmetic clinics operating in Punjab, PRA integration service for aesthetic salons is equally critical. Our Punjab Revenue Authority integration POS software is designed to meet provincial sales tax requirements while supporting nationwide compliance.</p>
       <p>Clinics in Lahore, Rawalpindi, Faisalabad, Multan, Sialkot and Islamabad rely on our service to avoid penalties, audits, and reporting errors.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
@@ -132,7 +133,7 @@
       <p>Whether you operate a single cosmetic clinic or a multi-location aesthetic brand, our PRA integration service scales with your business.</p>
       <p>Centralized reporting, branch-wise income visibility, and automated compliance allow clinics across Lahore, Islamabad and Punjab to expand confidently while staying aligned with Federal Board Of Revenue and Punjab Revenue Authority requirements.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       </div>
     </div>
   </div>
@@ -174,7 +175,7 @@
       <p>With our aesthetic clinics FBR POS integration service, they gain organized income records, easier tax filing, reduced audit risk, and complete financial transparency. Automated reporting eliminates manual errors while supporting long-term regulatory confidence.</p>
       <p>Our systems work quietly in the background, allowing beauty doctors and staff to focus on patient care and clinic growth.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
@@ -201,8 +202,8 @@
       <span>Lahore</span><span>Islamabad</span><span>Rawalpindi</span><span>Faisalabad</span><span>Multan</span><span>Sialkot</span><span>Punjab-wide</span>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-ghost">Contact MyPOS.pk</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-ghost">Contact MyPOS.pk</a>
     </div>
   </div>
 </section>

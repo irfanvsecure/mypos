@@ -18,12 +18,13 @@
 
 @section('content')
 <header class="ind-hero">
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap">
     <div class="crumb reveal"><a href="{{ route('home') }}">Home</a> &nbsp;/&nbsp; <a href="{{ url('/fbr-pos-integration') }}">FBR POS Integration</a> &nbsp;/&nbsp; Colleges</div>
     <h1 class="reveal">College FBR POS Integration</h1>
     <p class="lead reveal">FBR &amp; PRA compliant POS for private colleges and higher education institutions &mdash; every fee collection digitally recorded, reported and audit-ready.</p>
     <div class="ind-actions reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call</a>
     </div>
@@ -53,7 +54,7 @@
       <p>We provide a professional and scalable college FBR POS integration service for private colleges, degree-awarding institutes, and higher education institutions across Pakistan. Our solutions help colleges maintain structured income documentation, meet applicable FBR and PRA requirements, and ensure financial transparency without disrupting academic operations.</p>
       <p>Whether your institution needs mandatory POS compliance for taxable services or a reliable system for income reporting, tax filing, and audits, our company delivers education-focused POS solutions designed for long-term compliance.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
@@ -90,7 +91,7 @@
     </div>
     <p class="reveal" style="margin-top:28px;">Our company ensures compliance while keeping college administration simple and efficient.</p>
     <div class="btn-row reveal" style="margin-top:18px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
@@ -113,7 +114,7 @@
       </div>
       <p>We help colleges manage integration smoothly while aligning records with PRA requirements.</p>
       <div class="btn-row" style="margin-top:24px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/pra-integration') }}" class="btn btn-ghost">PRA Integration</a>
       </div>
     </div>
@@ -192,7 +193,7 @@
       <div class="benefit-card reveal-scale" style="--i:3; background:#fff;"><h3>&#10004; Secure &amp; Scalable Systems:</h3><p>Works for single colleges and large education networks.</p></div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
@@ -216,7 +217,7 @@
       <p>If you operate a college anywhere in Pakistan and need mandatory POS compliance or structured income documentation, our solutions deliver compliance without complexity. <a href="{{ url('/contact') }}">Contact us</a> today to get started.</p>
     </div>
     <div class="btn-row reveal" style="margin-top:24px;">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
     </div>
   </div>
 </section>

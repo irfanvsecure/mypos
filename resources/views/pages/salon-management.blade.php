@@ -37,7 +37,7 @@
       <p>Now, say goodbye to the hassles of traditional management systems. MyPOS makes appointment scheduling, inventory tracking, and accounts easy, with fantastic options for employee management, client communications, and detailed reporting, all accessible from the convenience of your computers.</p>
       <p>You can get a free trial version of MyPOS desktop software and see how our technology can take your business to the next level without needing an internet connection or cloud access. Many satisfied spa owners have trusted our desktop solution, so why wait? Try MyPOS today and turn your dreams into reality.</p>
       <div class="btn-row" style="margin-top:28px;">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="{{ demo_url() }}" class="btn btn-primary">Book a Free Demo</a>
         <a href="{{ url('/download/salonpro') }}" class="btn btn-ghost">Download Free Trial</a>
       </div>
     </div>
@@ -73,7 +73,7 @@
         <li>Focus more on client care.</li>
       </ul>
       <p>Take your beauty business to the next level with simplicity. Our software helps streamline success for your salon without the need for internet connectivity or a mobile app. Contact us to automate your salon tasks directly from your computers with our easy-to-use desktop software.</p>
-      <div class="btn-row" style="margin-top:28px;"><a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Contact Us</a></div>
+      <div class="btn-row" style="margin-top:28px;"><a href="{{ demo_url() }}" class="btn btn-primary">Contact Us</a></div>
     </div>
     <div class="media-frame illus reveal-right">
       <img src="{{ asset('uploads/2024/01/Hairdresser-bro-removebg-preview-min.png') }}" alt="Salon Management hairdresser illustration" loading="lazy">
@@ -105,7 +105,7 @@
         <h3>See SalonPro on your own chair — free demo, setup included.</h3>
         <p style="color:var(--text-mute-ink);"><a href="tel:{{ config('site.phone_raw') }}" style="color:var(--navy); font-weight:600;">{{ config('site.phone') }}</a> — Call us anytime, or message us on <a href="{{ wa_link() }}" target="_blank" rel="noopener" style="color:var(--coral-deep); font-weight:600;">WhatsApp</a>.</p>
       </div>
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+      <a href="{{ demo_url() }}" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
     </div>
   </div>
 </section>

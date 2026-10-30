@@ -12,6 +12,7 @@ Route::view('/', 'home')->name('home');
 Route::post('/enquiry', [EnquiryController::class, 'store'])
     ->middleware('throttle:6,1')
     ->name('enquiry.store');
+Route::view('/thank-you', 'thank-you')->name('thank-you');
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');

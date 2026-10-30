@@ -39,21 +39,40 @@
 @endpush
 
 @section('content')
-<header class="hero hero-home" id="home">
+@php
+  $businessTypes = ['Retail / Shop', 'Restaurant / Café', 'Salon / Spa', 'Supermarket / Mart', 'Pharmacy / Clinic', 'Other business'];
+@endphp
+<header class="hero hero-home hero-cine" id="home">
   <div class="hx-bg" aria-hidden="true"></div>
+  <div class="hx-3d" data-hero3d aria-hidden="true"></div>
   <div class="wrap hx-grid">
     <div class="hx-copy">
       <div class="hx-badges">
         <span class="hx-pill"><span class="pulse-dot"></span>Point of sale, built for Pakistan</span>
         <span class="hx-pill hx-pill--coral">FBR &amp; PRA ready</span>
       </div>
-      <h1><span class="h1-kicker">Best Free POS Software for Retail, Restaurant, &amp; Salon Businesses in Pakistan</span>The POS that keeps <span class="hx-hl">ringing up sales</span>, online or off.</h1>
+      <h1><span class="hx-hl">Free POS Software</span> for Retail, Restaurant, &amp; Salon Businesses in Pakistan</h1>
       <p class="lead">Power your business with a reliable free POS software built for seamless offline and cloud-based sales, smart inventory management, and real-time reporting. Stay connected, stay secure, and grow faster with a system built for modern businesses across Pakistan.</p>
-      <div class="hx-actions">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary hx-btn">Book a Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="{{ wa_link() }}" class="btn btn-wa hx-btn" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-      <p class="hx-talk">Want to try it yourself first? <a href="#free-version">Download the free version</a> — or call <a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></p>
+      <form class="hx-form" method="POST" action="{{ route('enquiry.store') }}#hero-demo" id="hero-demo" novalidate>
+        @csrf
+        <input type="hidden" name="page" value="home (hero)">
+        <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="hx-form-title"><span class="pulse-dot"></span>Get a free demo on your own products</div>
+        <div class="hx-form-row">
+          <label class="sr-only" for="h-name">Your name</label>
+          <input id="h-name" type="text" name="name" value="{{ old('name') }}" placeholder="Your name" required autocomplete="name">
+          <label class="sr-only" for="h-phone">Phone / WhatsApp</label>
+          <input id="h-phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="03XX XXXXXXX" required autocomplete="tel" inputmode="tel">
+          <label class="sr-only" for="h-type">Business type</label>
+          <select id="h-type" name="type">
+            @foreach ($businessTypes as $bt)<option value="Free Demo · {{ $bt }}" @selected(old('type') === "Free Demo · $bt")>{{ $bt }}</option>@endforeach
+          </select>
+          <button class="btn btn-primary hx-btn" type="submit">Get My Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        @if ($errors->any())<p class="hx-form-err" role="alert">{{ $errors->first() }}</p>@endif
+        <p class="hx-form-note">Free · No obligation · We reply within minutes on WhatsApp</p>
+      </form>
+      <p class="hx-talk">Prefer to chat? <a href="{{ wa_link() }}" target="_blank" rel="noopener">WhatsApp us</a> · <a href="#free-version">Download the free version</a> · or call <a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></p>
       <ul class="hx-assure">
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Free version available</li>
         <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.3" stroke="currentColor"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Works offline</li>
@@ -133,38 +152,64 @@
 @endphp
 <x-client-marquee :rows="$clientRows" title="Our POS Clients" eyebrow="TRUSTED BY" id="clients" />
 
-<section id="industries">
+@php
+  // Business selector: [key, tab label, product, tag, intro, 3 wins, page url, image, alt]
+  $industries = [
+    ['retail', 'Retail / Shop', 'RetailPro', 'RETAIL · MOST POPULAR', 'Barcode scanning, stock control and multi-branch inventory in one till — built for shops that never want a queue to stall.',
+      ['Scan &amp; bill in under 5 seconds', 'Low-stock alerts &amp; auto purchase orders', 'Customer credit ledgers &amp; loyalty'], '/retail-management',
+      'https://images.pexels.com/photos/12935045/pexels-photo-12935045.jpeg', 'Cashier at a retail store checkout using a POS terminal'],
+    ['restaurant', 'Restaurant / Café', 'RestroPro', 'RESTAURANT', 'Kitchen display, table management and split billing built for speed.',
+      ['Dine-in, takeaway &amp; delivery on one screen', 'Kitchen order tickets &amp; table map', 'PRA-ready restaurant invoices'], '/restaurant-management',
+      'https://images.pexels.com/photos/12935084/pexels-photo-12935084.jpeg', 'Restaurant kitchen digital ordering touchscreen system'],
+    ['salon', 'Salon / Spa', 'SalonPro', 'SALON &amp; SPA', 'Appointment booking, stylist commissions and loyalty ledgers, handled.',
+      ['Appointments &amp; walk-ins in one calendar', 'Stylist commissions calculated for you', 'Packages, memberships &amp; loyalty'], '/salon-management',
+      'https://images.pexels.com/photos/7195806/pexels-photo-7195806.jpeg', 'Beauty salon reception counter'],
+    ['supermarket', 'Supermarket / Mart', 'Supermarket POS', 'SUPERMARKET', 'Fast multi-counter billing with thousands of barcoded products, weighing scales and expiry tracking.',
+      ['Multiple tills, one live stock count', 'Weighing scale &amp; barcode label printing', 'Expiry and batch tracking'], '/supermarket-pos',
+      null, null],
+    ['clinic', 'Pharmacy / Clinic', 'Clinic &amp; Pharmacy POS', 'HEALTHCARE', 'Patient billing, medicine stock with expiry alerts and FBR-compliant invoices for clinics, labs and pharmacies.',
+      ['Medicine batches &amp; expiry alerts', 'Patient &amp; doctor-wise billing', 'FBR / PRA integration built in'], '/clinics-fbr-pos-integration',
+      'uploads/2025/12/679bb039e78be8df1b8cb6f9_shutterstock-2265711619_a484c0694ed81b3748b0aab8227eaa9f_2000.jpeg', 'Clinic reception billing patients on a POS system'],
+    ['other', 'Other business', 'myPOS ERP', 'EVERY KIND OF BUSINESS', 'Bakery, garments, laundry, tailor, distribution, hospital or something custom — one system covers the till to the back office.',
+      ['Ready-made apps for 30+ business types', 'Accounting, payroll &amp; HR built in', 'Custom features built on request'], '/features',
+      null, null],
+  ];
+@endphp
+<section id="industries" class="bsel">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head center reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>BUILT FOR YOUR INDUSTRY</span></div>
-      <h2>One POS, tuned for every counter.</h2>
-      <p>Retail, restaurant or salon — myPOS adapts its workflow to how your business actually runs.</p>
+      <h2>What kind of business do you run?</h2>
+      <p>Retail, restaurant or salon — myPOS adapts its workflow to how your business actually runs. Pick yours to see what you get.</p>
     </div>
-    <div class="industries-grid stagger">
-      <a href="{{ url('/retail-management') }}" class="ind-card ind-card--feat reveal-scale" style="--i:0">
-        <div class="photo"><img src="https://images.pexels.com/photos/12935045/pexels-photo-12935045.jpeg" alt="Cashier at a retail store checkout using a POS terminal"></div>
-        <div class="ind-body">
-          <div class="ind-tag">RETAIL <span class="ind-badge">MOST POPULAR</span></div>
-          <h3>RetailPro</h3>
-          <p>Barcode scanning, stock control and multi-branch inventory in one till — built for shops that never want a queue to stall.</p>
+    <div class="bsel-shell reveal" data-tabs>
+      <div class="bsel-tabs" role="tablist" aria-label="Business type">
+        @foreach ($industries as $i => [$key, $label])
+          <button type="button" role="tab" class="bsel-tab {{ $i === 0 ? 'active' : '' }}" id="bt-{{ $key }}" aria-controls="bp-{{ $key }}" aria-selected="{{ $i === 0 ? 'true' : 'false' }}" data-tab-target="bp-{{ $key }}">{{ $label }}</button>
+        @endforeach
+      </div>
+      @foreach ($industries as $i => [$key, $label, $product, $tag, $intro, $wins, $href, $img, $alt])
+        <div class="bsel-panel {{ $i === 0 ? 'active' : '' }}" role="tabpanel" id="bp-{{ $key }}" aria-labelledby="bt-{{ $key }}" @if ($i) hidden @endif>
+          <div class="bsel-copy">
+            <div class="ind-tag">{!! $tag !!}</div>
+            <h3>{!! $product !!}</h3>
+            <p>{{ $intro }}</p>
+            <ul class="bsel-wins">@foreach ($wins as $w)<li>{!! $w !!}</li>@endforeach</ul>
+            <div class="btn-row">
+              <a href="#enquiry" class="btn btn-primary" data-prefill="Business type: {{ $label }}. I would like a free demo of {{ html_entity_decode($product) }}.">Get a demo for my business</a>
+              <a href="{{ url($href) }}" class="link-arrow">Explore {!! $product !!} →</a>
+            </div>
+          </div>
+          <div class="bsel-vis tilt" data-tilt>
+            @if ($img)
+              <div class="photo"><img src="{{ str_starts_with($img, 'http') ? $img : asset($img) }}" alt="{{ $alt }}" loading="lazy"></div>
+            @else
+              <div class="bsel-art" aria-hidden="true"><span>{!! $product !!}</span></div>
+            @endif
+            <div class="bsel-float"><b>Live in 1–3 days</b><span>Setup &amp; training included</span></div>
+          </div>
         </div>
-      </a>
-      <a href="{{ url('/restaurant-management') }}" class="ind-card reveal-scale" style="--i:1">
-        <div class="photo"><img src="https://images.pexels.com/photos/12935084/pexels-photo-12935084.jpeg" alt="Restaurant kitchen digital ordering touchscreen system"></div>
-        <div class="ind-body">
-          <div class="ind-tag">RESTAURANT</div>
-          <h3>RestroPro</h3>
-          <p>Kitchen display, table management and split billing built for speed.</p>
-        </div>
-      </a>
-      <a href="{{ url('/salon-management') }}" class="ind-card reveal-scale" style="--i:2">
-        <div class="photo"><img src="https://images.pexels.com/photos/7195806/pexels-photo-7195806.jpeg" alt="Beauty salon reception counter"></div>
-        <div class="ind-body">
-          <div class="ind-tag">SALON</div>
-          <h3>SalonPro</h3>
-          <p>Appointment booking, stylist commissions and loyalty ledgers, handled.</p>
-        </div>
-      </a>
+      @endforeach
     </div>
   </div>
 </section>
@@ -256,6 +301,37 @@
   </div>
 </section>
 
+@php
+  // Problem finder: [pain, what myPOS does, icon path]
+  $problems = [
+    ['Long queues at the counter', 'Barcode billing, saved favourites and split payments ring up a customer in seconds.', 'M3 17h14M5 17V9m4 8V5m4 12v-6m4 6V8'],
+    ['Stock goes missing', 'Every item in and out is logged per user, with stock audits and shrinkage reports.', 'M3 6l7-3.5L17 6v8l-7 3.5L3 14V6zM3 6l7 3.5L17 6M10 9.5V17'],
+    ['Worried about FBR / PRA notices', 'Each invoice is reported live with an FBR number and QR code — no manual filing.', 'M5 2h10v16l-2.5-1.5L10 18l-2.5-1.5L5 18V2zM7.5 7h5M7.5 10h5'],
+    ['Can\'t see other branches', 'Live sales, stock and cash for every branch in one dashboard and on your phone.', 'M2 7h7v7H2zM11 7h7v7h-7zM5.5 7V4h9v3'],
+    ['Customer credit (udhaar) is a mess', 'Customer ledgers, payment reminders on WhatsApp and full sale history per customer.', 'M10 4a3.2 3.2 0 110 6.4A3.2 3.2 0 0110 4zM3.5 17c1-3.5 3.8-5.2 6.5-5.2s5.5 1.7 6.5 5.2'],
+    ['Internet keeps dropping', 'Keep selling offline — every sale and FBR invoice syncs the moment you reconnect.', 'M2 8a12 12 0 0116 0M5 11a7.5 7.5 0 0110 0M8 14a3 3 0 014 0M10 17h.01'],
+  ];
+@endphp
+<section id="fix" class="fixes">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow-line"><span class="bar"></span><span>FIND YOUR FIX</span></div>
+      <h2>What's slowing your business down?</h2>
+      <p>Pick the problem you want gone first — we'll show you exactly how myPOS fixes it on a free demo.</p>
+    </div>
+    <div class="fix-grid stagger">
+      @foreach ($problems as $i => [$pain, $fix, $icon])
+        <article class="fix-card reveal-3d tilt" data-tilt style="--i:{{ $i }}">
+          <span class="fix-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><path d="{{ $icon }}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>{{ $pain }}</h3>
+          <p>{{ $fix }}</p>
+          <a href="#enquiry" class="fix-btn" data-prefill="My biggest problem: {{ $pain }}. Please show me how myPOS fixes it.">Fix this first — free demo →</a>
+        </article>
+      @endforeach
+    </div>
+  </div>
+</section>
+
 <section id="features">
   <div class="wrap">
     <div class="bn-head reveal">
@@ -338,7 +414,7 @@
         <h3>Need something built for your business?</h3>
         <p>We also develop custom applications as per the customer&rsquo;s requirements.</p>
         <div class="bn-cta-btns">
-          <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+          <a href="#enquiry" class="btn btn-primary">Book a Free Demo</a>
           <a href="{{ wa_link() }}" class="bn-link bn-link--light" target="_blank" rel="noopener">or WhatsApp us →</a>
         </div>
       </article>
@@ -360,7 +436,7 @@
             <div class="d-row"><span>Payment</span><b>Cash + Card</b></div>
             <div class="d-row"><span>Discount</span><b>Loyalty 10%</b></div>
             <div class="d-row"><span>Tax (FBR)</span><b>Filed automatically</b></div>
-            <div class="d-row" style="border:none;"><span>Total</span><b style="color:#4FA8DA; font-size:1.1rem;">₨ 1,840</b></div>
+            <div class="d-row" style="border:none;"><span>Total</span><b style="color:#5CC8FF; font-size:1.1rem;">₨ 1,840</b></div>
           </div>
           <div class="device-panel" data-panel="mobile">
             <div class="d-row"><span>Today, all branches</span><b>₨ 412,600</b></div>
@@ -378,7 +454,7 @@
         <div class="tab-copy reveal-right">
           <h4 id="tabTitle">Full sales terminal, offline-ready</h4>
           <p id="tabDesc">Ring up items, split payments, apply discounts and print or send receipts — even mid-outage. Every FBR invoice files itself the moment you're back online.</p>
-          <a href="{{ url('/contact') }}#enquiry" class="link-arrow">See it on a free demo →</a>
+          <a href="#enquiry" class="link-arrow">See it on a free demo →</a>
         </div>
       </div>
     </div>
@@ -419,20 +495,40 @@
   </div>
 </section>
 
+<section id="savings" class="calc">
+  <div class="calc-bg" aria-hidden="true"></div>
+  <div class="wrap calc-grid">
+    <div class="calc-copy reveal-left">
+      <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">SAVINGS CALCULATOR</span></div>
+      <h2>How much is manual billing costing you?</h2>
+      <p>Move the sliders to match your business. We'll estimate the staff time and stock leakage myPOS can win back every month.</p>
+      <div class="calc-inputs" data-calc>
+        <label class="calc-field"><span>Monthly sales <b data-out="sales">Rs 1,500,000</b></span>
+          <input type="range" min="200000" max="20000000" step="100000" value="1500000" data-in="sales"></label>
+        <label class="calc-field"><span>Staff doing billing / stock work <b data-out="staff">3</b></span>
+          <input type="range" min="1" max="25" step="1" value="3" data-in="staff"></label>
+        <label class="calc-field"><span>Hours each spends on manual work per day <b data-out="hours">2</b></span>
+          <input type="range" min="0.5" max="8" step="0.5" value="2" data-in="hours"></label>
+        <label class="calc-field"><span>Average staff cost per hour <b data-out="wage">Rs 250</b></span>
+          <input type="range" min="100" max="1500" step="25" value="250" data-in="wage"></label>
+      </div>
+    </div>
+    <div class="calc-result reveal-right tilt" data-tilt aria-live="polite">
+      <span class="calc-label">You could save around</span>
+      <div class="calc-total">Rs <span data-out="total">0</span><small>/month</small></div>
+      <div class="calc-split">
+        <div><b>Rs <span data-out="time">0</span></b><span>Staff time won back</span></div>
+        <div><b>Rs <span data-out="leak">0</span></b><span>Stock leakage stopped</span></div>
+      </div>
+      <div class="calc-roi">That's <b data-out="roi">0×</b> the cost of myPOS (from Rs 2,000/month).</div>
+      <a href="#enquiry" class="btn btn-primary" data-prefill="I used the savings calculator and want to see how much myPOS can save my business.">Show me these savings — free demo</a>
+      <p class="calc-note">Estimate only: assumes myPOS automates 60% of manual billing &amp; stock work and cuts stock leakage by 1.5% of sales. Your demo gives you real numbers.</p>
+    </div>
+  </div>
+</section>
+
 @php
-  // Google reviews shown on the WordPress home page (Trustindex widget) — text kept verbatim.
-  $reviews = [
-    ['raaj', 'MyPOS Pakistan is a game-changer for my vape shop in Karachi! It offers seamless inventory management, fast transactions, and real-time sales tracking. The user-friendly interface and excellent customer support make it a must-have for any vape business. Highly recommended!'],
-    ['Asad Gaba', 'myPOS has simplified managing my shoe shop with easy sales tracking, inventory management, and quick billing. It’s efficient, user-friendly, and perfect for retail!'],
-    ['Hassan Raza', 'I’ve been using The MyPOS Hospital Management System (HMS) for two months, and it’s a highly efficient, user-friendly solution that improves hospital operations and patient care. The support team is excellent, especially Salman Khan, who ensures everything runs smoothly. Highly recommended!'],
-    ['Fahad Islam', 'As a salon owner, using myPOS.pk has made managing payments effortless. It supports multiple payment methods, integrates smoothly with my system, and offers real-time updates via the mobile app. The secure transactions give me peace of mind, and my clients appreciate the convenience. Highly recommend it for any salon business!'],
-    ['Yousuf Usman', 'We are using my pos as there partner and we have more then 300 Setisfied customer in oman for my pos and they are very happy with the software and there support'],
-    ['Javaid Nasir', 'Its amazing software. It meets our each & every need of business. I m more than satisfied not only withe software but service and gratitude of POS reps. Regards Happy Bhayi'],
-    ['Mubashar Hussain', 'Very nice and cooperative staff sir Khalil and Salman khan thanks for guiding me.mjy apni boutique k leye myPOS SE achha koi software nhi lga'],
-    ['Eaze App', 'I using this software since last three months and it is wonderful. It is very user friendly and the support provided by there team is amazing. I recommend this software to every retailer.'],
-    ['Salman Raza', 'I am using MyPos Its very amazing user friendly software'],
-    ['Faheem Akram', 'Efficient POS software, streamlines transactions, user-friendly interface.'],
-  ];
+  $reviews = config('site.reviews');
   $initials = fn ($n) => strtoupper(collect(preg_split('/\s+/', trim($n)))->take(2)->map(fn ($w) => mb_substr($w, 0, 1))->implode(''));
   $writeReview = 'https://admin.trustindex.io/api/googleWriteReview?place-id=ChIJ16hGakEFGTkRfzzOykTT1q4';
 @endphp
@@ -519,7 +615,7 @@
     ['all-in-one', 'All-in-One POS', 'One system on the desktop and in the cloud, for every branch.', '2026/07/All_in_one_Point_Of_Sale_Software-', 'png', 'All in one point of sale software — cloud based POS system and desktop POS software'],
   ];
 @endphp
-<section id="product-tour" class="tour-band" style="background-image:linear-gradient(160deg, rgba(18,63,95,0.95), rgba(21,74,115,0.9)), url('{{ asset('uploads/2019/01/mart-pos-mypos-pk-1.webp') }}');">
+<section id="product-tour" class="tour-band" style="background-image:linear-gradient(160deg, rgba(10,37,64,0.95), rgba(15,59,99,0.9)), url('{{ asset('uploads/2019/01/mart-pos-mypos-pk-1.webp') }}');">
   <div class="wrap">
     <div class="section-head center reveal">
       <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">PRODUCT TOUR</span></div>
@@ -551,7 +647,7 @@
     </div>
 
     <div class="tour-cta reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book Now</a>
+      <a href="#enquiry" class="btn btn-primary">Book Now</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <span class="tour-note">Free version available · Works offline · FBR &amp; PRA ready</span>
     </div>
@@ -571,9 +667,9 @@
       <p><em>No internet? No problem. This ERP software still gives you real-time reports the moment you&rsquo;re back online.</em></p>
       <p>myPOS automatically syncs data whenever your point of sale system reconnects to the internet, so a live connection isn&rsquo;t necessary to keep running, which is what makes our ERP software stand out in the market.</p>
       <ul>
-        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#8B3A1F"/><path d="M5 9.2L7.7 12L13 6" stroke="#8B3A1F" stroke-width="1.6"/></svg>myPOS setup is ready to trade within minutes.</li>
-        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#8B3A1F"/><path d="M5 9.2L7.7 12L13 6" stroke="#8B3A1F" stroke-width="1.6"/></svg>As a free POS software solution, it works with almost all POS hardware.</li>
-        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#8B3A1F"/><path d="M5 9.2L7.7 12L13 6" stroke="#8B3A1F" stroke-width="1.6"/></svg>Get started with guides and a 24-hour customer support team.</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#9E3412"/><path d="M5 9.2L7.7 12L13 6" stroke="#9E3412" stroke-width="1.6"/></svg>myPOS setup is ready to trade within minutes.</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#9E3412"/><path d="M5 9.2L7.7 12L13 6" stroke="#9E3412" stroke-width="1.6"/></svg>As a free POS software solution, it works with almost all POS hardware.</li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#9E3412"/><path d="M5 9.2L7.7 12L13 6" stroke="#9E3412" stroke-width="1.6"/></svg>Get started with guides and a 24-hour customer support team.</li>
       </ul>
       <a href="{{ url('/features') }}" class="link-arrow">See all features →</a>
     </div>
@@ -605,9 +701,47 @@
       </li>
     </ol>
     <div class="steps-cta reveal">
-      <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+      <a href="#enquiry" class="btn btn-primary">Book a Free Demo</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <span class="steps-note">No obligation · Free version available</span>
+    </div>
+  </div>
+</section>
+
+@php
+  // Comparison: [row, manual register / Excel, typical POS, myPOS]   true = yes, false = no, string = note
+  $compare = [
+    ['FBR / PRA / KPRA / SRB invoicing', false, 'Paid add-on', 'Built in'],
+    ['Works without internet', true, false, 'Offline + auto-sync'],
+    ['Live stock across branches', false, 'Extra cost', true],
+    ['Accounting, HR &amp; payroll', false, false, true],
+    ['Urdu &amp; Arabic interface', false, false, true],
+    ['Setup, data migration &amp; training', false, 'Self-service', 'Done for you'],
+    ['Local support on phone &amp; WhatsApp', false, 'Email tickets', '24-hour, &lt;2 min reply'],
+    ['Free version to start', true, false, true],
+  ];
+  $mark = fn ($v) => $v === true ? '<span class="cmp-yes" aria-label="Yes">✓</span>' : ($v === false ? '<span class="cmp-no" aria-label="No">✕</span>' : '<span class="cmp-note">' . $v . '</span>');
+@endphp
+<section id="compare" class="compare">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow-line"><span class="bar"></span><span>WHY MYPOS</span></div>
+      <h2>myPOS vs the way you do it today.</h2>
+      <p>See why 15,000+ businesses moved off registers, spreadsheets and generic POS apps.</p>
+    </div>
+    <div class="cmp-wrap reveal-3d">
+      <table class="cmp">
+        <thead><tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col">Register / Excel</th><th scope="col">Typical POS app</th><th scope="col" class="cmp-us">myPOS</th></tr></thead>
+        <tbody>
+          @foreach ($compare as [$row, $a, $b, $c])
+            <tr><th scope="row">{!! $row !!}</th><td>{!! $mark($a) !!}</td><td>{!! $mark($b) !!}</td><td class="cmp-us">{!! $mark($c) !!}</td></tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+    <div class="steps-cta reveal">
+      <a href="#enquiry" class="btn btn-primary" data-prefill="I'd like to switch to myPOS — please book my free demo.">Switch to myPOS — free demo</a>
+      <span class="steps-note">We move your products &amp; customers over for you</span>
     </div>
   </div>
 </section>
@@ -621,15 +755,15 @@
       <p>myPOS keeps your business running even without a steady internet connection, syncing everything the moment you&rsquo;re back online. As a free POS software option, it lets small and growing businesses test core sales features before committing to a paid plan, while mobile reporting keeps you connected to daily performance from anywhere. Download the demo version to see how our online ERP software handles remote reporting, or get in touch if you need a custom built application.</p>
       <div class="btn-row" style="margin-top:26px;">
         <a href="{{ url('/features') }}" class="btn btn-primary">See all features</a>
-        <a href="{{ url('/contact') }}#enquiry" class="link-arrow">Need a custom application? Get in touch →</a>
+        <a href="#enquiry" class="link-arrow">Need a custom application? Get in touch →</a>
       </div>
     </div>
     <div class="network-card reveal-right">
       <svg viewBox="0 0 400 380">
         <defs>
           <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#4FA8DA"/>
-            <stop offset="1" stop-color="#1D5D89"/>
+            <stop offset="0" stop-color="#5CC8FF"/>
+            <stop offset="1" stop-color="#1A5A8E"/>
           </linearGradient>
         </defs>
         <path id="p1" d="M60,90 C160,60 220,140 320,110" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
@@ -638,10 +772,10 @@
         <circle r="4" fill="url(#flow)"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
         <circle r="4" fill="url(#flow)"><animateMotion dur="3.6s" repeatCount="indefinite" begin="0.5s"><mpath href="#p2"/></animateMotion></circle>
         <circle r="4" fill="url(#flow)"><animateMotion dur="4s" repeatCount="indefinite" begin="1s"><mpath href="#p3"/></animateMotion></circle>
-        <circle cx="60" cy="90" r="5" fill="#4FA8DA"/>
-        <circle cx="60" cy="200" r="5" fill="#4FA8DA"/>
-        <circle cx="60" cy="300" r="5" fill="#4FA8DA"/>
-        <circle cx="320" cy="190" r="7" fill="#C1502E"/>
+        <circle cx="60" cy="90" r="5" fill="#5CC8FF"/>
+        <circle cx="60" cy="200" r="5" fill="#5CC8FF"/>
+        <circle cx="60" cy="300" r="5" fill="#5CC8FF"/>
+        <circle cx="320" cy="190" r="7" fill="#C8461C"/>
       </svg>
       <div class="node-label" style="top:56px; left:22px;"><div class="nd"></div><div><b>Gulberg</b>Branch — synced</div></div>
       <div class="node-label" style="top:168px; left:22px;"><div class="nd"></div><div><b>DHA</b>Branch — synced</div></div>
@@ -765,7 +899,7 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>WhatsApp, SMS &amp; email receipts</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Role-based staff access</li>
         </ul>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>
+        <a href="#enquiry" class="btn btn-primary">Book a Free Demo</a>
       </div>
       <div class="price-card reveal-scale" style="--i:2">
         <div class="pc-badge">CUSTOM</div>
@@ -778,7 +912,7 @@
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Dedicated onboarding &amp; training</li>
           <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Priority 24-hour support</li>
         </ul>
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-ghost">Book a Free Demo</a>
+        <a href="#enquiry" class="btn btn-ghost">Book a Free Demo</a>
       </div>
     </div>
     <div class="pricing-links reveal">
@@ -799,10 +933,94 @@
         </ul>
       </div>
       <div class="btn-row">
-        <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
+        <a href="#enquiry" class="btn btn-primary" style="white-space:nowrap;">Book a Free Demo</a>
         <a href="https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs" class="btn btn-outline" style="white-space:nowrap;" target="_blank" rel="noopener">Download free version</a>
       </div>
     </div>
+  </div>
+</section>
+
+@php
+  // Price builder — figures from the /pricing and /one-time-pricing pages.
+  $addons = [
+    ['offline', 'Offline Module', 500], ['accounting', 'Accounting Module', 1000], ['fbr-di', 'FBR Digital Invoicing', 1000],
+    ['fbr-pos', 'FBR / PRA / SRB POS Integration', 500], ['whatsapp', 'WhatsApp Invoicing', 500], ['mobile', 'Mobile App', 1000],
+    ['instalment', 'Instalment Module', 1000], ['manufacturing', 'Manufacturing Module', 1000], ['woocommerce', 'WooCommerce Integration', 1000],
+    ['catalogue', 'Online Store Catalogue', 1000],
+  ];
+@endphp
+<section id="builder" class="builder">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow-line"><span class="bar"></span><span>PRICE BUILDER</span></div>
+      <h2>Build your myPOS setup in one minute.</h2>
+      <p>Pick your business, branches and modules — see your price instantly. No sign-up, pay only for what you use.</p>
+    </div>
+    <form class="bld reveal-3d" method="POST" action="{{ route('enquiry.store') }}#builder" data-builder novalidate>
+      @csrf
+      <input type="hidden" name="page" value="home (price builder)">
+      <input type="hidden" name="type" value="Price Builder">
+      <input type="hidden" name="message" data-bld-message>
+      <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <ol class="bld-steps" aria-hidden="true"><li class="on">Business</li><li>Branches</li><li>Plan</li><li>Modules</li><li>Your price</li></ol>
+
+      <fieldset class="bld-step on" data-step="0">
+        <legend>What kind of business is it?</legend>
+        <div class="bld-chips">
+          @foreach ($businessTypes as $i => $bt)
+            <label class="bld-chip"><input type="radio" name="bld_business" value="{{ $bt }}" @checked($i === 0)><span>{{ $bt }}</span></label>
+          @endforeach
+        </div>
+      </fieldset>
+      <fieldset class="bld-step" data-step="1">
+        <legend>How many branches?</legend>
+        <div class="bld-chips">
+          @foreach (['1' => '1 branch', '2-3' => '2–3 branches', '4-10' => '4–10 branches', '10+' => '10+ branches'] as $v => $l)
+            <label class="bld-chip"><input type="radio" name="bld_branches" value="{{ $v }}" @checked($v === '1')><span>{{ $l }}</span></label>
+          @endforeach
+        </div>
+      </fieldset>
+      <fieldset class="bld-step" data-step="2">
+        <legend>How would you like to pay?</legend>
+        <div class="bld-chips bld-chips--big">
+          <label class="bld-chip"><input type="radio" name="bld_plan" value="monthly" checked><span><b>Monthly</b><small>Rs 2,000/month · 14 days free</small></span></label>
+          <label class="bld-chip"><input type="radio" name="bld_plan" value="onetime"><span><b>One-time licence</b><small>From Rs 24,000, pay once</small></span></label>
+        </div>
+      </fieldset>
+      <fieldset class="bld-step" data-step="3">
+        <legend>Which add-ons do you need? <small>(optional)</small></legend>
+        <div class="bld-chips bld-chips--mods">
+          @foreach ($addons as [$key, $name, $price])
+            <label class="bld-chip"><input type="checkbox" name="bld_mod" value="{{ $key }}" data-name="{{ $name }}" data-price="{{ $price }}"><span>{{ $name }} <small>+Rs {{ number_format($price) }}/mo</small></span></label>
+          @endforeach
+        </div>
+      </fieldset>
+      <fieldset class="bld-step" data-step="4">
+        <legend>Your estimated price</legend>
+        <div class="bld-result">
+          <div class="bld-price" aria-live="polite"><span data-bld-price>Rs 2,000</span><small data-bld-per>/month</small></div>
+          <p class="bld-plan" data-bld-plan>Standard monthly plan · first 14 days free</p>
+          <ul class="bld-summary" data-bld-summary></ul>
+        </div>
+        <div class="bld-contact">
+          <p>Get this exact quote and a free demo — we'll confirm on WhatsApp.</p>
+          <div class="form-row">
+            <div class="field"><label for="b-name">Full name <span class="req">*</span></label><input id="b-name" type="text" name="name" placeholder="Your name" required autocomplete="name"></div>
+            <div class="field"><label for="b-phone">Phone / WhatsApp <span class="req">*</span></label><input id="b-phone" type="tel" name="phone" placeholder="03XX XXXXXXX" required autocomplete="tel" inputmode="tel"></div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary" type="submit">Send me this quote</button>
+            <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener" data-bld-wa>Or send on WhatsApp</a>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="bld-nav">
+        <button type="button" class="btn btn-ghost" data-bld-back hidden>← Back</button>
+        <button type="button" class="btn btn-primary" data-bld-next>Next →</button>
+      </div>
+      <p class="bld-note">Prices from our pricing pages. Multi-branch and FBR setups on a one-time licence are quoted individually.</p>
+    </form>
   </div>
 </section>
 
@@ -847,7 +1065,20 @@ $homeFaqs = [
           <div><b>4.9/5</b><span>Average rating</span></div>
           <div><b>&lt; 2 min</b><span>Avg. response time</span></div>
         </div>
-        <a href="{{ url('/contact') }}" class="btn btn-primary" style="margin-top:22px; width:100%; justify-content:center;">Contact Support</a>
+        <form class="callback" method="POST" action="{{ route('enquiry.store') }}#faq" novalidate>
+          @csrf
+          <input type="hidden" name="page" value="home (call me back)">
+          <input type="hidden" name="type" value="Call Me Back">
+          <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <b>Rather talk it through? We'll call you.</b>
+          <label class="sr-only" for="c-name">Your name</label>
+          <input id="c-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
+          <label class="sr-only" for="c-phone">Phone number</label>
+          <input id="c-phone" type="tel" name="phone" placeholder="03XX XXXXXXX" required autocomplete="tel" inputmode="tel">
+          <button class="btn btn-primary" type="submit">Call Me Back</button>
+          <small>No sales pressure · Mon–Fri, 10am–6pm</small>
+        </form>
+        <a href="{{ url('/contact') }}" class="btn btn-outline" style="margin-top:14px; width:100%; justify-content:center;">Contact Support</a>
       </div>
       <div class="faq-list reveal">
         @foreach ($homeFaqs as $i => [$q, $a])
