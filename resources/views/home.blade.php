@@ -38,6 +38,7 @@
 @endverbatim
 @endpush
 
+
 @section('content')
 @php
   $businessTypes = ['Retail / Shop', 'Restaurant / Café', 'Salon / Spa', 'Supermarket / Mart', 'Pharmacy / Clinic', 'Other business'];
