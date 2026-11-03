@@ -103,5 +103,6 @@
 <script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
 @stack('scripts')
 @if ($pixelMode ?? false)<script src="{{ asset('js/pixel-events.js') }}?v={{ filemtime(public_path('js/pixel-events.js')) }}" defer></script>@endif
+@include('partials.chatwoot')
 </body>
 </html>
