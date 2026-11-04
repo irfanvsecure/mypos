@@ -58,6 +58,17 @@ class Settings
         }
     }
 
+    /** Save a setting and apply it to this request too (so pages rendered next already use it). */
+    public static function set(string $key, mixed $value): Setting
+    {
+        $s = Setting::withTrashed()->firstOrNew(['key' => $key]);
+        $s->fill(['value' => $value, 'description' => self::KEYS[$key] ?? $s->description, 'deleted_at' => null])->save();
+        config(['site.' . $key => $value]);
+        self::flush();
+
+        return $s;
+    }
+
     public static function flush(): void
     {
         Cache::forget(self::CACHE_KEY);

@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-11-04T09:30:57+00:00",
+    "exported_at": "2026-11-04T09:47:26+00:00",
     "tables": {
         "pages": [
             {
@@ -835,7 +835,7 @@
                 "status": "published",
                 "options": "[]",
                 "created_at": "2026-11-04 08:32:07",
-                "updated_at": "2026-11-04 08:32:07",
+                "updated_at": "2026-11-04 09:37:27",
                 "deleted_at": null
             },
             {
@@ -19439,10 +19439,10 @@
                 "to_url": "/downloads",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:32",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:05",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:32",
+                "updated_at": "2026-11-04 09:47:05",
                 "deleted_at": null
             },
             {
@@ -19451,10 +19451,10 @@
                 "to_url": "/downloads#retailpro",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:33",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:05",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:33",
+                "updated_at": "2026-11-04 09:47:05",
                 "deleted_at": null
             },
             {
@@ -19463,10 +19463,10 @@
                 "to_url": "/woocommerce-pos",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:33",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:05",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:33",
+                "updated_at": "2026-11-04 09:47:05",
                 "deleted_at": null
             },
             {
@@ -19475,10 +19475,10 @@
                 "to_url": "/restaurant-management",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:33",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:06",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:33",
+                "updated_at": "2026-11-04 09:47:06",
                 "deleted_at": null
             },
             {
@@ -19487,10 +19487,10 @@
                 "to_url": "/woocommerce-pos",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:34",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:06",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:34",
+                "updated_at": "2026-11-04 09:47:06",
                 "deleted_at": null
             },
             {
@@ -19499,10 +19499,10 @@
                 "to_url": "/pricing-laundry-pro",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:34",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:07",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:34",
+                "updated_at": "2026-11-04 09:47:07",
                 "deleted_at": null
             },
             {
@@ -19511,10 +19511,10 @@
                 "to_url": "/blogs",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:34",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:07",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:34",
+                "updated_at": "2026-11-04 09:47:07",
                 "deleted_at": null
             },
             {
@@ -19523,10 +19523,10 @@
                 "to_url": "/blogs",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:35",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:07",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:35",
+                "updated_at": "2026-11-04 09:47:07",
                 "deleted_at": null
             },
             {
@@ -19535,10 +19535,10 @@
                 "to_url": "/blogs",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:35",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:08",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:35",
+                "updated_at": "2026-11-04 09:47:08",
                 "deleted_at": null
             },
             {
@@ -19547,10 +19547,10 @@
                 "to_url": "/clients",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 14,
-                "last_hit_at": "2026-11-04 09:19:36",
+                "hits": 15,
+                "last_hit_at": "2026-11-04 09:47:08",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:36",
+                "updated_at": "2026-11-04 09:47:08",
                 "deleted_at": null
             },
             {
@@ -19559,10 +19559,10 @@
                 "to_url": "/multi-location-integration",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:36",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:09",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 09:19:36",
+                "updated_at": "2026-11-04 09:47:09",
                 "deleted_at": null
             },
             {
@@ -19571,10 +19571,10 @@
                 "to_url": "/",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:36",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:09",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 09:19:36",
+                "updated_at": "2026-11-04 09:47:09",
                 "deleted_at": null
             },
             {
@@ -19583,10 +19583,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:37",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:09",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 09:19:37",
+                "updated_at": "2026-11-04 09:47:09",
                 "deleted_at": null
             },
             {
@@ -19595,10 +19595,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:37",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:10",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 09:19:37",
+                "updated_at": "2026-11-04 09:47:10",
                 "deleted_at": null
             },
             {
@@ -19607,10 +19607,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 13,
-                "last_hit_at": "2026-11-04 09:19:38",
+                "hits": 14,
+                "last_hit_at": "2026-11-04 09:47:10",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 09:19:38",
+                "updated_at": "2026-11-04 09:47:10",
                 "deleted_at": null
             },
             {
@@ -19619,10 +19619,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 09:19:38",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:47:11",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 09:19:38",
+                "updated_at": "2026-11-04 09:47:11",
                 "deleted_at": null
             }
         ],

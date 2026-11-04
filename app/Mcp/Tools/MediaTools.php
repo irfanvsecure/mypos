@@ -18,7 +18,7 @@ class MediaTools
 {
     public static function tools(): array
     {
-        $image = P::str('Image id, or its path such as uploads/2026/07/logo.webp.')->req();
+        $image = P::ref('Image id, or its path such as uploads/2026/07/logo.webp.')->req();
 
         return [
             new SiteTool('list_images', 'List images in /uploads with size, dimensions, alt text and how many places use each.', [
@@ -79,7 +79,7 @@ class MediaTools
                 'title' => P::str('New title.', 'max:250'),
                 'filename' => P::str('New file name without folder or extension, e.g. "fbr-invoice-receipt".', ['max:120', 'regex:/^[a-z0-9]+(-[a-z0-9]+)*$/']),
             ], function (array $a) {
-                $m = self::find($a['image']);
+                $m = self::find((string) $a['image']);
                 $before = self::item($m);
                 $result = [];
                 if (isset($a['alt'])) {
@@ -100,11 +100,11 @@ class MediaTools
 
             new SiteTool('replace_image', 'Show a different image everywhere an image is used (pages, components, posts, logos, SEO images, settings).', [
                 'image' => $image,
-                'replacement' => P::str('Id or path of the new image (upload it first).')->req(),
+                'replacement' => P::ref('Id or path of the new image (upload it first).')->req(),
                 'copy_alt' => P::bool('Also give the new image the old one\'s alt text where it had none (default true).'),
             ], function (array $a) {
-                $old = self::find($a['image']);
-                $new = self::find($a['replacement']);
+                $old = self::find((string) $a['image']);
+                $new = self::find((string) $a['replacement']);
                 $changed = MediaLibrary::replaceEverywhere($old->path, $new->path);
                 if (($a['copy_alt'] ?? true) && ! $new->alt && $old->alt) {
                     $new->update(['alt' => $old->alt]);
@@ -117,7 +117,7 @@ class MediaTools
             new SiteTool('delete_image', 'Move an image to the trash. Refused while it is used somewhere unless force=true. The file is removed only when the item is purged.', [
                 'image' => $image, 'force' => P::bool('Delete even though it is used (those places will show a broken image).'),
             ], function (array $a) {
-                $m = self::find($a['image']);
+                $m = self::find((string) $a['image']);
                 $uses = MediaLibrary::usage($m->path);
                 if ($uses && empty($a['force'])) {
                     throw new ToolError('This image is used in: ' . implode('; ', array_column($uses, 'where')) . '. Replace it first (replace_image) or pass force=true.');

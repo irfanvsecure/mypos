@@ -130,7 +130,7 @@ class BlogTools
                 return ['deleted' => $post->slug, 'restore_with' => ['tool' => 'restore_item', 'type' => 'post', 'id' => $post->id], 'cache' => Support::changed([$post->slug, 'blogs'])];
             }, destructive: true),
 
-            new SiteTool('publish_blog', 'Publish a draft or scheduled post now.', ['slug' => $slug], fn (array $a) => self::setPublished($a['slug'], now(), 'published')),
+            new SiteTool('publish_blog', 'Publish a draft or scheduled post now: it goes live at its URL, on /blogs and in the sitemap.', ['slug' => $slug], fn (array $a) => self::setPublished($a['slug'], now(), 'published')),
             new SiteTool('unpublish_blog', 'Take a post offline (back to draft). Its URL answers 404 until published again.', ['slug' => $slug], fn (array $a) => self::setPublished($a['slug'], null, 'unpublished')),
             new SiteTool('schedule_blog', 'Schedule a post to go live at a future date-time.', [
                 'slug' => $slug, 'publish_at' => P::str('ISO date-time in the future, e.g. 2026-12-01T09:00:00+05:00.', 'date')->req(),
@@ -152,7 +152,7 @@ class BlogTools
             new SiteTool('list_categories', 'List blog categories (the blog filter bar) with post counts.', [], fn () => Category::withCount('posts')->orderBy('sort_order')->get()
                 ->map(fn ($c) => $c->only(['id', 'slug', 'name', 'description', 'sort_order']) + ['posts' => $c->posts_count, 'url' => url('/blogs?topic=' . $c->slug)])->all(), readOnly: true),
 
-            new SiteTool('create_category', 'Add a blog category.', [
+            new SiteTool('create_category', 'Add a blog category (shown in the /blogs filter bar; posts are assigned with set_blog_taxonomies).', [
                 'name' => P::str('Name shown in the filter bar.', 'max:120')->req(),
                 'slug' => P::str('Slug (default: from the name).', ['max:80']),
                 'description' => P::str('Description (plain text).', 'max:1000'),
@@ -223,7 +223,7 @@ class BlogTools
             new SiteTool('list_tags', 'List blog tags with post counts and their /tag/ URLs.', [], fn () => Tag::withCount('posts')->orderBy('name')->get()
                 ->map(fn ($t) => $t->only(['id', 'slug', 'name']) + ['posts' => $t->posts_count, 'url' => url('/tag/' . $t->slug)])->all(), readOnly: true),
 
-            new SiteTool('create_tag', 'Add a blog tag.', ['name' => P::str('Tag name.', 'max:80')->req(), 'slug' => P::str('Slug (default: from the name).')], function (array $a) {
+            new SiteTool('create_tag', 'Add a blog tag (its archive is /tag/<slug>; posts are tagged with set_blog_taxonomies).', ['name' => P::str('Tag name.', 'max:80')->req(), 'slug' => P::str('Slug (default: from the name).')], function (array $a) {
                 $slug = Str::slug($a['slug'] ?? $a['name']);
                 if (Tag::withTrashed()->where('slug', $slug)->exists()) {
                     throw new ToolError("Tag \"$slug\" already exists.");

@@ -316,11 +316,8 @@ class LinkTools
             if ($n) {
                 $changes[] = ['where' => "setting $key (header/footer)", 'links' => $n];
                 if (! $dry) {
-                    $setting = Setting::firstOrNew(['key' => $key]);
-                    $before = $setting->value;
-                    $setting->value = $value;
-                    $setting->save();
-                    Settings::flush();
+                    $before = config("site.$key");
+                    $setting = Settings::set($key, $value);
                     Support::log('setting.update', $setting, "replace_link_sitewide in $key", $before, $value);
                 }
             }

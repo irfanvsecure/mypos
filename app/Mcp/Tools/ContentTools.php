@@ -189,7 +189,7 @@ class ContentTools
                 return ['updated' => $t->only(['id', 'name', 'text', 'is_visible']), 'cache' => Support::changed()];
             }),
 
-            new SiteTool('delete_testimonial', 'Move a customer review to the trash.', ['id' => $id], fn (array $a) => self::trash(Testimonial::findOrFail($a['id']), 'testimonial'), destructive: true),
+            new SiteTool('delete_testimonial', 'Move a customer review to the trash; it disappears from the home page, sales pages and thank-you page (restore with restore_item).', ['id' => $id], fn (array $a) => self::trash(Testimonial::findOrFail($a['id']), 'testimonial'), destructive: true),
 
             // ---------------- client logos ----------------
             new SiteTool('list_client_logos', 'List client logo strips: group "proof" (the small logo row under calls to action) and the home page marquee rows.', [
@@ -233,7 +233,7 @@ class ContentTools
                 return ['updated' => $l->only(['id', 'logo_group', 'name', 'image', 'is_visible']), 'cache' => Support::changed()];
             }),
 
-            new SiteTool('delete_client_logo', 'Move a client logo to the trash.', ['id' => $id], fn (array $a) => self::trash(ClientLogo::findOrFail($a['id']), 'logo'), destructive: true),
+            new SiteTool('delete_client_logo', 'Move a client logo to the trash; it disappears from its logo strip (restore with restore_item).', ['id' => $id], fn (array $a) => self::trash(ClientLogo::findOrFail($a['id']), 'logo'), destructive: true),
 
             // ---------------- downloads ----------------
             new SiteTool('list_downloads', 'List the downloadable apps (RetailPro, RestroPro…) with version, size, download count and links. These facts are shown on /downloads and /download/* from one record each.', [],

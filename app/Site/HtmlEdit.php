@@ -177,33 +177,48 @@ class HtmlEdit
         $from = mb_substr($old, $p, mb_strlen($old) - $p - $s);
         $to = mb_substr($new, $p, mb_strlen($new) - $p - $s);
 
-        // Find which text run holds old[p .. len-s] and change it there.
-        $pos = 0;
-        $out = '';
-        $done = false;
-        foreach (self::tokens($inner) as [$type, $piece]) {
-            if ($type === 'text' && ! $done) {
-                $t = html_entity_decode($piece, ENT_QUOTES | ENT_HTML5);
-                $len = mb_strlen(preg_replace('/\s+/u', ' ', $t));
-                $start = $pos;
-                $pos += $len;
-                if ($p >= $start && $p + mb_strlen($from) <= $pos + 1) {
-                    $local = $p - $start;
-                    // Leading whitespace of the run is collapsed in plain(); skip it when indexing.
-                    $lead = strlen($t) - strlen(ltrim($t));
-                    $decoded = mb_substr($t, 0, $lead + $local) . $to . mb_substr($t, $lead + $local + mb_strlen($from));
-                    $out .= self::encodeLikeSource($decoded);
-                    $done = true;
+        // Map every character of plain($inner) back to [text run, offset in that run's decoded text], applying the
+        // same whitespace collapsing and trimming as plain(), so positions in $old point at the right characters.
+        $tokens = self::tokens($inner);
+        $runs = [];
+        $map = [];
+        $prevSpace = true;                                  // drops leading whitespace (plain() trims)
+        foreach ($tokens as $i => [$type, $piece]) {
+            if ($type !== 'text') {
+                continue;
+            }
+            $runs[$i] = html_entity_decode($piece, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            foreach (preg_split('//u', $runs[$i], -1, PREG_SPLIT_NO_EMPTY) as $o => $ch) {
+                $space = (bool) preg_match('/\s/u', $ch);
+                if ($space && $prevSpace) {
                     continue;
                 }
+                $map[] = [$i, $o];
+                $prevSpace = $space;
             }
-            $out .= $piece;
         }
-        if (! $done) {
-            throw new ToolError('This heading mixes text and inline markup in a way that cannot be edited safely; change it with update_page_section.');
+        while ($map && preg_match('/\s/u', mb_substr($runs[end($map)[0]], end($map)[1], 1))) {
+            array_pop($map);                                // trailing whitespace (plain() trims)
         }
 
-        return $out;
+        $len = mb_strlen($from);
+        if ($len > 0) {
+            $first = $map[$p] ?? null;
+            $last = $map[$p + $len - 1] ?? null;
+            if (! $first || ! $last || $first[0] !== $last[0]) {
+                throw new ToolError('The changed words span inline markup in this heading; change it with update_page_section.');
+            }
+            [$run, $start] = $first;
+            $end = $last[1] + 1;
+        } else {
+            // Pure insertion: put it right after the previous character (or before the next one).
+            [$run, $start] = isset($map[$p - 1]) ? [$map[$p - 1][0], $map[$p - 1][1] + 1] : ($map[$p] ?? throw new ToolError('Cannot place the new text.'));
+            $end = $start;
+        }
+        $decoded = mb_substr($runs[$run], 0, $start) . $to . mb_substr($runs[$run], $end);
+        $tokens[$run][1] = self::encodeLikeSource($decoded);
+
+        return implode('', array_column($tokens, 1));
     }
 
     /** Wrap the first occurrence of $anchor (in text, not already inside a link) in <a href="$href">. */

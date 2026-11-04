@@ -40,6 +40,12 @@ final class P
         return new self('number', $description, array_merge(['numeric'], (array) $rules));
     }
 
+    /** An id or a text reference (e.g. image id 42 or "uploads/2026/07/x.webp"). */
+    public static function ref(string $description): self
+    {
+        return new self('string', $description, []);
+    }
+
     public static function bool(string $description): self
     {
         return new self('boolean', $description, ['boolean']);
@@ -56,11 +62,13 @@ final class P
         return new self('object', $description, ['array']);
     }
 
+    /** Required. Returns a copy, so a parameter shared between tools is not changed for the others. */
     public function req(): self
     {
-        $this->required = true;
+        $p = clone $this;
+        $p->required = true;
 
-        return $this;
+        return $p;
     }
 
     /** Required, but "" is a valid value (the home page path). */
@@ -75,7 +83,7 @@ final class P
     public function enum(array $values): self
     {
         $this->enum = $values;
-        $this->rules[] = 'in:' . implode(',', $values);
+        $this->rules[] = \Illuminate\Validation\Rule::in($values);   // values may contain commas ("index, follow")
 
         return $this;
     }

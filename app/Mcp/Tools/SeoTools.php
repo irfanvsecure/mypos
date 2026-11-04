@@ -331,12 +331,8 @@ class SeoTools
                     }
                 }
                 $warn = preg_grep('/^Disallow:\s*\/\s*$/i', $lines) ? ['"Disallow: /" blocks the whole site for that user-agent.'] : [];
-                $s = Setting::firstOrNew(['key' => 'robots_extra']);
-                $before = $s->value;
-                $s->value = implode("\n", $lines);
-                $s->description ??= Settings::KEYS['robots_extra'];
-                $s->save();
-                Settings::flush();
+                $before = config('site.robots_extra');
+                $s = Settings::set('robots_extra', implode("\n", $lines));
                 Support::log('robots.update', $s, 'Updated robots.txt extra lines', $before, $s->value);
 
                 return ['robots_extra' => $s->value, 'warnings' => $warn, 'cache' => Support::changed(['robots.txt'])];

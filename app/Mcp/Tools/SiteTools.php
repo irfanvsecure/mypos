@@ -69,9 +69,8 @@ class SiteTools
                         throw new ToolError("Unknown setting \"$key\". Keys: " . implode(', ', array_keys(Settings::KEYS)));
                     }
                     $value = self::checkSetting($key, $value);
-                    $s = Setting::withTrashed()->firstOrNew(['key' => $key]);
-                    $before = $s->exists ? $s->value : config('site.' . $key);
-                    $s->fill(['value' => $value, 'description' => Settings::KEYS[$key], 'deleted_at' => null])->save();
+                    $before = config('site.' . $key);
+                    $s = Settings::set($key, $value);
                     Support::log('setting.update', $s, "Setting $key", $before, $value);
                     $changed[] = ['key' => $key, 'before' => $before, 'after' => $value];
                 }
@@ -120,7 +119,7 @@ class SiteTools
                 return $out;
             }, readOnly: true),
 
-            new SiteTool('restore_item', 'Bring an item back from the trash.', [
+            new SiteTool('restore_item', 'Bring an item back from the trash (page, section, post, FAQ, image, …) exactly as it was before it was deleted.', [
                 'type' => P::str('Kind of item.')->enum($types)->req(),
                 'id' => P::int('Item id (from list_trash).')->req(),
             ], function (array $a) {
