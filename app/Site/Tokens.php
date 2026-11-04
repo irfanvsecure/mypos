@@ -2,6 +2,8 @@
 
 namespace App\Site;
 
+use App\Models\PricingPlan;
+
 /**
  * Placeholders stored in section HTML (and component attributes) for values that depend on the request or on
  * site settings. They are filled in at render time, so content in the database never hard-codes the domain,
@@ -12,6 +14,8 @@ namespace App\Site;
  *   {{demo_url}}     where "Book a free demo" points on this page (#enquiry or /contact#enquiry)
  *   {{wa_link}}      WhatsApp chat link with a message naming the current page
  *   {{phone}} {{phone_raw}} {{email}} {{address}} {{hours}} {{register_url}} {{whatsapp}}  site settings
+ *   {{price:key}}    a price from pricing_plans (by plan_key), formatted "2,000"
+ *   {{price_plain:key}}  the same without thousands separators, "2000"
  *   {{embed:N}}      the N-th embedded component of the section (handled by SectionRenderer)
  */
 class Tokens
@@ -51,7 +55,39 @@ class Tokens
             return $s;
         }
 
-        return preg_replace_callback('/\{\{(' . implode('|', self::NAMES) . ')\}\}/', fn ($m) => e(self::value($m[1])), $s);
+        return preg_replace_callback(self::pattern(), fn ($m) => e(self::match($m)), $s);
+    }
+
+    private static function pattern(): string
+    {
+        return '/\{\{(?:(' . implode('|', self::NAMES) . ')|(price|price_plain):([a-z0-9][a-z0-9-]*))\}\}/';
+    }
+
+    private static function match(array $m): string
+    {
+        return ($m[1] ?? '') !== '' ? self::value($m[1]) : PricingPlan::formatted($m[3], $m[2] === 'price_plain');
+    }
+
+    /**
+     * Every {{…}} in $s that is not a known placeholder (unknown name, unknown price key, or an embed number
+     * with no embed). Write tools reject content for which this is not empty.
+     *
+     * @return string[]
+     */
+    public static function invalid(string $s, int $embedCount = 0): array
+    {
+        preg_match_all('/\{\{\s*(.*?)\s*\}\}/s', $s, $all);
+        $bad = [];
+        foreach ($all[1] as $i => $inner) {
+            $ok = in_array($inner, self::NAMES, true)
+                || (preg_match('/^embed:(\d+)$/', $inner, $e) && (int) $e[1] < $embedCount)
+                || (preg_match('/^price(?:_plain)?:([a-z0-9][a-z0-9-]*)$/', $inner, $p) && PricingPlan::where('plan_key', $p[1])->exists());
+            if (! $ok) {
+                $bad[] = $all[0][$i];
+            }
+        }
+
+        return array_values(array_unique($bad));
     }
 
     /** Same, unescaped: for meta values (escaped later by the layout) and JSON-LD. */
@@ -61,7 +97,7 @@ class Tokens
             return $s;
         }
 
-        return preg_replace_callback('/\{\{(' . implode('|', self::NAMES) . ')\}\}/', fn ($m) => self::value($m[1]), $s);
+        return preg_replace_callback(self::pattern(), fn ($m) => self::match($m), $s);
     }
 
     /** Resolve tokens in every string of a nested array (component attributes). */

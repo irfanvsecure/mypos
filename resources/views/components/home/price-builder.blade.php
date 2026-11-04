@@ -1,5 +1,12 @@
-@props(['types' => [], 'addons' => []])
-<form class="bld reveal-3d" method="POST" action="{{ route('enquiry.store') }}#builder" data-builder novalidate>
+@props(['types' => [], 'addons' => null])
+@php
+    // Prices come from pricing_plans (single source): the monthly plan, the RetailPro one-time licences and the add-ons.
+    $addons ??= \App\Models\PricingPlan::shown('addons')->get()->map(fn ($a) => [$a->extra['key'] ?? $a->plan_key, $a->name, (int) $a->price_pkr])->all();
+    $monthly = \App\Models\PricingPlan::price('retailpro-monthly');
+    $basic = \App\Models\PricingPlan::price('retailpro-onetime-basic');
+    $standard = \App\Models\PricingPlan::price('retailpro-onetime-standard');
+@endphp
+<form class="bld reveal-3d" method="POST" action="{{ route('enquiry.store') }}#builder" data-builder data-monthly="{{ (int) $monthly }}" data-onetime-basic="{{ (int) $basic }}" data-onetime-standard="{{ (int) $standard }}" novalidate>
       @csrf
       <input type="hidden" name="page" value="home (price builder)">
       <input type="hidden" name="type" value="Price Builder">
@@ -26,8 +33,8 @@
       <fieldset class="bld-step" data-step="2">
         <legend>How would you like to pay?</legend>
         <div class="bld-chips bld-chips--big">
-          <label class="bld-chip"><input type="radio" name="bld_plan" value="monthly" checked><span><b>Monthly</b><small>Rs 2,000/month · 14 days free</small></span></label>
-          <label class="bld-chip"><input type="radio" name="bld_plan" value="onetime"><span><b>One-time licence</b><small>From Rs 24,000, pay once</small></span></label>
+          <label class="bld-chip"><input type="radio" name="bld_plan" value="monthly" checked><span><b>Monthly</b><small>Rs {{ number_format($monthly) }}/month · 14 days free</small></span></label>
+          <label class="bld-chip"><input type="radio" name="bld_plan" value="onetime"><span><b>One-time licence</b><small>From Rs {{ number_format($basic) }}, pay once</small></span></label>
         </div>
       </fieldset>
       <fieldset class="bld-step" data-step="3">
@@ -41,7 +48,7 @@
       <fieldset class="bld-step" data-step="4">
         <legend>Your estimated price</legend>
         <div class="bld-result">
-          <div class="bld-price" aria-live="polite"><span data-bld-price>Rs 2,000</span><small data-bld-per>/month</small></div>
+          <div class="bld-price" aria-live="polite"><span data-bld-price>Rs {{ number_format($monthly) }}</span><small data-bld-per>/month</small></div>
           <p class="bld-plan" data-bld-plan>Standard monthly plan · first 14 days free</p>
           <ul class="bld-summary" data-bld-summary></ul>
         </div>

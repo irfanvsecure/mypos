@@ -244,7 +244,7 @@
       var sales=val('sales'), staff=val('staff'), hours=val('hours'), wage=val('wage');
       var time=staff*hours*26*wage*0.6, leak=sales*0.015, total=time+leak;
       out('sales','Rs '+fmtRs(sales)); out('staff',staff); out('hours',hours); out('wage','Rs '+fmtRs(wage));
-      out('time',fmtRs(time)); out('leak',fmtRs(leak)); out('roi',Math.max(1,Math.floor(total/2000))+'×');
+      out('time',fmtRs(time)); out('leak',fmtRs(leak)); out('roi',Math.max(1,Math.floor(total/(+calc.dataset.monthly||2000)))+'×');
       var from=shown, t0=null; shown=total;
       if(reduceMotion){ out('total',fmtRs(total)); return; }
       requestAnimationFrame(function f(t){ if(!t0) t0=t; var p=Math.min(1,(t-t0)/500); out('total',fmtRs(from+(total-from)*(1-Math.pow(1-p,3)))); if(p<1) requestAnimationFrame(f); });
@@ -252,7 +252,7 @@
     calc.addEventListener('input',runCalc); runCalc();
   }
 
-  /* One-minute price builder (prices mirror the /pricing and /one-time-pricing pages) */
+  /* One-minute price builder. Prices come from the form's data-* attributes (pricing_plans records). */
   var bld=document.querySelector('[data-builder]');
   if(bld){
     var steps=[].slice.call(bld.querySelectorAll('.bld-step')), dots=[].slice.call(bld.querySelectorAll('.bld-steps li'));
@@ -266,11 +266,11 @@
       if(branches!=='1' || (plan==='onetime' && wantsFbr)){
         q.price='Custom quote'; q.per=''; q.plan='Premium — multi-location / FBR setup, quoted for your business';
       } else if(plan==='monthly'){
-        var sum=2000; mods.forEach(function(m){ sum+=+m.dataset.price; });
+        var sum=+bld.dataset.monthly||2000; mods.forEach(function(m){ sum+=+m.dataset.price; });
         q.price='Rs '+fmtRs(sum); q.per='/month'; q.plan='Standard monthly plan'+(names.length?' + '+names.length+' add-on'+(names.length>1?'s':''):'')+' · first 14 days free';
       } else {
         var std=mods.some(function(m){ return /accounting|whatsapp|mobile|instalment|manufacturing|woocommerce|catalogue|offline/.test(m.value); });
-        q.price=std?'Rs 36,500':'Rs 24,000'; q.per=' one-time'; q.plan=(std?'Standard':'Basic')+' one-time licence · single location';
+        q.price='Rs '+fmtRs(std ? (+bld.dataset.onetimeStandard||36500) : (+bld.dataset.onetimeBasic||24000)); q.per=' one-time'; q.plan=(std?'Standard':'Basic')+' one-time licence · single location';
       }
       return q;
     };
