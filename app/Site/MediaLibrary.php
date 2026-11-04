@@ -9,6 +9,8 @@ use App\Models\PageSection;
 use App\Models\Post;
 use App\Models\SeoMeta;
 use App\Models\Setting;
+use GuzzleHttp\Psr7\Uri;
+use GuzzleHttp\Psr7\UriResolver;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
@@ -20,6 +22,13 @@ use Illuminate\Support\Str;
 class MediaLibrary
 {
     private const TYPES = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'avif'];
+
+    private const FETCH_TIMEOUT = 20;
+
+    private const MAX_REDIRECTS = 5;
+
+    /** Image CDNs such as Pexels reject requests without a browser User-Agent. */
+    private const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 
     /** Add a media row for every image file in public/uploads that has none yet. */
     public static function sync(): int
@@ -184,94 +193,341 @@ class MediaLibrary
     }
 
     /**
-     * Store an uploaded image: original kept, a WebP (max width) and srcset WebP sizes created.
+     * Store an image: a main file (max width, WebP by default) plus smaller srcset sizes, and the file as sent.
      *
-     * @return Media
+     * Options: max_width, format ('webp' or 'keep'), keep_original (default true), folder (under uploads/, default
+     * the current year/month), source_url, uploaded_via. Every file except a kept original is re-encoded, which
+     * removes EXIF data.
      */
-    public static function store(string $bytes, string $name, ?string $alt, ?string $title): Media
+    public static function store(string $bytes, string $name, ?string $alt, ?string $title, array $opts = []): Media
     {
         $info = @getimagesizefromstring($bytes);
         $types = [IMAGETYPE_JPEG => 'jpg', IMAGETYPE_PNG => 'png', IMAGETYPE_GIF => 'gif', IMAGETYPE_WEBP => 'webp'];
         if (! $info || ! isset($types[$info[2]])) {
             throw new ToolError('Not a JPEG, PNG, GIF or WebP image.');
         }
+        self::ensureMemory($info[0], $info[1]);
+
+        $cfg = config('mcp_site.images');
+        $maxWidth = (int) ($opts['max_width'] ?? $cfg['max_width']);
+        $keepOriginal = $opts['keep_original'] ?? true;
         $ext = $types[$info[2]];
-        $base = Str::slug(pathinfo($name, PATHINFO_FILENAME)) ?: 'image';
-        $dir = 'uploads/' . date('Y/m');
-        File::ensureDirectoryExists(public_path($dir));
-        $stem = $base;
-        for ($i = 2; File::exists(public_path("$dir/$stem.$ext")) || File::exists(public_path("$dir/$stem.webp")) || Media::withTrashed()->where('path', "$dir/$stem.webp")->exists(); $i++) {
-            $stem = "$base-$i";
-        }
+        $outExt = ($opts['format'] ?? 'webp') === 'keep' ? $ext : 'webp';
 
-        $original = "$dir/$stem.$ext";
-        File::put(public_path($original), $bytes);
-
-        $img = imagecreatefromstring($bytes) ?: throw new ToolError('The image could not be read.');
+        $img = @imagecreatefromstring($bytes) ?: throw new ToolError('The image could not be read.');
+        $img = self::orient($img, $bytes, $ext);
         imagepalettetotruecolor($img);
         imagealphablending($img, true);
         imagesavealpha($img, true);
-        $cfg = config('mcp_site.images');
         $w = imagesx($img);
         $h = imagesy($img);
 
-        $save = function (int $width, string $path) use ($img, $w, $h, $cfg) {
+        $base = Str::slug(pathinfo($name, PATHINFO_FILENAME)) ?: 'image';
+        $dir = 'uploads/' . (($opts['folder'] ?? null) ?: date('Y/m'));
+        File::ensureDirectoryExists(public_path($dir));
+        $stem = $base;
+        for ($i = 2; File::exists(public_path("$dir/$stem.$ext")) || File::exists(public_path("$dir/$stem.$outExt")) || Media::withTrashed()->where('path', "$dir/$stem.$outExt")->exists(); $i++) {
+            $stem = "$base-$i";
+        }
+
+        $written = [];
+        $save = function (int $width, string $path) use ($img, $w, $h, $cfg, $outExt, &$written) {
             $width = min($width, $w);
             $height = (int) round($h * $width / $w);
             $out = $width === $w ? $img : imagescale($img, $width, $height, IMG_BICUBIC);
             imagealphablending($out, false);
             imagesavealpha($out, true);
-            imagewebp($out, public_path($path), (int) $cfg['webp_quality']);
+            $written[] = $path;
+            $file = public_path($path);
+            $quality = (int) $cfg['webp_quality'];
+            $ok = match ($outExt) {
+                'webp' => imagewebp($out, $file, $quality),
+                'jpg' => imagejpeg($out, $file, $quality),
+                'png' => imagepng($out, $file),
+                'gif' => imagegif($out, $file),
+            };
+            if (! $ok) {
+                throw new \RuntimeException("Could not write $path.");
+            }
 
             return [$width, $height];
         };
 
-        $main = "$dir/$stem.webp";
-        if ($ext === 'webp' && $w <= $cfg['max_width']) {
-            $main = $original; // already WebP and small enough
-            [$mw, $mh] = [$w, $h];
-        } else {
-            [$mw, $mh] = $save($cfg['max_width'], $main);
-        }
-        $variants = [];
-        foreach ($cfg['srcset_widths'] as $sw) {
-            if ($sw < $mw) {
-                $vp = "$dir/$stem-$sw.webp";
-                $save($sw, $vp);
-                $variants[] = ['width' => $sw, 'path' => $vp];
+        try {
+            $original = null;
+            if ($keepOriginal) {
+                $original = "$dir/$stem.$ext";
+                $written[] = $original;
+                File::put(public_path($original), $bytes);
             }
-        }
-        $variants[] = ['width' => $mw, 'path' => $main];
 
-        return Media::create(['path' => $main, 'original_path' => $original === $main ? null : $original, 'mime' => 'image/webp',
-            'width' => $mw, 'height' => $mh, 'size' => filesize(public_path($main)), 'alt' => $alt, 'title' => $title, 'variants' => $variants]);
+            $main = "$dir/$stem.$outExt";
+            if ($keepOriginal && $ext === 'webp' && $outExt === 'webp' && $w <= $maxWidth) {
+                [$mw, $mh] = [$w, $h]; // already WebP and small enough: the kept file is the main file
+            } else {
+                [$mw, $mh] = $save($maxWidth, $main);
+            }
+            $variants = [];
+            foreach ($cfg['srcset_widths'] as $sw) {
+                if ($sw < $mw) {
+                    $vp = "$dir/$stem-$sw.$outExt";
+                    $save($sw, $vp);
+                    $variants[] = ['width' => $sw, 'path' => $vp];
+                }
+            }
+            $variants[] = ['width' => $mw, 'path' => $main];
+
+            $mimes = ['webp' => 'image/webp', 'jpg' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif'];
+
+            return Media::create(['path' => $main, 'original_path' => $original === $main ? null : $original, 'mime' => $mimes[$outExt],
+                'width' => $mw, 'height' => $mh, 'size' => filesize(public_path($main)), 'alt' => $alt, 'title' => $title, 'variants' => $variants,
+                'source_url' => $opts['source_url'] ?? null, 'uploaded_via' => $opts['uploaded_via'] ?? null]);
+        } catch (\Throwable $e) {
+            File::delete(array_map('public_path', $written)); // no half-finished image left behind
+
+            throw $e;
+        }
     }
 
-    /** Download an image from a public http(s) URL (no internal addresses, size-limited). */
-    public static function fetch(string $url): string
+    /**
+     * Download an image from a public URL and add it to the library. Used by upload_image_from_url and by the URL
+     * path of upload_image. Options: filename, alt, title, folder, max_width, convert_to_webp.
+     * Failures are ToolErrors with a code: url_not_allowed, fetch_failed, not_an_image, too_large, processing_failed.
+     */
+    public static function fromUrl(string $url, array $opts = []): Media
     {
-        $parts = parse_url($url);
-        if (! in_array(strtolower($parts['scheme'] ?? ''), ['http', 'https'], true) || empty($parts['host'])) {
-            throw new ToolError('image_url must be an http(s) URL.');
-        }
-        foreach (gethostbynamel($parts['host']) ?: [] as $ip) {
-            if (! filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
-                throw new ToolError('image_url points to a private or reserved address.');
-            }
-        }
-        if (! gethostbynamel($parts['host'])) {
-            throw new ToolError('image_url host could not be resolved.');
-        }
-        $max = (int) config('mcp_site.images.max_upload_mb') * 1024 * 1024;
-        $res = Http::timeout(20)->withOptions(['allow_redirects' => false, 'stream' => false])->get($url);
-        if (! $res->successful()) {
-            throw new ToolError('Download failed: HTTP ' . $res->status());
-        }
-        if (strlen($res->body()) > $max) {
-            throw new ToolError('The image is larger than ' . config('mcp_site.images.max_upload_mb') . ' MB.');
+        [$bytes, $contentType] = self::download($url);
+        if (self::sniff($bytes) === null) {
+            throw ToolError::coded('not_an_image', 'The URL did not return a JPEG, PNG, GIF or WebP image.', ['content_type' => $contentType]);
         }
 
-        return $res->body();
+        try {
+            return self::store($bytes, $opts['filename'] ?? self::nameFromUrl($url), $opts['alt'] ?? null, $opts['title'] ?? null, [
+                'max_width' => $opts['max_width'] ?? null,
+                'format' => ($opts['convert_to_webp'] ?? true) ? 'webp' : 'keep',
+                'keep_original' => false, // the source URL is recorded, and a raw copy would keep the EXIF data
+                'folder' => $opts['folder'] ?? null,
+                'source_url' => $url,
+                'uploaded_via' => 'mcp_url',
+            ]);
+        } catch (\Throwable $e) {
+            if ($e instanceof ToolError && $e->errorCode !== null) {
+                throw $e;
+            }
+            report($e);
+
+            throw ToolError::coded('processing_failed', 'The image was downloaded but could not be processed.', ['detail' => $e->getMessage()]);
+        }
+    }
+
+    /**
+     * Fetch a URL, checking every redirect hop against the SSRF guard and pinning the connection to the checked IP.
+     *
+     * @return array{0:string,1:string} body and Content-Type
+     */
+    private static function download(string $url): array
+    {
+        $max = (int) config('mcp_site.images.max_upload_mb') * 1024 * 1024;
+        $deadline = microtime(true) + self::FETCH_TIMEOUT;
+
+        for ($redirects = 0; ; $redirects++) {
+            [$host, $resolve] = self::guardUrl($url);
+            if (! extension_loaded('curl')) {
+                throw ToolError::coded('fetch_failed', 'The PHP curl extension is required to download images.', ['status' => null, 'hostname' => $host]);
+            }
+
+            $tooLarge = false;
+            $curl = [
+                CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
+                CURLOPT_NOPROGRESS => false,
+                CURLOPT_PROGRESSFUNCTION => function ($ch, $total, $received) use ($max, &$tooLarge) {
+                    $tooLarge = $total > $max || $received > $max;
+
+                    return $tooLarge ? 1 : 0; // non-zero stops the transfer
+                },
+            ];
+            if ($resolve !== null) {
+                $curl[CURLOPT_RESOLVE] = [$resolve];
+            }
+
+            try {
+                $res = Http::withoutRedirecting()
+                    ->withUserAgent(self::USER_AGENT)
+                    ->accept('image/*')
+                    ->connectTimeout(10)
+                    ->timeout(max(1, (int) ceil($deadline - microtime(true))))
+                    ->withOptions(['curl' => $curl])
+                    ->get($url);
+            } catch (\Throwable $e) {
+                if ($tooLarge) {
+                    throw self::tooLarge();
+                }
+                report($e);
+
+                throw ToolError::coded('fetch_failed', 'The download failed.', ['status' => null, 'hostname' => $host, 'detail' => $e->getMessage()]);
+            }
+
+            $status = $res->status();
+            if (in_array($status, [301, 302, 303, 307, 308], true)) {
+                $location = $res->header('Location');
+                if ($location === '' || $redirects >= self::MAX_REDIRECTS) {
+                    throw ToolError::coded('fetch_failed', $location === '' ? 'The redirect had no target.' : 'Too many redirects.', ['status' => $status, 'hostname' => $host]);
+                }
+                $url = (string) UriResolver::resolve(new Uri($url), new Uri($location));
+
+                continue;
+            }
+            if ($status !== 200) {
+                throw ToolError::coded('fetch_failed', "The server answered HTTP $status.", ['status' => $status, 'hostname' => $host]);
+            }
+
+            $contentType = $res->header('Content-Type');
+            if (! str_starts_with(strtolower(trim($contentType)), 'image/')) {
+                throw ToolError::coded('not_an_image', 'The URL did not return an image.', ['content_type' => $contentType, 'hostname' => $host]);
+            }
+            if (strlen($res->body()) > $max) {
+                throw self::tooLarge();
+            }
+
+            return [$res->body(), $contentType];
+        }
+    }
+
+    /**
+     * SSRF guard for one URL: http(s) only, allow-listed host if a list is set, public addresses only.
+     *
+     * @return array{0:string,1:?string} host and the curl "host:port:ip" entry that pins it (null for an IP literal)
+     */
+    private static function guardUrl(string $url): array
+    {
+        $deny = fn (string $why, ?string $host = null) => ToolError::coded('url_not_allowed', $why, ['hostname' => $host]);
+
+        $parts = parse_url($url);
+        $scheme = strtolower($parts['scheme'] ?? '');
+        if (! in_array($scheme, ['http', 'https'], true) || empty($parts['host'])) {
+            throw $deny('The URL must be http or https.');
+        }
+        // A URL that parsers could read differently must not reach curl, because the checks below read PHP's result.
+        if (isset($parts['user']) || isset($parts['pass']) || preg_match('/[\s\\\\\x00-\x1f]/', $url)) {
+            throw $deny('The URL must not contain credentials, backslashes or spaces.', $parts['host']);
+        }
+
+        $host = strtolower(trim($parts['host'], '[]'));
+        $allowed = config('mcp_site.images.url_allowed_hosts', []);
+        if ($allowed && ! in_array($host, $allowed, true)) {
+            throw $deny("$host is not in MCP_IMAGE_URL_ALLOWED_HOSTS.", $host);
+        }
+
+        if (filter_var($host, FILTER_VALIDATE_IP)) {
+            if (! self::isPublicIp($host)) {
+                throw $deny('The URL points to a private or reserved address.', $host);
+            }
+
+            return [$host, null];
+        }
+        if (preg_match('/^(0x[0-9a-f]+|\d+)(\.(0x[0-9a-f]+|\d+))*$/i', $host)) {
+            throw $deny('Write IP addresses in the normal dotted form.', $host); // 2130706433 or 0x7f.1 mean 127.0.0.1
+        }
+
+        $ips = gethostbynamel($host) ?: [];
+        foreach (@dns_get_record($host, DNS_AAAA) ?: [] as $record) {
+            $ips[] = $record['ipv6'];
+        }
+        if (! $ips) {
+            throw ToolError::coded('fetch_failed', 'The host name could not be resolved.', ['status' => null, 'hostname' => $host]);
+        }
+        foreach ($ips as $ip) {
+            if (! self::isPublicIp($ip)) {
+                throw $deny('The URL points to a private or reserved address.', $host);
+            }
+        }
+
+        $port = $parts['port'] ?? ($scheme === 'https' ? 443 : 80);
+        $ip = str_contains($ips[0], ':') ? "[{$ips[0]}]" : $ips[0];
+
+        return [$host, "$host:$port:$ip"];
+    }
+
+    public static function isPublicIp(string $ip): bool
+    {
+        $bin = @inet_pton($ip);
+        if ($bin === false) {
+            return false;
+        }
+        if (strlen($bin) === 16) {
+            if (substr($bin, 0, 12) === str_repeat("\0", 10) . "\xff\xff" || substr($bin, 0, 12) === str_repeat("\0", 12)) {
+                return strlen(ltrim($bin, "\0")) > 0 && self::isPublicIp((string) inet_ntop(substr($bin, 12))); // IPv4 inside IPv6
+            }
+            $first = ord($bin[0]);
+            if (($first & 0xFE) === 0xFC || ($first === 0xFE && (ord($bin[1]) & 0xC0) === 0x80)) {
+                return false; // fc00::/7 unique local, fe80::/10 link local
+            }
+        } elseif (ord($bin[0]) === 100 && (ord($bin[1]) & 0xC0) === 64) {
+            return false; // 100.64.0.0/10 carrier-grade NAT
+        }
+
+        return (bool) filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE);
+    }
+
+    /** The real type from the file's first bytes: jpg, png, gif, webp, or null. */
+    public static function sniff(string $bytes): ?string
+    {
+        return match (true) {
+            str_starts_with($bytes, "\xFF\xD8\xFF") => 'jpg',
+            str_starts_with($bytes, "\x89PNG\r\n\x1A\n") => 'png',
+            str_starts_with($bytes, 'GIF87a'), str_starts_with($bytes, 'GIF89a') => 'gif',
+            str_starts_with($bytes, 'RIFF') && substr($bytes, 8, 4) === 'WEBP' => 'webp',
+            default => null,
+        };
+    }
+
+    /** A file name from the URL path. Generic last parts such as "download" give way to the part before them. */
+    private static function nameFromUrl(string $url): string
+    {
+        $segments = array_values(array_filter(explode('/', urldecode((string) parse_url($url, PHP_URL_PATH)))));
+        $last = array_pop($segments) ?? 'image';
+        if (in_array(strtolower(pathinfo($last, PATHINFO_FILENAME)), ['download', 'image', 'photo', 'file', 'raw', 'index'], true) && $segments) {
+            return end($segments);
+        }
+
+        return $last;
+    }
+
+    private static function tooLarge(): ToolError
+    {
+        return ToolError::coded('too_large', 'The image is larger than ' . config('mcp_site.images.max_upload_mb') . ' MB.', ['max_mb' => (int) config('mcp_site.images.max_upload_mb')]);
+    }
+
+    /** Refuse images too big to decode: running out of memory is a fatal error that no catch block can report. */
+    private static function ensureMemory(int $w, int $h): void
+    {
+        $maxMp = (int) config('mcp_site.images.max_megapixels');
+        if ($w * $h > $maxMp * 1_000_000) {
+            throw ToolError::coded('too_large', "The image is {$w}x{$h}, above the limit of {$maxMp} megapixels.", ['width' => $w, 'height' => $h]);
+        }
+        $need = $w * $h * 10 + 64 * 1024 * 1024; // source and scaled copy, 4-5 bytes per pixel each
+        $limit = ini_parse_quantity((string) ini_get('memory_limit'));
+        if ($limit > 0 && $need > $limit && @ini_set('memory_limit', (string) $need) === false) {
+            throw ToolError::coded('too_large', "The image is {$w}x{$h}, too big for this server's memory limit.", ['width' => $w, 'height' => $h]);
+        }
+    }
+
+    /** Turn a JPEG upright according to its EXIF orientation, which is lost when the EXIF data is removed. */
+    private static function orient(\GdImage $img, string $bytes, string $ext): \GdImage
+    {
+        if ($ext !== 'jpg' || ! function_exists('exif_read_data')) {
+            return $img;
+        }
+        $exif = @exif_read_data('data://image/jpeg;base64,' . base64_encode($bytes));
+        $orientation = (int) ($exif['Orientation'] ?? 1);
+        if (in_array($orientation, [2, 5, 7], true)) {
+            imageflip($img, IMG_FLIP_HORIZONTAL);
+        } elseif ($orientation === 4) {
+            imageflip($img, IMG_FLIP_VERTICAL);
+        }
+        $angle = [3 => 180, 5 => 90, 6 => -90, 7 => -90, 8 => 90][$orientation] ?? 0;
+
+        return $angle ? (imagerotate($img, $angle, 0) ?: $img) : $img;
     }
 
     /** <img> markup for a media item, ready to paste into a section ({{base}} placeholders). */

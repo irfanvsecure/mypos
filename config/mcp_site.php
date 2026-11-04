@@ -22,6 +22,11 @@ return [
         'srcset_widths' => [480, 800, 1200],
         'webp_quality' => 82,
         'max_upload_mb' => 10,
+        'max_megapixels' => 50,            // larger images are refused before decoding (memory)
+
+        // Hosts upload_image_from_url may download from (comma-separated). Empty = all public hosts.
+        // Every host in a redirect chain must be listed, e.g. images.pexels.com,images.unsplash.com,unsplash.com
+        'url_allowed_hosts' => array_values(array_filter(array_map(fn ($h) => strtolower(trim($h)), explode(',', (string) env('MCP_IMAGE_URL_ALLOWED_HOSTS', ''))))),
         'oversized_kb' => 300,             // audit_images flags files above this
     ],
 ];

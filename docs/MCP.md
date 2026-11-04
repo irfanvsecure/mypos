@@ -1,6 +1,6 @@
 # mypos.pk MCP server: deploy and connect
 
-The website has a built-in MCP server. Once it is deployed and added to claude.ai as a custom connector, Claude can manage the marketing site: pages and sections, prices, FAQs, reviews, logos, downloads, blog, images, SEO, structured data, links, redirects, sitemap/robots and settings. The full list of 96 tools is in [mcp-tools.md](mcp-tools.md).
+The website has a built-in MCP server. Once it is deployed and added to claude.ai as a custom connector, Claude can manage the marketing site: pages and sections, prices, FAQs, reviews, logos, downloads, blog, images, SEO, structured data, links, redirects, sitemap/robots and settings. The full list of 97 tools is in [mcp-tools.md](mcp-tools.md).
 
 **Scope:** website content only. There is no tool for SQL, shell commands, files outside `public/uploads`, `.env`, or any POS-application data. Website enquiries are read-only, and phone numbers, emails and IPs are never returned. `tests/Feature/Mcp/IsolationTest.php` proves the tools only touch the website tables.
 
@@ -71,6 +71,7 @@ SITE_NOINDEX=true                       # keep true until launch: every page sta
 MCP_SECRET=                             # paste the generated secret (see below)
 MCP_REQUIRE_HTTPS=true                  # default outside local; leave on
 MCP_RATE_LIMIT=120                      # calls per minute per IP
+MCP_IMAGE_URL_ALLOWED_HOSTS=            # optional, comma-separated; empty = all public hosts
 TRUSTED_PROXIES=*                       # if behind Cloudflare or a load balancer, so HTTPS is detected
 
 # Optional: Cloudflare cache purge after every change
@@ -99,7 +100,7 @@ After editing `.env`, run `php artisan optimize:clear && php artisan optimize`.
 # Expect 401 (no secret):
 curl -s -o /dev/null -w "%{http_code}\n" -X POST https://myposs.mait.ae/mcp
 
-# Expect a list of 96 tools:
+# Expect a list of 97 tools:
 curl -s -X POST "https://myposs.mait.ae/mcp/YOUR_SECRET" \
   -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | head -c 300
@@ -142,5 +143,6 @@ Treat the connector URL like a password: anyone with it can edit the site. To re
 
 - **Revisions:** every section change keeps the previous version (`list_section_revisions` / `restore_section_revision`). Deletions go to the trash (`list_trash` / `restore_item`); `purge_item` with `confirm=true` is the only permanent delete.
 - **Speed:** the first site-wide audit (`audit_meta`, `find_orphan_pages`, `audit_headings` without a page) renders every page and takes about 30–40 seconds. Results are cached per page until that page changes.
-- **Uploaded images** go to `public/uploads/YYYY/MM/`: a WebP copy (max 1600 px), srcset sizes and the original. Back up `public/uploads/` with the database.
-- **Developer checks:** `php artisan test` (79 tests). `php artisan site:snapshot <label>` + `php artisan site:diff <a> <b>` compare the rendered HTML of every URL before and after a change. Run `php artisan serve --port=8090` first.
+- **Uploaded images** go to `public/uploads/YYYY/MM/` (or the `folder` you give): a WebP copy (max 1600 px) and srcset sizes. A base64 upload also keeps the file as sent. A URL download records its source URL instead. Back up `public/uploads/` with the database.
+- **Downloading images by URL:** `upload_image_from_url` and the URL option of `upload_image` share one download path. It fetches on the server, re-checks every redirect, and never connects to a private or reserved address. Errors are JSON with an `error` code: `url_not_allowed`, `fetch_failed`, `not_an_image`, `too_large` or `processing_failed`. If `MCP_IMAGE_URL_ALLOWED_HOSTS` is set, every host in a redirect chain must be on the list. `unsplash.com/photos/<id>/download` links redirect to a bot-protection check and fail as `fetch_failed` (HTTP 401); use the direct `images.unsplash.com` link.
+- **Developer checks:** `php artisan test` (88 tests). `php artisan site:snapshot <label>` + `php artisan site:diff <a> <b>` compare the rendered HTML of every URL before and after a change. Run `php artisan serve --port=8090` first.

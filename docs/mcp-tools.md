@@ -1,6 +1,6 @@
 # MCP tools
 
-All 96 tools of the mypos.pk MCP server, generated from `App\Mcp\ToolRegistry`.
+All 97 tools of the mypos.pk MCP server, generated from `App\Mcp\ToolRegistry`.
 **R** = read-only. **W** = changes the site (saves revisions, writes the activity log, clears caches). **D** = deletes (moves to the trash; `restore_item` brings it back, `purge_item` removes it for good).
 
 ## Pages & sections
@@ -97,7 +97,8 @@ All 96 tools of the mypos.pk MCP server, generated from `App\Mcp\ToolRegistry`.
 | Tool | | What it does |
 |---|---|---|
 | `list_images` | R | List images in /uploads with size, dimensions, alt text and how many places use each. |
-| `upload_image` | W | Upload an image from a public URL or base64 data. It is converted to WebP (max 1600 px wide, original kept) with 480/800/1200 px srcset sizes. Returns ready-to-use <img> HTML. |
+| `upload_image` | W | Upload an image from a public URL or base64 data. It is converted to WebP (max 1600 px wide) with 480/800/1200 px srcset sizes. For base64 the file as sent is kept too. Returns ready-to-use <img> HTML. |
+| `upload_image_from_url` | W | Download an image from a public URL server-side and add it to the media library. Use when the client cannot fetch external images. |
 | `update_image` | W | Change an image's alt text (applied to every <img> that shows it), title, or file name (the file is renamed, every reference updated, and the old URL redirects). |
 | `replace_image` | W | Show a different image everywhere an image is used (pages, components, posts, logos, SEO images, settings). |
 | `delete_image` | D | Move an image to the trash. Refused while it is used somewhere unless force=true. The file is removed only when the item is purged. |

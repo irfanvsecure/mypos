@@ -29,7 +29,7 @@ Laravel 12 rebuild of [mypos.pk](https://mypos.pk): POS software for Pakistan (r
 
 ## MCP server
 
-`POST /mcp` (header `Authorization: Bearer <MCP_SECRET>`) or `POST /mcp/<MCP_SECRET>` (for claude.ai connectors). It has 96 tools for pages, sections, headings, links, pricing, FAQs, reviews, logos, downloads, blog, images, SEO, structured data, redirects, sitemap/robots, settings, read-only enquiries, trash, activity log and cache.
+`POST /mcp` (header `Authorization: Bearer <MCP_SECRET>`) or `POST /mcp/<MCP_SECRET>` (for claude.ai connectors). It has 97 tools for pages, sections, headings, links, pricing, FAQs, reviews, logos, downloads, blog, images, SEO, structured data, redirects, sitemap/robots, settings, read-only enquiries, trash, activity log and cache.
 
 - Deploy, `.env`, and how to add it in claude.ai: **[docs/MCP.md](docs/MCP.md)**
 - Every tool with a one-line description: **[docs/mcp-tools.md](docs/mcp-tools.md)**
@@ -54,6 +54,7 @@ php artisan serve
 | `LEADS_EMAIL`, `MAIL_*` | Where and how enquiries are emailed |
 | `MCP_SECRET` | Secret for the MCP endpoint (64 hex characters; empty = MCP off) |
 | `MCP_REQUIRE_HTTPS`, `MCP_RATE_LIMIT`, `TRUSTED_PROXIES` | MCP transport settings (see docs/MCP.md) |
+| `MCP_IMAGE_URL_ALLOWED_HOSTS` | Optional list of hosts `upload_image_from_url` may download from |
 | `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ZONE_ID` | Optional Cloudflare cache purge after changes |
 | `SITE_REMOTE_UPLOADS` | Migration fallback for missing `/uploads` files; keep `false` |
 
@@ -73,7 +74,7 @@ Phase 1 migration diff reports: [docs/phase1/](docs/phase1/).
 php artisan test
 ```
 
-79 tests cover:
+88 tests cover:
 - every page, post and client page rendering, old-URL redirects and the enquiry form;
 - the HTML sanitizer round-trip over all stored content;
 - the MCP endpoint (auth, HTTPS, JSON-RPC) and every tool (create / update / delete / restore, validation);

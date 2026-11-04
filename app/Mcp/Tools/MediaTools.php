@@ -45,8 +45,8 @@ class MediaTools
                 return ['total' => count($out), 'images' => array_slice($out, $a['offset'] ?? 0, $a['limit'] ?? 100)];
             }, readOnly: true),
 
-            new SiteTool('upload_image', 'Upload an image from a public URL or base64 data. It is converted to WebP (max 1600 px wide, original kept) with 480/800/1200 px srcset sizes. Returns ready-to-use <img> HTML.', [
-                'image_url' => P::str('Public http(s) URL of the image.'),
+            new SiteTool('upload_image', 'Upload an image from a public URL or base64 data. It is converted to WebP (max 1600 px wide) with 480/800/1200 px srcset sizes. For base64 the file as sent is kept too. Returns ready-to-use <img> HTML.', [
+                'image_url' => P::str('Public http(s) URL of the image.', 'max:2048'),
                 'base64' => P::str('Image data as base64 (or a data: URL).'),
                 'filename' => P::str('File name to use, e.g. "car-wash-pos-dashboard" (default from the URL).', 'max:120'),
                 'alt' => P::str('Alt text: describe the image (required).', 'max:250')->req(),
@@ -55,23 +55,36 @@ class MediaTools
                 if (empty($a['image_url']) === empty($a['base64'])) {
                     throw new ToolError('Give either image_url or base64.');
                 }
-                if (! empty($a['base64'])) {
-                    $bytes = base64_decode(preg_replace('/^data:[^,]*,/', '', $a['base64']), true);
-                    if ($bytes === false) {
-                        throw new ToolError('base64 is not valid.');
-                    }
-                    if (strlen($bytes) > config('mcp_site.images.max_upload_mb') * 1024 * 1024) {
-                        throw new ToolError('The image is too large.');
-                    }
-                } else {
-                    $bytes = MediaLibrary::fetch($a['image_url']);
+                $alt = Support::text($a['alt'], 'alt');
+                $title = Support::text($a['title'] ?? null, 'title');
+                if (! empty($a['image_url'])) {
+                    return self::uploaded(MediaLibrary::fromUrl($a['image_url'], ['filename' => $a['filename'] ?? null, 'alt' => $alt, 'title' => $title]));
                 }
-                $name = $a['filename'] ?? (! empty($a['image_url']) ? basename(parse_url($a['image_url'], PHP_URL_PATH) ?: 'image') : 'image');
-                $m = MediaLibrary::store($bytes, $name, Support::text($a['alt'], 'alt'), Support::text($a['title'] ?? null, 'title'));
-                Support::log('media.upload', $m, "Uploaded {$m->path}", null, self::item($m));
+                $bytes = base64_decode(preg_replace('/^data:[^,]*,/', '', $a['base64']), true);
+                if ($bytes === false) {
+                    throw new ToolError('base64 is not valid.');
+                }
+                if (strlen($bytes) > config('mcp_site.images.max_upload_mb') * 1024 * 1024) {
+                    throw new ToolError('The image is too large.');
+                }
 
-                return self::item($m) + ['html' => MediaLibrary::snippet($m), 'note' => 'Paste `html` into a section; {{base}} is filled in with the site address.'];
+                return self::uploaded(MediaLibrary::store($bytes, $a['filename'] ?? 'image', $alt, $title, ['uploaded_via' => 'mcp_base64']));
             }),
+
+            new SiteTool('upload_image_from_url', 'Download an image from a public URL server-side and add it to the media library. Use when the client cannot fetch external images.', [
+                'url' => P::str('Direct image URL (http or https).', 'max:2048')->req(),
+                'filename' => P::str('File name without extension (default: from the URL).', 'max:120'),
+                'alt' => P::str('Alt text to store with the image.', 'max:250'),
+                'folder' => P::str('Sub-folder under uploads/, e.g. "industries" (default: the current year/month).', ['max:120', 'regex:/^[a-z0-9]+(-[a-z0-9]+)*(\/[a-z0-9]+(-[a-z0-9]+)*)*$/']),
+                'max_width' => P::int('Scale down to this width if larger (default 1600).', ['min:16', 'max:4000']),
+                'convert_to_webp' => P::bool('Convert to WebP (default true). false keeps the source format.'),
+            ], fn (array $a) => self::uploaded(MediaLibrary::fromUrl($a['url'], [
+                'filename' => $a['filename'] ?? null,
+                'alt' => Support::text($a['alt'] ?? null, 'alt'),
+                'folder' => $a['folder'] ?? null,
+                'max_width' => $a['max_width'] ?? null,
+                'convert_to_webp' => $a['convert_to_webp'] ?? true,
+            ]))),
 
             new SiteTool('update_image', 'Change an image\'s alt text (applied to every <img> that shows it), title, or file name (the file is renamed, every reference updated, and the old URL redirects).', [
                 'image' => $image,
@@ -200,6 +213,14 @@ class MediaTools
         ];
     }
 
+    /** The result of every upload tool, after recording it in the activity log. */
+    private static function uploaded(Media $m): array
+    {
+        Support::log('media.upload', $m, "Uploaded {$m->path}", null, self::item($m));
+
+        return self::item($m) + ['html' => MediaLibrary::snippet($m), 'note' => 'Paste `html` into a section; {{base}} is filled in with the site address.'];
+    }
+
     private static function find(string $ref): Media
     {
         MediaLibrary::sync();
@@ -214,8 +235,9 @@ class MediaTools
     public static function item(Media $m): array
     {
         return ['id' => $m->id, 'path' => $m->path, 'url' => asset($m->path), 'width' => $m->width, 'height' => $m->height,
-            'size_kb' => $m->size ? round($m->size / 1024) : null, 'alt' => $m->alt, 'title' => $m->title,
-            'original' => $m->original_path, 'srcset' => array_column($m->variants ?? [], 'width')];
+            'size_kb' => $m->size ? round($m->size / 1024) : null, 'size_bytes' => $m->size, 'mime' => $m->mime, 'alt' => $m->alt, 'title' => $m->title,
+            'original' => $m->original_path, 'srcset' => array_column($m->variants ?? [], 'width'),
+            'source_url' => $m->source_url, 'uploaded_via' => $m->uploaded_via];
     }
 
     /** "uploads/…" for a site image URL, else null. */
