@@ -2,8 +2,8 @@
     $siteUrl     = rtrim(config('site.url'), '/');
     // Inline @section values arrive already HTML-escaped; decode once so {{ }} below escapes exactly once.
     $yield       = fn ($name) => trim(html_entity_decode($__env->yieldContent($name), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
-    $metaTitle   = $yield('title') ?: 'myPOS — Free POS Software for Pakistan';
-    $metaDesc    = $yield('description') ?: 'Free POS software for Pakistani businesses — FBR & PRA digital invoicing built in, works offline, syncs across every branch.';
+    $metaTitle   = $yield('title') ?: config('site.default_title');
+    $metaDesc    = $yield('description') ?: config('site.default_description');
     $metaKeys    = $yield('keywords');
     $canonical   = trim($__env->yieldContent('canonical')) ?: $siteUrl . (request()->path() === '/' ? '/' : '/' . request()->path());
     $ogImage     = trim($__env->yieldContent('og_image')) ?: '/images/logo.png';
@@ -74,7 +74,7 @@
 <div class="scroll-progress" aria-hidden="true"><i data-progress></i></div>
 <div class="offer-bar" data-offer>
   <div class="wrap">
-    <p><span class="ob-tag">FREE</span>FBR &amp; PRA setup + staff training with every new myPOS install. <a href="{{ $demoHref }}">Book your free demo →</a></p>
+    <p><span class="ob-tag">{{ config('site.offer_bar.tag') }}</span>{!! config('site.offer_bar.text') !!} <a href="{{ $demoHref }}">{{ config('site.offer_bar.link') }}</a></p>
     <button type="button" class="ob-close" data-offer-close aria-label="Dismiss offer">&times;</button>
   </div>
 </div>

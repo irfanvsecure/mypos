@@ -1,6 +1,6 @@
 {{-- Proof block shown above the demo form on sales pages: numbers, how it works, and three Google reviews. --}}
 @php
-    $picks = collect(config('site.reviews'))->filter(fn ($r) => mb_strlen($r[1]) > 90)->values();
+    $picks = collect(\App\Models\Testimonial::pairs())->filter(fn ($r) => mb_strlen($r[1]) > 90)->values();
     // Rotate the reviews by page so neighbouring pages don't all show the same three.
     $offset = crc32(request()->path()) % max(1, $picks->count());
     $picks = $picks->slice($offset)->concat($picks->take($offset))->take(3);

@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Site settings saved in the database override the defaults in config/site.php.
+        \App\Site\Settings::apply();
     }
 }

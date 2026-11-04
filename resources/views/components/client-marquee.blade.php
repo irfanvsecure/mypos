@@ -3,8 +3,14 @@
     'rows' => [],
     'title' => 'Our Clients',
     'eyebrow' => 'TRUSTED BY',
+    'groups' => null, // client_logos groups, one per row (used instead of rows)
 ])
-@php $total = config('site.clients_total'); @endphp
+@php
+    if ($groups) {
+        $rows = array_map(fn ($g) => \App\Models\ClientLogo::shown($g)->get()->map(fn ($l) => [$l->image, $l->name, $l->client_slug])->all(), $groups);
+    }
+    $total = config('site.clients_total');
+@endphp
 <section class="section-tight cs-section" {{ $attributes }}>
   <div class="wrap">
     <div class="cs-head reveal">

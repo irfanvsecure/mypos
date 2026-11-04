@@ -6,6 +6,10 @@ if (! function_exists('wa_link')) {
      */
     function wa_link(): string
     {
+        if (config('site.__extract')) {
+            return \App\Site\Tokens::SENTINELS['wa_link']; // site:extract stores {{wa_link}} instead
+        }
+
         $path = trim(request()->path(), '/');
         $topic = wa_topic($path);
 
@@ -105,6 +109,10 @@ if (! function_exists('demo_url')) {
      */
     function demo_url(): string
     {
+        if (config('site.__extract')) {
+            return \App\Site\Tokens::SENTINELS['demo_url']; // site:extract stores {{demo_url}} instead
+        }
+
         return has_lead_form() ? '#enquiry' : url('/contact') . '#enquiry';
     }
 }
@@ -116,5 +124,16 @@ if (! function_exists('pexels')) {
     function pexels(string $url, int $width = 1000): string
     {
         return strtok($url, '?') . '?auto=compress&cs=tinysrgb&w=' . $width;
+    }
+}
+
+if (! function_exists('attr_url')) {
+    /**
+     * A stored URL for an href/src attribute. Ampersands are written as-is (as the hand-written pages did);
+     * only the characters that could break out of the attribute are encoded. URLs are validated on save.
+     */
+    function attr_url(?string $url): string
+    {
+        return str_replace(['"', '<', '>'], ['%22', '%3C', '%3E'], (string) $url);
     }
 }

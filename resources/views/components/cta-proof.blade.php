@@ -3,13 +3,7 @@
     'caption' => true,
 ])
 @php
-    $logos = [
-        ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi'],
-        ['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School'],
-        ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai'],
-        ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods'],
-        ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos'],
-    ];
+    $logos = \App\Models\ClientLogo::pairs('proof') ?: config('site.proof_logos');
 @endphp
 <div {{ $attributes->merge(['class' => 'proof-row proof-' . $tone]) }}>
   <div class="proof-logos">

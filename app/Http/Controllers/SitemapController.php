@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Page;
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
 
@@ -11,11 +12,29 @@ class SitemapController extends Controller
     public function __invoke()
     {
         $base = rtrim(config('site.url'), '/');
-        $urls = [[$base . '/', filemtime(resource_path('views/home.blade.php')), '1.0']];
-
+        // Pages: published database pages (last change to the page, its sections or SEO), plus any Blade page
+        // not moved to the database yet (file time). Sorted the way the Blade files always were.
+        $pages = [];
+        foreach (Page::published()->withMax('sections', 'updated_at')->with('seo')->get() as $page) {
+            $pages[$page->path] = max(array_filter([
+                $page->updated_at?->timestamp,
+                $page->sections_max_updated_at ? strtotime($page->sections_max_updated_at) : null,
+                $page->seo?->updated_at?->timestamp,
+            ]));
+        }
+        if (! isset($pages['']) && is_file(resource_path('views/home.blade.php'))) {
+            $pages[''] = filemtime(resource_path('views/home.blade.php'));
+        }
         foreach (File::allFiles(resource_path('views/pages')) as $file) {
-            $slug = str_replace(['\\', '.blade.php'], ['/', ''], $file->getRelativePathname());
-            $urls[] = [$base . '/' . $slug, $file->getMTime(), str_contains($slug, '-policy') || $slug === 'terms-of-service' ? '0.3' : '0.8'];
+            $pages[str_replace(['\\', '.blade.php'], ['/', ''], $file->getRelativePathname())] ??= $file->getMTime();
+        }
+        $home = $pages[''] ?? null;
+        unset($pages['']);
+        uksort($pages, fn ($a, $b) => strcmp($a . '.blade.php', $b . '.blade.php'));
+
+        $urls = $home ? [[$base . '/', $home, '1.0']] : [];
+        foreach ($pages as $slug => $time) {
+            $urls[] = [$base . '/' . $slug, $time, str_contains($slug, '-policy') || $slug === 'terms-of-service' ? '0.3' : '0.8'];
         }
 
         $urls[] = [$base . '/blogs', Post::max('updated_at') ? strtotime(Post::max('updated_at')) : time(), '0.7'];

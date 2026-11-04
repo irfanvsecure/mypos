@@ -10,6 +10,14 @@ return [
     'address'   => 'Office No. 1, Midlane Plaza, Ghazni Lane, New Super Town, Lahore, Pakistan',
     'hours'     => 'Mon–Fri, 10:00 am – 18:00 pm (Pakistan Standard Time)',
     'register_url' => 'https://erp.mypos.pk/business/register',
+
+    // Sitewide texts (editable as settings). HTML values are written into the page as-is.
+    'default_title' => 'myPOS — Free POS Software for Pakistan',
+    'default_description' => 'Free POS software for Pakistani businesses — FBR & PRA digital invoicing built in, works offline, syncs across every branch.',
+    'offer_bar' => ['tag' => 'FREE', 'text' => 'FBR &amp; PRA setup + staff training with every new myPOS install.', 'link' => 'Book your free demo →'],
+    'footer_tagline' => "Pakistan's leading free POS software for retail, restaurant, salon and laundry businesses — with FBR &amp; PRA compliance built in.",
+    'footer_since' => '2018',
+    'footer_copyright' => "myPOS | Pakistan's Best Point of Sale Software. All rights reserved.",
     // Keep the whole site out of search engines (meta robots + X-Robots-Tag on every response + robots.txt).
     // Set SITE_NOINDEX=false in .env on launch day.
     'noindex' => env('SITE_NOINDEX', true),
@@ -20,6 +28,15 @@ return [
 
     // Where website enquiries are emailed (stored in the `leads` table either way).
     'leads_email' => env('LEADS_EMAIL', 'info@mypos.pk'),
+
+    // Client logos under CTAs (x-cta-proof): [file under public/uploads, name]. The client_logos table (group "proof") overrides this.
+    'proof_logos' => [
+        ['2026/07/mitti-di-handi-logo-revise.jpeg', 'Mitti Di Handi'],
+        ['2026/07/meadows-grammar-school-logo-revise.jpeg', 'Meadows Grammar School'],
+        ['2026/07/hyundai-blue-logo-revise.jpeg', 'Hyundai'],
+        ['2026/07/snt-foods-logo-revise.jpeg', 'SNT Foods'],
+        ['2026/07/chemcos-logo-revise.jpeg', 'Chemcos'],
+    ],
 
     // Businesses running myPOS, shown on the client logo strip (the clients table only holds the showcased ones).
     'clients_total' => 1200,

@@ -4,7 +4,9 @@
     'eyebrow' => 'FAQ',
     'id' => 'faq',
     'schema' => true,       // emit FAQPage structured data
+    'group' => null,        // read the items from the faqs table instead
 ])
+@php if ($group) { $items = \App\Models\Faq::pairs($group); } @endphp
 @if ($schema && count($items))
 @push('head')
 <script type="application/ld+json">{!! json_encode([

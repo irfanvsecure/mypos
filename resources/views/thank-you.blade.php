@@ -4,7 +4,7 @@
 @section('robots', 'noindex, nofollow')
 
 @php
-    $reviews = collect(config('site.reviews'))->filter(fn ($r) => mb_strlen($r[1]) > 90)->take(3);
+    $reviews = collect(\App\Models\Testimonial::pairs())->filter(fn ($r) => mb_strlen($r[1]) > 90)->take(3);
     $initials = fn ($n) => strtoupper(collect(preg_split('/\s+/', trim($n)))->take(2)->map(fn ($w) => mb_substr($w, 0, 1))->implode(''));
 @endphp
 

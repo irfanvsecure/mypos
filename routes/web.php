@@ -7,7 +7,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home')->name('home');
+Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::post('/enquiry', [EnquiryController::class, 'store'])
     ->middleware('throttle:6,1')

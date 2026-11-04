@@ -54,27 +54,8 @@
       </div>
       <h1><span class="hx-hl">Free POS Software</span> for Retail, Restaurant, &amp; Salon Businesses in Pakistan</h1>
       <p class="lead">Fast billing that keeps working offline, smart inventory and real-time reports — with FBR &amp; PRA digital invoicing built in. Free to start, set up for you in days.</p>
-      <form class="hx-form" method="POST" action="{{ route('enquiry.store') }}#hero-demo" id="hero-demo" novalidate>
-        @csrf
-        <input type="hidden" name="page" value="home (hero)">
-        <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-        <div class="hx-form-title"><span class="pulse-dot"></span>Get a free demo on your own products</div>
-        <div class="hx-form-row">
-          <label class="sr-only" for="h-name">Your name</label>
-          <input id="h-name" type="text" name="name" value="{{ old('name') }}" placeholder="Your name" required autocomplete="name">
-          <label class="sr-only" for="h-phone">Phone / WhatsApp</label>
-          <input id="h-phone" type="tel" name="phone" value="{{ old('phone') }}" placeholder="03XX XXXXXXX" required autocomplete="tel" inputmode="tel">
-          <label class="sr-only" for="h-type">Business type</label>
-          <select id="h-type" name="type">
-            @foreach ($businessTypes as $bt)<option value="Free Demo · {{ $bt }}" @selected(old('type') === "Free Demo · $bt")>{{ $bt }}</option>@endforeach
-          </select>
-          <button class="btn btn-primary hx-btn" type="submit">Get My Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        </div>
-        @if ($errors->any())<p class="hx-form-err" role="alert">{{ $errors->first() }}</p>@endif
-        <ul class="hx-assure">
-          <li>Free version available</li><li>Works offline</li><li>Reply within minutes</li>
-        </ul>
-      </form>
+      <x-home.hero-form :types="$businessTypes" />
+
       <p class="hx-talk">Prefer to chat? <a href="{{ wa_link() }}" target="_blank" rel="noopener">WhatsApp us</a> · <a href="#free-version">Download the free version</a> · or call <a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></p>
     </div>
 
@@ -559,8 +540,6 @@
 </section>
 
 @php
-  $reviews = config('site.reviews');
-  $initials = fn ($n) => strtoupper(collect(preg_split('/\s+/', trim($n)))->take(2)->map(fn ($w) => mb_substr($w, 0, 1))->implode(''));
   $writeReview = 'https://admin.trustindex.io/api/googleWriteReview?place-id=ChIJ16hGakEFGTkRfzzOykTT1q4';
 @endphp
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -620,18 +599,7 @@
     </div>
 
     <div class="rv-track" data-rv-track tabindex="0" aria-label="Customer reviews">
-      @foreach ($reviews as $i => [$name, $text])
-        <figure class="review-card">
-          <svg class="rv-quote" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 8H6v8h5c0 3-2 5-5 5v3c5 0 9-4 9-9V8zm14 0h-7v8h5c0 3-2 5-5 5v3c5 0 9-4 9-9V8z" fill="currentColor"/></svg>
-          <div class="rv-stars" role="img" aria-label="5 out of 5 stars">@for ($s = 0; $s < 5; $s++)<svg><use href="#rv-star"/></svg>@endfor</div>
-          <blockquote>{{ $text }}</blockquote>
-          <figcaption>
-            <span class="rv-avatar">{{ $initials($name) }}</span>
-            <span><b>{{ $name }}</b><small>Posted on Google</small></span>
-            <svg class="rv-g"><use href="#rv-google"/></svg>
-          </figcaption>
-        </figure>
-      @endforeach
+              <x-home.review-cards />
     </div>
   </div>
 </section>
@@ -909,46 +877,8 @@
       <p>Start free, upgrade whenever your business needs more locations, users or modules.</p>
     </div>
     <div class="pricing-grid stagger">
-      <div class="price-card reveal-scale" style="--i:0">
-        <div class="pc-badge">FREE</div>
-        <div class="h3">Starter</div>
-        <div class="pc-price">Rs. 0</div>
-        <div class="pc-sub">Core sales features, forever free</div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Single location POS</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Basic sales &amp; inventory</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Offline mode</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Community support</li>
-        </ul>
-        <a href="https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs" target="_blank" rel="noopener" class="btn btn-ghost">Download Free</a>
-      </div>
-      <div class="price-card featured reveal-scale" style="--i:1">
-        <div class="pc-badge">MOST POPULAR</div>
-        <div class="h3">Business</div>
-        <div class="pc-price">Contact Sales</div>
-        <div class="pc-sub">For growing multi-branch businesses</div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Everything in Starter</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Multi-location &amp; multi-company</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>FBR / PRA / KPRA / SRB e-invoicing</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>WhatsApp, SMS &amp; email receipts</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Role-based staff access</li>
-        </ul>
-        <a href="#enquiry" class="btn btn-primary">Book a Free Demo</a>
-      </div>
-      <div class="price-card reveal-scale" style="--i:2">
-        <div class="pc-badge">CUSTOM</div>
-        <div class="h3">Enterprise</div>
-        <div class="pc-price">Custom</div>
-        <div class="pc-sub">Tailored builds for large operations</div>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Everything in Business</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Custom application development</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Dedicated onboarding &amp; training</li>
-          <li><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>Priority 24-hour support</li>
-        </ul>
-        <a href="#enquiry" class="btn btn-ghost">Book a Free Demo</a>
-      </div>
+      <x-pricing.cards group="home" />
+
     </div>
     <div class="pricing-links reveal">
       <a href="{{ url('/pricing') }}">RetailPro Pricing</a>
@@ -991,71 +921,8 @@
       <div class="h2">Build your myPOS setup in one minute.</div>
       <p>Pick your business, branches and modules — see your price instantly. No sign-up, pay only for what you use.</p>
     </div>
-    <form class="bld reveal-3d" method="POST" action="{{ route('enquiry.store') }}#builder" data-builder novalidate>
-      @csrf
-      <input type="hidden" name="page" value="home (price builder)">
-      <input type="hidden" name="type" value="Price Builder">
-      <input type="hidden" name="message" data-bld-message>
-      <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-      <ol class="bld-steps" aria-hidden="true"><li class="on">Business</li><li>Branches</li><li>Plan</li><li>Modules</li><li>Your price</li></ol>
+    <x-home.price-builder :types="$businessTypes" :addons="$addons" />
 
-      <fieldset class="bld-step on" data-step="0">
-        <legend>What kind of business is it?</legend>
-        <div class="bld-chips">
-          @foreach ($businessTypes as $i => $bt)
-            <label class="bld-chip"><input type="radio" name="bld_business" value="{{ $bt }}" @checked($i === 0)><span>{{ $bt }}</span></label>
-          @endforeach
-        </div>
-      </fieldset>
-      <fieldset class="bld-step" data-step="1">
-        <legend>How many branches?</legend>
-        <div class="bld-chips">
-          @foreach (['1' => '1 branch', '2-3' => '2–3 branches', '4-10' => '4–10 branches', '10+' => '10+ branches'] as $v => $l)
-            <label class="bld-chip"><input type="radio" name="bld_branches" value="{{ $v }}" @checked($v === '1')><span>{{ $l }}</span></label>
-          @endforeach
-        </div>
-      </fieldset>
-      <fieldset class="bld-step" data-step="2">
-        <legend>How would you like to pay?</legend>
-        <div class="bld-chips bld-chips--big">
-          <label class="bld-chip"><input type="radio" name="bld_plan" value="monthly" checked><span><b>Monthly</b><small>Rs 2,000/month · 14 days free</small></span></label>
-          <label class="bld-chip"><input type="radio" name="bld_plan" value="onetime"><span><b>One-time licence</b><small>From Rs 24,000, pay once</small></span></label>
-        </div>
-      </fieldset>
-      <fieldset class="bld-step" data-step="3">
-        <legend>Which add-ons do you need? <small>(optional)</small></legend>
-        <div class="bld-chips bld-chips--mods">
-          @foreach ($addons as [$key, $name, $price])
-            <label class="bld-chip"><input type="checkbox" name="bld_mod" value="{{ $key }}" data-name="{{ $name }}" data-price="{{ $price }}"><span>{{ $name }} <small>+Rs {{ number_format($price) }}/mo</small></span></label>
-          @endforeach
-        </div>
-      </fieldset>
-      <fieldset class="bld-step" data-step="4">
-        <legend>Your estimated price</legend>
-        <div class="bld-result">
-          <div class="bld-price" aria-live="polite"><span data-bld-price>Rs 2,000</span><small data-bld-per>/month</small></div>
-          <p class="bld-plan" data-bld-plan>Standard monthly plan · first 14 days free</p>
-          <ul class="bld-summary" data-bld-summary></ul>
-        </div>
-        <div class="bld-contact">
-          <p>Get this exact quote and a free demo — we'll confirm on WhatsApp.</p>
-          <div class="form-row">
-            <div class="field"><label for="b-name">Full name <span class="req">*</span></label><input id="b-name" type="text" name="name" placeholder="Your name" required autocomplete="name"></div>
-            <div class="field"><label for="b-phone">Phone / WhatsApp <span class="req">*</span></label><input id="b-phone" type="tel" name="phone" placeholder="03XX XXXXXXX" required autocomplete="tel" inputmode="tel"></div>
-          </div>
-          <div class="btn-row">
-            <button class="btn btn-primary" type="submit">Send me this quote</button>
-            <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener" data-bld-wa>Or send on WhatsApp</a>
-          </div>
-        </div>
-      </fieldset>
-
-      <div class="bld-nav">
-        <button type="button" class="btn btn-ghost" data-bld-back hidden>← Back</button>
-        <button type="button" class="btn btn-primary" data-bld-next>Next →</button>
-      </div>
-      <p class="bld-note">Prices from our pricing pages. Multi-branch and FBR setups on a one-time licence are quoted individually.</p>
-    </form>
   </div>
 </section>
 
@@ -1073,9 +940,6 @@ $homeFaqs = [
     ['Is my business data secure with myPOS?', 'Yes, this POS system uses encrypted cloud storage with regular backups and access controls, keeping your data safe and accessible only to authorized staff.'],
 ];
 @endphp
-@push('head')
-<script type="application/ld+json">{!! json_encode(['@@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => collect($homeFaqs)->map(fn ($f) => ['@type' => 'Question', 'name' => $f[0], 'acceptedAnswer' => ['@type' => 'Answer', 'text' => $f[1]]])->all()], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
-@endpush
 <section id="faq" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1100,28 +964,12 @@ $homeFaqs = [
           <div><b>4.9/5</b><span>Average rating</span></div>
           <div><b>&lt; 2 min</b><span>Avg. response time</span></div>
         </div>
-        <form class="callback" method="POST" action="{{ route('enquiry.store') }}#faq" novalidate>
-          @csrf
-          <input type="hidden" name="page" value="home (call me back)">
-          <input type="hidden" name="type" value="Call Me Back">
-          <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <b>Rather talk it through? We'll call you.</b>
-          <label class="sr-only" for="c-name">Your name</label>
-          <input id="c-name" type="text" name="name" placeholder="Your name" required autocomplete="name">
-          <label class="sr-only" for="c-phone">Phone number</label>
-          <input id="c-phone" type="tel" name="phone" placeholder="03XX XXXXXXX" required autocomplete="tel" inputmode="tel">
-          <button class="btn btn-primary" type="submit">Call Me Back</button>
-          <small>No sales pressure · Mon–Fri, 10am–6pm</small>
-        </form>
+        <x-home.callback-form />
+
         <a href="{{ url('/contact') }}" class="btn btn-outline" style="margin-top:14px; width:100%; justify-content:center;">Contact Support</a>
       </div>
       <div class="faq-list reveal">
-        @foreach ($homeFaqs as $i => [$q, $a])
-        <div class="faq-item {{ $i === 0 ? 'open' : '' }}">
-          <button class="faq-q" type="button">{{ $q }}<span class="plus"></span></button>
-          <div class="faq-a"><p>{{ $a }}</p></div>
-        </div>
-        @endforeach
+                <x-faq-list :items="$homeFaqs" />
       </div>
     </div>
   </div>

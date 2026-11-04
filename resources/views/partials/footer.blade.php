@@ -2,7 +2,7 @@
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <a href="{{ route('home') }}" class="logo-mark"><picture><source srcset="{{ asset('images/logo-168.webp') }}" type="image/webp"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="96" height="96" loading="lazy"></picture></a>
-      <p>Pakistan's leading free POS software for retail, restaurant, salon and laundry businesses — with FBR &amp; PRA compliance built in.</p>
+      <p>{!! config('site.footer_tagline') !!}</p>
       <ul style="margin-top:18px;">
         <li><a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></li>
         <li><a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></li>
@@ -25,7 +25,7 @@
     @endforeach
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2018–{{ date('Y') }} myPOS | Pakistan's Best Point of Sale Software. All rights reserved.</span>
+    <span>© {{ config('site.footer_since') }}–{{ date('Y') }} {!! config('site.footer_copyright') !!}</span>
     <span>
       @foreach (config('site.legal') as [$label, $href])
         <a href="{{ url($href) }}">{{ $label }}</a>@if (!$loop->last) · @endif
