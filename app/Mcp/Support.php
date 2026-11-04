@@ -178,6 +178,69 @@ class Support
         return SiteCache::changed($paths);
     }
 
+    /** A page or a blog post by path / slug: ['type' => 'page'|'post', 'model' => …]. Pages win on a tie. */
+    public static function target(string $ref): array
+    {
+        $path = self::path($ref);
+        if ($page = Page::where('path', $path)->first()) {
+            return ['type' => 'page', 'model' => $page];
+        }
+        if (! str_contains($path, '/') && ($post = Post::where('slug', $path)->first())) {
+            return ['type' => 'post', 'model' => $post];
+        }
+        throw new ToolError("No page or blog post at /$path.");
+    }
+
+    /** Crawler view of a page or post (headings, links, images, meta…), see SiteAnalyzer. */
+    public static function analyze(string $ref): array
+    {
+        $t = self::target($ref);
+
+        return $t['type'] === 'page' ? \App\Site\SiteAnalyzer::page($t['model']) : \App\Site\SiteAnalyzer::post($t['model']);
+    }
+
+    /**
+     * What a visitor gets at an internal path: 200 (page, post or app route), 301/302 (with target), 404 or 410.
+     *
+     * @return array{status:int, to?:string, what?:string}
+     */
+    public static function resolvePath(string $path): array
+    {
+        $path = trim(preg_replace('/[?#].*$/', '', $path), '/');
+        if ($path !== strtolower($path)) {
+            return ['status' => 301, 'to' => '/' . strtolower($path), 'what' => 'lower-case redirect'];
+        }
+        $map = \App\Http\Middleware\SiteRedirects::map();
+        if (isset($map[$path])) {
+            [, $code, $to] = $map[$path];
+
+            return $code === 410 ? ['status' => 410, 'what' => 'gone'] : ['status' => $code, 'to' => $to, 'what' => 'redirect'];
+        }
+        if (Page::published()->where('path', $path)->exists()) {
+            return ['status' => 200, 'what' => 'page'];
+        }
+        if (in_array($path, ['blogs', 'clients', 'thank-you', 'sitemap.xml', 'robots.txt'], true)) {
+            return ['status' => 200, 'what' => 'route'];
+        }
+        if (! str_contains($path, '/') && Post::published()->where('slug', $path)->exists()) {
+            return ['status' => 200, 'what' => 'post'];
+        }
+        if (preg_match('#^portfolio-item/([a-z0-9-]+)$#', $path, $m)) {
+            return ['status' => \App\Models\Client::where('slug', $m[1])->exists() ? 200 : 404, 'what' => 'client'];
+        }
+        if (preg_match('#^tag/([a-z0-9-]+)$#', $path, $m)) {
+            return ['status' => \App\Models\Tag::where('slug', $m[1])->exists() ? 200 : 404, 'what' => 'tag'];
+        }
+        if (preg_match('#^(uploads|images|css|js|vendor)/#', $path) || $path === 'favicon.ico') {
+            return ['status' => is_file(public_path($path)) ? 200 : 404, 'what' => 'file'];
+        }
+        if (! Page::withTrashed()->where('path', $path)->exists() && view()->exists('pages.' . str_replace('/', '.', $path))) {
+            return ['status' => 200, 'what' => 'page (Blade file)'];
+        }
+
+        return ['status' => 404];
+    }
+
     public static function stamp(?Model $m): ?string
     {
         return $m?->updated_at?->toIso8601String();

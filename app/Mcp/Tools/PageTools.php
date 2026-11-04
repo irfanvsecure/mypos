@@ -24,7 +24,7 @@ class PageTools
 {
     public static function tools(): array
     {
-        $page = P::str('Page URL path, e.g. "car-wash-pos" or "download/restropro"; "" or "home" for the home page.')->req();
+        $page = P::str('Page URL path, e.g. "car-wash-pos" or "download/restropro"; "" or "home" for the home page.')->reqAllowEmpty();
         $section = P::str('Section key (from get_page_sections).')->req();
         $stamp = P::str('updated_at you read; the change is refused if the section changed since (optional but recommended).');
 

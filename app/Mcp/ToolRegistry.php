@@ -7,6 +7,8 @@ class ToolRegistry
 {
     public const GROUPS = [
         Tools\PageTools::class,
+        Tools\HeadingTools::class,
+        Tools\LinkTools::class,
     ];
 
     /** @return SiteTool[] */

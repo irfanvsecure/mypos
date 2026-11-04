@@ -13,6 +13,8 @@ final class P
 {
     private bool $required = false;
 
+    private bool $allowEmpty = false;
+
     private ?array $enum = null;
 
     private function __construct(
@@ -61,6 +63,15 @@ final class P
         return $this;
     }
 
+    /** Required, but "" is a valid value (the home page path). */
+    public function reqAllowEmpty(): self
+    {
+        $this->required = true;
+        $this->allowEmpty = true;
+
+        return $this;
+    }
+
     public function enum(array $values): self
     {
         $this->enum = $values;
@@ -72,7 +83,8 @@ final class P
     /** @return array<string, array> Laravel rules for this parameter (and its items). */
     public function rules(string $name): array
     {
-        $rules = [$name => array_merge([$this->required ? 'required' : 'nullable'], $this->rules)];
+        $presence = $this->required ? ($this->allowEmpty ? 'present' : 'required') : 'nullable';
+        $rules = [$name => array_merge([$presence], $this->rules)];
         if ($this->items) {
             foreach ($this->items->rules('*') as $k => $r) {
                 $rules[$name . '.' . $k] = $r;
