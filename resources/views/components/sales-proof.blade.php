@@ -10,7 +10,7 @@
   <div class="wrap">
     <div class="sp-stats stagger">
       <div class="sp-stat reveal-3d" style="--i:0"><b>15,000+</b><span>Businesses on myPOS</span></div>
-      <div class="sp-stat reveal-3d" style="--i:1"><b>4.9<small>/5</small></b><span>Average customer rating</span></div>
+      <div class="sp-stat reveal-3d" style="--i:1"><b>{{ config('site.rating_value') }}<small>/5</small></b><span>Average customer rating</span></div>
       <div class="sp-stat reveal-3d" style="--i:2"><b>1–3 days</b><span>From demo to going live</span></div>
       <div class="sp-stat reveal-3d" style="--i:3"><b>&lt;2 min</b><span>Reply on phone &amp; WhatsApp</span></div>
     </div>

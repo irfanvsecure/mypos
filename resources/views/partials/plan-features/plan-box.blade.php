@@ -66,7 +66,7 @@
         </div>
         <div style="margin-top:26px; border-top:1px solid var(--paper-line); padding-top:6px;">
           <div class="addon-row"><span>Businesses using myPOS</span><span class="price">15,000+</span></div>
-          <div class="addon-row"><span>Customer rating</span><span class="price">4.9/5</span></div>
+          <div class="addon-row"><span>Customer rating</span><span class="price">{{ config('site.rating_value') }}/5</span></div>
           <div class="addon-row"><span>Languages</span><span class="price">English / Urdu / Arabic</span></div>
           <div class="addon-row"><span>Tax integration</span><span class="price">FBR / PRA / KPRA / SRB</span></div>
         </div>

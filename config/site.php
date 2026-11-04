@@ -18,6 +18,11 @@ return [
     'footer_tagline' => "Pakistan's leading free POS software for retail, restaurant, salon and laundry businesses — with FBR &amp; PRA compliance built in.",
     'footer_since' => '2018',
     'footer_copyright' => "myPOS | Pakistan's Best Point of Sale Software. All rights reserved.",
+
+    // Customer rating shown on the site ("4.9/5"). Not output as AggregateRating structured data.
+    'rating_value' => '4.9',
+    'rating_count' => '12000',
+    'rating_source' => null,
     // Keep the whole site out of search engines (meta robots + X-Robots-Tag on every response + robots.txt).
     // Set SITE_NOINDEX=false in .env on launch day.
     'noindex' => env('SITE_NOINDEX', true),

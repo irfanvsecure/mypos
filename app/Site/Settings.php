@@ -37,6 +37,9 @@ class Settings
         'footer_tagline' => 'Footer text under the logo (HTML)',
         'footer_since' => 'First year in the footer copyright',
         'footer_copyright' => 'Footer copyright text after the years (HTML)',
+        'rating_value' => 'Average customer rating shown across the site, e.g. 4.9 (out of 5)',
+        'rating_count' => 'Number of ratings behind rating_value (stored for reference; not shown on pages today)',
+        'rating_source' => 'Where rating_value comes from, e.g. Google reviews (stored for reference)',
     ];
 
     /** Load stored settings over config('site.*'). Safe to call before the table exists. */

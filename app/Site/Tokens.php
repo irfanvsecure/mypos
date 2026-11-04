@@ -15,6 +15,7 @@ use App\Models\PricingPlan;
  *   {{demo_url}}     where "Book a free demo" points on this page (#enquiry or /contact#enquiry)
  *   {{wa_link}}      WhatsApp chat link with a message naming the current page
  *   {{phone}} {{phone_raw}} {{email}} {{address}} {{hours}} {{register_url}} {{whatsapp}}  site settings
+ *   {{rating_value}} {{rating_count}} {{rating_source}}  customer rating shown on the site (settings)
  *   {{price:key}}    a price from pricing_plans (by plan_key), formatted "2,000"
  *   {{price_plain:key}}  the same without thousands separators, "2000"
  *   {{download:key.field}}  a fact about a download (version, file_size, download_count, file_url, …)
@@ -22,7 +23,8 @@ use App\Models\PricingPlan;
  */
 class Tokens
 {
-    public const NAMES = ['base', 'site_url', 'demo_url', 'wa_link', 'phone', 'phone_raw', 'email', 'address', 'hours', 'register_url', 'whatsapp'];
+    public const NAMES = ['base', 'site_url', 'demo_url', 'wa_link', 'phone', 'phone_raw', 'email', 'address', 'hours', 'register_url', 'whatsapp',
+        'rating_value', 'rating_count', 'rating_source'];
 
     /** Unique strings rendered in place of each value during extraction, turned back into {{tokens}}. */
     public const SENTINELS = [

@@ -12,6 +12,6 @@
     @endforeach
   </div>
   @if ($caption)
-    <p class="proof-caption">Trusted by <strong>15,000+</strong> businesses · <strong>4.9/5</strong> rating</p>
+    <p class="proof-caption">Trusted by <strong>15,000+</strong> businesses · <strong>{{ config('site.rating_value') }}/5</strong> rating</p>
   @endif
 </div>
