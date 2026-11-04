@@ -2,6 +2,7 @@
 
 namespace App\Site;
 
+use App\Models\Download;
 use App\Models\PricingPlan;
 
 /**
@@ -16,6 +17,7 @@ use App\Models\PricingPlan;
  *   {{phone}} {{phone_raw}} {{email}} {{address}} {{hours}} {{register_url}} {{whatsapp}}  site settings
  *   {{price:key}}    a price from pricing_plans (by plan_key), formatted "2,000"
  *   {{price_plain:key}}  the same without thousands separators, "2000"
+ *   {{download:key.field}}  a fact about a download (version, file_size, download_count, file_url, …)
  *   {{embed:N}}      the N-th embedded component of the section (handled by SectionRenderer)
  */
 class Tokens
@@ -60,12 +62,19 @@ class Tokens
 
     private static function pattern(): string
     {
-        return '/\{\{(?:(' . implode('|', self::NAMES) . ')|(price|price_plain):([a-z0-9][a-z0-9-]*))\}\}/';
+        return '/\{\{(?:(' . implode('|', self::NAMES) . ')|(price|price_plain):([a-z0-9][a-z0-9-]*)|download:([a-z0-9][a-z0-9-]*)\.([a-z_]+))\}\}/';
     }
 
     private static function match(array $m): string
     {
-        return ($m[1] ?? '') !== '' ? self::value($m[1]) : PricingPlan::formatted($m[3], $m[2] === 'price_plain');
+        if (($m[1] ?? '') !== '') {
+            return self::value($m[1]);
+        }
+        if (($m[4] ?? '') !== '') {
+            return (string) Download::field($m[4], $m[5]);
+        }
+
+        return PricingPlan::formatted($m[3], $m[2] === 'price_plain');
     }
 
     /**
@@ -81,7 +90,8 @@ class Tokens
         foreach ($all[1] as $i => $inner) {
             $ok = in_array($inner, self::NAMES, true)
                 || (preg_match('/^embed:(\d+)$/', $inner, $e) && (int) $e[1] < $embedCount)
-                || (preg_match('/^price(?:_plain)?:([a-z0-9][a-z0-9-]*)$/', $inner, $p) && PricingPlan::where('plan_key', $p[1])->exists());
+                || (preg_match('/^price(?:_plain)?:([a-z0-9][a-z0-9-]*)$/', $inner, $p) && PricingPlan::where('plan_key', $p[1])->exists())
+                || (preg_match('/^download:([a-z0-9][a-z0-9-]*)\.([a-z_]+)$/', $inner, $d) && isset(Download::FIELDS[$d[2]]) && Download::where('key', $d[1])->exists());
             if (! $ok) {
                 $bad[] = $all[0][$i];
             }
