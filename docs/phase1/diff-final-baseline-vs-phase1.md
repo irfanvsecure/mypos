@@ -1,0 +1,241 @@
+# Rendered-page diff: `baseline` vs `phase1-final`
+
+Generated Wed, Nov 4, 2026 8:49 AM. Normalised before comparing: per-session CSRF token, `?v=<filemtime>` on CSS/JS, site root URL, CRLF vs LF line endings, empty lines inside `<head>`, and the six random "Other businesses" on client portfolio pages.
+
+**185 identical, 2 different** out of 187 URLs.
+
+| URL | Result | Notes |
+|---|---|---|
+| `/` | ❌ DIFF | HTML differs |
+| `/about-us` | ✅ identical |  |
+| `/accounting-software` | ✅ identical |  |
+| `/aesthatic-clinics-fbr-pos-integration` | ✅ identical |  |
+| `/bakery-pos` | ✅ identical |  |
+| `/beauty-salons-fbr-pos-integration` | ✅ identical |  |
+| `/biller-permission` | ✅ identical |  |
+| `/bulk-import` | ✅ identical |  |
+| `/car-wash-pos` | ✅ identical |  |
+| `/clinics-fbr-pos-integration` | ✅ identical |  |
+| `/college-fbr-pos-integration` | ✅ identical |  |
+| `/commissions` | ✅ identical |  |
+| `/contact` | ✅ identical |  |
+| `/cookie-policy` | ✅ identical |  |
+| `/customers` | ✅ identical |  |
+| `/dental-clinics-fbr-pos-integration` | ✅ identical |  |
+| `/distribution-management` | ✅ identical |  |
+| `/download/laundrypro` | ✅ identical |  |
+| `/download/restropro` | ✅ identical |  |
+| `/download/salonpro` | ✅ identical |  |
+| `/download/tailorpro` | ✅ identical |  |
+| `/downloads` | ✅ identical |  |
+| `/employee-management` | ✅ identical |  |
+| `/expense` | ✅ identical |  |
+| `/expiry` | ✅ identical |  |
+| `/fbr-digital-invoicing` | ✅ identical |  |
+| `/fbr-pos-integration` | ✅ identical |  |
+| `/features` | ✅ identical |  |
+| `/frequently-asked-questions` | ✅ identical |  |
+| `/garments-pos` | ✅ identical |  |
+| `/gym-fbr-pos-integration` | ✅ identical |  |
+| `/home-delivery` | ✅ identical |  |
+| `/hospital-fbr-pos-integration` | ✅ identical |  |
+| `/hospital-management` | ✅ identical |  |
+| `/inventory` | ✅ identical |  |
+| `/kpra-integration` | ✅ identical |  |
+| `/laboratories-fbr-pos-integration` | ✅ identical |  |
+| `/laundry-management` | ✅ identical |  |
+| `/medical-complex-fbr-pos-integration` | ✅ identical |  |
+| `/mobile-mypos` | ✅ identical |  |
+| `/multi-location-integration` | ✅ identical |  |
+| `/on-call-support` | ✅ identical |  |
+| `/one-time-pricing` | ✅ identical |  |
+| `/paperless-invoicing` | ✅ identical |  |
+| `/payment-accounts` | ✅ identical |  |
+| `/payroll-software` | ✅ identical |  |
+| `/pra-integration` | ✅ identical |  |
+| `/pra-pos-restaurant-integration` | ✅ identical |  |
+| `/pricing-laundry-pro` | ✅ identical |  |
+| `/pricing-restropro` | ✅ identical |  |
+| `/pricing-salonpro` | ✅ identical |  |
+| `/pricing-tailorpro` | ✅ identical |  |
+| `/pricing` | ✅ identical |  |
+| `/privacy-policy` | ✅ identical |  |
+| `/purchase` | ✅ identical |  |
+| `/reports` | ✅ identical |  |
+| `/reseller` | ✅ identical |  |
+| `/restaurant-management` | ✅ identical |  |
+| `/restro-pos` | ✅ identical |  |
+| `/retail-management` | ✅ identical |  |
+| `/returns` | ✅ identical |  |
+| `/sales` | ✅ identical |  |
+| `/salon-management` | ✅ identical |  |
+| `/schools-fbr-pos-integration` | ✅ identical |  |
+| `/security-policy` | ✅ identical |  |
+| `/single-location` | ✅ identical |  |
+| `/srb-integration-services-in-pakistan` | ✅ identical |  |
+| `/stock-management` | ✅ identical |  |
+| `/supermarket-pos` | ✅ identical |  |
+| `/support-policy` | ✅ identical |  |
+| `/support` | ✅ identical |  |
+| `/tailor-management` | ✅ identical |  |
+| `/terms-of-service` | ✅ identical |  |
+| `/tickets` | ✅ identical |  |
+| `/unlimited-products` | ✅ identical |  |
+| `/veteran-clinic-fbr-pos-integration` | ✅ identical |  |
+| `/wedding-event-halls-fbr-pos-integration` | ✅ identical |  |
+| `/woocommerce-pos` | ✅ identical |  |
+| `/blogs` | ✅ identical |  |
+| `/blogs?topic=fbr-compliance` | ✅ identical |  |
+| `/blogs?topic=restaurant` | ✅ identical |  |
+| `/blogs?topic=salon` | ✅ identical |  |
+| `/blogs?topic=retail` | ✅ identical |  |
+| `/blogs?page=2` | ✅ identical |  |
+| `/why-fbr-digital-invoicing-in-pakistan-is-mandatory-k` | ✅ identical |  |
+| `/the-best-pos-solution-for-restaurants-in-pakistan` | ✅ identical |  |
+| `/how-does-a-pos-system-work-in-a-restaurant` | ✅ identical |  |
+| `/choosing-the-right-software-for-your-restaurant` | ✅ identical |  |
+| `/cloud-pos-vs-traditional-pos-for-pakistani-restaurants` | ✅ identical |  |
+| `/common-restaurant-billing-problems-and-how-to-fix-them` | ✅ identical |  |
+| `/top-features-every-restaurant-pos-system-must-have` | ✅ identical |  |
+| `/why-restaurants-in-pakistan-still-lose-sales-due-to-manual-billing-mistakes` | ✅ identical |  |
+| `/pos-systems-for-cafes-vs-restaurant-chains-which-one-fits-your-business-in-pakistan` | ✅ identical |  |
+| `/single-salon-vs-salon-chain-pos-setup` | ✅ identical |  |
+| `/salon-pos-system-client-retention` | ✅ identical |  |
+| `/salon-management-software-pakistan` | ✅ identical |  |
+| `/fbr-pos-integration-guide-beauty-salons` | ✅ identical |  |
+| `/fbr-pos-integration-guide-pakistan` | ✅ identical |  |
+| `/how-kpra-srb-and-fbr-integration-differentiate` | ✅ identical |  |
+| `/switching-to-fbr-compliant-pos-guide` | ✅ identical |  |
+| `/fbr-pos-integration-2026-deadlines-penalties` | ✅ identical |  |
+| `/wholesalers-guide-to-fbr-digital-invoicing` | ✅ identical |  |
+| `/fbr-digital-invoicing-rules-online-sellers` | ✅ identical |  |
+| `/how-multi-branch-salon-pos-enables-reporting` | ✅ identical |  |
+| `/how-salon-pos-tracks-retail-and-supply-stock` | ✅ identical |  |
+| `/fbr-pos-integration-errors-and-fixes` | ✅ identical |  |
+| `/is-your-data-safe-after-fbr-pos-integration` | ✅ identical |  |
+| `/fbr-pos-integration-pricing-guide` | ✅ identical |  |
+| `/fbr-pos-integration-guide-restaurants` | ✅ identical |  |
+| `/retail-pos-system-pakistan-guide` | ✅ identical |  |
+| `/retail-inventory-management-stock-loss` | ✅ identical |  |
+| `/barcode-scanning-bulk-product-import-retail` | ✅ identical |  |
+| `/supermarket-vs-small-retail-shop-pos` | ✅ identical |  |
+| `/product-expiry-returns-retail-stores` | ✅ identical |  |
+| `/multi-branch-retail-centralised-stock-reporting` | ✅ identical |  |
+| `/fbr-pos-integration-retail-stores-pakistan` | ✅ identical |  |
+| `/retail-pos-reports-check-weekly` | ✅ identical |  |
+| `/garments-pos-size-colour-variant-tracking` | ✅ identical |  |
+| `/seasonal-stock-markdown-planning-clothing` | ✅ identical |  |
+| `/pra-pos-integration-punjab-guide` | ✅ identical |  |
+| `/clients` | ✅ identical |  |
+| `/portfolio-item/baked-potato` | ✅ identical |  |
+| `/portfolio-item/bazaar` | ✅ identical |  |
+| `/portfolio-item/bhavna-restaurant` | ✅ identical |  |
+| `/portfolio-item/bisou-salon` | ✅ identical |  |
+| `/portfolio-item/blue-gulf` | ✅ identical |  |
+| `/portfolio-item/brain-games` | ✅ identical |  |
+| `/portfolio-item/brooklyn` | ✅ identical |  |
+| `/portfolio-item/burger-bliss` | ✅ identical |  |
+| `/portfolio-item/butt-karahi` | ✅ identical |  |
+| `/portfolio-item/canadian-pizza` | ✅ identical |  |
+| `/portfolio-item/cedars` | ✅ identical |  |
+| `/portfolio-item/chemcos` | ✅ identical |  |
+| `/portfolio-item/client` | ✅ identical |  |
+| `/portfolio-item/compubase` | ✅ identical |  |
+| `/portfolio-item/edrees-medical-equipments` | ✅ identical |  |
+| `/portfolio-item/france-gallery` | ✅ identical |  |
+| `/portfolio-item/good-times` | ✅ identical |  |
+| `/portfolio-item/green-desert` | ✅ identical |  |
+| `/portfolio-item/hyundai-blue-otimus` | ✅ identical |  |
+| `/portfolio-item/izaak-men-salon` | ✅ identical |  |
+| `/portfolio-item/lapis-lazuli` | ✅ identical |  |
+| `/portfolio-item/lavande` | ✅ identical |  |
+| `/portfolio-item/louretal-fashion` | ✅ identical |  |
+| `/portfolio-item/maras-turka` | ✅ identical |  |
+| `/portfolio-item/meadows-grammar-school` | ✅ identical |  |
+| `/portfolio-item/mesol-pvt-ltd` | ✅ identical |  |
+| `/portfolio-item/mitti-di-handi` | ✅ identical |  |
+| `/portfolio-item/mugcafe` | ✅ identical |  |
+| `/portfolio-item/nebras` | ✅ identical |  |
+| `/portfolio-item/pectiv` | ✅ identical |  |
+| `/portfolio-item/perfect-biryani-house` | ✅ identical |  |
+| `/portfolio-item/shahi-mughal` | ✅ identical |  |
+| `/portfolio-item/sham-salon` | ✅ identical |  |
+| `/portfolio-item/skin-white-beauty-salon` | ✅ identical |  |
+| `/portfolio-item/snt-foods` | ✅ identical |  |
+| `/portfolio-item/strongman-medifur-systems` | ✅ identical |  |
+| `/portfolio-item/tas` | ✅ identical |  |
+| `/portfolio-item/tea-at-terrace` | ✅ identical |  |
+| `/portfolio-item/tender-touch` | ✅ identical |  |
+| `/portfolio-item/the-florist-by-aimen-tahir` | ✅ identical |  |
+| `/portfolio-item/the-ivy-journal` | ✅ identical |  |
+| `/portfolio-item/topit` | ✅ identical |  |
+| `/portfolio-item/transworld` | ✅ identical |  |
+| `/portfolio-item/vision-optik` | ✅ identical |  |
+| `/portfolio-item/xd-cinema` | ✅ identical |  |
+| `/thank-you` | ✅ identical |  |
+| `/sitemap.xml` | ❌ DIFF | HTML differs |
+| `/robots.txt` | ✅ identical |  |
+| `/this-page-does-not-exist` | ✅ identical |  |
+| `/Single-Location` | ✅ identical |  |
+| `/download` | ✅ identical |  |
+| `/download/mypos-retailpro` | ✅ identical |  |
+| `/online-store-catalogue` | ✅ identical |  |
+| `/restaurant-pos-software` | ✅ identical |  |
+| `/woocommerce-integration` | ✅ identical |  |
+| `/pricing-laundrypro` | ✅ identical |  |
+| `/category/uncategorized` | ✅ identical |  |
+| `/author/mypos_admin` | ✅ identical |  |
+| `/author/author` | ✅ identical |  |
+| `/portfolio` | ✅ identical |  |
+| `/multilocation` | ✅ identical |  |
+| `/home` | ✅ identical |  |
+| `/discovering-big-red-pokies-online-fun` | ✅ identical |  |
+| `/australia-pokies-online-real-money-choices` | ✅ identical |  |
+| `/is-payid-safe-for-pokies-transactions` | ✅ identical |  |
+| `/test-post-d505479a-6998-4bf6-b5c4-66bfdb6dbcb7-e1fba110b3948adf` | ✅ identical |  |
+
+## `/`
+
+line 1489:
+  - before: `<div class="calc-inputs" data-calc>`
+  - after:  `<div class="calc-inputs" data-calc data-monthly="2000">`
+line 2038:
+  - before: `<form class="bld reveal-3d" method="POST" action="{base}/enquiry#builder" data-builder novalidate>`
+  - after:  `<form class="bld reveal-3d" method="POST" action="{base}/enquiry#builder" data-builder data-monthly="2000" data-onetime-basic="24000" data-onetime-standard="36500" novalidate>`
+
+## `/sitemap.xml`
+
+**visible text**:
+  - before: `2026-11-02`
+  - before: `2026-10-29`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+  - before: `2026-10-30`
+line 3:
+  - before: `<url><loc>http://localhost/</loc><lastmod>2026-11-02</lastmod><priority>1.0</priority></url>`
+  - after:  `<url><loc>http://localhost/</loc><lastmod>2026-11-04</lastmod><priority>1.0</priority></url>`
+line 4:
+  - before: `<url><loc>http://localhost/about-us</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>`
+  - after:  `<url><loc>http://localhost/about-us</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>`
+line 5:
+  - before: `<url><loc>http://localhost/accounting-software</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>`
+  - after:  `<url><loc>http://localhost/accounting-software</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>`
+line 6:
+  - before: `<url><loc>http://localhost/aesthatic-clinics-fbr-pos-integration</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>`
+  - after:  `<url><loc>http://localhost/aesthatic-clinics-fbr-pos-integration</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>`
+line 7:
+  - before: `<url><loc>http://localhost/bakery-pos</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>`
+  - after:  `<url><loc>http://localhost/bakery-pos</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>`
+line 8:
+  - before: `<url><loc>http://localhost/beauty-salons-fbr-pos-integration</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>`
+  - after:  `<url><loc>http://localhost/beauty-salons-fbr-pos-integration</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>`
