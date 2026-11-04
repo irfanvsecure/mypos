@@ -39,6 +39,7 @@ class Settings
         'footer_copyright' => 'Footer copyright text after the years (HTML)',
         'rating_value' => 'Average customer rating shown across the site, e.g. 4.9 (out of 5)',
         'rating_count' => 'Number of ratings behind rating_value (stored for reference; not shown on pages today)',
+        'robots_extra' => 'Extra robots.txt lines added after the built-in rules (plain text)',
         'rating_source' => 'Where rating_value comes from, e.g. Google reviews (stored for reference)',
     ];
 

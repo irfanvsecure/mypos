@@ -23,6 +23,9 @@ return [
     'rating_value' => '4.9',
     'rating_count' => '12000',
     'rating_source' => null,
+
+    // Extra robots.txt lines (after "Disallow: /enquiry").
+    'robots_extra' => '',
     // Keep the whole site out of search engines (meta robots + X-Robots-Tag on every response + robots.txt).
     // Set SITE_NOINDEX=false in .env on launch day.
     'noindex' => env('SITE_NOINDEX', true),

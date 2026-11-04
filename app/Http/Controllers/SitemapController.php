@@ -14,19 +14,29 @@ class SitemapController extends Controller
         $base = rtrim(config('site.url'), '/');
         // Pages: published database pages (last change to the page, its sections or SEO), plus any Blade page
         // not moved to the database yet (file time). Sorted the way the Blade files always were.
+        // Left out: pages / posts set to noindex or "exclude from sitemap" through the SEO tools.
+        $hidden = fn ($seo) => $seo && ($seo->exclude_from_sitemap || str_contains(strtolower((string) $seo->robots), 'noindex'));
+        // Paths with a database record in any state (draft, trashed) never fall back to their old Blade file.
+        $inDatabase = array_flip(Page::withTrashed()->pluck('path')->all());
         $pages = [];
         foreach (Page::published()->withMax('sections', 'updated_at')->with('seo')->get() as $page) {
+            if ($hidden($page->seo)) {
+                continue;
+            }
             $pages[$page->path] = max(array_filter([
                 $page->updated_at?->timestamp,
                 $page->sections_max_updated_at ? strtotime($page->sections_max_updated_at) : null,
                 $page->seo?->updated_at?->timestamp,
             ]));
         }
-        if (! isset($pages['']) && is_file(resource_path('views/home.blade.php'))) {
+        if (! isset($inDatabase['']) && is_file(resource_path('views/home.blade.php'))) {
             $pages[''] = filemtime(resource_path('views/home.blade.php'));
         }
         foreach (File::allFiles(resource_path('views/pages')) as $file) {
-            $pages[str_replace(['\\', '.blade.php'], ['/', ''], $file->getRelativePathname())] ??= $file->getMTime();
+            $slug = str_replace(['\\', '.blade.php'], ['/', ''], $file->getRelativePathname());
+            if (! isset($inDatabase[$slug])) {
+                $pages[$slug] = $file->getMTime();
+            }
         }
         $home = $pages[''] ?? null;
         unset($pages['']);
@@ -38,7 +48,10 @@ class SitemapController extends Controller
         }
 
         $urls[] = [$base . '/blogs', Post::max('updated_at') ? strtotime(Post::max('updated_at')) : time(), '0.7'];
-        foreach (Post::published()->get(['slug', 'updated_at']) as $p) {
+        foreach (Post::published()->with('seo')->get(['id', 'slug', 'updated_at']) as $p) {
+            if ($hidden($p->seo)) {
+                continue;
+            }
             $urls[] = [$base . '/' . $p->slug, $p->updated_at->timestamp, '0.6'];
         }
 

@@ -8,6 +8,15 @@
     $canonical   = trim($__env->yieldContent('canonical')) ?: $siteUrl . (request()->path() === '/' ? '/' : '/' . request()->path());
     $ogImage     = trim($__env->yieldContent('og_image')) ?: '/images/logo.png';
     $ogImage     = str_starts_with($ogImage, 'http') ? $ogImage : $siteUrl . $ogImage;
+    // Optional social overrides (set per page / post through the SEO tools); they default to the meta values.
+    $ogTitle     = $yield('og_title') ?: $metaTitle;
+    $ogDesc      = $yield('og_description') ?: $metaDesc;
+    $twCard      = $yield('twitter_card') ?: 'summary_large_image';
+    $twTitle     = $yield('twitter_title') ?: $ogTitle;
+    $twDesc      = $yield('twitter_description') ?: $ogDesc;
+    $twImage     = trim($__env->yieldContent('twitter_image'));
+    $twImage     = $twImage === '' ? $ogImage : (str_starts_with($twImage, 'http') ? $twImage : $siteUrl . $twImage);
+    // While SITE_NOINDEX is on (pre-launch) every page is noindex, whatever the page's own robots setting says.
     $robots      = config('site.noindex')
         ? 'noindex, nofollow'
         : (trim($__env->yieldContent('robots')) ?: 'index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large');
@@ -28,15 +37,15 @@
 
 <meta property="og:type" content="@yield('og_type', 'website')" />
 <meta property="og:site_name" content="myPOS" />
-<meta property="og:title" content="{{ $metaTitle }}" />
-<meta property="og:description" content="{{ $metaDesc }}" />
+<meta property="og:title" content="{{ $ogTitle }}" />
+<meta property="og:description" content="{{ $ogDesc }}" />
 <meta property="og:url" content="{{ $canonical }}" />
 <meta property="og:image" content="{{ $ogImage }}" />
 <meta property="og:locale" content="en_US" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ $metaTitle }}" />
-<meta name="twitter:description" content="{{ $metaDesc }}" />
-<meta name="twitter:image" content="{{ $ogImage }}" />
+<meta name="twitter:card" content="{{ $twCard }}" />
+<meta name="twitter:title" content="{{ $twTitle }}" />
+<meta name="twitter:description" content="{{ $twDesc }}" />
+<meta name="twitter:image" content="{{ $twImage }}" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

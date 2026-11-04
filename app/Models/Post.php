@@ -4,20 +4,56 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    use SoftDeletes;
+
     protected $guarded = [];
 
     protected $casts = ['published_at' => 'datetime'];
 
-    /** Topic slug => label, used for the blog filter bar. */
+    /** Original topics; the categories table (seeded from these) is the source once it has rows. */
     public const TOPICS = [
         'fbr-compliance' => 'FBR & Tax Compliance',
         'restaurant'     => 'Restaurant POS',
         'salon'          => 'Salon POS',
         'retail'         => 'Retail POS',
     ];
+
+    /** @var array<string, string>|null */
+    private static ?array $topics = null;
+
+    /** Category slug => name, in display order (the blog filter bar). */
+    public static function topics(): array
+    {
+        try {
+            return static::$topics ??= (Category::orderBy('sort_order')->orderBy('id')->pluck('name', 'slug')->all() ?: self::TOPICS);
+        } catch (\Throwable) {
+            return self::TOPICS;
+        }
+    }
+
+    public static function flushTopics(): void
+    {
+        static::$topics = null;
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'topic', 'slug');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function seo()
+    {
+        return $this->morphOne(SeoMeta::class, 'seoable');
+    }
 
     public function scopePublished(Builder $q): Builder
     {
@@ -31,7 +67,7 @@ class Post extends Model
 
     public function getTopicLabelAttribute(): string
     {
-        return self::TOPICS[$this->topic] ?? 'Insights';
+        return self::topics()[$this->topic] ?? 'Insights';
     }
 
     /** Content with id="" anchors on every <h2>, plus the list of those headings for a table of contents. */

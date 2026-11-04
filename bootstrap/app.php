@@ -12,6 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->append(\App\Http\Middleware\NoindexHeader::class);
+        // Behind Cloudflare / a load balancer set TRUSTED_PROXIES=* so HTTPS is detected (the MCP endpoint requires it).
+        if ($proxies = env('TRUSTED_PROXIES')) {
+            $middleware->trustProxies(at: $proxies === '*' ? '*' : explode(',', $proxies));
+        }
         // Redirects / 410s from the redirects table (in the web group, so error pages get a session as before).
         $middleware->appendToGroup('web', \App\Http\Middleware\SiteRedirects::class);
     })

@@ -14,12 +14,17 @@ use Illuminate\View\AnonymousComponent;
  */
 class SectionRenderer
 {
+    /** When true, each section is wrapped in <!--§S:key--> … <!--§/S--> (used by the SEO / link analysis only). */
+    public static bool $annotate = false;
+
     public function page(Page $page): string
     {
         $out = '';
         foreach ($page->sections as $section) {
             if ($section->is_visible) {
-                $out .= $this->section($section);
+                $out .= self::$annotate
+                    ? '<!--§S:' . $section->key . '-->' . $this->section($section) . '<!--§/S-->'
+                    : $this->section($section);
             }
         }
 

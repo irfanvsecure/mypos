@@ -21,6 +21,7 @@ class PageController extends Controller
         if ($page = $this->dbPage('')) {
             return view('site.page', ['page' => $page]);
         }
+        abort_if($this->inDatabase(''), 404);
 
         return view('home');
     }
@@ -33,6 +34,15 @@ class PageController extends Controller
         }
 
         return Page::published()->where('path', $path)->with(['sections', 'seo', 'schemaBlocks'])->first();
+    }
+
+    /**
+     * True when the path has a database page in any state (draft, trashed): its old Blade file (kept as a
+     * fallback until the MCP is signed off) must then never be served, or deleting a page would not remove it.
+     */
+    private function inDatabase(string $path): bool
+    {
+        return ! config('site.__extract') && Page::withTrashed()->where('path', $path)->exists();
     }
 
     public function show(string $slug)
@@ -51,7 +61,7 @@ class PageController extends Controller
         }
 
         $view = 'pages.' . str_replace('/', '.', $slug);
-        if (preg_match('#^[a-z0-9\-/]+$#', $slug) && View::exists($view)) {
+        if (preg_match('#^[a-z0-9\-/]+$#', $slug) && ! $this->inDatabase($slug) && View::exists($view)) {
             return view($view);
         }
 

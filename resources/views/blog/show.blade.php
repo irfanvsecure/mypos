@@ -8,6 +8,13 @@
 @if ($post->featured_image)
 @section('og_image', $post->featured_image)
 @endif
+@php $postSeo = $post->seo; @endphp
+@if ($postSeo)
+@foreach (['canonical', 'robots', 'keywords', 'og_title', 'og_description', 'twitter_card', 'twitter_title', 'twitter_description', 'twitter_image'] as $field)
+@if ($postSeo->$field !== null)@section($field, $postSeo->$field)@endif
+@endforeach
+@if ($postSeo->og_image !== null)@section('og_image', $postSeo->og_image)@endif
+@endif
 
 @push('head')
 <meta property="article:published_time" content="{{ $post->published_at?->toIso8601String() }}" />

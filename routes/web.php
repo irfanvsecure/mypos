@@ -15,6 +15,7 @@ Route::post('/enquiry', [EnquiryController::class, 'store'])
 Route::view('/thank-you', 'thank-you')->name('thank-you');
 
 Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/tag/{slug}', [BlogController::class, 'tag'])->where('slug', '[a-z0-9-]+')->name('blog.tag');
 Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
 Route::get('/portfolio-item/{slug}', [ClientController::class, 'show'])->name('clients.show');
 
@@ -22,6 +23,10 @@ Route::get('/portfolio-item/{slug}', [ClientController::class, 'show'])->name('c
 // and the sitemap is only advertised once the site is meant to be indexed.
 Route::get('/robots.txt', function () {
     $txt = "User-agent: *\nDisallow: /enquiry\n";
+    // Extra lines from the robots_extra setting (update_robots tool).
+    if ($extra = trim((string) config('site.robots_extra'))) {
+        $txt .= str_replace("\r\n", "\n", $extra) . "\n";
+    }
     if (!config('site.noindex')) {
         $txt .= "\nSitemap: " . rtrim(config('site.url'), '/') . "/sitemap.xml\n";
     }

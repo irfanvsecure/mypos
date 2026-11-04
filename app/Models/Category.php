@@ -20,6 +20,14 @@ class Category extends Model
         return $this->hasMany(Post::class, 'topic', 'slug');
     }
 
+    protected static function booted(): void
+    {
+        $flush = fn () => Post::flushTopics();
+        static::saved($flush);
+        static::deleted($flush);
+        static::restored($flush);
+    }
+
     public function seo()
     {
         return $this->morphOne(SeoMeta::class, 'seoable');

@@ -10,7 +10,7 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $topic = $request->query('topic');
-        $topic = array_key_exists($topic, Post::TOPICS) ? $topic : null;
+        $topic = array_key_exists((string) $topic, Post::topics()) ? $topic : null;
 
         $posts = Post::published()
             ->when($topic, fn ($q) => $q->where('topic', $topic))
@@ -18,7 +18,26 @@ class BlogController extends Controller
             ->paginate(12)
             ->withQueryString();
 
-        return view('blog.index', compact('posts', 'topic'));
+        // A category's own SEO title / description (set through the MCP tools) replaces the generated ones.
+        $seo = $topic ? \App\Models\Category::where('slug', $topic)->first()?->seo : null;
+
+        return view('blog.index', [
+            'posts' => $posts, 'topic' => $topic,
+            'listTitle' => $seo?->title, 'listDescription' => $seo?->description, 'listRobots' => $seo?->robots,
+        ]);
+    }
+
+    /** /tag/{slug}: published posts with this tag. */
+    public function tag(string $slug)
+    {
+        $tag = \App\Models\Tag::where('slug', $slug)->firstOrFail();
+        $posts = $tag->posts()->published()->orderByDesc('published_at')->paginate(12)->withQueryString();
+
+        return view('blog.index', [
+            'posts' => $posts, 'topic' => null, 'tag' => $tag,
+            'listTitle' => $tag->name . ' — Blog — myPOS',
+            'listCanonical' => url('/tag/' . $tag->slug),
+        ]);
     }
 
     public function show(Post $post)

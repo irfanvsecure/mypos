@@ -21,5 +21,10 @@ class AppServiceProvider extends ServiceProvider
     {
         // Site settings saved in the database override the defaults in config/site.php.
         \App\Site\Settings::apply();
+
+        // MCP endpoint: calls per minute per IP (config/mcp_site.php).
+        \Illuminate\Support\Facades\RateLimiter::for('mcp', fn ($request) => \Illuminate\Cache\RateLimiting\Limit::perMinute(
+            max(1, (int) config('mcp_site.rate_limit', 120))
+        )->by($request->ip()));
     }
 }

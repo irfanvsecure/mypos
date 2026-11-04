@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('page', 'blogs')
-@section('title', ($topic ? \App\Models\Post::TOPICS[$topic] . ' — ' : '') . 'Blog: POS, FBR Integration & Business Guides — myPOS' . ($posts->currentPage() > 1 ? ' (Page ' . $posts->currentPage() . ')' : ''))
-@section('description', 'Practical guides on POS software, FBR & PRA integration, digital invoicing, and running retail, restaurant and salon businesses in Pakistan — from the myPOS team.')
-@if ($topic || $posts->currentPage() > 1)
+@section('title', ($listTitle ?? null) ?: (($topic ? \App\Models\Post::topics()[$topic] . ' — ' : '') . 'Blog: POS, FBR Integration & Business Guides — myPOS' . ($posts->currentPage() > 1 ? ' (Page ' . $posts->currentPage() . ')' : '')))
+@section('description', ($listDescription ?? null) ?: 'Practical guides on POS software, FBR & PRA integration, digital invoicing, and running retail, restaurant and salon businesses in Pakistan — from the myPOS team.')
+@if ($listRobots ?? null)@section('robots', $listRobots)@endif
+@if ($listCanonical ?? null)
+@section('canonical', $listCanonical)
+@elseif ($topic || $posts->currentPage() > 1)
 @section('canonical', url('/blogs') . ($posts->currentPage() > 1 ? '?page=' . $posts->currentPage() : ''))
 @endif
 
@@ -15,7 +18,7 @@
   <div class="wrap">
     <nav class="filter-bar reveal" aria-label="Blog topics">
       <a href="{{ route('blog.index') }}" class="{{ $topic ? '' : 'active' }}">All articles</a>
-      @foreach (\App\Models\Post::TOPICS as $key => $label)
+      @foreach (\App\Models\Post::topics() as $key => $label)
         <a href="{{ route('blog.index', ['topic' => $key]) }}" class="{{ $topic === $key ? 'active' : '' }}">{{ $label }}</a>
       @endforeach
     </nav>

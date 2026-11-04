@@ -52,6 +52,15 @@ return [
 
     'channels' => [
 
+        // Every MCP tool call: tool, status, duration, argument summary, IP (storage/logs/mcp-YYYY-MM-DD.log).
+        'mcp' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/mcp.log'),
+            'level' => 'info',
+            'days' => 90,
+            'replace_placeholders' => true,
+        ],
+
         'stack' => [
             'driver' => 'stack',
             'channels' => explode(',', (string) env('LOG_STACK', 'single')),
