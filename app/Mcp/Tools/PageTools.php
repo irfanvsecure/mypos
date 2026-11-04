@@ -327,7 +327,8 @@ class PageTools
                 foreach (PageSection::with('page')->get() as $s) {
                     if ($s->page) {
                         $text = '';
-                        array_walk_recursive($s->content, function ($v, $k) use (&$text) {
+                        $__c = $s->content;
+                        array_walk_recursive($__c, function ($v, $k) use (&$text) {
                             if (is_string($v) && $k !== 'before') {
                                 $text .= ' ' . $v;
                             }

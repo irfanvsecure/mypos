@@ -21,17 +21,7 @@ Route::get('/portfolio-item/{slug}', [ClientController::class, 'show'])->name('c
 
 // robots.txt follows config('site.noindex'): crawling stays allowed so bots can see the noindex signals,
 // and the sitemap is only advertised once the site is meant to be indexed.
-Route::get('/robots.txt', function () {
-    $txt = "User-agent: *\nDisallow: /enquiry\n";
-    // Extra lines from the robots_extra setting (update_robots tool).
-    if ($extra = trim((string) config('site.robots_extra'))) {
-        $txt .= str_replace("\r\n", "\n", $extra) . "\n";
-    }
-    if (!config('site.noindex')) {
-        $txt .= "\nSitemap: " . rtrim(config('site.url'), '/') . "/sitemap.xml\n";
-    }
-    return response($txt, 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
-});
+Route::get('/robots.txt', fn () => response(\App\Site\Robots::text(), 200, ['Content-Type' => 'text/plain; charset=UTF-8']));
 
 // Old WordPress sitemap URLs all point at the single generated sitemap.
 Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');

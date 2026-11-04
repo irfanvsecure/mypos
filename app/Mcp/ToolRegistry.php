@@ -9,6 +9,11 @@ class ToolRegistry
         Tools\PageTools::class,
         Tools\HeadingTools::class,
         Tools\LinkTools::class,
+        Tools\ContentTools::class,
+        Tools\BlogTools::class,
+        Tools\MediaTools::class,
+        Tools\SeoTools::class,
+        Tools\SiteTools::class,
     ];
 
     /** @return SiteTool[] */
