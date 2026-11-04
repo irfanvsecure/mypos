@@ -5,6 +5,7 @@
     'id' => 'faq',
     'schema' => true,       // emit FAQPage structured data
     'group' => null,        // read the items from the faqs table instead
+    'numbered' => false,    // plain-text items shown as "1  Question" (numbers are not part of the stored question)
 ])
 @php if ($group) { $items = \App\Models\Faq::pairs($group); } @endphp
 @if ($schema && count($items))
@@ -29,8 +30,13 @@
     <div class="faq-list" style="max-width:820px; margin-top:40px;">
       @foreach ($items as $i => [$q, $a])
         <div class="faq-item {{ $i === 0 ? 'open' : '' }}">
+@if ($numbered)
+          <button class="faq-q" type="button"><span><span style="color:var(--coral-deep); margin-right:12px;">{{ $i + 1 }}</span>{{ $q }}</span><span class="plus"></span></button>
+          <div class="faq-a"><p>{{ $a }}</p></div>
+@else
           <button class="faq-q" type="button">{!! $q !!}<span class="plus"></span></button>
           <div class="faq-a"><p>{!! $a !!}</p></div>
+@endif
         </div>
       @endforeach
     </div>

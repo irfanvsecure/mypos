@@ -1,5 +1,5 @@
 {
-    "exported_at": "2026-11-04T08:57:44+00:00",
+    "exported_at": "2026-11-04T09:19:51+00:00",
     "tables": {
         "pages": [
             {
@@ -747,7 +747,7 @@
                 "status": "published",
                 "options": "[]",
                 "created_at": "2026-11-04 08:31:54",
-                "updated_at": "2026-11-04 08:31:54",
+                "updated_at": "2026-11-04 09:07:13",
                 "deleted_at": null
             },
             {
@@ -8721,10 +8721,10 @@
                 "type": "component",
                 "component": "faq",
                 "sort_order": 60,
-                "content": "{\"before\":\"\\n\\n\",\"attributes\":{\"schema\":false,\"title\":\"Frequently Asked Questions\",\"eyebrow\":\"RESELLER FAQ\",\"id\":\"reseller-faq\",\"style\":\"background:linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('{{base}}\\/uploads\\/2022\\/10\\/pane-1-bg.png') center\\/cover no-repeat;\",\"group\":\"reseller:faq-1\"}}",
+                "content": "{\"before\":\"\\n\\n\",\"attributes\":{\"title\":\"Frequently Asked Questions\",\"eyebrow\":\"RESELLER FAQ\",\"id\":\"reseller-faq\",\"style\":\"background:linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('{{base}}\\/uploads\\/2022\\/10\\/pane-1-bg.png') center\\/cover no-repeat;\",\"group\":\"reseller:faq-1\",\"numbered\":true}}",
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
@@ -8747,10 +8747,10 @@
                 "type": "component",
                 "component": "page-header",
                 "sort_order": 10,
-                "content": "{\"before\":\"\",\"attributes\":{\"title\":\"Frequently Asked Questions\",\"crumb\":\"FAQ\",\"eyebrow\":\"HELP CENTRE\",\"lead\":\"Whether you are exploring myPOS for the first time or evaluating a switch from your current system, this FAQ is here to help.\",\"call\":true},\"slot\":{\"html\":\"<p class=\\\"reveal\\\" style=\\\"margin-top:14px; color:var(--text-mute-on-dark); font-style:italic;\\\">myPOS.pk | Pakistan\\u2019s Trusted POS Software Solution<\\/p>\"}}",
+                "content": "{\"before\":\"\",\"attributes\":{\"title\":\"Frequently Asked Questions\",\"crumb\":\"FAQ\",\"eyebrow\":\"HELP CENTRE\",\"lead\":\"Whether you are exploring myPOS for the first time or evaluating a switch from your current system, this FAQ is here to help.\",\"call\":true},\"slot\":{\"html\":\"{{embed:0}}<p class=\\\"reveal\\\" style=\\\"margin-top:14px; color:var(--text-mute-on-dark); font-style:italic;\\\">myPOS.pk | Pakistan\\u2019s Trusted POS Software Solution<\\/p>\",\"embeds\":[{\"component\":\"faq-schema\",\"attributes\":{\"groups\":[\"frequently-asked-questions:general\",\"frequently-asked-questions:pos-software\",\"frequently-asked-questions:cloud-offline\",\"frequently-asked-questions:fbr-pos-integration\",\"frequently-asked-questions:fbr-digital-invoicing\",\"frequently-asked-questions:pricing-implementation\",\"frequently-asked-questions:support-security\",\"frequently-asked-questions:getting-started\"]}}]}}",
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:11",
-                "updated_at": "2026-11-04 08:32:11",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
@@ -8760,10 +8760,10 @@
                 "type": "html",
                 "component": null,
                 "sort_order": 20,
-                "content": "{\"before\":\"\\n\",\"html\":\"<section id=\\\"faq\\\">\\n  <div class=\\\"wrap article-layout\\\">\\n    <div>\\n      <div class=\\\"section-head reveal\\\" style=\\\"max-width:760px;\\\">\\n        <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>35 ANSWERS \\u00b7 8 TOPICS<\\/span><\\/div>\\n        <h2>Answers about myPOS, FBR compliance, pricing &amp; support.<\\/h2>\\n        <p>Below you will find clear answers about our POS software, FBR POS Integration, Digital Invoicing, cloud and offline options, pricing, implementation, and ongoing support. If you have a question that is not covered here, our team is always available to assist.<\\/p>\\n      <\\/div>\\n\\n              <div id=\\\"general\\\" class=\\\"reveal\\\" style=\\\"margin-top:48px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>01 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">General Questions<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item open\\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What is myPOS.pk?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS.pk is a Pakistan-based software company specializing in point-of-sale and business management solutions. We design, develop, and support software that helps businesses of all sizes manage sales, inventory, customers, and reporting from a single, easy-to-use platform. From single-outlet retailers to multi-branch enterprises, myPOS is built to meet the practical needs of Pakistani businesses.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What services does myPOS provide?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS offers a comprehensive suite of business software solutions, including POS Software, Retail and Restaurant POS, Salon and Pharmacy POS, Inventory Management, Cloud POS, Offline POS, Accounting and Reporting Systems, FBR POS Integration, FBR Digital Invoicing, PRA Integration, Multi-Branch Management, Barcode and Inventory Tracking, Customer Loyalty Solutions, and Business Automation. We also provide end-to-end technical support and staff training to ensure your team gets the most from the system.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Which types of businesses can use myPOS?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS is designed to serve a wide range of industries. Our software is actively used by retail stores, supermarkets, restaurants and cafes, salons and spas, pharmacies, wholesale distributors, and businesses with multiple branches. If your business involves managing sales, stock, or customer transactions, myPOS has a solution that can be tailored to your needs.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Is myPOS available across Pakistan?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS serves businesses across Pakistan. Whether your business is located in Karachi, Lahore, Islamabad, or any other city, our team can assist you remotely or on-site depending on your requirements. Our cloud-based options also make it easy for businesses in any location to get started quickly.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does myPOS provide custom software development?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS focuses on delivering proven, feature-rich software solutions rather than fully custom development. However, we understand that every business is different, so we work closely with clients to configure and adapt the software to fit their specific workflows and operational requirements. Our team will guide you through the available options to ensure the system works the way your business works.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"pos-software\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>02 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">POS Software Questions<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What is POS software?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>POS stands for Point of Sale. POS software is the system businesses use to process sales transactions, manage inventory, generate receipts, and track business performance. A modern POS system like myPOS goes far beyond a simple cash register. It connects sales, stock management, customer data, and financial reporting into one centralized platform, giving business owners real-time visibility into how their business is performing.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How does myPOS help manage sales and inventory?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS automatically updates your inventory every time a sale is made, so you always have an accurate, real-time picture of your stock levels. You can set low-stock alerts, manage product categories, track purchase orders, and reduce the risk of overstocking or running out of key items. The sales management features allow you to process transactions quickly, apply discounts, manage different payment methods, and generate end-of-day summaries without manual effort.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Can I manage multiple branches from one system?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS includes a dedicated Multi-Branch Management module that allows you to oversee all your locations from a single dashboard. You can monitor sales, stock levels, and staff performance across branches in real time, transfer inventory between locations, and generate consolidated reports for your entire business. This makes myPOS a practical choice for growing businesses that operate more than one outlet.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does myPOS support multiple users and access levels?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Absolutely. myPOS allows you to create multiple user accounts, each with its own defined role and permission level. For example, a cashier may only access the billing screen, while a manager can view reports and adjust pricing. This keeps your data secure and ensures that staff members only interact with the parts of the system relevant to their responsibilities.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does myPOS provide reports and business analytics?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS includes a built-in Accounting and Reporting System that gives you access to daily sales summaries, inventory reports, profit and loss overviews, customer purchase history, and staff performance data. These reports are available on demand and can help you make informed decisions about pricing, purchasing, and business growth without needing a separate accounting tool.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does myPOS support barcode scanning?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS fully supports barcode scanning as part of its Barcode and Inventory Tracking solution. You can scan barcodes to add products to a sale, look up stock information, or update inventory records. This speeds up the checkout process significantly and reduces the chance of manual entry errors, which is especially valuable for retail stores and pharmacies managing large product catalogues.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"cloud-offline\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>03 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Cloud and Offline Software<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What is the difference between cloud and offline POS software?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Cloud POS software stores your data on secure remote servers and can be accessed from any device with an internet connection. Offline POS software stores data locally on your hardware and does not require a constant internet connection to operate. Both options have advantages, and the right choice depends on your business environment, internet reliability, and how you prefer to access your data.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does myPOS offer cloud-based software?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS offers a Cloud POS solution that lets you access your sales data, inventory, and reports from anywhere with an internet connection. This is ideal for business owners who need to monitor operations remotely or manage multiple branches from different locations. Cloud-based systems also make it easier to keep your software updated without manual installations.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does myPOS offer offline software?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS also provides an Offline POS option that operates fully without internet access. All transactions and data are stored locally, ensuring your business continues running smoothly regardless of connectivity. This option is well-suited for businesses in areas with inconsistent internet service or for operations that require guaranteed uptime.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Can I continue billing if the internet goes down?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. With myPOS Offline POS, your billing and transaction processing will continue uninterrupted even if your internet connection is unavailable. Once the connection is restored, data is synchronized automatically. This ensures your business operations are never dependent on internet availability for day-to-day sales.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Which option is better for my business?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>The best option depends on your specific situation. If you have reliable internet access and need to manage your business from multiple locations or devices, the Cloud POS is a strong choice. If your business operates in an area with connectivity challenges or you prefer local data storage, the Offline POS may be more suitable. Our team can help you evaluate both options during your consultation and recommend what fits your needs best.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"fbr-pos-integration\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>04 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">FBR POS Integration<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What is FBR POS Integration?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>FBR POS Integration refers to the connection between your point-of-sale system and the Federal Board of Revenue (FBR) of Pakistan. Through this integration, businesses are required to report their sales transactions directly to FBR in real time. The goal is to improve tax transparency and bring more businesses into the formal economy. Businesses that meet certain revenue thresholds are legally required to integrate their POS with FBR.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Which businesses require FBR POS Integration?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>FBR POS Integration is currently mandated for Tier-1 retailers in Pakistan, which generally includes businesses operating in large shopping malls, retail chains, and high-turnover commercial outlets. FBR regularly updates its requirements and expands the list of businesses that must comply. If you are unsure whether your business is required to integrate, myPOS can help you assess your obligations and guide you through the process.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How does myPOS help with FBR POS Integration?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS is built with FBR POS Integration support included. Our software connects your POS system to FBR\\u2019s servers, ensuring that your sales data is reported accurately and in the required format. We handle the technical setup, configure the integration within your existing workflow, and provide guidance on maintaining compliance as your business grows. Our team stays up to date with FBR requirements so you do not have to.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What information is required for FBR integration?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>To set up FBR POS Integration, you will typically need your business National Tax Number (NTN), STRN (Sales Tax Registration Number) if applicable, and access to your FBR portal account. myPOS will guide you through the registration steps and coordinate the technical configuration from our end. The exact requirements may vary depending on your business category and FBR\\u2019s current guidelines.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What happens if FBR services are temporarily unavailable?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS is designed to handle FBR service interruptions gracefully. If FBR servers are temporarily unavailable, the system queues the transaction data and automatically syncs it once connectivity with FBR is restored. Your billing operations continue without interruption, and no transaction data is lost during the downtime.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"fbr-digital-invoicing\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>05 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">FBR Digital Invoicing<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What is FBR Digital Invoicing?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>FBR Digital Invoicing is a separate but related initiative under which businesses generate and submit sales invoices electronically through FBR\\u2019s integrated system. Unlike traditional paper-based invoicing, digital invoices are issued in a standardized electronic format and are visible to both the seller and FBR. This initiative supports the broader goal of improving tax compliance and reducing undocumented transactions in Pakistan.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How does myPOS support Digital Invoicing?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS supports FBR Digital Invoicing by generating compliant electronic invoices directly from the billing screen. When a sale is processed, the system formats the invoice according to FBR requirements and submits it through the appropriate channel. This means your staff does not need to handle the compliance process manually. Everything is handled within the normal billing workflow, keeping operations efficient and accurate.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Does Digital Invoicing replace my current billing process?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>No. FBR Digital Invoicing works alongside your existing billing process rather than replacing it. myPOS integrates the digital invoicing requirement into your regular sales flow so that every eligible transaction automatically generates a compliant digital invoice. Your customers still receive their standard receipts, and your internal records remain consistent with what has been submitted to FBR.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                  <div class=\\\"cta-band reveal\\\" style=\\\"margin-top:64px;\\\">\\n            <h2>Need help with FBR or PRA compliance?<\\/h2>\\n            <p>Our team handles the technical setup, configures the integration within your existing workflow and trains your staff.<\\/p>\\n            <div class=\\\"btn-row\\\" style=\\\"justify-content:center;\\\">\\n              <a href=\\\"{{demo_url}}\\\" class=\\\"btn btn-primary\\\">Book a Free Demo<\\/a>\\n              <a href=\\\"{{wa_link}}\\\" class=\\\"btn btn-wa\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">WhatsApp Us<\\/a>\\n            <\\/div>\\n          <\\/div>\\n                      <div id=\\\"pricing-implementation\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>06 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Pricing and Implementation<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How much does myPOS software cost?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Pricing for myPOS depends on the type of solution you need, the number of branches or users, and the features included. We offer flexible pricing structures to suit businesses at different stages of growth. To get an accurate quote tailored to your requirements, we recommend reaching out to our team for a consultation. We will walk you through the available options and help you find a plan that fits your budget.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Are monthly subscription plans available?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS offers subscription-based pricing plans so that businesses can access the software without a large upfront investment. Subscription plans typically include software updates, cloud access (for cloud-based plans), and technical support. Our team can provide full details on available plans and what each one includes during your consultation.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Is implementation and training included?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS includes implementation assistance and staff training as part of the onboarding process. Our team will set up the system, configure it according to your business requirements, and train your staff on how to use it effectively. We understand that getting your team up to speed quickly is important, and we take that responsibility seriously.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Can existing business data be imported?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>In most cases, yes. If you have existing product lists, customer data, or inventory records in a structured format such as a spreadsheet, our team can assist you with importing that data into myPOS. This saves significant time compared to manual data entry and helps you get operational quickly without starting from scratch.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What hardware is compatible with myPOS?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS is compatible with a range of standard business hardware, including POS terminals, receipt printers, barcode scanners, cash drawers, and customer-facing displays. The software can run on Windows-based computers and selected tablets. Our team can advise you on compatible hardware configurations during setup and help ensure your existing equipment works seamlessly with the system.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"support-security\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>07 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Support and Security<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">What support options are available?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>myPOS provides dedicated technical support and training to all clients. Support is available through phone, email, and remote assistance, depending on your plan and requirements. Our support team is familiar with the day-to-day challenges Pakistani businesses face with POS systems, FBR compliance, and business automation, so you can expect informed and practical help when you need it.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Is remote support available?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS offers remote support, which allows our technical team to assist you without needing to visit your premises. Using remote access tools, we can diagnose issues, make configuration adjustments, and guide your staff through problems quickly and efficiently. This is particularly useful for resolving time-sensitive issues during business hours.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How secure is my business data?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Data security is a priority at myPOS. For cloud-based solutions, your data is stored on secure servers with access controls and regular security practices in place. For offline installations, data is stored on your local hardware and protected by user authentication. User access levels within the software ensure that sensitive information is only accessible to authorized personnel.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">Are backups available?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Yes. myPOS supports data backups to protect your business information. Cloud-based plans benefit from automatic server-side backups. For offline installations, the system supports scheduled local backups, and our team can advise you on best practices for maintaining regular backup routines. We recommend discussing your backup requirements with our team during implementation.<\\/p><\\/div>\\n              <\\/div>\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How do I contact support?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>You can contact the myPOS support team through the contact information available on our website at mypos.pk. Our team is available during business hours and can assist you with technical issues, billing questions, FBR compliance queries, or any other matter related to your software. For urgent issues, we recommend calling directly for the fastest response.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"getting-started\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>08 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Getting Started<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          <div class=\\\"faq-item \\\">\\n                <button class=\\\"faq-q\\\" type=\\\"button\\\">How do I request a demo or get started with myPOS?<span class=\\\"plus\\\"><\\/span><\\/button>\\n                <div class=\\\"faq-a\\\"><p>Getting started with myPOS is straightforward. Visit mypos.pk and use the contact form or phone number to reach our sales team. During your initial consultation, we will learn about your business, discuss the right solution for your needs, and walk you through a live demonstration of the software. There is no obligation, and our team is happy to answer any questions before you make a decision.<\\/p><\\/div>\\n              <\\/div>\\n                      <\\/div>\\n        <\\/div>\\n\\n              \\n      <div class=\\\"related-links reveal\\\" style=\\\"margin-top:48px;\\\">\\n        <a href=\\\"{{base}}\\/support\\\">Support<\\/a>\\n        <a href=\\\"{{base}}\\/pricing\\\">Pricing<\\/a>\\n        <a href=\\\"{{base}}\\/features\\\">Features<\\/a>\\n        <a href=\\\"{{base}}\\/fbr-pos-integration\\\">FBR POS Integration<\\/a>\\n        <a href=\\\"{{base}}\\/fbr-digital-invoicing\\\">FBR Digital Invoicing<\\/a>\\n        <a href=\\\"{{base}}\\/downloads\\\">Free Downloads<\\/a>\\n      <\\/div>\\n    <\\/div>\\n\\n    <aside class=\\\"article-aside\\\">\\n      <nav class=\\\"toc\\\" aria-label=\\\"FAQ topics\\\">\\n        <div class=\\\"h4\\\">FAQ TOPICS<\\/div>\\n                  <a href=\\\"#general\\\">General Questions <span style=\\\"color:var(--text-mute-ink);\\\">(5)<\\/span><\\/a>\\n                  <a href=\\\"#pos-software\\\">POS Software Questions <span style=\\\"color:var(--text-mute-ink);\\\">(6)<\\/span><\\/a>\\n                  <a href=\\\"#cloud-offline\\\">Cloud and Offline Software <span style=\\\"color:var(--text-mute-ink);\\\">(5)<\\/span><\\/a>\\n                  <a href=\\\"#fbr-pos-integration\\\">FBR POS Integration <span style=\\\"color:var(--text-mute-ink);\\\">(5)<\\/span><\\/a>\\n                  <a href=\\\"#fbr-digital-invoicing\\\">FBR Digital Invoicing <span style=\\\"color:var(--text-mute-ink);\\\">(3)<\\/span><\\/a>\\n                  <a href=\\\"#pricing-implementation\\\">Pricing and Implementation <span style=\\\"color:var(--text-mute-ink);\\\">(5)<\\/span><\\/a>\\n                  <a href=\\\"#support-security\\\">Support and Security <span style=\\\"color:var(--text-mute-ink);\\\">(5)<\\/span><\\/a>\\n                  <a href=\\\"#getting-started\\\">Getting Started <span style=\\\"color:var(--text-mute-ink);\\\">(1)<\\/span><\\/a>\\n              <\\/nav>\\n      <div class=\\\"aside-cta\\\">\\n        <div class=\\\"h4\\\">Still have a question?<\\/div>\\n        <p>Talk to a myPOS expert \\u2014 15,000+ customers, rated {{rating_value}}\\/5, replies in under 2 minutes on WhatsApp.<\\/p>\\n        <a href=\\\"{{wa_link}}\\\" class=\\\"btn btn-wa btn-sm\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">WhatsApp Us<\\/a>\\n        <a href=\\\"tel:{{phone_raw}}\\\" class=\\\"btn btn-outline btn-sm\\\" style=\\\"border-color:rgba(255,255,255,0.35); color:var(--text-on-dark);\\\">Call {{phone}}<\\/a>\\n        <a href=\\\"{{base}}\\/tickets\\\" class=\\\"btn btn-primary btn-sm\\\">Open a Support Ticket<\\/a>\\n      <\\/div>\\n    <\\/aside>\\n  <\\/div>\\n<\\/section>\"}",
+                "content": "{\"before\":\"\\n\",\"html\":\"<section id=\\\"faq\\\">\\n  <div class=\\\"wrap article-layout\\\">\\n    <div>\\n      <div class=\\\"section-head reveal\\\" style=\\\"max-width:760px;\\\">\\n        <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>{{embed:16}} ANSWERS \\u00b7 8 TOPICS<\\/span><\\/div>\\n        <h2>Answers about myPOS, FBR compliance, pricing &amp; support.<\\/h2>\\n        <p>Below you will find clear answers about our POS software, FBR POS Integration, Digital Invoicing, cloud and offline options, pricing, implementation, and ongoing support. If you have a question that is not covered here, our team is always available to assist.<\\/p>\\n      <\\/div>\\n\\n              <div id=\\\"general\\\" class=\\\"reveal\\\" style=\\\"margin-top:48px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>01 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">General Questions<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:0}}          <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"pos-software\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>02 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">POS Software Questions<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:2}}          <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"cloud-offline\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>03 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Cloud and Offline Software<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:4}}          <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"fbr-pos-integration\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>04 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">FBR POS Integration<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:6}}          <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"fbr-digital-invoicing\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>05 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">FBR Digital Invoicing<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:8}}          <\\/div>\\n        <\\/div>\\n\\n                  <div class=\\\"cta-band reveal\\\" style=\\\"margin-top:64px;\\\">\\n            <h2>Need help with FBR or PRA compliance?<\\/h2>\\n            <p>Our team handles the technical setup, configures the integration within your existing workflow and trains your staff.<\\/p>\\n            <div class=\\\"btn-row\\\" style=\\\"justify-content:center;\\\">\\n              <a href=\\\"{{demo_url}}\\\" class=\\\"btn btn-primary\\\">Book a Free Demo<\\/a>\\n              <a href=\\\"{{wa_link}}\\\" class=\\\"btn btn-wa\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">WhatsApp Us<\\/a>\\n            <\\/div>\\n          <\\/div>\\n                      <div id=\\\"pricing-implementation\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>06 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Pricing and Implementation<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:10}}          <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"support-security\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>07 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Support and Security<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:12}}          <\\/div>\\n        <\\/div>\\n\\n                      <div id=\\\"getting-started\\\" class=\\\"reveal\\\" style=\\\"margin-top:64px; scroll-margin-top:110px;\\\">\\n          <div class=\\\"eyebrow-line\\\"><span class=\\\"bar\\\"><\\/span><span>08 \\/ 08<\\/span><\\/div>\\n          <h2 style=\\\"font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px;\\\">Getting Started<\\/h2>\\n          <div class=\\\"faq-list\\\">\\n                          {{embed:14}}          <\\/div>\\n        <\\/div>\\n\\n              \\n      <div class=\\\"related-links reveal\\\" style=\\\"margin-top:48px;\\\">\\n        <a href=\\\"{{base}}\\/support\\\">Support<\\/a>\\n        <a href=\\\"{{base}}\\/pricing\\\">Pricing<\\/a>\\n        <a href=\\\"{{base}}\\/features\\\">Features<\\/a>\\n        <a href=\\\"{{base}}\\/fbr-pos-integration\\\">FBR POS Integration<\\/a>\\n        <a href=\\\"{{base}}\\/fbr-digital-invoicing\\\">FBR Digital Invoicing<\\/a>\\n        <a href=\\\"{{base}}\\/downloads\\\">Free Downloads<\\/a>\\n      <\\/div>\\n    <\\/div>\\n\\n    <aside class=\\\"article-aside\\\">\\n      <nav class=\\\"toc\\\" aria-label=\\\"FAQ topics\\\">\\n        <div class=\\\"h4\\\">FAQ TOPICS<\\/div>\\n                  <a href=\\\"#general\\\">General Questions <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:1}})<\\/span><\\/a>\\n                  <a href=\\\"#pos-software\\\">POS Software Questions <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:3}})<\\/span><\\/a>\\n                  <a href=\\\"#cloud-offline\\\">Cloud and Offline Software <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:5}})<\\/span><\\/a>\\n                  <a href=\\\"#fbr-pos-integration\\\">FBR POS Integration <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:7}})<\\/span><\\/a>\\n                  <a href=\\\"#fbr-digital-invoicing\\\">FBR Digital Invoicing <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:9}})<\\/span><\\/a>\\n                  <a href=\\\"#pricing-implementation\\\">Pricing and Implementation <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:11}})<\\/span><\\/a>\\n                  <a href=\\\"#support-security\\\">Support and Security <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:13}})<\\/span><\\/a>\\n                  <a href=\\\"#getting-started\\\">Getting Started <span style=\\\"color:var(--text-mute-ink);\\\">({{embed:15}})<\\/span><\\/a>\\n              <\\/nav>\\n      <div class=\\\"aside-cta\\\">\\n        <div class=\\\"h4\\\">Still have a question?<\\/div>\\n        <p>Talk to a myPOS expert \\u2014 15,000+ customers, rated {{rating_value}}\\/5, replies in under 2 minutes on WhatsApp.<\\/p>\\n        <a href=\\\"{{wa_link}}\\\" class=\\\"btn btn-wa btn-sm\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">WhatsApp Us<\\/a>\\n        <a href=\\\"tel:{{phone_raw}}\\\" class=\\\"btn btn-outline btn-sm\\\" style=\\\"border-color:rgba(255,255,255,0.35); color:var(--text-on-dark);\\\">Call {{phone}}<\\/a>\\n        <a href=\\\"{{base}}\\/tickets\\\" class=\\\"btn btn-primary btn-sm\\\">Open a Support Ticket<\\/a>\\n      <\\/div>\\n    <\\/aside>\\n  <\\/div>\\n<\\/section>\",\"embeds\":[{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:general\",\"open-first\":true}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:general\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:pos-software\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:pos-software\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:cloud-offline\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:cloud-offline\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:fbr-pos-integration\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:fbr-pos-integration\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:fbr-digital-invoicing\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:fbr-digital-invoicing\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:pricing-implementation\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:pricing-implementation\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:support-security\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:support-security\"]}},{\"component\":\"faq-topic-items\",\"attributes\":{\"group\":\"frequently-asked-questions:getting-started\",\"open-first\":false}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:getting-started\"]}},{\"component\":\"faq-count\",\"attributes\":{\"groups\":[\"frequently-asked-questions:general\",\"frequently-asked-questions:pos-software\",\"frequently-asked-questions:cloud-offline\",\"frequently-asked-questions:fbr-pos-integration\",\"frequently-asked-questions:fbr-digital-invoicing\",\"frequently-asked-questions:pricing-implementation\",\"frequently-asked-questions:support-security\",\"frequently-asked-questions:getting-started\"]}}]}",
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:11",
-                "updated_at": "2026-11-04 08:56:07",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
@@ -8799,7 +8799,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:10:10",
                 "updated_at": "2026-11-04 08:10:10",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 2,
@@ -8819,7 +8822,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:25",
                 "updated_at": "2026-11-04 08:26:25",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 3,
@@ -8839,7 +8845,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:27",
                 "updated_at": "2026-11-04 08:26:27",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 4,
@@ -8859,7 +8868,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:28",
                 "updated_at": "2026-11-04 08:26:28",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 5,
@@ -8879,7 +8891,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:30",
                 "updated_at": "2026-11-04 08:26:30",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 6,
@@ -8899,7 +8914,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:31",
                 "updated_at": "2026-11-04 08:26:31",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 7,
@@ -8919,7 +8937,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:33",
                 "updated_at": "2026-11-04 08:26:33",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 8,
@@ -8939,7 +8960,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:34",
                 "updated_at": "2026-11-04 08:26:34",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 9,
@@ -8959,7 +8983,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:36",
                 "updated_at": "2026-11-04 08:26:36",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 10,
@@ -8979,7 +9006,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:37",
                 "updated_at": "2026-11-04 08:26:37",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 11,
@@ -8999,7 +9029,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:39",
                 "updated_at": "2026-11-04 08:26:39",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 12,
@@ -9019,7 +9052,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:41",
                 "updated_at": "2026-11-04 08:26:41",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 13,
@@ -9039,7 +9075,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:42",
                 "updated_at": "2026-11-04 08:26:42",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 14,
@@ -9059,7 +9098,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:43",
                 "updated_at": "2026-11-04 08:26:43",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 15,
@@ -9079,7 +9121,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:45",
                 "updated_at": "2026-11-04 08:26:45",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 16,
@@ -9099,7 +9144,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:46",
                 "updated_at": "2026-11-04 08:26:46",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 17,
@@ -9119,7 +9167,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:47",
                 "updated_at": "2026-11-04 08:26:47",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 18,
@@ -9139,7 +9190,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:49",
                 "updated_at": "2026-11-04 08:26:49",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 19,
@@ -9159,7 +9213,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:50",
                 "updated_at": "2026-11-04 08:26:50",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 20,
@@ -9179,7 +9236,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:52",
                 "updated_at": "2026-11-04 08:26:52",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 21,
@@ -9199,7 +9259,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:54",
                 "updated_at": "2026-11-04 08:26:54",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 22,
@@ -9219,7 +9282,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:56",
                 "updated_at": "2026-11-04 08:26:56",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 23,
@@ -9239,7 +9305,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:57",
                 "updated_at": "2026-11-04 08:26:57",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 24,
@@ -9259,7 +9328,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:26:59",
                 "updated_at": "2026-11-04 08:26:59",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 25,
@@ -9279,7 +9351,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:00",
                 "updated_at": "2026-11-04 08:27:00",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 26,
@@ -9299,7 +9374,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:02",
                 "updated_at": "2026-11-04 08:27:02",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 27,
@@ -9319,7 +9397,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:03",
                 "updated_at": "2026-11-04 08:27:03",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 28,
@@ -9339,7 +9420,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:04",
                 "updated_at": "2026-11-04 08:27:04",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 29,
@@ -9359,7 +9443,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:06",
                 "updated_at": "2026-11-04 08:27:06",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 30,
@@ -9379,7 +9466,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:07",
                 "updated_at": "2026-11-04 08:27:07",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 31,
@@ -9399,7 +9489,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:09",
                 "updated_at": "2026-11-04 08:27:09",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 32,
@@ -9419,7 +9512,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:10",
                 "updated_at": "2026-11-04 08:27:10",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 33,
@@ -9439,7 +9535,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:12",
                 "updated_at": "2026-11-04 08:27:12",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 34,
@@ -9459,7 +9558,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:13",
                 "updated_at": "2026-11-04 08:27:13",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 35,
@@ -9479,7 +9581,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:14",
                 "updated_at": "2026-11-04 08:27:14",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 36,
@@ -9499,7 +9604,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:16",
                 "updated_at": "2026-11-04 08:27:16",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 37,
@@ -9519,7 +9627,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:17",
                 "updated_at": "2026-11-04 08:27:17",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 38,
@@ -9539,7 +9650,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:19",
                 "updated_at": "2026-11-04 08:27:19",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 39,
@@ -9559,7 +9673,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:20",
                 "updated_at": "2026-11-04 08:27:20",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 40,
@@ -9579,7 +9696,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:22",
                 "updated_at": "2026-11-04 08:27:22",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 41,
@@ -9599,7 +9719,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:23",
                 "updated_at": "2026-11-04 08:27:23",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 42,
@@ -9619,7 +9742,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:27:25",
                 "updated_at": "2026-11-04 08:27:25",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 43,
@@ -9639,7 +9765,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:40",
                 "updated_at": "2026-11-04 08:29:40",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 44,
@@ -9659,7 +9788,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:42",
                 "updated_at": "2026-11-04 08:29:42",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 45,
@@ -9679,7 +9811,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:43",
                 "updated_at": "2026-11-04 08:29:43",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 46,
@@ -9699,7 +9834,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:44",
                 "updated_at": "2026-11-04 08:29:44",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 47,
@@ -9719,7 +9857,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:46",
                 "updated_at": "2026-11-04 08:29:46",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 48,
@@ -9739,7 +9880,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:47",
                 "updated_at": "2026-11-04 08:29:47",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 49,
@@ -9759,7 +9903,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:49",
                 "updated_at": "2026-11-04 08:29:49",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 50,
@@ -9779,7 +9926,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:50",
                 "updated_at": "2026-11-04 08:29:50",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 51,
@@ -9799,7 +9949,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:51",
                 "updated_at": "2026-11-04 08:29:51",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 52,
@@ -9819,7 +9972,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:52",
                 "updated_at": "2026-11-04 08:29:52",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 53,
@@ -9839,7 +9995,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:54",
                 "updated_at": "2026-11-04 08:29:54",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 54,
@@ -9859,7 +10018,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:55",
                 "updated_at": "2026-11-04 08:29:55",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 55,
@@ -9879,7 +10041,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:56",
                 "updated_at": "2026-11-04 08:29:56",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 56,
@@ -9899,7 +10064,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:57",
                 "updated_at": "2026-11-04 08:29:57",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 57,
@@ -9919,7 +10087,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:29:59",
                 "updated_at": "2026-11-04 08:29:59",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 58,
@@ -9939,7 +10110,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:00",
                 "updated_at": "2026-11-04 08:30:00",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 59,
@@ -9959,7 +10133,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:01",
                 "updated_at": "2026-11-04 08:30:01",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 60,
@@ -9979,7 +10156,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:03",
                 "updated_at": "2026-11-04 08:30:03",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 61,
@@ -9999,7 +10179,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:05",
                 "updated_at": "2026-11-04 08:30:05",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 62,
@@ -10019,7 +10202,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:06",
                 "updated_at": "2026-11-04 08:30:06",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 63,
@@ -10039,7 +10225,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:07",
                 "updated_at": "2026-11-04 08:30:07",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 64,
@@ -10059,7 +10248,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:09",
                 "updated_at": "2026-11-04 08:30:09",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 65,
@@ -10079,7 +10271,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:10",
                 "updated_at": "2026-11-04 08:30:10",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 66,
@@ -10099,7 +10294,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:12",
                 "updated_at": "2026-11-04 08:30:12",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 67,
@@ -10119,7 +10317,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:30:13",
                 "updated_at": "2026-11-04 08:30:13",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 68,
@@ -10139,7 +10340,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:31:54",
                 "updated_at": "2026-11-04 08:31:54",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 69,
@@ -10159,7 +10363,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:31:55",
                 "updated_at": "2026-11-04 08:31:55",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 70,
@@ -10179,7 +10386,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:31:57",
                 "updated_at": "2026-11-04 08:31:57",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 71,
@@ -10199,7 +10409,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:31:59",
                 "updated_at": "2026-11-04 08:31:59",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 72,
@@ -10219,7 +10432,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:00",
                 "updated_at": "2026-11-04 08:32:00",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 73,
@@ -10239,7 +10455,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:02",
                 "updated_at": "2026-11-04 08:32:02",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 74,
@@ -10259,7 +10478,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:04",
                 "updated_at": "2026-11-04 08:32:04",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 75,
@@ -10279,7 +10501,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:06",
                 "updated_at": "2026-11-04 08:32:06",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 76,
@@ -10299,7 +10524,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:07",
                 "updated_at": "2026-11-04 08:32:07",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 77,
@@ -10319,7 +10547,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:09",
                 "updated_at": "2026-11-04 08:32:09",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             },
             {
                 "id": 78,
@@ -10339,7 +10570,10 @@
                 "twitter_image": null,
                 "created_at": "2026-11-04 08:32:11",
                 "updated_at": "2026-11-04 08:32:11",
-                "deleted_at": null
+                "deleted_at": null,
+                "focus_keyword": null,
+                "twitter_card": null,
+                "exclude_from_sitemap": 0
             }
         ],
         "schema_blocks": [
@@ -10390,33 +10624,50 @@
                 "created_at": "2026-11-04 08:27:22",
                 "updated_at": "2026-11-04 08:27:22",
                 "deleted_at": null
-            },
+            }
+        ],
+        "categories": [
             {
-                "id": 5,
-                "schemaable_type": "App\\Models\\Page",
-                "schemaable_id": 77,
-                "schema_type": "FAQPage",
-                "json": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Why should I resell MyPOS services?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"It is indeed a good opportunity for you to become a MyPOS reseller it helps you accomplish your goals via shortcuts. We will be honored to help you establish your business, build your brand name and provide you complete control over the features and packaging of our product that you can offer to your target market.\"}},{\"@type\":\"Question\",\"name\":\"How do I start reselling with MyPOS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"To become a POS reseller with MyPOS, you need to activate your account or get yourself registered with MyPOS. Once you are done with it, you can go ahead and start selling up your reseller business. For further details, please contact our help representative they will be happy to help you.\"}},{\"@type\":\"Question\",\"name\":\"In case of any help, do MyPOS provide support to my clients?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"When you become a MyPOS reseller it’s your responsibility to address your clients’ issues. Still, when the situation arises, when you do not have sufficient server access to check and investigate the problems. Then, our technical team will step in and do our best to help you and your clients.\"}},{\"@type\":\"Question\",\"name\":\"Do MyPOS have any direct or indirect contact with my clients?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No, they will be your clients, and we will respect your privacy. So we will not contact any of your clients at any point in time.\"}},{\"@type\":\"Question\",\"name\":\"Being a POS Reseller, how effective MyPOS for me?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"If you are keen on your business’s success, then MyPOS system is the best solution that brings proficiency and profitability to your target market.\"}}]}",
+                "id": 1,
+                "slug": "fbr-compliance",
+                "name": "FBR & Tax Compliance",
+                "description": null,
                 "sort_order": 1,
-                "is_active": 1,
-                "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "created_at": "2026-11-04 09:04:37",
+                "updated_at": "2026-11-04 09:04:37",
                 "deleted_at": null
             },
             {
-                "id": 6,
-                "schemaable_type": "App\\Models\\Page",
-                "schemaable_id": 78,
-                "schema_type": "FAQPage",
-                "json": "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What is myPOS.pk?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS.pk is a Pakistan-based software company specializing in point-of-sale and business management solutions. We design, develop, and support software that helps businesses of all sizes manage sales, inventory, customers, and reporting from a single, easy-to-use platform. From single-outlet retailers to multi-branch enterprises, myPOS is built to meet the practical needs of Pakistani businesses.\"}},{\"@type\":\"Question\",\"name\":\"What services does myPOS provide?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS offers a comprehensive suite of business software solutions, including POS Software, Retail and Restaurant POS, Salon and Pharmacy POS, Inventory Management, Cloud POS, Offline POS, Accounting and Reporting Systems, FBR POS Integration, FBR Digital Invoicing, PRA Integration, Multi-Branch Management, Barcode and Inventory Tracking, Customer Loyalty Solutions, and Business Automation. We also provide end-to-end technical support and staff training to ensure your team gets the most from the system.\"}},{\"@type\":\"Question\",\"name\":\"Which types of businesses can use myPOS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS is designed to serve a wide range of industries. Our software is actively used by retail stores, supermarkets, restaurants and cafes, salons and spas, pharmacies, wholesale distributors, and businesses with multiple branches. If your business involves managing sales, stock, or customer transactions, myPOS has a solution that can be tailored to your needs.\"}},{\"@type\":\"Question\",\"name\":\"Is myPOS available across Pakistan?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS serves businesses across Pakistan. Whether your business is located in Karachi, Lahore, Islamabad, or any other city, our team can assist you remotely or on-site depending on your requirements. Our cloud-based options also make it easy for businesses in any location to get started quickly.\"}},{\"@type\":\"Question\",\"name\":\"Does myPOS provide custom software development?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS focuses on delivering proven, feature-rich software solutions rather than fully custom development. However, we understand that every business is different, so we work closely with clients to configure and adapt the software to fit their specific workflows and operational requirements. Our team will guide you through the available options to ensure the system works the way your business works.\"}},{\"@type\":\"Question\",\"name\":\"What is POS software?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"POS stands for Point of Sale. POS software is the system businesses use to process sales transactions, manage inventory, generate receipts, and track business performance. A modern POS system like myPOS goes far beyond a simple cash register. It connects sales, stock management, customer data, and financial reporting into one centralized platform, giving business owners real-time visibility into how their business is performing.\"}},{\"@type\":\"Question\",\"name\":\"How does myPOS help manage sales and inventory?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS automatically updates your inventory every time a sale is made, so you always have an accurate, real-time picture of your stock levels. You can set low-stock alerts, manage product categories, track purchase orders, and reduce the risk of overstocking or running out of key items. The sales management features allow you to process transactions quickly, apply discounts, manage different payment methods, and generate end-of-day summaries without manual effort.\"}},{\"@type\":\"Question\",\"name\":\"Can I manage multiple branches from one system?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS includes a dedicated Multi-Branch Management module that allows you to oversee all your locations from a single dashboard. You can monitor sales, stock levels, and staff performance across branches in real time, transfer inventory between locations, and generate consolidated reports for your entire business. This makes myPOS a practical choice for growing businesses that operate more than one outlet.\"}},{\"@type\":\"Question\",\"name\":\"Does myPOS support multiple users and access levels?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Absolutely. myPOS allows you to create multiple user accounts, each with its own defined role and permission level. For example, a cashier may only access the billing screen, while a manager can view reports and adjust pricing. This keeps your data secure and ensures that staff members only interact with the parts of the system relevant to their responsibilities.\"}},{\"@type\":\"Question\",\"name\":\"Does myPOS provide reports and business analytics?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS includes a built-in Accounting and Reporting System that gives you access to daily sales summaries, inventory reports, profit and loss overviews, customer purchase history, and staff performance data. These reports are available on demand and can help you make informed decisions about pricing, purchasing, and business growth without needing a separate accounting tool.\"}},{\"@type\":\"Question\",\"name\":\"Does myPOS support barcode scanning?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS fully supports barcode scanning as part of its Barcode and Inventory Tracking solution. You can scan barcodes to add products to a sale, look up stock information, or update inventory records. This speeds up the checkout process significantly and reduces the chance of manual entry errors, which is especially valuable for retail stores and pharmacies managing large product catalogues.\"}},{\"@type\":\"Question\",\"name\":\"What is the difference between cloud and offline POS software?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cloud POS software stores your data on secure remote servers and can be accessed from any device with an internet connection. Offline POS software stores data locally on your hardware and does not require a constant internet connection to operate. Both options have advantages, and the right choice depends on your business environment, internet reliability, and how you prefer to access your data.\"}},{\"@type\":\"Question\",\"name\":\"Does myPOS offer cloud-based software?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS offers a Cloud POS solution that lets you access your sales data, inventory, and reports from anywhere with an internet connection. This is ideal for business owners who need to monitor operations remotely or manage multiple branches from different locations. Cloud-based systems also make it easier to keep your software updated without manual installations.\"}},{\"@type\":\"Question\",\"name\":\"Does myPOS offer offline software?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS also provides an Offline POS option that operates fully without internet access. All transactions and data are stored locally, ensuring your business continues running smoothly regardless of connectivity. This option is well-suited for businesses in areas with inconsistent internet service or for operations that require guaranteed uptime.\"}},{\"@type\":\"Question\",\"name\":\"Can I continue billing if the internet goes down?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. With myPOS Offline POS, your billing and transaction processing will continue uninterrupted even if your internet connection is unavailable. Once the connection is restored, data is synchronized automatically. This ensures your business operations are never dependent on internet availability for day-to-day sales.\"}},{\"@type\":\"Question\",\"name\":\"Which option is better for my business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The best option depends on your specific situation. If you have reliable internet access and need to manage your business from multiple locations or devices, the Cloud POS is a strong choice. If your business operates in an area with connectivity challenges or you prefer local data storage, the Offline POS may be more suitable. Our team can help you evaluate both options during your consultation and recommend what fits your needs best.\"}},{\"@type\":\"Question\",\"name\":\"What is FBR POS Integration?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"FBR POS Integration refers to the connection between your point-of-sale system and the Federal Board of Revenue (FBR) of Pakistan. Through this integration, businesses are required to report their sales transactions directly to FBR in real time. The goal is to improve tax transparency and bring more businesses into the formal economy. Businesses that meet certain revenue thresholds are legally required to integrate their POS with FBR.\"}},{\"@type\":\"Question\",\"name\":\"Which businesses require FBR POS Integration?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"FBR POS Integration is currently mandated for Tier-1 retailers in Pakistan, which generally includes businesses operating in large shopping malls, retail chains, and high-turnover commercial outlets. FBR regularly updates its requirements and expands the list of businesses that must comply. If you are unsure whether your business is required to integrate, myPOS can help you assess your obligations and guide you through the process.\"}},{\"@type\":\"Question\",\"name\":\"How does myPOS help with FBR POS Integration?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS is built with FBR POS Integration support included. Our software connects your POS system to FBR’s servers, ensuring that your sales data is reported accurately and in the required format. We handle the technical setup, configure the integration within your existing workflow, and provide guidance on maintaining compliance as your business grows. Our team stays up to date with FBR requirements so you do not have to.\"}},{\"@type\":\"Question\",\"name\":\"What information is required for FBR integration?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"To set up FBR POS Integration, you will typically need your business National Tax Number (NTN), STRN (Sales Tax Registration Number) if applicable, and access to your FBR portal account. myPOS will guide you through the registration steps and coordinate the technical configuration from our end. The exact requirements may vary depending on your business category and FBR’s current guidelines.\"}},{\"@type\":\"Question\",\"name\":\"What happens if FBR services are temporarily unavailable?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS is designed to handle FBR service interruptions gracefully. If FBR servers are temporarily unavailable, the system queues the transaction data and automatically syncs it once connectivity with FBR is restored. Your billing operations continue without interruption, and no transaction data is lost during the downtime.\"}},{\"@type\":\"Question\",\"name\":\"What is FBR Digital Invoicing?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"FBR Digital Invoicing is a separate but related initiative under which businesses generate and submit sales invoices electronically through FBR’s integrated system. Unlike traditional paper-based invoicing, digital invoices are issued in a standardized electronic format and are visible to both the seller and FBR. This initiative supports the broader goal of improving tax compliance and reducing undocumented transactions in Pakistan.\"}},{\"@type\":\"Question\",\"name\":\"How does myPOS support Digital Invoicing?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS supports FBR Digital Invoicing by generating compliant electronic invoices directly from the billing screen. When a sale is processed, the system formats the invoice according to FBR requirements and submits it through the appropriate channel. This means your staff does not need to handle the compliance process manually. Everything is handled within the normal billing workflow, keeping operations efficient and accurate.\"}},{\"@type\":\"Question\",\"name\":\"Does Digital Invoicing replace my current billing process?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. FBR Digital Invoicing works alongside your existing billing process rather than replacing it. myPOS integrates the digital invoicing requirement into your regular sales flow so that every eligible transaction automatically generates a compliant digital invoice. Your customers still receive their standard receipts, and your internal records remain consistent with what has been submitted to FBR.\"}},{\"@type\":\"Question\",\"name\":\"How much does myPOS software cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Pricing for myPOS depends on the type of solution you need, the number of branches or users, and the features included. We offer flexible pricing structures to suit businesses at different stages of growth. To get an accurate quote tailored to your requirements, we recommend reaching out to our team for a consultation. We will walk you through the available options and help you find a plan that fits your budget.\"}},{\"@type\":\"Question\",\"name\":\"Are monthly subscription plans available?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS offers subscription-based pricing plans so that businesses can access the software without a large upfront investment. Subscription plans typically include software updates, cloud access (for cloud-based plans), and technical support. Our team can provide full details on available plans and what each one includes during your consultation.\"}},{\"@type\":\"Question\",\"name\":\"Is implementation and training included?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS includes implementation assistance and staff training as part of the onboarding process. Our team will set up the system, configure it according to your business requirements, and train your staff on how to use it effectively. We understand that getting your team up to speed quickly is important, and we take that responsibility seriously.\"}},{\"@type\":\"Question\",\"name\":\"Can existing business data be imported?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"In most cases, yes. If you have existing product lists, customer data, or inventory records in a structured format such as a spreadsheet, our team can assist you with importing that data into myPOS. This saves significant time compared to manual data entry and helps you get operational quickly without starting from scratch.\"}},{\"@type\":\"Question\",\"name\":\"What hardware is compatible with myPOS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS is compatible with a range of standard business hardware, including POS terminals, receipt printers, barcode scanners, cash drawers, and customer-facing displays. The software can run on Windows-based computers and selected tablets. Our team can advise you on compatible hardware configurations during setup and help ensure your existing equipment works seamlessly with the system.\"}},{\"@type\":\"Question\",\"name\":\"What support options are available?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"myPOS provides dedicated technical support and training to all clients. Support is available through phone, email, and remote assistance, depending on your plan and requirements. Our support team is familiar with the day-to-day challenges Pakistani businesses face with POS systems, FBR compliance, and business automation, so you can expect informed and practical help when you need it.\"}},{\"@type\":\"Question\",\"name\":\"Is remote support available?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS offers remote support, which allows our technical team to assist you without needing to visit your premises. Using remote access tools, we can diagnose issues, make configuration adjustments, and guide your staff through problems quickly and efficiently. This is particularly useful for resolving time-sensitive issues during business hours.\"}},{\"@type\":\"Question\",\"name\":\"How secure is my business data?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Data security is a priority at myPOS. For cloud-based solutions, your data is stored on secure servers with access controls and regular security practices in place. For offline installations, data is stored on your local hardware and protected by user authentication. User access levels within the software ensure that sensitive information is only accessible to authorized personnel.\"}},{\"@type\":\"Question\",\"name\":\"Are backups available?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes. myPOS supports data backups to protect your business information. Cloud-based plans benefit from automatic server-side backups. For offline installations, the system supports scheduled local backups, and our team can advise you on best practices for maintaining regular backup routines. We recommend discussing your backup requirements with our team during implementation.\"}},{\"@type\":\"Question\",\"name\":\"How do I contact support?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"You can contact the myPOS support team through the contact information available on our website at mypos.pk. Our team is available during business hours and can assist you with technical issues, billing questions, FBR compliance queries, or any other matter related to your software. For urgent issues, we recommend calling directly for the fastest response.\"}},{\"@type\":\"Question\",\"name\":\"How do I request a demo or get started with myPOS?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Getting started with myPOS is straightforward. Visit mypos.pk and use the contact form or phone number to reach our sales team. During your initial consultation, we will learn about your business, discuss the right solution for your needs, and walk you through a live demonstration of the software. There is no obligation, and our team is happy to answer any questions before you make a decision.\"}}]}",
-                "sort_order": 1,
-                "is_active": 1,
-                "created_at": "2026-11-04 08:32:11",
-                "updated_at": "2026-11-04 08:32:11",
+                "id": 2,
+                "slug": "restaurant",
+                "name": "Restaurant POS",
+                "description": null,
+                "sort_order": 2,
+                "created_at": "2026-11-04 09:04:37",
+                "updated_at": "2026-11-04 09:04:37",
+                "deleted_at": null
+            },
+            {
+                "id": 3,
+                "slug": "salon",
+                "name": "Salon POS",
+                "description": null,
+                "sort_order": 3,
+                "created_at": "2026-11-04 09:04:37",
+                "updated_at": "2026-11-04 09:04:37",
+                "deleted_at": null
+            },
+            {
+                "id": 4,
+                "slug": "retail",
+                "name": "Retail POS",
+                "description": null,
+                "sort_order": 4,
+                "created_at": "2026-11-04 09:04:37",
+                "updated_at": "2026-11-04 09:04:37",
                 "deleted_at": null
             }
         ],
-        "categories": [],
         "tags": [],
         "post_tag": [],
         "media": [],
@@ -10427,10 +10678,10 @@
                 "to_url": "/downloads",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:18",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:32",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:18",
+                "updated_at": "2026-11-04 09:19:32",
                 "deleted_at": null
             },
             {
@@ -10439,10 +10690,10 @@
                 "to_url": "/downloads#retailpro",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:19",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:33",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:19",
+                "updated_at": "2026-11-04 09:19:33",
                 "deleted_at": null
             },
             {
@@ -10451,10 +10702,10 @@
                 "to_url": "/woocommerce-pos",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:19",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:33",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:19",
+                "updated_at": "2026-11-04 09:19:33",
                 "deleted_at": null
             },
             {
@@ -10463,10 +10714,10 @@
                 "to_url": "/restaurant-management",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:20",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:33",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:20",
+                "updated_at": "2026-11-04 09:19:33",
                 "deleted_at": null
             },
             {
@@ -10475,10 +10726,10 @@
                 "to_url": "/woocommerce-pos",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:20",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:34",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:20",
+                "updated_at": "2026-11-04 09:19:34",
                 "deleted_at": null
             },
             {
@@ -10487,10 +10738,10 @@
                 "to_url": "/pricing-laundry-pro",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:20",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:34",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:20",
+                "updated_at": "2026-11-04 09:19:34",
                 "deleted_at": null
             },
             {
@@ -10499,10 +10750,10 @@
                 "to_url": "/blogs",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:21",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:34",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:21",
+                "updated_at": "2026-11-04 09:19:34",
                 "deleted_at": null
             },
             {
@@ -10511,10 +10762,10 @@
                 "to_url": "/blogs",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:21",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:35",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:21",
+                "updated_at": "2026-11-04 09:19:35",
                 "deleted_at": null
             },
             {
@@ -10523,10 +10774,10 @@
                 "to_url": "/blogs",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:22",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:35",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:22",
+                "updated_at": "2026-11-04 09:19:35",
                 "deleted_at": null
             },
             {
@@ -10535,10 +10786,10 @@
                 "to_url": "/clients",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 12,
-                "last_hit_at": "2026-11-04 08:57:22",
+                "hits": 14,
+                "last_hit_at": "2026-11-04 09:19:36",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:22",
+                "updated_at": "2026-11-04 09:19:36",
                 "deleted_at": null
             },
             {
@@ -10547,10 +10798,10 @@
                 "to_url": "/multi-location-integration",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:22",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:36",
                 "created_at": "2026-11-04 08:14:40",
-                "updated_at": "2026-11-04 08:57:22",
+                "updated_at": "2026-11-04 09:19:36",
                 "deleted_at": null
             },
             {
@@ -10559,10 +10810,10 @@
                 "to_url": "/",
                 "status_code": 301,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:23",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:36",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 08:57:23",
+                "updated_at": "2026-11-04 09:19:36",
                 "deleted_at": null
             },
             {
@@ -10571,10 +10822,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:23",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:37",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 08:57:23",
+                "updated_at": "2026-11-04 09:19:37",
                 "deleted_at": null
             },
             {
@@ -10583,10 +10834,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:24",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:37",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 08:57:24",
+                "updated_at": "2026-11-04 09:19:37",
                 "deleted_at": null
             },
             {
@@ -10595,10 +10846,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 11,
-                "last_hit_at": "2026-11-04 08:57:24",
+                "hits": 13,
+                "last_hit_at": "2026-11-04 09:19:38",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 08:57:24",
+                "updated_at": "2026-11-04 09:19:38",
                 "deleted_at": null
             },
             {
@@ -10607,10 +10858,10 @@
                 "to_url": null,
                 "status_code": 410,
                 "is_auto": 0,
-                "hits": 10,
-                "last_hit_at": "2026-11-04 08:57:25",
+                "hits": 12,
+                "last_hit_at": "2026-11-04 09:19:38",
                 "created_at": "2026-11-04 08:14:41",
-                "updated_at": "2026-11-04 08:57:25",
+                "updated_at": "2026-11-04 09:19:38",
                 "deleted_at": null
             }
         ],
@@ -12834,61 +13085,481 @@
             {
                 "id": 128,
                 "faq_group": "reseller:faq-1",
-                "question": "<span><span style=\"color:var(--coral-deep); margin-right:12px;\">1</span>Why should I resell MyPOS services?</span>",
+                "question": "Why should I resell MyPOS services?",
                 "answer": "It is indeed a good opportunity for you to become a MyPOS reseller it helps you accomplish your goals via shortcuts. We will be honored to help you establish your business, build your brand name and provide you complete control over the features and packaging of our product that you can offer to your target market.",
-                "is_html": 1,
+                "is_html": 0,
                 "sort_order": 1,
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
                 "id": 129,
                 "faq_group": "reseller:faq-1",
-                "question": "<span><span style=\"color:var(--coral-deep); margin-right:12px;\">2</span>How do I start reselling with MyPOS?</span>",
+                "question": "How do I start reselling with MyPOS?",
                 "answer": "To become a POS reseller with MyPOS, you need to activate your account or get yourself registered with MyPOS. Once you are done with it, you can go ahead and start selling up your reseller business. For further details, please contact our help representative they will be happy to help you.",
-                "is_html": 1,
+                "is_html": 0,
                 "sort_order": 2,
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
                 "id": 130,
                 "faq_group": "reseller:faq-1",
-                "question": "<span><span style=\"color:var(--coral-deep); margin-right:12px;\">3</span>In case of any help, do MyPOS provide support to my clients?</span>",
+                "question": "In case of any help, do MyPOS provide support to my clients?",
                 "answer": "When you become a MyPOS reseller it’s your responsibility to address your clients’ issues. Still, when the situation arises, when you do not have sufficient server access to check and investigate the problems. Then, our technical team will step in and do our best to help you and your clients.",
-                "is_html": 1,
+                "is_html": 0,
                 "sort_order": 3,
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
                 "id": 131,
                 "faq_group": "reseller:faq-1",
-                "question": "<span><span style=\"color:var(--coral-deep); margin-right:12px;\">4</span>Do MyPOS have any direct or indirect contact with my clients?</span>",
+                "question": "Do MyPOS have any direct or indirect contact with my clients?",
                 "answer": "No, they will be your clients, and we will respect your privacy. So we will not contact any of your clients at any point in time.",
-                "is_html": 1,
+                "is_html": 0,
                 "sort_order": 4,
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             },
             {
                 "id": 132,
                 "faq_group": "reseller:faq-1",
-                "question": "<span><span style=\"color:var(--coral-deep); margin-right:12px;\">5</span>Being a POS Reseller, how effective MyPOS for me?</span>",
+                "question": "Being a POS Reseller, how effective MyPOS for me?",
                 "answer": "If you are keen on your business’s success, then MyPOS system is the best solution that brings proficiency and profitability to your target market.",
-                "is_html": 1,
+                "is_html": 0,
                 "sort_order": 5,
                 "is_visible": 1,
                 "created_at": "2026-11-04 08:32:09",
-                "updated_at": "2026-11-04 08:32:09",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 133,
+                "faq_group": "frequently-asked-questions:general",
+                "question": "What is myPOS.pk?",
+                "answer": "myPOS.pk is a Pakistan-based software company specializing in point-of-sale and business management solutions. We design, develop, and support software that helps businesses of all sizes manage sales, inventory, customers, and reporting from a single, easy-to-use platform. From single-outlet retailers to multi-branch enterprises, myPOS is built to meet the practical needs of Pakistani businesses.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 134,
+                "faq_group": "frequently-asked-questions:general",
+                "question": "What services does myPOS provide?",
+                "answer": "myPOS offers a comprehensive suite of business software solutions, including POS Software, Retail and Restaurant POS, Salon and Pharmacy POS, Inventory Management, Cloud POS, Offline POS, Accounting and Reporting Systems, FBR POS Integration, FBR Digital Invoicing, PRA Integration, Multi-Branch Management, Barcode and Inventory Tracking, Customer Loyalty Solutions, and Business Automation. We also provide end-to-end technical support and staff training to ensure your team gets the most from the system.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 135,
+                "faq_group": "frequently-asked-questions:general",
+                "question": "Which types of businesses can use myPOS?",
+                "answer": "myPOS is designed to serve a wide range of industries. Our software is actively used by retail stores, supermarkets, restaurants and cafes, salons and spas, pharmacies, wholesale distributors, and businesses with multiple branches. If your business involves managing sales, stock, or customer transactions, myPOS has a solution that can be tailored to your needs.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 136,
+                "faq_group": "frequently-asked-questions:general",
+                "question": "Is myPOS available across Pakistan?",
+                "answer": "Yes. myPOS serves businesses across Pakistan. Whether your business is located in Karachi, Lahore, Islamabad, or any other city, our team can assist you remotely or on-site depending on your requirements. Our cloud-based options also make it easy for businesses in any location to get started quickly.",
+                "is_html": 0,
+                "sort_order": 4,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 137,
+                "faq_group": "frequently-asked-questions:general",
+                "question": "Does myPOS provide custom software development?",
+                "answer": "myPOS focuses on delivering proven, feature-rich software solutions rather than fully custom development. However, we understand that every business is different, so we work closely with clients to configure and adapt the software to fit their specific workflows and operational requirements. Our team will guide you through the available options to ensure the system works the way your business works.",
+                "is_html": 0,
+                "sort_order": 5,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 138,
+                "faq_group": "frequently-asked-questions:pos-software",
+                "question": "What is POS software?",
+                "answer": "POS stands for Point of Sale. POS software is the system businesses use to process sales transactions, manage inventory, generate receipts, and track business performance. A modern POS system like myPOS goes far beyond a simple cash register. It connects sales, stock management, customer data, and financial reporting into one centralized platform, giving business owners real-time visibility into how their business is performing.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 139,
+                "faq_group": "frequently-asked-questions:pos-software",
+                "question": "How does myPOS help manage sales and inventory?",
+                "answer": "myPOS automatically updates your inventory every time a sale is made, so you always have an accurate, real-time picture of your stock levels. You can set low-stock alerts, manage product categories, track purchase orders, and reduce the risk of overstocking or running out of key items. The sales management features allow you to process transactions quickly, apply discounts, manage different payment methods, and generate end-of-day summaries without manual effort.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 140,
+                "faq_group": "frequently-asked-questions:pos-software",
+                "question": "Can I manage multiple branches from one system?",
+                "answer": "Yes. myPOS includes a dedicated Multi-Branch Management module that allows you to oversee all your locations from a single dashboard. You can monitor sales, stock levels, and staff performance across branches in real time, transfer inventory between locations, and generate consolidated reports for your entire business. This makes myPOS a practical choice for growing businesses that operate more than one outlet.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 141,
+                "faq_group": "frequently-asked-questions:pos-software",
+                "question": "Does myPOS support multiple users and access levels?",
+                "answer": "Absolutely. myPOS allows you to create multiple user accounts, each with its own defined role and permission level. For example, a cashier may only access the billing screen, while a manager can view reports and adjust pricing. This keeps your data secure and ensures that staff members only interact with the parts of the system relevant to their responsibilities.",
+                "is_html": 0,
+                "sort_order": 4,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 142,
+                "faq_group": "frequently-asked-questions:pos-software",
+                "question": "Does myPOS provide reports and business analytics?",
+                "answer": "Yes. myPOS includes a built-in Accounting and Reporting System that gives you access to daily sales summaries, inventory reports, profit and loss overviews, customer purchase history, and staff performance data. These reports are available on demand and can help you make informed decisions about pricing, purchasing, and business growth without needing a separate accounting tool.",
+                "is_html": 0,
+                "sort_order": 5,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 143,
+                "faq_group": "frequently-asked-questions:pos-software",
+                "question": "Does myPOS support barcode scanning?",
+                "answer": "Yes. myPOS fully supports barcode scanning as part of its Barcode and Inventory Tracking solution. You can scan barcodes to add products to a sale, look up stock information, or update inventory records. This speeds up the checkout process significantly and reduces the chance of manual entry errors, which is especially valuable for retail stores and pharmacies managing large product catalogues.",
+                "is_html": 0,
+                "sort_order": 6,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 144,
+                "faq_group": "frequently-asked-questions:cloud-offline",
+                "question": "What is the difference between cloud and offline POS software?",
+                "answer": "Cloud POS software stores your data on secure remote servers and can be accessed from any device with an internet connection. Offline POS software stores data locally on your hardware and does not require a constant internet connection to operate. Both options have advantages, and the right choice depends on your business environment, internet reliability, and how you prefer to access your data.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 145,
+                "faq_group": "frequently-asked-questions:cloud-offline",
+                "question": "Does myPOS offer cloud-based software?",
+                "answer": "Yes. myPOS offers a Cloud POS solution that lets you access your sales data, inventory, and reports from anywhere with an internet connection. This is ideal for business owners who need to monitor operations remotely or manage multiple branches from different locations. Cloud-based systems also make it easier to keep your software updated without manual installations.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 146,
+                "faq_group": "frequently-asked-questions:cloud-offline",
+                "question": "Does myPOS offer offline software?",
+                "answer": "Yes. myPOS also provides an Offline POS option that operates fully without internet access. All transactions and data are stored locally, ensuring your business continues running smoothly regardless of connectivity. This option is well-suited for businesses in areas with inconsistent internet service or for operations that require guaranteed uptime.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 147,
+                "faq_group": "frequently-asked-questions:cloud-offline",
+                "question": "Can I continue billing if the internet goes down?",
+                "answer": "Yes. With myPOS Offline POS, your billing and transaction processing will continue uninterrupted even if your internet connection is unavailable. Once the connection is restored, data is synchronized automatically. This ensures your business operations are never dependent on internet availability for day-to-day sales.",
+                "is_html": 0,
+                "sort_order": 4,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 148,
+                "faq_group": "frequently-asked-questions:cloud-offline",
+                "question": "Which option is better for my business?",
+                "answer": "The best option depends on your specific situation. If you have reliable internet access and need to manage your business from multiple locations or devices, the Cloud POS is a strong choice. If your business operates in an area with connectivity challenges or you prefer local data storage, the Offline POS may be more suitable. Our team can help you evaluate both options during your consultation and recommend what fits your needs best.",
+                "is_html": 0,
+                "sort_order": 5,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 149,
+                "faq_group": "frequently-asked-questions:fbr-pos-integration",
+                "question": "What is FBR POS Integration?",
+                "answer": "FBR POS Integration refers to the connection between your point-of-sale system and the Federal Board of Revenue (FBR) of Pakistan. Through this integration, businesses are required to report their sales transactions directly to FBR in real time. The goal is to improve tax transparency and bring more businesses into the formal economy. Businesses that meet certain revenue thresholds are legally required to integrate their POS with FBR.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 150,
+                "faq_group": "frequently-asked-questions:fbr-pos-integration",
+                "question": "Which businesses require FBR POS Integration?",
+                "answer": "FBR POS Integration is currently mandated for Tier-1 retailers in Pakistan, which generally includes businesses operating in large shopping malls, retail chains, and high-turnover commercial outlets. FBR regularly updates its requirements and expands the list of businesses that must comply. If you are unsure whether your business is required to integrate, myPOS can help you assess your obligations and guide you through the process.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 151,
+                "faq_group": "frequently-asked-questions:fbr-pos-integration",
+                "question": "How does myPOS help with FBR POS Integration?",
+                "answer": "myPOS is built with FBR POS Integration support included. Our software connects your POS system to FBR’s servers, ensuring that your sales data is reported accurately and in the required format. We handle the technical setup, configure the integration within your existing workflow, and provide guidance on maintaining compliance as your business grows. Our team stays up to date with FBR requirements so you do not have to.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 152,
+                "faq_group": "frequently-asked-questions:fbr-pos-integration",
+                "question": "What information is required for FBR integration?",
+                "answer": "To set up FBR POS Integration, you will typically need your business National Tax Number (NTN), STRN (Sales Tax Registration Number) if applicable, and access to your FBR portal account. myPOS will guide you through the registration steps and coordinate the technical configuration from our end. The exact requirements may vary depending on your business category and FBR’s current guidelines.",
+                "is_html": 0,
+                "sort_order": 4,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 153,
+                "faq_group": "frequently-asked-questions:fbr-pos-integration",
+                "question": "What happens if FBR services are temporarily unavailable?",
+                "answer": "myPOS is designed to handle FBR service interruptions gracefully. If FBR servers are temporarily unavailable, the system queues the transaction data and automatically syncs it once connectivity with FBR is restored. Your billing operations continue without interruption, and no transaction data is lost during the downtime.",
+                "is_html": 0,
+                "sort_order": 5,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 154,
+                "faq_group": "frequently-asked-questions:fbr-digital-invoicing",
+                "question": "What is FBR Digital Invoicing?",
+                "answer": "FBR Digital Invoicing is a separate but related initiative under which businesses generate and submit sales invoices electronically through FBR’s integrated system. Unlike traditional paper-based invoicing, digital invoices are issued in a standardized electronic format and are visible to both the seller and FBR. This initiative supports the broader goal of improving tax compliance and reducing undocumented transactions in Pakistan.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 155,
+                "faq_group": "frequently-asked-questions:fbr-digital-invoicing",
+                "question": "How does myPOS support Digital Invoicing?",
+                "answer": "myPOS supports FBR Digital Invoicing by generating compliant electronic invoices directly from the billing screen. When a sale is processed, the system formats the invoice according to FBR requirements and submits it through the appropriate channel. This means your staff does not need to handle the compliance process manually. Everything is handled within the normal billing workflow, keeping operations efficient and accurate.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 156,
+                "faq_group": "frequently-asked-questions:fbr-digital-invoicing",
+                "question": "Does Digital Invoicing replace my current billing process?",
+                "answer": "No. FBR Digital Invoicing works alongside your existing billing process rather than replacing it. myPOS integrates the digital invoicing requirement into your regular sales flow so that every eligible transaction automatically generates a compliant digital invoice. Your customers still receive their standard receipts, and your internal records remain consistent with what has been submitted to FBR.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 157,
+                "faq_group": "frequently-asked-questions:pricing-implementation",
+                "question": "How much does myPOS software cost?",
+                "answer": "Pricing for myPOS depends on the type of solution you need, the number of branches or users, and the features included. We offer flexible pricing structures to suit businesses at different stages of growth. To get an accurate quote tailored to your requirements, we recommend reaching out to our team for a consultation. We will walk you through the available options and help you find a plan that fits your budget.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 158,
+                "faq_group": "frequently-asked-questions:pricing-implementation",
+                "question": "Are monthly subscription plans available?",
+                "answer": "Yes. myPOS offers subscription-based pricing plans so that businesses can access the software without a large upfront investment. Subscription plans typically include software updates, cloud access (for cloud-based plans), and technical support. Our team can provide full details on available plans and what each one includes during your consultation.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 159,
+                "faq_group": "frequently-asked-questions:pricing-implementation",
+                "question": "Is implementation and training included?",
+                "answer": "Yes. myPOS includes implementation assistance and staff training as part of the onboarding process. Our team will set up the system, configure it according to your business requirements, and train your staff on how to use it effectively. We understand that getting your team up to speed quickly is important, and we take that responsibility seriously.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 160,
+                "faq_group": "frequently-asked-questions:pricing-implementation",
+                "question": "Can existing business data be imported?",
+                "answer": "In most cases, yes. If you have existing product lists, customer data, or inventory records in a structured format such as a spreadsheet, our team can assist you with importing that data into myPOS. This saves significant time compared to manual data entry and helps you get operational quickly without starting from scratch.",
+                "is_html": 0,
+                "sort_order": 4,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 161,
+                "faq_group": "frequently-asked-questions:pricing-implementation",
+                "question": "What hardware is compatible with myPOS?",
+                "answer": "myPOS is compatible with a range of standard business hardware, including POS terminals, receipt printers, barcode scanners, cash drawers, and customer-facing displays. The software can run on Windows-based computers and selected tablets. Our team can advise you on compatible hardware configurations during setup and help ensure your existing equipment works seamlessly with the system.",
+                "is_html": 0,
+                "sort_order": 5,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 162,
+                "faq_group": "frequently-asked-questions:support-security",
+                "question": "What support options are available?",
+                "answer": "myPOS provides dedicated technical support and training to all clients. Support is available through phone, email, and remote assistance, depending on your plan and requirements. Our support team is familiar with the day-to-day challenges Pakistani businesses face with POS systems, FBR compliance, and business automation, so you can expect informed and practical help when you need it.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 163,
+                "faq_group": "frequently-asked-questions:support-security",
+                "question": "Is remote support available?",
+                "answer": "Yes. myPOS offers remote support, which allows our technical team to assist you without needing to visit your premises. Using remote access tools, we can diagnose issues, make configuration adjustments, and guide your staff through problems quickly and efficiently. This is particularly useful for resolving time-sensitive issues during business hours.",
+                "is_html": 0,
+                "sort_order": 2,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 164,
+                "faq_group": "frequently-asked-questions:support-security",
+                "question": "How secure is my business data?",
+                "answer": "Data security is a priority at myPOS. For cloud-based solutions, your data is stored on secure servers with access controls and regular security practices in place. For offline installations, data is stored on your local hardware and protected by user authentication. User access levels within the software ensure that sensitive information is only accessible to authorized personnel.",
+                "is_html": 0,
+                "sort_order": 3,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 165,
+                "faq_group": "frequently-asked-questions:support-security",
+                "question": "Are backups available?",
+                "answer": "Yes. myPOS supports data backups to protect your business information. Cloud-based plans benefit from automatic server-side backups. For offline installations, the system supports scheduled local backups, and our team can advise you on best practices for maintaining regular backup routines. We recommend discussing your backup requirements with our team during implementation.",
+                "is_html": 0,
+                "sort_order": 4,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 166,
+                "faq_group": "frequently-asked-questions:support-security",
+                "question": "How do I contact support?",
+                "answer": "You can contact the myPOS support team through the contact information available on our website at mypos.pk. Our team is available during business hours and can assist you with technical issues, billing questions, FBR compliance queries, or any other matter related to your software. For urgent issues, we recommend calling directly for the fastest response.",
+                "is_html": 0,
+                "sort_order": 5,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
+                "deleted_at": null
+            },
+            {
+                "id": 167,
+                "faq_group": "frequently-asked-questions:getting-started",
+                "question": "How do I request a demo or get started with myPOS?",
+                "answer": "Getting started with myPOS is straightforward. Visit mypos.pk and use the contact form or phone number to reach our sales team. During your initial consultation, we will learn about your business, discuss the right solution for your needs, and walk you through a live demonstration of the software. There is no obligation, and our team is happy to answer any questions before you make a decision.",
+                "is_html": 0,
+                "sort_order": 1,
+                "is_visible": 1,
+                "created_at": "2026-11-04 09:18:23",
+                "updated_at": "2026-11-04 09:18:23",
                 "deleted_at": null
             }
         ],
@@ -13884,6 +14555,15 @@
                 "description": "Where rating_value comes from, e.g. Google reviews (stored for reference)",
                 "created_at": "2026-11-04 08:55:38",
                 "updated_at": "2026-11-04 08:55:38",
+                "deleted_at": null
+            },
+            {
+                "id": 27,
+                "key": "robots_extra",
+                "value": "\"\"",
+                "description": "Extra robots.txt lines added after the built-in rules (plain text)",
+                "created_at": "2026-11-04 09:07:11",
+                "updated_at": "2026-11-04 09:07:11",
                 "deleted_at": null
             }
         ]
