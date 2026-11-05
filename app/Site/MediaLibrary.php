@@ -234,7 +234,14 @@ class MediaLibrary
         $save = function (int $width, string $path) use ($img, $w, $h, $cfg, $outExt, &$written) {
             $width = min($width, $w);
             $height = (int) round($h * $width / $w);
-            $out = $width === $w ? $img : imagescale($img, $width, $height, IMG_BICUBIC);
+            // Not imagescale(): it returned false for ordinary JPEGs with production's GD build.
+            $out = $img;
+            if ($width !== $w) {
+                $out = imagecreatetruecolor($width, $height);
+                imagealphablending($out, false);
+                imagefill($out, 0, 0, imagecolorallocatealpha($out, 0, 0, 0, 127));
+                imagecopyresampled($out, $img, 0, 0, 0, 0, $width, $height, $w, $h);
+            }
             imagealphablending($out, false);
             imagesavealpha($out, true);
             $written[] = $path;
