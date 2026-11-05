@@ -8,7 +8,6 @@ Laravel 12 rebuild of [mypos.pk](https://mypos.pk): POS software for Pakistan (r
   - **HTML sections** hold HTML with `{{placeholders}}` (site URL, per-page WhatsApp link, phone, prices…).
   - **Component sections** feed an existing Blade component its attributes.
   - Every change keeps a revision.
-  - The original Blade files in `resources/views/pages/` are kept as a fallback until the MCP is signed off on staging. They are never used for a path that has a database page (in any state).
 - **Single sources:**
   - prices in `pricing_plans` (`{{price:key}}`);
   - download facts in `downloads` (`{{download:key.field}}`);
@@ -25,7 +24,7 @@ Laravel 12 rebuild of [mypos.pk](https://mypos.pk): POS software for Pakistan (r
   - `/sitemap.xml` (live) and `/robots.txt`;
   - redirects and 410s in `redirects`.
 - **Pre-launch switch**: with `SITE_NOINDEX=true`, every response is `noindex, nofollow`, whatever a page's robots setting says.
-- **One stylesheet** (`public/css/style.css`) and one script (`public/js/app.js`). Media lives in `public/uploads/`.
+- **One stylesheet** (`public/css/style.css`) and one script (`public/js/app.js`). Pages load their `.min` copies, so run `npm run minify` after editing and commit the result. Media lives in `public/uploads/`.
 
 ## MCP server
 
@@ -50,7 +49,8 @@ php artisan serve
 | `.env` key | Purpose |
 |---|---|
 | `APP_URL` | Public URL, used in canonical tags and the sitemap (`https://mypos.pk`) |
-| `SITE_NOINDEX` | `true` until launch: noindex everywhere, no sitemap in robots.txt |
+| `SITE_NOINDEX` | `true` hides the site: noindex everywhere, no sitemap in robots.txt |
+| `SITE_CANONICAL_HOST`, `HSTS_MAX_AGE` | http:// and www. redirect to this host over HTTPS; HSTS lifetime in seconds |
 | `LEADS_EMAIL`, `MAIL_*` | Where and how enquiries are emailed |
 | `MCP_SECRET` | Secret for the MCP endpoint (64 hex characters; empty = MCP off) |
 | `MCP_REQUIRE_HTTPS`, `MCP_RATE_LIMIT`, `TRUSTED_PROXIES` | MCP transport settings (see docs/MCP.md) |
@@ -63,7 +63,6 @@ php artisan serve
 | Command | What it does |
 |---|---|
 | `php artisan site:export` / `site:import [--force]` | Write / load the website tables as `database/data/site-content.json` |
-| `php artisan site:extract` | One-time copy of Blade pages into the database (already done, do not run on servers) |
 | `php artisan site:snapshot <label>` + `site:diff <a> <b>` | Save the rendered HTML of every URL and compare two saves (proof that a change altered nothing else) |
 
 Phase 1 migration diff reports: [docs/phase1/](docs/phase1/).

@@ -45,7 +45,7 @@ class SiteRedirects
         try {
             return Cache::rememberForever(self::CACHE_KEY, function () {
                 if (! Redirect::withTrashed()->exists()) {
-                    // Fresh install, table not filled yet (site:extract --globals / site:import): use config/site.php.
+                    // Fresh install, table not filled yet (site:import): use config/site.php.
                     return collect(config('site.redirects'))->map(fn ($to) => [0, 301, $to])
                         ->merge(collect(config('site.gone'))->mapWithKeys(fn ($p) => [$p => [0, 410, null]]))->all();
                 }

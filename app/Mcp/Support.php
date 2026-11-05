@@ -234,10 +234,6 @@ class Support
         if (preg_match('#^(uploads|images|css|js|vendor)/#', $path) || $path === 'favicon.ico') {
             return ['status' => is_file(public_path($path)) ? 200 : 404, 'what' => 'file'];
         }
-        if (! Page::withTrashed()->where('path', $path)->exists() && view()->exists('pages.' . str_replace('/', '.', $path))) {
-            return ['status' => 200, 'what' => 'page (Blade file)'];
-        }
-
         return ['status' => 404];
     }
 

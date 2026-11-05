@@ -3,10 +3,10 @@
 namespace Tests\Feature;
 
 use App\Models\Client;
+use App\Models\Page;
 use App\Models\Post;
 use Database\Seeders\ContentSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\File;
 use Tests\TestCase;
 
 /** Smoke test: every migrated page, post and client page renders, and old WordPress URLs behave. */
@@ -18,15 +18,13 @@ class ExampleTest extends TestCase
     {
         parent::setUp();
         $this->seed(ContentSeeder::class);
+        $this->artisan('site:import')->assertSuccessful();
     }
 
     public function test_every_static_page_renders(): void
     {
-        $this->get('/')->assertOk();
-
-        foreach (File::allFiles(resource_path('views/pages')) as $file) {
-            $slug = str_replace(['\\', '.blade.php'], ['/', ''], $file->getRelativePathname());
-            $this->get('/' . $slug)->assertOk();
+        foreach (Page::pluck('path') as $path) {
+            $this->get('/' . $path)->assertOk();
         }
     }
 

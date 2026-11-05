@@ -6,10 +6,6 @@ if (! function_exists('wa_link')) {
      */
     function wa_link(): string
     {
-        if (config('site.__extract')) {
-            return \App\Site\Tokens::SENTINELS['wa_link']; // site:extract stores {{wa_link}} instead
-        }
-
         $path = trim(request()->path(), '/');
         $topic = wa_topic($path);
 
@@ -54,7 +50,7 @@ if (! function_exists('wa_topic')) {
             'download/tailorpro' => 'TailorPro',
             'clinics-fbr-pos-integration' => 'clinic FBR and PRA POS',
             'dental-clinics-fbr-pos-integration' => 'dental clinic FBR POS',
-            'aesthatic-clinics-fbr-pos-integration' => 'aesthetic clinic FBR POS',
+            'aesthetic-clinics-fbr-pos-integration' => 'aesthetic clinic FBR POS',
             'veteran-clinic-fbr-pos-integration' => 'veterinary clinic FBR POS',
             'hospital-fbr-pos-integration' => 'hospital FBR POS',
             'hospital-management' => 'hospital management',
@@ -109,10 +105,6 @@ if (! function_exists('demo_url')) {
      */
     function demo_url(): string
     {
-        if (config('site.__extract')) {
-            return \App\Site\Tokens::SENTINELS['demo_url']; // site:extract stores {{demo_url}} instead
-        }
-
         return has_lead_form() ? '#enquiry' : url('/contact') . '#enquiry';
     }
 }

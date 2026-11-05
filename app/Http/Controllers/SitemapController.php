@@ -5,19 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Page;
 use App\Models\Post;
-use Illuminate\Support\Facades\File;
 
 class SitemapController extends Controller
 {
     public function __invoke()
     {
         $base = rtrim(config('site.url'), '/');
-        // Pages: published database pages (last change to the page, its sections or SEO), plus any Blade page
-        // not moved to the database yet (file time). Sorted the way the Blade files always were.
+        // Pages: published database pages (last change to the page, its sections or SEO), sorted by path.
         // Left out: pages / posts set to noindex or "exclude from sitemap" through the SEO tools.
         $hidden = fn ($seo) => $seo && ($seo->exclude_from_sitemap || str_contains(strtolower((string) $seo->robots), 'noindex'));
-        // Paths with a database record in any state (draft, trashed) never fall back to their old Blade file.
-        $inDatabase = array_flip(Page::withTrashed()->pluck('path')->all());
         $pages = [];
         foreach (Page::published()->withMax('sections', 'updated_at')->with('seo')->get() as $page) {
             if ($hidden($page->seo)) {
@@ -28,15 +24,6 @@ class SitemapController extends Controller
                 $page->sections_max_updated_at ? strtotime($page->sections_max_updated_at) : null,
                 $page->seo?->updated_at?->timestamp,
             ]));
-        }
-        if (! isset($inDatabase['']) && is_file(resource_path('views/home.blade.php'))) {
-            $pages[''] = filemtime(resource_path('views/home.blade.php'));
-        }
-        foreach (File::allFiles(resource_path('views/pages')) as $file) {
-            $slug = str_replace(['\\', '.blade.php'], ['/', ''], $file->getRelativePathname());
-            if (! isset($inDatabase[$slug])) {
-                $pages[$slug] = $file->getMTime();
-            }
         }
         $home = $pages[''] ?? null;
         unset($pages['']);

@@ -69,9 +69,6 @@ class SiteSnapshot extends Command
     {
         $paths = [''];
 
-        foreach (File::allFiles(resource_path('views/pages')) as $f) {
-            $paths[] = str_replace(['\\', '.blade.php'], ['/', ''], $f->getRelativePathname());
-        }
         if (class_exists(\App\Models\Page::class) && \Illuminate\Support\Facades\Schema::hasTable('pages')) {
             $paths = array_merge($paths, \App\Models\Page::pluck('path')->all());
         }
