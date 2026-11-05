@@ -75,6 +75,10 @@
         : (in_array(request()->getHost(), config('services.meta.pixel_hosts'), true) ? 'live' : (config('app.debug') ? 'debug' : false));
 @endphp
 @includeWhen($pixelMode, 'partials.meta-pixel', ['pixelId' => $pixelId, 'pixelMode' => $pixelMode])
+@php
+    $gaId = config('services.google_analytics.id');
+@endphp
+@includeWhen($gaId && in_array(request()->getHost(), config('services.google_analytics.hosts'), true), 'partials.google-analytics', ['gaId' => $gaId])
 </head>
 <body>
 @php

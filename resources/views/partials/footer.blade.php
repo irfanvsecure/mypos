@@ -3,10 +3,10 @@
     <div class="footer-brand">
       <a href="{{ route('home') }}" class="logo-mark"><picture><source srcset="{{ asset('images/logo-mark-168.webp') }}" type="image/webp"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="96" height="96" loading="lazy"></picture></a>
       <p>{!! config('site.footer_tagline') !!}</p>
-      <ul style="margin-top:18px;">
+      <ul class="u-margin-top-18px">
         <li><a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></li>
         <li><a href="mailto:{{ config('site.email') }}">{{ config('site.email') }}</a></li>
-        <li style="max-width:260px;">{{ config('site.address') }}</li>
+        <li class="u-max-width-260px">{{ config('site.address') }}</li>
       </ul>
       <div class="footer-cta">
         <a href="{{ url('/contact') }}#enquiry" class="btn btn-primary">Book a Free Demo</a>

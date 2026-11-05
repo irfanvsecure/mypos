@@ -8,7 +8,7 @@
 <section id="{{ $id }}" class="contact">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow-line"><span class="bar"></span><span style="color:var(--coral-soft);">{{ $eyebrow }}</span></div>
+      <div class="eyebrow-line"><span class="bar"></span><span class="u-color-var-coral-soft">{{ $eyebrow }}</span></div>
       <div class="h2">{!! $title !!}</div>
       <p>{!! $text !!}</p>
     </div>
@@ -30,7 +30,7 @@
           <div class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.2" stroke="#fff" stroke-width="1.3"/><path d="M8 4.8V8l2.2 1.4" stroke="#fff" stroke-width="1.3"/></svg></div>
           <div><div class="lbl">Support hours</div><div class="val">{{ config('site.hours') }}</div></div>
         </div>
-        <div class="btn-row" style="margin-top:26px;">
+        <div class="u-margin-top-26px btn-row">
           <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
           <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call Now</a>
         </div>

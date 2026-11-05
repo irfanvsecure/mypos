@@ -27,11 +27,11 @@
       <div class="eyebrow-line"><span class="bar"></span><span>{{ $eyebrow }}</span></div>
       <h2>{!! $title !!}</h2>
     </div>
-    <div class="faq-list" style="max-width:820px; margin-top:40px;">
+    <div class="u-max-width-820px-marg-5879f faq-list">
       @foreach ($items as $i => [$q, $a])
         <div class="faq-item {{ $i === 0 ? 'open' : '' }}">
 @if ($numbered)
-          <button class="faq-q" type="button"><span><span style="color:var(--coral-deep); margin-right:12px;">{{ $i + 1 }}</span>{{ $q }}</span><span class="plus"></span></button>
+          <button class="faq-q" type="button"><span><span class="u-color-var-coral-deep-973b5">{{ $i + 1 }}</span>{{ $q }}</span><span class="plus"></span></button>
           <div class="faq-a"><p>{{ $a }}</p></div>
 @else
           <button class="faq-q" type="button">{!! $q !!}<span class="plus"></span></button>

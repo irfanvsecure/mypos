@@ -289,6 +289,9 @@ class SeoTools
                 preg_match_all('#<loc>([^<]+)</loc>#', $xml, $m);
                 $base = rtrim((string) config('site.url'), '/');
                 $problems = [];
+                if (is_file(public_path('robots.txt'))) {
+                    $problems[] = 'A static public/robots.txt file is served instead of these rules: rename or delete it on the server';
+                }
                 $inSitemap = [];
                 foreach ($m[1] as $loc) {
                     $loc = html_entity_decode($loc);

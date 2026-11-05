@@ -21,7 +21,7 @@
       </div>
       <ul class="check-grid stagger" @if (!empty($img)) style="grid-template-columns:1fr 1fr;" @endif>
         @foreach ($salient as $i => $s)
-          <li class="reveal" style="--i:{{ $i }}"><a href="{{ url('/features') }}" style="color:inherit;">{{ $s }}</a></li>
+          <li class="reveal" style="--i:{{ $i }}"><a class="u-color-inherit" href="{{ url('/features') }}">{{ $s }}</a></li>
         @endforeach
       </ul>
       <div class="related-links reveal">

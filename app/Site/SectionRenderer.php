@@ -46,7 +46,7 @@ class SectionRenderer
     /** HTML with {{tokens}}; each {{embed:N}} becomes the rendered N-th embedded component. */
     public function html(string $html, array $embeds = []): string
     {
-        $html = Tokens::resolve($html);
+        $html = ImageAttributes::apply(Tokens::resolve($html));
         if (! $embeds) {
             return $html;
         }

@@ -21,9 +21,9 @@
         ['Reports', '/reports'],
     ];
 @endphp
-<section id="{{ $current }}--plan" class="bg-paper2" style="background:var(--paper-2);">
+<section id="{{ $current }}--plan" class="u-background-var-paper-2 bg-paper2">
   <div class="wrap">
-    <div class="section-head reveal" style="margin-bottom:44px;">
+    <div class="u-margin-bottom-44px section-head reveal">
       <div class="eyebrow-line"><span class="bar"></span><span>STANDARD PLAN</span></div>
       <h2>{{ $name }} is part of the Standard Plan.</h2>
       <p>Get {{ $name }} and every other Standard Plan feature for Rs. 2,000/month — free for 14 days.</p>
@@ -31,7 +31,7 @@
     <div class="plan-layout">
       <div class="plan-card reveal-left">
         <div class="pc-badge">STANDARD</div>
-        <div class="h3" style="font-size:1.5rem; margin-bottom:6px;">Standard Plan</div>
+        <div class="u-font-size-1-5rem-mar-50d4e h3">Standard Plan</div>
         <div class="pc-trial">Free for 14 days</div>
         <div class="pc-price">Rs. 2,000<span>/month</span></div>
         <nav aria-label="Standard Plan features">
@@ -40,9 +40,9 @@
               <li @if ($href === '/' . $current) aria-current="page" style="color:var(--coral-soft); font-weight:700;" @endif>
                 <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="currentColor"/><path d="M5 9.2L7.7 12L13 6" stroke="currentColor" stroke-width="1.6"/></svg>
                 @if ($href === '/' . $current)
-                  <span style="color:var(--coral-soft);">{{ $label }}</span>
+                  <span class="u-color-var-coral-soft">{{ $label }}</span>
                 @else
-                  <a href="{{ url($href) }}" style="color:inherit; text-decoration:underline; text-decoration-color:rgba(255,255,255,0.25); text-underline-offset:3px;">{{ $label }}</a>
+                  <a class="u-color-inherit-text-d-85383" href="{{ url($href) }}">{{ $label }}</a>
                 @endif
               </li>
             @endforeach
@@ -58,13 +58,13 @@
 
       <div class="addon-card reveal-right">
         <div class="h3">Not sure this is the right plan? We will set it up with you.</div>
-        <a href="tel:{{ config('site.phone_raw') }}" style="display:block; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.6rem; color:var(--navy);">{{ config('site.phone') }}</a>
-        <div style="font-size:0.9rem; color:var(--text-mute-ink); margin-top:4px;">Call us anytime</div>
-        <div class="btn-row" style="display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;">
+        <a class="u-display-block-font-f-f44ec" href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a>
+        <div class="u-font-size-0-9rem-col-112d4">Call us anytime</div>
+        <div class="u-display-flex-flex-wr-13162 btn-row">
           <a href="{{ demo_url() }}" class="btn btn-primary btn-sm">Book a Free Demo</a>
           <a href="{{ wa_link() }}" class="btn btn-wa btn-sm" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
-        <div style="margin-top:26px; border-top:1px solid var(--paper-line); padding-top:6px;">
+        <div class="u-margin-top-26px-bord-efead">
           <div class="addon-row"><span>Businesses using myPOS</span><span class="price">15,000+</span></div>
           <div class="addon-row"><span>Customer rating</span><span class="price">{{ config('site.rating_value') }}/5</span></div>
           <div class="addon-row"><span>Languages</span><span class="price">English / Urdu / Arabic</span></div>

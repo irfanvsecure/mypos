@@ -20,7 +20,7 @@
         <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>
       </div>
     @else
-    <div class="btn-row" style="justify-content:center;">
+    <div class="u-justify-content-center btn-row">
       <a href="{{ url($primaryUrl) }}" class="btn btn-primary">{{ $primary }}</a>
       <a href="{{ wa_link() }}" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
       <a href="tel:{{ config('site.phone_raw') }}" class="btn btn-outline">Call {{ config('site.phone') }}</a>

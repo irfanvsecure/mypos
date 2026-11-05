@@ -29,15 +29,25 @@ class EnquiryController extends Controller
             'phone.regex' => 'Please enter a valid phone number.',
         ]);
 
-        $lead = Lead::create($data + [
-            'referrer' => substr((string) $request->headers->get('referer'), 0, 500),
-            'ip'       => $request->ip(),
-        ]);
+        // A double click sends the form twice: keep one lead and one email, and reuse its ID for the pixel event.
+        $lead = Lead::where('phone', $data['phone'])
+            ->where('type', $data['type'] ?? null)
+            ->where('page', $data['page'] ?? null)
+            ->where('created_at', '>=', now()->subMinute())
+            ->latest('id')
+            ->first();
 
-        try {
-            Mail::to(config('site.leads_email'))->send(new NewEnquiry($lead));
-        } catch (\Throwable $e) {
-            Log::warning('Enquiry email failed: ' . $e->getMessage(), ['lead' => $lead->id]);
+        if (! $lead) {
+            $lead = Lead::create($data + [
+                'referrer' => substr((string) $request->headers->get('referer'), 0, 500),
+                'ip'       => $request->ip(),
+            ]);
+
+            try {
+                Mail::to(config('site.leads_email'))->send(new NewEnquiry($lead));
+            } catch (\Throwable $e) {
+                Log::warning('Enquiry email failed: ' . $e->getMessage(), ['lead' => $lead->id]);
+            }
         }
 
         // Fired by the pixel on the next page only: a refresh or a direct visit to /thank-you won't count again.

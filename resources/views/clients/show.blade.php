@@ -13,7 +13,7 @@
 
 <section>
   <div class="wrap split">
-    <div class="media-frame contain reveal-left" style="max-width:420px;">
+    <div class="u-max-width-420px media-frame contain reveal-left">
       @if ($client->logo)<img src="{{ asset(ltrim($client->logo, '/')) }}" alt="{{ $client->name }} logo">@endif
     </div>
     <div class="reveal-right">

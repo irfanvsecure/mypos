@@ -43,6 +43,7 @@ class BlogController extends Controller
     public function show(Post $post)
     {
         [$content, $toc] = $post->contentWithToc();
+        $content = \App\Site\ImageAttributes::apply($content, lazyAfterFirst: true);
 
         $related = Post::published()
             ->where('id', '!=', $post->id)

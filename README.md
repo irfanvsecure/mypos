@@ -51,6 +51,7 @@ php artisan serve
 | `APP_URL` | Public URL, used in canonical tags and the sitemap (`https://mypos.pk`) |
 | `SITE_NOINDEX` | `true` hides the site: noindex everywhere, no sitemap in robots.txt |
 | `SITE_CANONICAL_HOST`, `HSTS_MAX_AGE` | http:// and www. redirect to this host over HTTPS; HSTS lifetime in seconds |
+| `GA_MEASUREMENT_ID`, `GA_HOSTS` | Google Analytics 4 ID (empty = off) and the hosts it runs on |
 | `LEADS_EMAIL`, `MAIL_*` | Where and how enquiries are emailed |
 | `MCP_SECRET` | Secret for the MCP endpoint (64 hex characters; empty = MCP off) |
 | `MCP_REQUIRE_HTTPS`, `MCP_RATE_LIMIT`, `TRUSTED_PROXIES` | MCP transport settings (see docs/MCP.md) |
