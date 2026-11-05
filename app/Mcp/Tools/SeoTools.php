@@ -289,9 +289,6 @@ class SeoTools
                 preg_match_all('#<loc>([^<]+)</loc>#', $xml, $m);
                 $base = rtrim((string) config('site.url'), '/');
                 $problems = [];
-                if (is_file(public_path('robots.txt'))) {
-                    $problems[] = 'A static public/robots.txt file is served instead of these rules: rename or delete it on the server';
-                }
                 $inSitemap = [];
                 foreach ($m[1] as $loc) {
                     $loc = html_entity_decode($loc);
@@ -311,7 +308,9 @@ class SeoTools
                         $problems[] = "/{$p->path} is noindex / excluded but still in the sitemap";
                     }
                 }
-                $robots = \App\Site\Robots::text();
+                // public/robots.txt is what visitors get; the generated text only applies when that file is absent.
+                $staticRobots = public_path('robots.txt');
+                $robots = is_file($staticRobots) ? (string) file_get_contents($staticRobots) : \App\Site\Robots::text();
                 $noindex = (bool) config('site.noindex');
 
                 return [
@@ -319,6 +318,7 @@ class SeoTools
                     'site_noindex_note' => $noindex ? 'SITE_NOINDEX is on: every page is noindex, nofollow and robots.txt does not list the sitemap. The owner switches it off in .env at launch.' : 'Site is indexable.',
                     'sitemap_urls' => count($m[1]),
                     'robots_txt' => $robots,
+                    'robots_source' => is_file($staticRobots) ? 'public/robots.txt' : 'generated',
                     'robots_lists_sitemap' => str_contains($robots, 'Sitemap:'),
                     'problems' => $problems,
                 ];
@@ -337,6 +337,10 @@ class SeoTools
                 $before = config('site.robots_extra');
                 $s = Settings::set('robots_extra', implode("\n", $lines));
                 Support::log('robots.update', $s, 'Updated robots.txt extra lines', $before, $s->value);
+
+                if (is_file(public_path('robots.txt'))) {
+                    $warn[] = 'public/robots.txt is what the site serves, so these lines have no effect. Edit that file instead.';
+                }
 
                 return ['robots_extra' => $s->value, 'warnings' => $warn, 'cache' => Support::changed(['robots.txt'])];
             }),

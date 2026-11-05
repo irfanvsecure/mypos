@@ -109,7 +109,9 @@ class SeoToolsTest extends McpTestCase
         $v = $this->tool('validate_sitemap_robots');
         $this->assertTrue($v['site_noindex']);
         $this->assertSame([], $v['problems']);
-        $this->assertFalse($v['robots_lists_sitemap']);
+        $this->assertSame('public/robots.txt', $v['robots_source']);
+        $this->assertStringContainsString('Disallow: /enquiry', $v['robots_txt']);
+        $this->assertStringNotContainsString('Sitemap:', \App\Site\Robots::text());
 
         $this->tool('update_robots', ['lines' => "User-agent: GPTBot\nDisallow: /"]);
         $this->assertStringContainsString("User-agent: GPTBot\nDisallow: /", $this->get('/robots.txt')->getContent());

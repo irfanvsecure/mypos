@@ -21,7 +21,7 @@ Laravel 12 rebuild of [mypos.pk](https://mypos.pk): POS software for Pakistan (r
 - **SEO**:
   - per-page meta, canonical, robots, OG / Twitter (`seo_meta`);
   - JSON-LD blocks (`schema_blocks`) plus automatic Organization, breadcrumbs and FAQPage;
-  - `/sitemap.xml` (live) and `/robots.txt`;
+  - `/sitemap.xml` (live) and `public/robots.txt` (edit this file; it overrides the generated robots route);
   - redirects and 410s in `redirects`.
 - **Pre-launch switch**: with `SITE_NOINDEX=true`, every response is `noindex, nofollow`, whatever a page's robots setting says.
 - **One stylesheet** (`public/css/style.css`) and one script (`public/js/app.js`). Pages load their `.min` copies, so run `npm run minify` after editing and commit the result. Media lives in `public/uploads/`.

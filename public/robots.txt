@@ -1,0 +1,43 @@
+User-agent: *
+Disallow: /enquiry
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /?s=
+Disallow: /search/
+Disallow: /cgi-bin/
+Disallow: /wp-includes/
+Disallow: /*?attachment_id=
+
+# Block spam tracking parameters
+Disallow: /*?_gl=
+Disallow: /*&_gl=
+Disallow: /*?_gz=
+Disallow: /*&_gz=
+Disallow: /*_bdsid=
+Disallow: /*_bd_prev_page=
+Disallow: /*?_ga=
+Disallow: /*&_ga=
+
+# Block fake spam page pattern
+Disallow: /select.py
+Disallow: /select.py
+
+# Block REST API form endpoints
+Disallow: /wp-json/contact-form-7/
+
+# AI crawlers allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://mypos.pk/sitemap.xml
