@@ -11,6 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->append(\App\Http\Middleware\CanonicalHost::class);
         $middleware->append(\App\Http\Middleware\NoindexHeader::class);
         // Behind Cloudflare / a load balancer set TRUSTED_PROXIES=* so HTTPS is detected (the MCP endpoint requires it).
         if ($proxies = env('TRUSTED_PROXIES')) {

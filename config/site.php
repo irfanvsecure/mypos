@@ -30,6 +30,11 @@ return [
     // Set SITE_NOINDEX=false in .env on launch day.
     'noindex' => env('SITE_NOINDEX', true),
 
+    // http:// and www. on this host redirect to https://{canonical_host}. Empty switches the redirect off.
+    'canonical_host' => env('SITE_CANONICAL_HOST', 'mypos.pk'),
+    // Strict-Transport-Security max-age in seconds (0 = no header). Starts at one day; raise to 31536000 once HTTPS has proved stable.
+    'hsts_max_age' => (int) env('HSTS_MAX_AGE', 86400),
+
     // Serve not-yet-migrated /uploads files from the old WordPress server (see routes/web.php).
     'remote_uploads' => env('SITE_REMOTE_UPLOADS', true),
     'free_download' => 'https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs',

@@ -1,0 +1,41 @@
+# myPOS
+
+> myPOS is point of sale (POS) software for businesses in Pakistan: retail, restaurant, salon, laundry and tailor shops. It includes FBR digital invoicing and PRA, KPRA and SRB integration, and it works offline and syncs when the connection returns.
+
+Based in Lahore, Pakistan. Website: https://mypos.pk. Email: info@mypos.pk. Phone: +92 322 4765528.
+
+## Products
+
+- [Retail POS](https://mypos.pk/retail-management): retail billing and inventory management
+- [Restaurant POS](https://mypos.pk/restaurant-management): restaurant point of sale with online ordering and a waiter app
+- [Salon software](https://mypos.pk/salon-management): hair salon, spa and parlour management
+- [Laundry software](https://mypos.pk/laundry-management): laundry management and POS
+- [Tailor software](https://mypos.pk/tailor-management): tailor shop management
+- [Mobile app](https://mypos.pk/mobile-mypos): the myPOS mobile POS app
+
+## Tax integration
+
+- [FBR POS integration](https://mypos.pk/fbr-pos-integration): integration with the Federal Board of Revenue for retailers
+- [FBR digital invoicing](https://mypos.pk/fbr-digital-invoicing): digital invoicing software
+- [PRA integration](https://mypos.pk/pra-integration): Punjab Revenue Authority
+- [KPRA integration](https://mypos.pk/kpra-integration): Khyber Pakhtunkhwa Revenue Authority
+- [SRB integration](https://mypos.pk/srb-integration-services-in-pakistan): Sindh Revenue Board
+
+## Pricing and downloads
+
+- [Pricing](https://mypos.pk/pricing): free and paid plans in PKR
+- [Downloads](https://mypos.pk/downloads): free versions to download
+
+## Support and company
+
+- [Features](https://mypos.pk/features): full feature list
+- [FAQs](https://mypos.pk/frequently-asked-questions): common questions
+- [Support](https://mypos.pk/support): support plans
+- [About](https://mypos.pk/about-us): the company
+- [Contact](https://mypos.pk/contact): contact details and free demo requests
+
+## Optional
+
+- [Blog](https://mypos.pk/blogs): guides on POS software and FBR compliance
+- [Clients](https://mypos.pk/clients): businesses that use myPOS
+- [Sitemap](https://mypos.pk/sitemap.xml): every public page

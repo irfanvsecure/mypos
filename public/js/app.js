@@ -329,7 +329,7 @@
   /* Cinematic 3D hero backdrop: loaded after the page settles, skipped for reduced motion or no WebGL */
   var host3d=document.querySelector('[data-hero3d]');
   if(host3d && scriptSrc && !reduceMotion && window.WebGLRenderingContext && (function(){ try{ return !!document.createElement('canvas').getContext('webgl2'); }catch(e){ return false; } })()){
-    var load3d=function(){ import(new URL('hero3d.js',scriptSrc).href.replace(/\?.*$/,'')+(scriptSrc.match(/\?.*$/)||[''])[0]).then(function(m){ m.mount(host3d); }).catch(function(){}); };
+    var load3d=function(){ import(new URL('hero3d.min.js',scriptSrc).href.replace(/\?.*$/,'')+(scriptSrc.match(/\?.*$/)||[''])[0]).then(function(m){ m.mount(host3d); }).catch(function(){}); };
     if(document.readyState==='complete') setTimeout(load3d,200); else window.addEventListener('load',function(){ setTimeout(load3d,200); });
   }
 

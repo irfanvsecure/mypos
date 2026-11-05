@@ -52,7 +52,8 @@
 {{-- Fonts load without blocking the first paint; text shows in the fallback font until they arrive (display=swap). --}}
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
-<link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
+{{-- Pages load the .min files. After editing public/css/style.css or public/js/*.js, run `npm run minify` and commit the result. --}}
+<link rel="stylesheet" href="{{ asset('css/style.min.css') }}?v={{ filemtime(public_path('css/style.min.css')) }}">
 <script type="application/ld+json">{!! json_encode([
     '@@context' => 'https://schema.org',
     '@type' => ['LocalBusiness', 'Organization'],
@@ -109,9 +110,9 @@
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="{{ asset('js/app.js') }}?v={{ filemtime(public_path('js/app.js')) }}"></script>
+<script src="{{ asset('js/app.min.js') }}?v={{ filemtime(public_path('js/app.min.js')) }}" defer></script>
 @stack('scripts')
-@if ($pixelMode ?? false)<script src="{{ asset('js/pixel-events.js') }}?v={{ filemtime(public_path('js/pixel-events.js')) }}" defer></script>@endif
+@if ($pixelMode ?? false)<script src="{{ asset('js/pixel-events.min.js') }}?v={{ filemtime(public_path('js/pixel-events.min.js')) }}" defer></script>@endif
 @include('partials.chatwoot')
 </body>
 </html>

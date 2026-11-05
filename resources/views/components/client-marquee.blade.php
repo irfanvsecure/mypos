@@ -37,7 +37,7 @@
                   @if (is_file(public_path('uploads/' . ($webp = preg_replace('/\.jpe?g$/', '-420.webp', $logo)))))
                     <source srcset="@if (is_file(public_path('uploads/' . ($small = str_replace('-420.webp', '-210.webp', $webp))))){{ asset('uploads/' . $small) }} 280w, @endif{{ asset('uploads/' . $webp) }} 420w" sizes="(max-width:560px) 134px, 186px" type="image/webp">
                   @endif
-                  <img src="{{ asset('uploads/' . $logo) }}" alt="{{ $copy ? '' : $name . ' logo' }}" title="{{ $name }}" loading="lazy" width="210" height="130">
+                  <img src="{{ asset('uploads/' . $logo) }}" alt="{{ $name }} logo" title="{{ $name }}" loading="lazy" width="210" height="130">
                 </picture>
               </a>
             @endforeach

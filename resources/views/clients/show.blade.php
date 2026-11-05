@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('page', 'client')
-@section('title', $client->meta_title ?: $client->name . ' — myPOS Client')
+{{-- Imported WordPress titles end in a long site-wide suffix; those use the short title instead. --}}
+@section('title', $client->meta_title && ! str_contains($client->meta_title, 'Pakistan Leading Retail') ? $client->meta_title : $client->name . ' — myPOS Client')
 @section('description', $client->name . ' runs on myPOS — Pakistan\'s point of sale software for retail, restaurant, salon and service businesses, with FBR & PRA integration built in.')
 @if ($client->logo)
 @section('og_image', $client->logo)

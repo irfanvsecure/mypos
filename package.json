@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "minify": "npx --yes esbuild@0.28.2 public/css/style.css public/js/app.js public/js/pixel-events.js public/js/hero3d.js --minify --charset=utf8 --outbase=public --outdir=public --entry-names=[dir]/[name].min --log-level=warning"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
