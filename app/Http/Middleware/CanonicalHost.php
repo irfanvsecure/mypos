@@ -26,12 +26,16 @@ class CanonicalHost
             // 308 keeps the method and body of a POST; a 301 may turn it into a GET.
             $status = $request->isMethodSafe() ? 301 : 308;
 
-            return redirect()->away('https://' . $canonical . $request->getRequestUri(), $status);
+            return $this->withHsts($request, redirect()->away('https://' . $canonical . $request->getRequestUri(), $status));
         }
 
-        $response = $next($request);
+        return $this->withHsts($request, $next($request));
+    }
 
-        if (($maxAge = (int) config('site.hsts_max_age')) > 0) {
+    /** Browsers only accept HSTS over HTTPS, so https://www gets it on its redirect and plain http never does. */
+    private function withHsts(Request $request, Response $response): Response
+    {
+        if ($request->isSecure() && ($maxAge = (int) config('site.hsts_max_age')) > 0) {
             $response->headers->set('Strict-Transport-Security', 'max-age=' . $maxAge);
         }
 

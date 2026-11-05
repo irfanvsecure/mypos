@@ -37,6 +37,14 @@ class CanonicalHostTest extends TestCase
             ->assertHeader('Strict-Transport-Security', 'max-age=86400');
     }
 
+    public function test_https_www_redirect_also_gets_hsts_but_plain_http_does_not(): void
+    {
+        config(['site.hsts_max_age' => 86400]);
+
+        $this->get('https://www.mypos.pk/')->assertStatus(301)->assertHeader('Strict-Transport-Security', 'max-age=86400');
+        $this->get('http://www.mypos.pk/')->assertStatus(301)->assertHeaderMissing('Strict-Transport-Security');
+    }
+
     public function test_hsts_can_be_switched_off(): void
     {
         config(['site.hsts_max_age' => 0]);

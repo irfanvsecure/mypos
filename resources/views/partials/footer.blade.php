@@ -1,7 +1,7 @@
 <footer>
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a href="{{ route('home') }}" class="logo-mark"><picture><source srcset="{{ asset('images/logo-168.webp') }}" type="image/webp"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="96" height="96" loading="lazy"></picture></a>
+      <a href="{{ route('home') }}" class="logo-mark"><picture><source srcset="{{ asset('images/logo-mark-168.webp') }}" type="image/webp"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="96" height="96" loading="lazy"></picture></a>
       <p>{!! config('site.footer_tagline') !!}</p>
       <ul style="margin-top:18px;">
         <li><a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></li>

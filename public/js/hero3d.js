@@ -1,6 +1,6 @@
 // Cinematic 3D backdrop for dark heroes: coins, FBR receipts, payment cards and product boxes drifting in a lit,
 // fogged space, with mouse parallax and a scroll-driven camera push. Loaded lazily by app.js into [data-hero3d].
-import * as THREE from '../vendor/three.module.min.js';
+import * as THREE from './three.module.min.js';
 
 export function mount(host) {
   const small = window.matchMedia('(max-width: 760px)').matches;
