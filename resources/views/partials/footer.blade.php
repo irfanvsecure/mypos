@@ -1,10 +1,7 @@
 <footer>
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a href="{{ route('home') }}" class="footer-logo" aria-label="myPOS home">
-        <span class="footer-logo-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9h6M7 12h3"/></svg></span>
-        <span class="footer-logo-text">my<b>POS</b></span>
-      </a>
+      <a href="{{ route('home') }}" class="footer-logo"><picture><source srcset="{{ asset('images/logo-mark-168.webp') }}" type="image/webp"><img src="{{ asset('images/logo.png') }}" alt="myPOS" width="84" height="84" loading="lazy"></picture></a>
       <p>{!! config('site.footer_tagline') !!}</p>
       <ul class="u-margin-top-18px">
         <li><a href="tel:{{ config('site.phone_raw') }}">{{ config('site.phone') }}</a></li>

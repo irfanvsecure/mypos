@@ -1850,10 +1850,8 @@ a.core-item:hover{color:var(--coral-deep);}
 /* Footer: the link columns fill the row whether there are four or five of them. */
 .footer-links{display:grid; grid-auto-flow:column; grid-auto-columns:auto; justify-content:space-between; gap:28px;}
 .footer-links ul li{white-space:nowrap;}
-.footer-logo{display:inline-flex; align-items:center; gap:12px;}
-.footer-logo-mark{width:46px; height:46px; border-radius:13px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,#C8461C,#A23A15); flex-shrink:0;}
-.footer-logo-text{font:700 1.75rem/1 'Space Grotesk',sans-serif; letter-spacing:-0.02em; color:#fff;}
-.footer-logo-text b{font-weight:700; color:var(--blue-light);}
+.footer-logo{display:inline-block; background:#fff; padding:10px 14px; border-radius:14px; line-height:0;}
+.footer-logo img{width:84px; height:84px; object-fit:contain;}
 .footer-cta{flex-wrap:nowrap;}
 @media (max-width:1180px){
   .footer-grid{grid-template-columns:1fr; gap:44px;}
