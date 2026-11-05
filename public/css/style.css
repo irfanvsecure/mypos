@@ -286,7 +286,7 @@ section{padding:108px 0; position:relative;}
 .field input:focus, .field select:focus{outline:2px solid var(--blue-light); outline-offset:1px;}
 .form-card .btn-primary{width:100%; justify-content:center; margin-top:6px;}
 footer{background:var(--navy); color:var(--text-mute-on-dark); border-top:1px solid rgba(255,255,255,0.1); padding:70px 0 30px;}
-.footer-grid{display:grid; grid-template-columns:1.4fr repeat(4,1fr) 1.2fr; gap:28px;}
+.footer-grid{display:grid; grid-template-columns:minmax(290px,320px) 1fr; gap:64px;}
 .footer-grid .h4{color:var(--text-on-dark); font-size:0.88rem; margin-bottom:18px; font-weight:600;}
 .footer-grid ul li{margin-bottom:11px; font-size:0.86rem;}
 .footer-grid ul li a:hover{color:var(--coral-soft);}
@@ -1847,14 +1847,23 @@ a.core-item:hover{color:var(--coral-deep);}
 .bsel-vis .photo::before{opacity:0;}
 .bsel-vis .photo::after{background:linear-gradient(180deg, transparent 55%, rgba(7,26,46,0.35));}
 
-/* Footer: logo block on its own row once the six columns stop fitting. */
-@media (max-width:1100px){
-  .footer-grid{grid-template-columns:repeat(3,1fr);}
-  .footer-brand{grid-column:1/-1;}
-  .footer-brand p,.footer-brand .u-max-width-260px{max-width:520px !important;}
+/* Footer: the link columns fill the row whether there are four or five of them. */
+.footer-links{display:grid; grid-auto-flow:column; grid-auto-columns:auto; justify-content:space-between; gap:28px;}
+.footer-links ul li{white-space:nowrap;}
+.footer-logo{display:inline-flex; align-items:center; gap:12px;}
+.footer-logo-mark{width:46px; height:46px; border-radius:13px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,#C8461C,#A23A15); flex-shrink:0;}
+.footer-logo-text{font:700 1.75rem/1 'Space Grotesk',sans-serif; letter-spacing:-0.02em; color:#fff;}
+.footer-logo-text b{font-weight:700; color:var(--blue-light);}
+.footer-cta{flex-wrap:nowrap;}
+@media (max-width:1180px){
+  .footer-grid{grid-template-columns:1fr; gap:44px;}
+  .footer-brand p,.footer-brand .u-max-width-260px{max-width:560px !important;}
+  .footer-links{grid-auto-flow:row; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); justify-content:stretch;}
 }
-@media (max-width:640px){
-  .footer-grid{grid-template-columns:repeat(2,1fr);}
+@media (max-width:560px){
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-links{grid-template-columns:1fr 1fr; gap:32px 18px;}
+  .footer-links ul li{white-space:normal;}
 }
 
 /* Former inline styles from the Blade views. */
