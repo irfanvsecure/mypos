@@ -32,8 +32,8 @@ return [
 
     // http:// and www. on this host redirect to https://{canonical_host}. Empty switches the redirect off.
     'canonical_host' => env('SITE_CANONICAL_HOST', 'mypos.pk'),
-    // Strict-Transport-Security max-age in seconds (0 = no header). Starts at one day; raise to 31536000 once HTTPS has proved stable.
-    'hsts_max_age' => (int) env('HSTS_MAX_AGE', 86400),
+    // Strict-Transport-Security max-age in seconds (0 = no header). One year: HTTPS on mypos.pk and www has been stable since launch.
+    'hsts_max_age' => (int) env('HSTS_MAX_AGE', 31536000),
 
     // Serve not-yet-migrated /uploads files from the old WordPress server (see routes/web.php).
     'remote_uploads' => env('SITE_REMOTE_UPLOADS', true),
