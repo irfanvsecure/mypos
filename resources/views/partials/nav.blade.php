@@ -1,8 +1,7 @@
 @php
     $path = '/' . trim(request()->path(), '/');
     $isActive = fn ($href) => $href !== '/' && ($path === $href || str_starts_with($path, rtrim($href, '/') . '/'));
-    $icons = config('site.nav_icons');
-    $icon = fn ($key, $size = 20) => '<svg width="' . $size . '" height="' . $size . '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($icons[$key] ?? '') . '</svg>';
+    $icon = fn ($key, $size = 20) => \App\Site\NavSprite::icon($key, $size);
     $menus = collect(config('site.menu'))->map(function ($menu) {
         $menu['all'] = $menu['items'] ?? array_merge(...array_values($menu['groups']));
         return $menu;
