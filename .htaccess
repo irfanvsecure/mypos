@@ -1,4 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Redirect any /public/... URL to the clean URL
+    RewriteCond %{THE_REQUEST} \s/+public/ [NC]
+    RewriteRule ^public/(.*)$ /$1 [R=301,L]
+
+    # Internally route requests to the public/ directory
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
