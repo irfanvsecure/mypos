@@ -38,7 +38,7 @@ return [
     // Meta (Facebook) Pixel. Events are only sent from the hosts listed here, so local and staging
     // visits never reach the ads data; elsewhere, with APP_DEBUG on, calls are logged to the console instead.
     'google_analytics' => [
-        'id' => env('GA_MEASUREMENT_ID', ''),
+        'id' => env('GA_MEASUREMENT_ID', 'G-82GZBZCW8K'),
         'hosts' => array_filter(explode(',', env('GA_HOSTS', 'mypos.pk'))),
     ],
 
