@@ -6,7 +6,7 @@
     'compact' => false, // short demo form (name, phone, business) for CTA bands
 ])
 @php config(['site.form_rendered' => true]); /* the layout's offer bar and sticky "Free Demo" button scroll here instead */ @endphp
-<form class="form-card{{ $compact ? ' form-compact' : '' }}" method="POST" action="{{ route('enquiry.store') }}#enquiry" id="enquiry" novalidate {{ $attributes }}>
+<form class="form-card{{ $compact ? ' form-compact' : '' }}" method="POST" action="{{ route('enquiry.store') }}#enquiry" id="enquiry" {{ $attributes }}>
   @csrf
   <input type="hidden" name="page" value="{{ request()->path() }}">
   <div class="hp-field" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
