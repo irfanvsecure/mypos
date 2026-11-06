@@ -19,6 +19,8 @@ return Application::configure(basePath: dirname(__DIR__))
         }
         // Redirects / 410s from the redirects table (in the web group, so error pages get a session as before).
         $middleware->appendToGroup('web', \App\Http\Middleware\SiteRedirects::class);
+        // Inline styles → classes and collapsed whitespace on every HTML page (app/Site/HtmlOptimizer.php).
+        $middleware->appendToGroup('web', \App\Http\Middleware\OptimizeHtml::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

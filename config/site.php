@@ -35,6 +35,9 @@ return [
     // Strict-Transport-Security max-age in seconds (0 = no header). One year: HTTPS on mypos.pk and www has been stable since launch.
     'hsts_max_age' => (int) env('HSTS_MAX_AGE', 31536000),
 
+    // Move mapped inline styles into classes and collapse whitespace in HTML responses (app/Site/HtmlOptimizer.php).
+    'optimize_html' => (bool) env('HTML_OPTIMIZE', true),
+
     // Serve not-yet-migrated /uploads files from the old WordPress server (see routes/web.php).
     'remote_uploads' => env('SITE_REMOTE_UPLOADS', true),
     'free_download' => 'https://drive.google.com/open?id=1EQBjuP8GQZDwOKGs09rf81bU56QD-2mM&usp=drive_fs',
