@@ -54,7 +54,7 @@ h1,h2,h3,.h4,.h2,.h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; 
 .stagger > *{transition-delay:calc(var(--i,0) * 90ms);}
 .nav{position:sticky; top:0; z-index:60; background:rgba(255,255,255,0.92); backdrop-filter:blur(14px) saturate(1.3); border-bottom:1px solid var(--paper-line);}
 .nav .wrap{display:flex; align-items:center; justify-content:space-between; height:78px;}
-.logo-mark{display:flex; align-items:center; line-height:0;}
+.logo-mark{display:flex; align-items:center; line-height:0; flex-shrink:0;}
 .logo-mark img{width:84px; height:84px; object-fit:contain; flex-shrink:0;}
 .footer-brand .logo-mark img{width:96px; height:96px;}
 .nav-links{display:flex; gap:26px; align-items:center;}
@@ -63,6 +63,8 @@ h1,h2,h3,.h4,.h2,.h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; 
 .nav-links a:hover{color:var(--text-ink);}
 .nav-links a:hover::after{width:100%;}
 .nav-cta{display:flex; align-items:center; gap:20px;}
+/* The header button stays on one line: with seven menus it used to wrap into a tall two-line block. */
+.nav-cta .btn{white-space:nowrap; flex-shrink:0; padding:12px 22px; border-radius:8px;}
 .btn{display:inline-flex; align-items:center; gap:8px; font-size:0.9rem; font-weight:600; padding:13px 24px; border-radius:4px; transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;}
 .btn-primary{background:linear-gradient(135deg,var(--coral),var(--coral-deep)); color:#fff; box-shadow:0 8px 22px -10px rgba(158,52,18,0.6);}
 .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(158,52,18,0.7);}
@@ -623,10 +625,16 @@ main{overflow-x:clip;}
 .phone-pill{display:flex; align-items:center; gap:10px; color:var(--text-ink);}
 .pp-ic, .nav-call{display:grid; place-items:center; border-radius:50%; color:var(--coral-deep); background:#FFF1EA; border:1px solid #F8D9CA; transition:background .2s ease, color .2s ease;}
 .pp-ic{width:36px; height:36px;}
-.pp-txt small{display:block; font-size:0.66rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-mute-ink);}
+.pp-txt small{display:block; white-space:nowrap; font-size:0.66rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-mute-ink);}
 .pp-txt b{display:block; font-family:'Space Grotesk',sans-serif; font-size:0.92rem; font-weight:600; white-space:nowrap;}
 .phone-pill:hover .pp-ic, .nav-call:hover{background:var(--coral-deep); border-color:var(--coral-deep); color:#fff;}
 .nav-call{display:none; width:44px; height:44px;}
+/* Below 1480px seven menus, the phone number and the button do not fit: the phone shows as its round icon. */
+@media (max-width:1480px){
+  .nav-cta{gap:14px;}
+  .phone-pill{display:none;}
+  .nav-call{display:grid; order:-1;}
+}
 .nav-toggle{display:none; width:44px; height:44px; border-radius:8px; border:1px solid var(--paper-line); align-items:center; justify-content:center; flex-direction:column; gap:5px;}
 .nav-toggle span{display:block; width:20px; height:2px; background:var(--text-ink); transition:transform .25s ease, opacity .2s ease;}
 .nav-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
